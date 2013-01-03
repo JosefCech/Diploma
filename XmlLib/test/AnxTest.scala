@@ -1,0 +1,60 @@
+
+import org.scalatest._
+import org.scalatest.FunSuite
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+import common._
+import scala.xml._
+import java.io._
+import Anx.AnxWriter
+import Anx.AnxReader
+
+
+@RunWith(classOf[JUnitRunner])
+class AxnTest extends FunSuite {
+
+  def GetWords(count : Int) :  Segment = 
+  {
+    def GetWordsAcc(count : Int, acc : List[Word]) : Segment = {
+      if (count == 0) new PureSegment(acc)
+      else {
+        def w1 = new MorfWord("testform" + count ,"tag" + count)
+        GetWordsAcc(count-1, w1 :: acc )  
+        }
+      
+    }
+    
+    GetWordsAcc(count,List[Word]())
+  }
+  
+  def GetSegments(count : Int , countWord : Int) : List[Segment] = {
+    def GetSegmentsAcc(count : Int , countWord : Int , acc : List[Segment]) : List[Segment] = {
+      if (count == 0) acc
+      else {
+         def words = GetWords(countWord)
+         GetSegmentsAcc(count-1,countWord,words :: acc)
+      }  
+    }
+    GetSegmentsAcc(count,countWord,List[Segment]())
+  }
+  
+  test("read anx file ca-001.xml")
+  {
+    val file = new File("ca-001.anx")
+    val data = AnxReader.ReadSentence(file)
+    data.foreach(t => t.words.foreach(r => println(r.form)))
+  }
+  
+ test("create segment node") {
+  def segments =  GetSegments(2,5);
+  def xmlSegments =  new Xml.XmlSentence(segments)
+  println(xmlSegments.TransformXml)
+ }
+ 
+  test("write anx file") {
+  def segments =  GetSegments(2,2);
+  def f = "testdata.anx"
+  AnxWriter.Write(f,new Xml.XmlSentence(segments))
+ }
+ 
+}
