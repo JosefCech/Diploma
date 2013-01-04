@@ -2,12 +2,16 @@ package Anx
 
 import Xml._
 import scala.xml._
+import common._
 
 
 object AnxWriter extends XmlWriter {
   
   val Encoding = "UTF-8"
     
+  def  Write(f : String , sentence : List[Segment]) : Boolean = {
+     Write(f,new Xml.XmlSentence(sentence))
+  }
 
   def Write (f: String, node : Node) : Boolean =
   {

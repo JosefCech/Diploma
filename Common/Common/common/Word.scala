@@ -2,9 +2,8 @@ package common
 
 import java.io;
 
-class Word(val form : String) {
-  def IsSF : Boolean = false
-  def IsDelimiter : Boolean = false
+class Word(val form : String ) {
+  def IsSeparator : Boolean = false
   
 }
 

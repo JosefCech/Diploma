@@ -54,7 +54,7 @@ class AxnTest extends FunSuite {
   test("write anx file") {
   def segments =  GetSegments(2,2);
   def f = "testdata.anx"
-  AnxWriter.Write(f,new Xml.XmlSentence(segments))
+  AnxWriter.Write(f,segments)
  }
  
 }

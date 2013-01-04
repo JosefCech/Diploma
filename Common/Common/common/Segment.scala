@@ -12,7 +12,7 @@ abstract class Segment {
    
   
   def ContainsSubcord() : Boolean = {
-	   words.last.IsSF 
+	   false
 	 }
 }
 
@@ -22,8 +22,8 @@ class PureSegment(val data : List[Any]) extends Segment {
 			 data.map( f => f match 
 		  					{
 		  						case f : String => new Word(f)
-		  						case f : (String,String) => new MorfWord(f._1,f._2)	
-		  						case f : Word => f
+		  						case f : (String,String) => new MorfWord(f._1,f._2)
+		  					    case f : Word => f
 		  					}
 		  			)	
 		  			

@@ -18,11 +18,11 @@ object AnxReader extends XmlReader {
     new PureSegment(words);  
   }
   
-  def CreateWord(word : Node) : (String,String) = {
+  def CreateWord(word : Node) : AnxWord = {
     val form : String = (word\\"@form").text
     val tag : String = (word\\ "@tag").text
-    val separator : String = (word\\"@sep").text
-    (form,tag)
+    val separator : Boolean = (word\\"@sep").text.trim == '1'
+    new AnxWord(form,tag, separator)
   }
     
 }
