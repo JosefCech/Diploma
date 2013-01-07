@@ -27,7 +27,7 @@ class PureSegment(val data : List[Any]) extends Segment {
 		  					}
 		  			)	
 		  			
-	
+	def separators = words.filter(p => p.IsSeparator)
 	
 }
 

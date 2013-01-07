@@ -8,6 +8,8 @@ import scala.xml._
 import java.io._
 import Anx.AnxWriter
 import Anx.AnxReader
+import Anx.AnxWord
+import common.Word
 
 
 @RunWith(classOf[JUnitRunner])
@@ -42,7 +44,7 @@ class AxnTest extends FunSuite {
   {
     val file = new File("ca-001.anx")
     val data = AnxReader.ReadSentence(file)
-    data.foreach(t => t.words.foreach(r => println(r.form)))
+    data.foreach(t => t.words.foreach(r => r match {case r : AnxWord => println(r.form,r.tag,r.sep)}))
   }
   
  test("create segment node") {
@@ -55,6 +57,12 @@ class AxnTest extends FunSuite {
   def segments =  GetSegments(2,2);
   def f = "testdata.anx"
   AnxWriter.Write(f,segments)
+ }
+  
+   test("anx word equals morfword") {
+   def anxWord = new AnxWord("form","tag",true)
+   def morfWord = new MorfWord("form","tag")
+   assert(anxWord.equals(morfWord))
  }
  
 }

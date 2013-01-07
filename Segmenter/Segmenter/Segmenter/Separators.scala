@@ -1,4 +1,5 @@
 package Segmenter
+
 import Anx._
 import Xml._
 import scala.xml._
@@ -30,5 +31,7 @@ protected def readData : Node =
 		   val sepFile = dirData +"/"+ files.head.getName()
 		   new Xml.Reader(sepFile).data 
 		 }
+
+ println(separatorsWords)
   
 }

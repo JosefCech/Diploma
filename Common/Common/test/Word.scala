@@ -24,4 +24,22 @@ class WordTest extends FunSuite {
   assert(words.form == "form")
   assert(words.tag == "tag")
  }
+ 
+  test("morfword test  equals ") {
+  def words =  new MorfWord("form","tag")
+  def words2 =  new MorfWord("form","tag")
+  assert(words.equals(words2))
+ }
+  
+  test("morfword test  equals - word ") {
+  def words =  new MorfWord("form","tag")
+  def words2 =  new Word("form")
+  assert(words.equals(words2))
+ }
+  
+  test("morfword test  equals - string") {
+  def words =  new MorfWord("form","tag")
+  def words2 =  "form"
+  assert(words.equals(words2))
+ }
 }

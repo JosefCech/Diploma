@@ -19,9 +19,9 @@ object AnxReader extends XmlReader {
   }
   
   def CreateWord(word : Node) : AnxWord = {
-    val form : String = (word\\"@form").text
-    val tag : String = (word\\ "@tag").text
-    val separator : Boolean = (word\\"@sep").text.trim == '1'
+    val form : String = (word\\"@form").text.toLowerCase
+    val tag : String = (word\\"@tag").text   
+    val separator : Boolean = (word\\"@sep").text.trim == "1"
     new AnxWord(form,tag, separator)
   }
     

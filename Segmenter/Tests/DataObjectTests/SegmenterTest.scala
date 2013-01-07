@@ -11,7 +11,6 @@ import common._
 class SegmenterTest extends FunSuite {
   
   ("read morf sentence") {
-    
     print(Segmenter.parsedSegments)
     println(Segmenter.parsedSegments.size)
     1
