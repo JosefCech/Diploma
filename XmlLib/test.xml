@@ -1,7 +1,1 @@
-<root name="veta" tag="AABBVV">
-<sentence>
-<word>test</word>
-<word>test21</word>
-testsentence
-</sentence>
-</root>
+<root><node>test</node></root>

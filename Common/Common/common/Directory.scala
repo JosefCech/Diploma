@@ -4,7 +4,7 @@ import java.io._
 
 object Directory {
    
-  protected def ReadAllFiles( dir : String ,  typeFile : String) : List[File] = {
+   def ReadAllFiles( dir : String ,  typeFile : String) : List[File] = {
 
     def directory = new File(dir)
     if (directory.exists()) {
@@ -32,6 +32,7 @@ object Directory {
   
   def ReadFiles(dir : String) : List[File] = {
      ReadAllFiles(dir, "")
+    
     
   }
 }

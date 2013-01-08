@@ -3,7 +3,7 @@ package common
 import java.io;
 
 class Word(val form : String ) {
-  def IsSeparator : Boolean = false
+
   override def equals(that : Any) : Boolean = that match {
     case that : Word => that.form.toLowerCase == this.form.toLowerCase
     case that : String => this.form == that
@@ -22,4 +22,22 @@ class MorfWord( form : String, val tag: String) extends Word(form)
   }
   
   override def hashCode = form.hashCode + tag.hashCode
+  
+  def compareTag( tagCompare : String) : Boolean = {
+    def partialCompare(tag1 : String , tag2: String ) : Boolean = {
+      if (tag1.isEmpty || tag2.isEmpty) true
+      else {
+         val ch1 = tag1.head
+         val ch2 = tag2.head
+         if (ch1 == ch2) partialCompare(tag1.tail,tag2.tail)
+         else false
+      }
+    }
+    partialCompare(tag.toUpperCase,tagCompare.toUpperCase)
+  }
+  
+  def isSeparator = (this.compareTag("J^") || this.compareTag("Z:"))
+  
+  def isSubFlag = (this.compareTag("J,") || this.compareTag("P4") || this.compareTag("PE") || this.compareTag("PJ") || this.compareTag("PK") || this.compareTag("PQ") || this.compareTag("PY") || this.compareTag("C?") || this.compareTag("Cu") || this.compareTag("Cz"))
+
 }

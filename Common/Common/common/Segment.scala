@@ -27,8 +27,15 @@ class PureSegment(val data : List[Any]) extends Segment {
 		  					}
 		  			)	
 		  			
-	def separators = words.filter(p => p.IsSeparator)
-	
+	def separators = words.takeWhile(p => p match {case p : MorfWord => p.isSeparator 
+												 case p : Word => false
+	                                             }
+	                                       ).toList
+	                                       
+	def haveSubFlag = !words.filter(p => p match {case p : MorfWord => p.isSeparator 
+												  case p : Word => false
+	                                             }
+	                                       ).isEmpty
 }
 
 class AnalyzedSegment(data : List[Any], val level : Int) extends PureSegment(data) {

@@ -22,6 +22,6 @@ object MorfReader extends XmlReader {
  }
  
  def CreateWord(wordNode : xml.Node) : Word = {
-   new  MorfWord((wordNode\\"form").toList.head.text,(wordNode\\"tag").toList.head.text) 
+   new  MorfWord((wordNode\\"form").toList.head.text.toLowerCase,(wordNode\\"tag").toList.head.text) 
  }
 }
