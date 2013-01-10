@@ -5,7 +5,7 @@ abstract class Segment {
   def words : List[Word]
  
   
-  def ToSentence() : String  = words.map(s => s match {
+  def ToString : String  = words.map(s => s match {
     case s : Word => s.form
   	}
    ).mkString(" ") 

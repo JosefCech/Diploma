@@ -20,9 +20,9 @@ class SentenceTest extends FunSuite {
   }
   
     test("get segments from sentence") {
-     val words =  List( new MorfWord ("a","J^------------") , new MorfWord ("který","J,------------"), new MorfWord ("a","J^------------"))
+     val words =  List( new MorfWord ("a","J^------------") , new MorfWord ("ale","J^------------"), new MorfWord ("který","J,------------"), new MorfWord ("a","J^------------"))
      val sentence = new Sentence(words)
-     sentence.parsedSegments.foreach(f => { f.words.foreach(w =>  {print(w.form) ; print(" ")}) ; println("") })
+     sentence.parsedSegments.foreach(f => { println(f.ToString) ; println("") })
      0
   }
 

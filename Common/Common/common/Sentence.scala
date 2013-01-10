@@ -15,12 +15,22 @@ class Sentence(sentence : List[Word] ) {
    def GetSubFlags = {
 	   				   morfSentence.filter( t => t.isSubFlag ).toList	   					  
 	   				  }
-     
+   def ToStrng =   sentence.map(s => s match {
+    case s : Word => s.form
+  	}
+   ).mkString(" ") 
+
    def parsedSegments = {
       def segments(words : List[MorfWord] , acc : List[Segment] , accWord : List[MorfWord]) : List[Segment] = {
         if (words.isEmpty) (new PureSegment(accWord.reverse) :: acc).reverse
         else if (words.head.isSeparator && !accWord.isEmpty) {
+          if (accWord.head.isSeparator)
+          {
+           segments(words.tail,acc,words.head :: accWord)
+          }
+          else {
             segments(words.tail,(new PureSegment(accWord.reverse) :: acc),List(words.head))
+          }
         }
         else {
            segments(words.tail,acc,words.head :: accWord)
