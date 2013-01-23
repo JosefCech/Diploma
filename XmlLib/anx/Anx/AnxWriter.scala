@@ -3,6 +3,7 @@ package Anx
 import Xml._
 import scala.xml._
 import common._
+import java.io.File
 
 
 object AnxWriter extends XmlWriter {
@@ -15,6 +16,7 @@ object AnxWriter extends XmlWriter {
 
   def Write (f: String, node : Node) : Boolean =
   {
+    val file = new File(f);
    scala.xml.XML.save(f,node,"UTF-8")
     true
   }

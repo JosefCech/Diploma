@@ -1,8 +1,13 @@
 package common
 
-class Sentence(sentence : List[Word] ) {
+class Sentence(val sentence : List[Word], val ident : String = "" ) {
 
-   protected def morfSentence = sentence.map(t => t match {
+   def morfSentence = sentence.map(t => t match {
+        						case t : MorfWord =>  t 
+        						case t : Word => new MorfWord(t.form,"")   
+        						case _ => throw new ClassCastException
+                                } ).filter(_.tag != "").toList
+   def MorfWords = sentence.map(t => t match {
         						case t : MorfWord =>  t 
         						case t : Word => new MorfWord(t.form,"")   
         						case _ => throw new ClassCastException
@@ -15,21 +20,36 @@ class Sentence(sentence : List[Word] ) {
    def GetSubFlags = {
 	   				   morfSentence.filter( t => t.isSubFlag ).toList	   					  
 	   				  }
-   def ToStrng =   sentence.map(s => s match {
+   
+   def Ident = this.ident
+   
+   def ToString =   sentence.map(s => s match {
     case s : Word => s.form
   	}
    ).mkString(" ") 
 
    def parsedSegments = {
       def segments(words : List[MorfWord] , acc : List[Segment] , accWord : List[MorfWord]) : List[Segment] = {
-        if (words.isEmpty) (new PureSegment(accWord.reverse) :: acc).reverse
-        else if (words.head.isSeparator && !accWord.isEmpty) {
-          if (accWord.head.isSeparator)
+        if (words.isEmpty) { 
+          if (!accWord.isEmpty)
           {
-           segments(words.tail,acc,words.head :: accWord)
+           if (accWord.head.isSeparator) 
+             (new Boundary(accWord.reverse,-1):: acc).reverse
+           else {
+             (new PureSegment(accWord.reverse,-1) :: acc).reverse
+           }
           }
           else {
-            segments(words.tail,(new PureSegment(accWord.reverse) :: acc),List(words.head))
+            acc.reverse
+          }
+        }
+        else if (words.head.isSeparator)
+         {
+          if (accWord.isEmpty) {
+           segments(words.tail,(new Boundary(List(words.head),-1):: acc),accWord)
+          }
+          else {
+             segments(words.tail,(new Boundary(List(words.head),-1) :: (new PureSegment(accWord.reverse,-1) :: acc)),List[MorfWord]())
           }
         }
         else {

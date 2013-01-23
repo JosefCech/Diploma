@@ -33,7 +33,7 @@ class MorfWord( form : String, val tag: String) extends Word(form)
          else false
       }
     }
-    partialCompare(tag.toUpperCase,tagCompare.toUpperCase)
+    partialCompare(tag,tagCompare)
   }
   
   def isSeparator = (this.compareTag("J^") || this.compareTag("Z:"))
