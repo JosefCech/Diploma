@@ -15,7 +15,12 @@ object AnxReader extends XmlReader {
   
   def GetSegment(segment : Node) : Segment = {
     val words = (segment\\"word").map(t => CreateWord(t)).toList
+    if (words.filter(p => p.isSeparator).size > 0) {
+      new Boundary(words)
+    }
+    else {
     new PureSegment(words);  
+    }
   }
   
   def CreateWord(word : Node) : AnxWord = {

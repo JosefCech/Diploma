@@ -1,0 +1,5 @@
+package Main
+
+class Rule {
+
+}

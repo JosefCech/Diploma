@@ -34,9 +34,9 @@ class BaseSegment(val data : List[Any] ,  val level : Int )
 	                                       ).isEmpty
 }
 
-class Boundary(  data : List[Any] , level : Int = 0) 
+class Boundary( data : List[Any] , level : Int = 0) 
 extends BaseSegment(data,level) {
- 
+  def this(data : List[Any]) = this(data,-1)	
   
 }
 
@@ -44,6 +44,6 @@ extends BaseSegment(data,level) {
 
 class PureSegment(data : List[Any] , level : Int ) 
 extends BaseSegment(data,level) {
-		
+ def this(data : List[Any]) = this(data,-1)		
 
 }

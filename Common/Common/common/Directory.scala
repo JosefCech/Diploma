@@ -30,6 +30,10 @@ object Directory {
     ReadAllFiles(dir,".xml")
   }
   
+  def ReadSegFiles(dir : String ) : List[File] = {
+    ReadAllFiles(dir,".seg")
+  }
+  
   def ReadFiles(dir : String) : List[File] = {
      ReadAllFiles(dir, "")
     

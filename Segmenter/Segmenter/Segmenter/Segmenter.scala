@@ -28,7 +28,7 @@ object Segmenter extends App {
       
       sentences.foreach(t => 
         		{ val data = SegReader.ReadData("SegData/"+ t.Ident + ".seg" )
-        		  println(data);
+        		  //println(data);
         		  Anx.AnxWriter.Write( resultFolder.getPath() + '/' + t.Ident + ".anx", t.parsedSegments)
         		} )
       }

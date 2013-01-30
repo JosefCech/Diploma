@@ -28,15 +28,25 @@ class Sentence(val sentence : List[Word], val ident : String = "" ) {
   	}
    ).mkString(" ") 
 
-   def parsedSegments = {
-      def segments(words : List[MorfWord] , acc : List[Segment] , accWord : List[MorfWord]) : List[Segment] = {
+   def parsedSegments : List[Segment] = this.parsedSegments(List[(Int,Int)]())
+   def parsedSegments(levels : List[(Int,Int)]) : List[Segment] = {
+      def segments(words : List[MorfWord] , acc : List[Segment] , accWord : List[MorfWord], levels : List[(Int,Int)]) : List[Segment] = {
+        var restLevels = List[(Int,Int)]();
+        var	originLevels =  List[(Int,Int)]();
+        var level = -1;
+        if (!levels.isEmpty)
+        {
+          restLevels = levels.tail
+          originLevels = levels
+          level = levels.head._1
+        }
         if (words.isEmpty) { 
           if (!accWord.isEmpty)
           {
            if (accWord.head.isSeparator) 
-             (new Boundary(accWord.reverse,-1):: acc).reverse
+             (new Boundary(accWord.reverse,level):: acc).reverse
            else {
-             (new PureSegment(accWord.reverse,-1) :: acc).reverse
+             (new PureSegment(accWord.reverse,level) :: acc).reverse
            }
           }
           else {
@@ -46,16 +56,23 @@ class Sentence(val sentence : List[Word], val ident : String = "" ) {
         else if (words.head.isSeparator)
          {
           if (accWord.isEmpty) {
-           segments(words.tail,(new Boundary(List(words.head),-1):: acc),accWord)
+           segments(words.tail,(new Boundary(List(words.head),level):: acc),accWord, restLevels)
           }
           else {
-             segments(words.tail,(new Boundary(List(words.head),-1) :: (new PureSegment(accWord.reverse,-1) :: acc)),List[MorfWord]())
+            var nextLevel =  -1 
+            if (!restLevels.isEmpty){
+            nextLevel = restLevels.head._1
+            restLevels = restLevels.tail
+            }
+             segments(words.tail,(new Boundary(List(words.head),nextLevel) :: (new PureSegment(accWord.reverse,level) :: acc)),List[MorfWord](),restLevels)
           }
         }
         else {
-           segments(words.tail,acc,words.head :: accWord)
+           segments(words.tail,acc,words.head :: accWord , originLevels)
         }
       }
-     segments(morfSentence,List[Segment](),List[MorfWord]())
+     segments(morfSentence,List[Segment](),List[MorfWord](), levels)
    }
+   
+ def segments = this.parsedSegments(List[(Int,Int)]())
    }

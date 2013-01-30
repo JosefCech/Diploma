@@ -10,6 +10,7 @@ import Anx.AnxWriter
 import Anx.AnxReader
 import Anx.AnxWord
 import common.Word
+import Anx.AnxReader
 
 
 @RunWith(classOf[JUnitRunner])
@@ -54,7 +55,7 @@ class AxnTest extends FunSuite {
  }
  
   test("write anx file") {
-  def segments =  GetSegments(2,2);
+  def segments =  GetSegments(2,2)
   def f = "testdata.anx"
   AnxWriter.Write(f,segments)
  }
@@ -63,6 +64,21 @@ class AxnTest extends FunSuite {
    def anxWord = new AnxWord("form","tag",true)
    def morfWord = new MorfWord("form","tag")
    assert(anxWord.equals(morfWord))
- }
+   }
+   
+   test("anx word read") {
+   def anxWord : Node = <segment><word tag="Z:-------------" form=","></word></segment>
+   def segment = AnxReader.GetSegment(anxWord)
+   segment.words.foreach(f => f match { case f : MorfWord => println(f.isSeparator)
+   											  case f : Word => println(f.form + " " + false)
+   })
+   
+   print(segment.words.map(f => f match { case f : MorfWord => f.isSeparator
+   										  case f : Word =>  false
+   										}).size)
+   										
+   	print(segment)									
+  }
+
  
 }
