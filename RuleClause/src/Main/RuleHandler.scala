@@ -11,4 +11,10 @@ object RuleHandler {
         updateLevels(addLevel,segments.tail,(head._1 + addLevel,head._2) :: acc)
      }
    }
-}
+  /*
+   def apply(rule : Rule , segments : List[(Int,AnalyzedSegment)]) : List[(Int,AnalyzedSegment)] = rule match {
+     case rule : ExcactLevelRule =>  null
+     case rule : MultiplyLevelRule => null
+     case rule : AnotherRule => null
+     */
+   }

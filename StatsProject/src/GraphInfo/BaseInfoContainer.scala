@@ -26,7 +26,8 @@ class BaseInfoContainer(string : String) extends scala.swing.Panel {
 		 contents += new FlowPanel(FlowPanel.Alignment.Center)( new Label(" Poèet segmentù bez slovesa "), new Label(noVerbSegments.size.toString))
 		 contents += new FlowPanel(FlowPanel.Alignment.Center)( new Label(" Nejhloubší segment "), new Label(maxLevel.toString))
 		 //contents += new FlowPanel(new Label(" Poèet vìt s clausemi na základì aktivního slovesa "),new ListView(baseInfo.clauseEstimatedCount))
-         contents += new FlowPanel(new Label(" Poèet segmentù s vyšším levelem vs subflags "),new ListView(baseInfo.subFlagsStats))
+         contents += new FlowPanel(new Label("Èetnost subflagù "),new ListView(baseInfo.sublflagsDetail))
+         
          border = Swing.EmptyBorder(30, 30, 10, 30)
         }
   
