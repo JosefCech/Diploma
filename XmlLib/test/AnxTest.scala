@@ -77,7 +77,10 @@ class AxnTest extends FunSuite {
    										  case f : Word =>  false
    										}).size)
    										
-   	print(segment)									
+   segment match {
+     case segment : Boundary => println("Boundary")
+     case segment : PureSegment => println("PureSegment")
+   }								
   }
 
  

@@ -34,6 +34,9 @@ object Directory {
     ReadAllFiles(dir,".seg")
   }
   
+  def ReadPdtMorfFiles(dir:String) : List[File] = {
+     ReadAllFiles(dir,".m")
+  }
   def ReadFiles(dir : String) : List[File] = {
      ReadAllFiles(dir, "")
     

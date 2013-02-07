@@ -11,7 +11,7 @@ import common._
 class SegReaderTest extends FunSuite {
   
   test("read  sentence") {
-   SegReader.ReadData("SegData/cmpr9406-001-p4s3.seg").foreach(f => println(f._1))
+   SegReader.ReadData("SegData/cmpr9406-001-p4s3.seg").foreach(f => println(f._1 + " " +f._2))
     1
   }
 }

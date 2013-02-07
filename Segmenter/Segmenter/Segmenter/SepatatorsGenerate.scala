@@ -22,8 +22,8 @@ object SepatatorsGeneate extends App {
         else {
           try {
           val sentences = Pdt.MorfReader.Read(files.head)
-          val seps = sentences.map(t => t.GetBounderies).toList.flatten.toList
-          val sf = sentences.map(t => t.GetSubFlags).toList.flatten.toList
+          val seps = sentences.map(t => t.getBounderies).toList.flatten.toList
+          val sf = sentences.map(t => t.getSubFlags).toList.flatten.toList
           GetSeparators(files.tail, acc ::: seps, acc2 ::: sf)
           }
           catch {

@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+        <heapspace.Xmx.compiler>-Xmx2g</heapspace.Xmx.compiler>
+
+        <project.build.sourceEncoding>Cp1250</project.build.sourceEncoding>
+        <java.compiler.version>1.6</java.compiler.version>
+        <maven.scala.plugin.version>2.15.0</maven.scala.plugin.version>
+        <maven.install.plugin.version>2.3.1</maven.install.plugin.version>
+        <maven.assembly.plugin.version>2.2-beta-5</maven.assembly.plugin.version>
+        <scala.compiler.version>2.9.1</scala.compiler.version>
+  </properties>
+  <groupId>StatsProject</groupId>
+  <artifactId>StatsProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>StatsProject</name>
+  <description>statistiky</description>
+  <build>  
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source/>
+          <target/>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>${scala.compiler.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.compiler.version}</version>
+        </dependency>
+  </dependencies>
+   
+</project>

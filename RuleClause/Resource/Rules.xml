@@ -1,0 +1,13 @@
+<Rules>
+  <Rule Priority="1">
+    <Template>
+      <Segment/>
+      <Boundary Form="i|nebo" Tag="J^" />
+      <Segment>
+    	 <Attribute Name="ActiveVerb" Value="0" />
+      </Segment>
+    </Template>
+    <Effect Segment="JoinWithPrevious" Level="ActualLevel" EffectOn="2" />
+  </Rule>
+
+</Rules>

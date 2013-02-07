@@ -3,7 +3,7 @@ package common
 import wordProperties._
 
 class AnalyzedSegment(val segment : Segment) {
-
+  
   def haveSubFlag = segment.words.map(f => f match {
     case f : MorfWord => f
     case f : Word => new MorfWord(f.form,"")
@@ -35,4 +35,8 @@ class AnalyzedSegment(val segment : Segment) {
     case s : Boundary => true
     case _  => false
   }
+  
+  def updateLevel(u : Int) : Unit = segment.updateLevel(u)
+  
+  def setLevel(l : Int) : Unit = segment.setLevel(l)
 }
