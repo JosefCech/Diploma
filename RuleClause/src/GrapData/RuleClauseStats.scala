@@ -11,6 +11,7 @@ object RuleClauseStats extends App {
    def segmentFolder : String = RuleClauseStats.goldenDataFolder + "/Seg" 
    def pdtFolder : String = RuleClauseStats.goldenDataFolder + "/Morf"
    def resultFolder : String = RuleClauseStats.goldenDataFolder + "/Result"
+   
  
   
   override def main(args: Array[String]) {
@@ -38,11 +39,26 @@ object RuleClauseStats extends App {
                      
     println(sentences.filter(p => p._1.segments.size == p._2.size).size)
     println(sentences.filter(p => p._1.segments.size != p._2.size).size)
-       
-    val firstStepAnalyze = sentences.map(r => (r._1,new AnalyzedSentence(r._1.segments).getLevels,r._2))
+    
+    val zeroStepAnalyze = sentences.map(r => (r._1,new AnalyzedSentence(r._1.segments,r._1.ident),r._2))
+    
+    val firstStepAnalyze = sentences.map(r => (r._1,new AnalyzedSentence(r._1.segments,r._1.ident).getLevels,r._2))
+    printProblemData(zeroStepAnalyze)
     printData(firstStepAnalyze)
+    
    }
    
+   def printProblemData(firstStepAnalyze : List[(common.Sentence,AnalyzedSentence, Array[(Int, Int)])]) : Unit = {
+     println("Wrong analyze data")
+     val data = firstStepAnalyze.filter(p => p._2.isForTesting);
+     var rightData = data.filter(p => p._2.levelConfiguration == p._3.foldLeft("")((r,a) => r + a._1.toString))
+     var wrongData = data.filterNot(p => p._2.levelConfiguration == p._3.foldLeft("")((r,a) => r + a._1.toString))
+     println("Whole data: "+data.size+" Right: " + rightData.size + " wrong: " + wrongData.size)
+     
+     wrongData.foreach(f => {
+        println("Ident : " + f._1.ident + " Estimation: " + f._2.levelConfiguration + " Origin: " + f._3.foldLeft("")((r,a) => r + a._1.toString))
+     })
+   }
    
    def printData(firstStepAnalyze : List[(common.Sentence, List[Int], Array[(Int, Int)])]) : Unit = {
     

@@ -29,6 +29,8 @@ class AnalyzedSegment(val segment : Segment) {
   
   def haveQuotationMark = WordFormQuery.quotationMark(this.boundary)
   
+  def haveDash : Boolean = (segment.words.count(p => p.form == "-") > 0)
+  
   def countWords = segment.words.size
   
   def isBoundarySegment = segment match {

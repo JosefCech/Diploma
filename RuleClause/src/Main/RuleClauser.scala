@@ -13,7 +13,7 @@ object RuleClauser {
   
  def analyzeSentence(sentence : Sentence) : ClauseSentence = {
    
-   val segments = new AnalyzedSentence(sentence.segments).morfSegmentsIndexed
+   val segments = new AnalyzedSentence(sentence.segments,sentence.ident).morfSegmentsIndexed
    val applyingRules = RuleHandler.applicableRules(segments)
    val applySegmentToClause = getRuleSegments(applyingRules)
    val applyGlobalEffect = getRuleLevel(applyingRules)

@@ -49,4 +49,20 @@ class WordTest extends FunSuite {
     assert(word1.compareTag("ta"))
     assert(word1.compareTag("t"))
   }
+  
+   test("get subflag conjuction") {
+    def words = List( 
+      new MorfWord("formVF","Vf_____________"),
+      new MorfWord("formvi","Vi_____________"),
+      new MorfWord("formN","NN_____________"),
+      new MorfWord("formA","AA_____________"),
+      new MorfWord("formp6","P6_____________"),
+      new MorfWord("formN","J^_____________"),
+      new MorfWord("formA","AA_____________"),
+       new MorfWord("ní","P9FS6----------")
+      ) 
+    words.filter(t => t.isSubFlag).foreach(f => println(f.form))
+     
+   assert(true)
+  }
 }

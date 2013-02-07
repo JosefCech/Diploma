@@ -6,6 +6,7 @@
 	<classpathentry kind="lib" path="C:/Projekty/Skola/Diploma/myLib/xml.jar"/>
 	<classpathentry kind="lib" path="C:/Projekty/Skola/Diploma/myLib/junit/junit-4.10.jar"/>
 	<classpathentry kind="lib" path="C:/Projekty/Skola/Diploma/myLib/org.scalatest/scalatest_2.9.2/scalatest_2.9.2-1.8.jar"/>
+	<classpathentry kind="lib" path="C:/Projekty/Skola/Diploma/myLib/segmenter.jar"/>
 	<classpathentry kind="lib" path="C:/Projekty/Skola/Diploma/myLib/common.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

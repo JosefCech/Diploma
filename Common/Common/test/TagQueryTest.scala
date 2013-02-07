@@ -29,9 +29,11 @@ class TagQueryTest extends FunSuite{
       new MorfWord("formA","AA_____________"),
       new MorfWord("formp6","P6_____________"),
       new MorfWord("formN","J^_____________"),
-      new MorfWord("formA","AA_____________")
+      new MorfWord("formA","AA_____________"),
+       new MorfWord("formp6","P9-------------")
       ) 
      TagQuery.cordConjuction(words).foreach(t => println(t.form))
+     
    assert(TagQuery.cordConjuction(words).size == 1)
   }
     
@@ -48,4 +50,6 @@ class TagQueryTest extends FunSuite{
      TagQuery.reflexivePronoun(words).foreach(t => println(t.form))
    assert(TagQuery.reflexivePronoun(words).size == 1)
   }
+     
+ 
   }

@@ -25,7 +25,7 @@ class RuleClauserTest extends FunSuite {
      val files = Clauser.getFiles("Results").take(1)
      val sentences = files.map(f => (f.getName,Anx.AnxReader.ReadSentence(f))).toList.map(f => f._2.map(t => new AnalyzedSegment(t)).toList)
      
-     sentences.head.foreach(f => println(f.isBoundarySegment + " " + f.segment.toString))
+    // sentences.head.foreach(f => println(f.isBoundarySegment + " " + f.segment.toString))
      var data = RuleHandler.applicableRules(sentences.head.zipWithIndex.toList.map(t => t.swap))
    
       println(RuleClauser.getRuleSegments(data))

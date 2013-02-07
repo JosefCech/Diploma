@@ -34,15 +34,12 @@ object RuleHandler extends Xml.XmlReader {
        }
      }
       val matchProp : Boolean = compareProperties(segment,condition.attributes)
-      println(matchProp)
-      println(segment.segment.ToString)
       matchProp
   }
   
   def compareBoundarySegment(segment : AnalyzedSegment, condition : BoundaryCondition) : Boolean = {
     val formMatch =  {
       if (condition.form.contains("|")) {
-         println(condition.form.split('|').toList)
 	     condition.form.split('|').map(t => t.trim).toList.contains(segment.boundary.head.form.trim)
 	    }
       else if (condition.form.isEmpty) {
@@ -64,7 +61,6 @@ object RuleHandler extends Xml.XmlReader {
       }
     }  
     
- println("boundary_compare" +  ((formMatch  ) && (tagMatch )) + " " + segment.segment.toString + " " + formMatch + " " + tagMatch + " " + condition.form + " " + segment.boundary.head.form )
      (formMatch  ) && (tagMatch )
   }
   
