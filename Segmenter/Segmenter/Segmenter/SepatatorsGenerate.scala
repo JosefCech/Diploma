@@ -1,4 +1,4 @@
-package Segmenter
+package segmenter
 
 import common._
 import java.io._

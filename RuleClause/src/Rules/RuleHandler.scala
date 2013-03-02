@@ -132,32 +132,33 @@ object RuleHandler extends Xml.XmlReader {
 
   def applicableRule(segments : List[(Int,AnalyzedSegment)], rule : ClauserRule) : List[(Int,Effect,Int)] = {
   
-  def applicableRuleAcc(segments : List[(Int,AnalyzedSegment)], template : List[Condition],acc : List[Int]) : List[Int] = {
-     if (segments.isEmpty) { 
-       acc
-     }
-     else {
-       val result = compareTemplate(segments,template,new Condition(),0)
-       val updateAcc =  
-         if (result._2) {
-           segments.head._1 :: acc
-          }
-         else {
-           acc
-         }
-       val segmentsAcc = 
-          if (result._2) {
-            segments.drop(template.size)
-          }
-          else if (result._1 == 0 ) {
-            segments.tail
-          }
-          else {
-            segments.filterNot(p => p._1 < result._1).toList
-          }
-       applicableRuleAcc(segmentsAcc,template,updateAcc)
-     }
-   }
+	  def applicableRuleAcc(segments : List[(Int,AnalyzedSegment)], template : List[Condition],acc : List[Int]) : List[Int] = {
+	     if (segments.isEmpty) { 
+	       acc
+	     }
+	     else {
+	       val result = compareTemplate(segments,template,new Condition(),0)
+	       val updateAcc =  
+	         if (result._2) {
+	           segments.head._1 :: acc
+	          }
+	         else {
+	           acc
+	         }
+	       val segmentsAcc = 
+	          if (result._2) {
+	            segments.drop(template.size)
+	          }
+	          else if (result._1 == 0 ) {
+	            segments.tail
+	          }
+	          else {
+	            segments.filterNot(p => p._1 < result._1).toList
+	          }
+	       applicableRuleAcc(segmentsAcc,template,updateAcc)
+	     }
+	   }
+	  
      val template = rule.template
      val indexes = applicableRuleAcc(segments,template, List[Int]())
      

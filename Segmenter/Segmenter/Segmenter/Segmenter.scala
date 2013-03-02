@@ -1,4 +1,4 @@
-package Segmenter
+package segmenter
 
 import Pdt.MorfReader
 import java.io._

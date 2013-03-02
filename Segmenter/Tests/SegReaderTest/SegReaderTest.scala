@@ -3,7 +3,7 @@ package SegReaderTest
 import org.scalatest._
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-import Segmenter._
+import segmenter._
 import scala.xml._
 import common._
 

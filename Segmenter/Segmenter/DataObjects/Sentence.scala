@@ -1,5 +1,4 @@
-package DataObjects
-
+package dataObjects
 import Xml.XmlWritable
 import scala.xml._
 import common._

@@ -23,10 +23,13 @@ class Word(val form : String ) {
   }
 }
 
-class MorfWord( form : String, val tag: String) extends Word(form) 
+class MorfWord( form : String, val lemma: Lemma , val tag: String) extends Word(form) 
 {
+  def this(form: String, lemma : String, tag : String) = this(form,new Lemma(lemma),tag)
+  def this(form : String , tag: String) =  this(form,"",tag)
+  
    override def equals(that : Any) : Boolean = that match {
-    case that : MorfWord => (that.form.toLowerCase == this.form.toLowerCase && that.tag == this.tag)
+    case that : MorfWord => (that.form.toLowerCase == this.form.toLowerCase && that.tag == this.tag && this.lemma == that.lemma)
     case that : Word => this.form == that.form
     case that : String => this.form == that
   }

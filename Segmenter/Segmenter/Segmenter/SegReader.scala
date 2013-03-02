@@ -1,4 +1,4 @@
-package Segmenter
+package segmenter
 
 import scala.io._
 import java.io._

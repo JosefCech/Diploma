@@ -1,4 +1,4 @@
-package Segmenter
+package segmenter
 
 import Anx._
 import Xml._
