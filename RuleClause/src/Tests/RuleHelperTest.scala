@@ -11,7 +11,7 @@ import Rules.{SegmentCondition , RuleHelper}
 class RuleHelperTest extends FunSuite  {
   test("update segmentcondition") {
     val att = List[(String,String)]{("Att","Value")}
-   val test =  new Rules.SegmentCondition {
+   val test =  new Rules.ConditionSegment {
       attributes = att
     }
    1

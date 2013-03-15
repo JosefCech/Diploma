@@ -1,6 +1,6 @@
 package Vallex
 
-
+/*
 class Verb(val lemma : String , frames : ValencyFrame) {
   
   def LemmaForm = {
@@ -13,4 +13,4 @@ class Verb(val lemma : String , frames : ValencyFrame) {
     }
   }
   
-}
+}*/

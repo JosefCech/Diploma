@@ -53,7 +53,7 @@ object RuleClauseStats extends App {
      val data = firstStepAnalyze.filter(p => p._2.isForTesting);
      var rightData = data.filter(p => p._2.levelConfiguration == p._3.foldLeft("")((r,a) => r + a._1.toString))
      var wrongData = data.filterNot(p => p._2.levelConfiguration == p._3.foldLeft("")((r,a) => r + a._1.toString))
-     println("Whole data: "+data.size+" Right: " + rightData.size + " wrong: " + wrongData.size)
+     println("Whole data: "+ data.size+" Right: " + rightData.size + " wrong: " + wrongData.size)
      
      wrongData.foreach(f => {
         println("Ident : " + f._1.ident + " Estimation: " + f._2.levelConfiguration + " Origin: " + f._3.foldLeft("")((r,a) => r + a._1.toString))

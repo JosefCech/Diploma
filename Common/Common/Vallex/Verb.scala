@@ -1,5 +1,5 @@
 package Vallex
-
+import common.Lemma
 
 class Verb(val lemma : String) {
   

@@ -5,8 +5,8 @@ import scala.xml.{Node}
 
 object RuleHelper {
     
-  def parseRule(xml : Node) : ClauserRule = {
-     new ClauserRule {
+  def parseRule(xml : Node) : RuleClauser = {
+     new RuleClauser {
       template = getTemplate((xml \\ "Template").head)
       level = (xml \\ "@Priority").head.text.toInt
       effect = new Effect {
@@ -18,38 +18,37 @@ object RuleHelper {
   }
    
   
-  private  def getTemplate(template : Node) : List[Condition] = {
+  private  def getTemplate(template : Node) : List[ConditionBase] = {
     
-    def getSegmentCondition(cond : Node) : Condition = {
-      def attributeNodes : List[Node] = (cond\\ "Attributes").toList
-      
-      def getAttributes(att : List[Node] , acc : List[(String,String)]) : List[(String,String)] = {
-        if (att.isEmpty) { 
-            acc.reverse
-        }
+    def getSegmentCondition(cond : Node) : ConditionBase = {
+     def getAttributes(att : List[Node] , acc : List[(String,String)]) : List[(String,String)] = {
+        if (att.isEmpty) {
+          acc.reverse
+          }    
         else {
-          val attName = (att.head \\ "@name").text
-          val attValues = (att.head \\ "@values").text
-          getAttributes(att.tail,(attName,attValues) :: acc)          
+          getAttributes(att.tail,((att.head \\ "@name").text,(att.head \\ "@values").text) :: acc)          
         }
-      }
-         
-     new SegmentCondition {
-         this.attributes = getAttributes(attributeNodes,List[(String,String)]())
+      }        
+     new ConditionSegment {
+         this.attributes = getAttributes((cond\\ "Attributes").toList,List[(String,String)]())
       }
     }
-    
-    
-    def getBoundaryCondition(cond : Node) : Condition = {
-      val formNew = (cond \\ "@Form").text
-      val tagNew = (cond \\ "@Tag").text
-      new BoundaryCondition {
-         this.form = formNew
-         this.tag = tagNew
+      
+    def getBoundaryCondition(cond : Node) : ConditionBase = {
+    		def getBoundaries(att : List[Node] , acc : List[(String,String)]) : List[(String,String)] = {
+	        if (att.isEmpty) { 
+	          acc.reverse
+	        }
+	        else {
+	          getBoundaries(att.tail,((att.head \\ "@form").text,(att.head \\ "@tag").text) :: acc)          
+	        }
+	      }        
+      new ConditionBoundary {
+         this.boundary = getBoundaries((cond \\ "Boundary").toList, List[(String,String)]())
       }
     } 
     
-    def getTemplateSegment(nodes : List[Node], acc : List[Condition]) : List[Condition] = {
+    def getTemplateSegment(nodes : List[Node], acc : List[ConditionBase]) : List[ConditionBase] = {
       if (nodes.isEmpty) {
         acc.reverse
       }
@@ -58,15 +57,15 @@ object RuleHelper {
         getTemplateSegment(nodes.tail,acc)
       }
       else {
-	      val cond : Condition = nodes.head.label match { case "Segment" => getSegmentCondition(nodes.head)
+	      val cond : ConditionBase = nodes.head.label match { case "Segment" => getSegmentCondition(nodes.head)
 	     												  case "Boundary"=> getBoundaryCondition(nodes.head)
-	     												  case _         => {	
-	     													  					throw new Exception("unknown xml condition")
-	    										}	                        }
+	     												  case _         => throw new Exception("unknown xml condition")
+	    										}	                        
 	       getTemplateSegment(nodes.tail, (cond) :: acc)
          }
       }
     }
-    getTemplateSegment(template.child.toList,List[Condition]())
+    
+    getTemplateSegment(template.child.toList,List[ConditionBase]())
   }
 }

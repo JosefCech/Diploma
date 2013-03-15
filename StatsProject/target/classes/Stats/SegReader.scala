@@ -1,4 +1,4 @@
-package readersAndWriters
+package Stats
 
 import scala.io._
 import java.io._
@@ -8,6 +8,7 @@ object SegReader {
   def ReadData(file : String): (String  ,Array[(Int,Int)]) = {
         ReadData(new File(file))  
   }
+
   
   def ReadData(file : File) : (String  ,Array[(Int,Int)])= {
     if (file.exists) {

@@ -2,7 +2,9 @@ package dataObjects
 import Xml.XmlWritable
 import scala.xml._
 import common._
-
+/**
+ * class Sentence implements Xml.XmlWritable 
+ **/
 class Sentence(val sentence : List[List[Word]]) extends Xml.XmlWritable {
 
    

@@ -1,7 +1,6 @@
 package common
 
-
-class Lemma(val lemma : String) {
+class Lemma(val lemma : String){
   
   def LemmaForm = {
     if (lemma.contains("_")) {
