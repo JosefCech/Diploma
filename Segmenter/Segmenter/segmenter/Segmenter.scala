@@ -1,9 +1,8 @@
 package segmenter
 
-import Pdt.MorfReader
 import java.io._
 import common.Sentence
-import Anx.AnxWriter
+import Pdt._
 
 /**
  * segmenter app - create data for testing 
@@ -36,7 +35,7 @@ object Segmenter  extends App {
      						}
      }
      case file : String =>  { MorfReader.Read(new File(file)).toList
-     }
+     						}
      }
    
    
@@ -71,11 +70,22 @@ object Segmenter  extends App {
 	        		 println(Configuration.SegDataFolder + "/" + t.segIdent + ".seg")
 	        		 println(new File(Configuration.SegDataFolder + "/" + t.segIdent + ".seg").exists)
 	        		 var clauseNum = 0
+	        		 var previousJoined = false
 	        		  if (!data.isEmpty){
 	        		  val segments = data.zipWithIndex.map(f => 
 			        		     { 
 			        		       val segment = t.segments.apply(f._2)
 			        		       segment.SetLevel(f._1._1)
+			        		       segment.SetClause(clauseNum)
+			        		       if (f._1._2 == 0 && !previousJoined) {
+			        		         clauseNum += 1
+			        		       }
+			        		       else if (f._1._2 == 0 && previousJoined){
+			        		         previousJoined = false
+			        		       }
+			        		       else if (f._1._2 == 1){
+			        		         previousJoined=true
+			        		       }
 			        		       segment
 			        		      })
 	        		  Anx.AnxWriter.Write( resultFolder.getPath() + '/' + t.segIdent + ".anx", segments.toList)

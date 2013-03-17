@@ -44,7 +44,4 @@ class AnalyzedSegment(val segment : Segment) {
     case _  => false
   }
   
-  def UpdateLevel(u : Int) : Unit = segment.updateLevel(u)
-  
-  def SetLevel(l : Int) : Unit = segment.SetLevel(l)
 }

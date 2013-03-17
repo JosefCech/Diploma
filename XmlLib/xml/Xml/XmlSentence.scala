@@ -15,7 +15,7 @@ class XmlSentence(segments : List[Segment]) extends XmlWritable {
   val words = segment.words.map(t => CreateWordNode(t)).toList  
   if (segment.level.toString() != "-1")
   {
-    <segment level={ segment.level.toString }  clause= { segment.clause} >{words}</segment>
+    <segment level={ segment.level.toString }  clause={segment.clause.toString } >{words}</segment>
   }
   else {
 	  <segment>{words}</segment>

@@ -25,25 +25,17 @@ object AnxReader extends XmlReader {
     GetSegment(segment,true)
   }
   def GetSegment(segment : Node, use : Boolean) : Segment = {
-    val levelString = (segment \\ "@level").toString
-    val clauseString = (segment \\ "@clause").toString
     
-    val level : Int = {
-       if (levelString.toInt >= 0 && use) {
-           levelString.toInt
-        }
-      else{
-          -1
-       }
-    }
-  val clause : Int = {
-    if (clauseString.toInt >= 0 && use) {
-      clauseString.toInt
-    }
-    else{
-      -1
-    }
-  }
+   var level = -1
+   var clause = -1
+      
+	  if (use){ 
+	    val levelString = (segment \\ "@level").toString
+	    val clauseString = (segment \\ "@clause").toString
+	    
+	    level  = GetParametr(levelString, -1)
+	    clause = GetParametr(clauseString, -1)
+	  }
     var segmentGenerate: Segment = null
     val words = (segment\\"word").map(t => CreateWord(t)).toList
     if (words.filter(p => p.isSeparator).size > 0) {
@@ -62,5 +54,14 @@ object AnxReader extends XmlReader {
     val separator : Boolean = (word\\"@sep").text.trim == "1"
     new AnxWord(form,tag, separator)
   }
+ 
+  private def GetParametr(param : String , default : Int) : Int = {
+    try {
+      param.toInt
+    }
+    catch  {
+      case _ => default
+    }
     
+  }
 }
