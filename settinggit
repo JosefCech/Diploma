@@ -1,0 +1,16 @@
+#!bin/bash
+GLOBAL="";
+echo 'Setting options'
+git config  $GLOBAL user.name "Josef Cech";
+git config  $GLOBAL user.name "josef.cech@gmail.com";
+git config 	$GLOBAL core.filemode false;
+git config	$GLOBAL core.ignorecase false;
+git config 	$GLOBAL core.autocrlf true;
+git config  $GLOBAL core.eol crlf;
+ echo 'Check options'
+git config  $GLOBAL user.name;
+git config  $GLOBAL user.name;
+git config 	$GLOBAL core.filemode;
+git config	$GLOBAL core.ignorecase;
+git config 	$GLOBAL core.autocrlf;
+git config  $GLOBAL core.eol;
