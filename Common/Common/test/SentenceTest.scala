@@ -39,19 +39,19 @@ class SentenceTest extends FunSuite {
      val words =  List( new MorfWord ("rychlost","NNFS1-----A----") , new MorfWord ("(","Z:-------------"),  new MorfWord ("A","NNFXX-----A---8"),new MorfWord (")","Z:-------------"),new MorfWord (":","Z:-------------"))
       val sentence = new Sentence(words)
      sentence.segments.map(
-         p => { p.setLevel(2)
+         p => { p.SetLevel(2)
                 p
          }).foreach(p => println(p.level))
   }
   
     test("test estimate clause") {
-       val words =  List( new MorfWord ("rychlost","NNFS1-----A----") , new MorfWord ("(","Z:-------------"),  new MorfWord ("A","NNFXX-----A---8"),new MorfWord (")","Z:-------------"),new MorfWord (":","Z:-------------"))
-    val sentence = new Sentence(words)
+     val words =  List( new MorfWord ("rychlost","NNFS1-----A----") , new MorfWord ("(","Z:-------------"),  new MorfWord ("A","NNFXX-----A---8"),new MorfWord (")","Z:-------------"),new MorfWord (":","Z:-------------"))
+     val sentence = new Sentence(words)
      println(sentence.estimationOfClause)
   }
    test("test estimate clause 2 ") {
-       val words =  List( new MorfWord ("rychlost","NNFS1-----A----") , new MorfWord (":","Z:-------------"))
-    val sentence = new Sentence(words)
+     val words =  List( new MorfWord ("rychlost","NNFS1-----A----") , new MorfWord (":","Z:-------------"))
+     val sentence = new Sentence(words)
      println(sentence.estimationOfClause)
   }
 }

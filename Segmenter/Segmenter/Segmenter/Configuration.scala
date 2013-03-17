@@ -4,10 +4,24 @@ import scala.xml._
 import scala._
 object Configuration {
   
-   val root =   XML.loadFile("configuration.xml") 
+  val root =   XML.loadFile("configuration.xml") 
   def DataFolder : String =  {
-      val separator = (root\"separatorDir")  
-      separator.head.text.trim()
+   Configuration.LoadAttributeFolder((root \ "Separators").head.head)    
   }
-
+   def SegDataFolder : String =  {
+       Configuration.LoadAttributeFolder((root \ "SegmentationData").head.head)   
+  }
+   def  PdtDataFolder : String =  {
+     Configuration.LoadAttributeFolder((root \ "PdtData").head.head)   
+    }
+  def OutputGoldenFolder : String =  {
+    Configuration.LoadAttributeFolder((root \ "OutputGolden").head.head)   
+  }
+  def OutputOthersFolder : String =  {
+    Configuration.LoadAttributeFolder((root \ "OutputOthers").head.head)   
+  } 
+ def LoadAttributeFolder(elem : Node) : String = Configuration.LoadAttribute(elem,"@Folder")   
+ def LoadAttribute(elem : Node, attr : String ) : String = {
+   (elem \ attr).toString() 
+ }
 }

@@ -1,5 +1,7 @@
 <configuration>
-  <separatorDir>
-    Data
-  </separatorDir>
+  <Separators Folder="../GoldenData/Seg" />
+  <SegmentationData Folder="../GoldenData/Seg" />
+  <PdtData Folder="../GoldenData/Morf" />
+  <OutputGolden Folder="../GoldenData/OutputGolden" />
+  <OutputOthers Folder="../GoldenData/OutputOthers" />
 </configuration>

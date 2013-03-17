@@ -35,23 +35,46 @@ class Level(min : Int , max : Int) {
  }
 }
 
+
 trait Segment {
   def words : List[Word]
-  var level : Level 
+  protected var _level : Level  =  new Level(-1,-1)
+  protected var _clause : Int  = -1
+  def level =  _level
+  def clause = _clause
+  
   
  def ToString : String  = words.map(s => s match {
     case s : Word => s.form
   	}
    ).mkString(" ") 
    
-  def updateLevel(u : Int) : Unit = this.level += u 
-  def setLevel(l : Int) : Unit = this.level = new Level(l)
+  def level_=(l : Level) {
+     this._level = l
+  } 
+  def UpdateLevel(u : Int) : Unit = this.level += u 
+  def SetLevel(l : Int) : Unit = {
+     this.level_=(new Level(l,l))
+  }
+  
+  protected def clause_=(c : Int){
+    _clause = c
+  }
+  
+  def SetClause(c : Int) : Unit = {
+    this.clause_=(c)
+  }
 }
 
 
-class BaseSegment(val data : List[Any] , var level : Level) extends Segment {
+class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int) extends Segment {
+ 
+  def this(data : List[Any], level : Int) = this(data,level,level)
   
-   def words : List[Word] =
+  def this(data : List[Any]) = this(data,-1,-1)
+  
+  this.level = new Level(lmin,lmax) 
+  def words : List[Word] =
 			 data.map( f => f match 
 		  					{
 		  						case f : String => new Word(f)
@@ -69,20 +92,22 @@ class BaseSegment(val data : List[Any] , var level : Level) extends Segment {
 	                                             }
 	                                       ).isEmpty
 	                                       
-	override def toString = words.foldLeft("")((a,f) => a + " " + f.form)                                      
-  
+	override def toString = words.foldLeft("")((a,f) => a + " " + f.form)                    
+	
+	
+    
 }
 
-class Boundary( data : List[Any] , level : Int = 0) 
-extends BaseSegment(data,new Level(level)) {
+class Boundary( data : List[Any] , lmin : Int , lmax : Int )
+extends BaseSegment(data, lmin, lmax) {
+  def this(data : List[Any], l: Int) = this(data,l,l)
   def this(data : List[Any]) = this(data,-1)	
-  
 }
 
 
 
-class PureSegment(data : List[Any] , level : Int ) 
-extends BaseSegment(data,new Level(level)) {
- def this(data : List[Any]) = this(data,-1)		
-
+class PureSegment(data : List[Any] , lmin : Int , lmax : Int ) 
+extends BaseSegment(data, lmin, lmax) {
+ def this(data : List[Any], l: Int) = this(data,l,l)
+  def this(data : List[Any]) = this(data,-1,-1)
 }

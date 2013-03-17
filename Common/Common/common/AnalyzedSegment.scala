@@ -4,41 +4,47 @@ import wordProperties._
 
 class AnalyzedSegment(val segment : Segment) {
   
-  def haveSubFlag = segment.words.map(f => f match {
+  protected val subflags = segment.words.map(f => f match {
     case f : MorfWord => f
     case f : Word => new MorfWord(f.form,"")
-  }).filter(f => f.isSubFlag).size > 0
+  }).filter(f => f.isSubFlag)
+  def HaveSubFlag = subflags.size > 0
+  def FirstSubflag = subflags.head
   
-  protected def morfWords = segment.words.map(f => f match {
+  def morfWords = segment.words.map(f => f match {
     case f : MorfWord => f
     case f : Word => new MorfWord(f.form,"")
   })
   
-  def boundary = morfWords.takeWhile(p => p.isSeparator)
-  def rest = morfWords.reverse.takeWhile(p => !p.isSeparator)
+  protected val verbs = TagQuery.activeVerb(this.morfWords)
+  def ActiveVerb = verbs.head
+  def HaveActiveVerb = verbs.size > 0
   
-  def haveActiveVerb = TagQuery.activeVerb(this.morfWords).size > 0
+  protected val cordConjuctions = TagQuery.cordConjuction(this.morfWords)
+  def HaveCordConjuction =  cordConjuctions.size > 0
+  def CordCordConjuction = cordConjuctions.head
   
-  def haveCordConjuction =  TagQuery.cordConjuction(this.boundary).size > 0
+  protected val reflexivePronouns = TagQuery.reflexivePronoun(this.morfWords)
+  def ReflexivePronoun = reflexivePronouns.head
+  def HaveReflexivePronoun = reflexivePronouns.size > 0
   
-  def haveReflexivePronoun = TagQuery.reflexivePronoun(this.morfWords).size > 0
+
+  def HaveOpeningBracket = WordFormQuery.openBracket(this.morfWords) 
+
+  def HaveCloseBracket = WordFormQuery.closeBracket(this.morfWords)
   
-  def haveOpeningBracket = WordFormQuery.openBracket(this.boundary) 
+  def HaveQuotationMark = WordFormQuery.quotationMark(this.morfWords)
   
-  def haveCloseBracket = WordFormQuery.closeBracket(this.boundary)
+  def HaveDash : Boolean = (segment.words.count(p => p.form == "-") > 0)
   
-  def haveQuotationMark = WordFormQuery.quotationMark(this.boundary)
+  def CountWords = segment.words.size
   
-  def haveDash : Boolean = (segment.words.count(p => p.form == "-") > 0)
-  
-  def countWords = segment.words.size
-  
-  def isBoundarySegment = segment match {
+  def IsBoundarySegment = segment match {
     case s : Boundary => true
     case _  => false
   }
   
-  def updateLevel(u : Int) : Unit = segment.updateLevel(u)
+  def UpdateLevel(u : Int) : Unit = segment.updateLevel(u)
   
-  def setLevel(l : Int) : Unit = segment.setLevel(l)
+  def SetLevel(l : Int) : Unit = segment.SetLevel(l)
 }

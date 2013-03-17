@@ -22,7 +22,7 @@ class AnalyzedSentence(sentence : List[Segment],val ident : String)  {
    
    /** Found pairs boundary */
    private def containsPairBounary(segments : List[AnalyzedSegment]) : Boolean = 
-    this.morfSegments.filter(f => f.haveOpeningBracket.size > 0 || f.haveQuotationMark.size > 0).size > 0
+    this.morfSegments.filter(f => f.HaveOpeningBracket.size > 0 || f.HaveQuotationMark.size > 0).size > 0
   
     /** Get group of segments and its level */
    private def parsedAccordingPairBoundary(segments : List[AnalyzedSegment]) : Array[(Int,List[AnalyzedSegment])] = {
@@ -49,8 +49,8 @@ class AnalyzedSentence(sentence : List[Segment],val ident : String)  {
       }
       else {
         val analyzedSegment = segments.head
-        if (analyzedSegment.haveCloseBracket.size > 0) {
-           val foundBracket = analyzedSegment.haveCloseBracket.head
+        if (analyzedSegment.HaveCloseBracket.size > 0) {
+           val foundBracket = analyzedSegment.HaveCloseBracket.head
            val requiredBracked = queue.head
            if (!foundBracket.equals(requiredBracked)){
              queue.foreach(f => println(f.toString))
@@ -59,12 +59,12 @@ class AnalyzedSentence(sentence : List[Segment],val ident : String)  {
            }         
            parsingData(segments.tail, level-1,countDash,pairDash,queue.tail,List(analyzedSegment),accArray ++ Array((level,accList)))
         }
-        else if (analyzedSegment.haveOpeningBracket.size > 0) {
-             val foundBracket = analyzedSegment.haveOpeningBracket.head
+        else if (analyzedSegment.HaveOpeningBracket.size > 0) {
+             val foundBracket = analyzedSegment.HaveOpeningBracket.head
              val requiredBracket = foundBracket.syntacticOpposite
              parsingData(segments.tail, level + 1,countDash,pairDash, requiredBracket :: queue, List[AnalyzedSegment](),accArray ++ Array((level,accList ::: List(analyzedSegment))))
         }
-        else if (analyzedSegment.haveDash && countDash > 0 && pairDash){
+        else if (analyzedSegment.HaveDash && countDash > 0 && pairDash){
           if ((countDash % 2) > 0) {
              parsingData(segments.tail, level-1,countDash-1,pairDash,queue.tail,List(analyzedSegment),accArray ++ Array((level,accList)))
           }
@@ -79,10 +79,10 @@ class AnalyzedSentence(sentence : List[Segment],val ident : String)  {
         
       }
     }
-   var dashPair = segments.count(p => p.haveOpeningBracket.size > 0) == 0 && segments.count(p => p.haveDash) == 2
+   var dashPair = segments.count(p => p.HaveOpeningBracket.size > 0) == 0 && segments.count(p => p.HaveDash) == 2
    this.tested = dashPair
    println(this.ident + " " +dashPair)
-   parsingData(segments,0,segments.count(p => p.haveDash),dashPair,List[String](),List[AnalyzedSegment](),Array[(Int,List[AnalyzedSegment])]())
+   parsingData(segments,0,segments.count(p => p.HaveDash),dashPair,List[String](),List[AnalyzedSegment](),Array[(Int,List[AnalyzedSegment])]())
   }
   
     /** Using pair of boundary and subflags to setting each segment its level */
@@ -127,11 +127,11 @@ class AnalyzedSentence(sentence : List[Segment],val ident : String)  {
              }
           }
           
-          if (actualSegment.isBoundarySegment  && 
+          if (actualSegment.IsBoundarySegment  && 
         	  actualSegment.segment.words.head == ".") {
             useSubflags(pseudoClause,segments.tail,List(level-1,0).max,false,(0,actualSegment) :: acc)
           }
-          else if (actualSegment.haveSubFlag){
+          else if (actualSegment.HaveSubFlag){
             if (previousLevel == level + 1){
               useSubflags(pseudoClause,segments.tail,acc.head._1,false,(previousLevel + 1,actualSegment) :: acc)
             }
@@ -142,7 +142,7 @@ class AnalyzedSentence(sentence : List[Segment],val ident : String)  {
           else {
              if (previousLevel == level + 1) { 
               
-               if  (actualSegment.haveCordConjuction){
+               if  (actualSegment.HaveCordConjuction){
               // this.tested = true; 
             	 useSubflags(pseudoClause,segments.tail,level,true,(previousLevel,actualSegment) :: acc)
                }
@@ -155,10 +155,10 @@ class AnalyzedSentence(sentence : List[Segment],val ident : String)  {
                   
                }
                else if (nextSegment != null && 
-            		   actualSegment.isBoundarySegment && 
+            		   actualSegment.IsBoundarySegment && 
             		   actualSegment.segment.words.head.form == "," &&
-            		   nextSegment.haveSubFlag &&
-            		   !nextSegment.isBoundarySegment
+            		   nextSegment.HaveSubFlag &&
+            		   !nextSegment.IsBoundarySegment
                ) {
                   useSubflags(pseudoClause,segments.tail,level,false,(previousLevel,actualSegment) :: acc)
                }

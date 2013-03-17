@@ -18,8 +18,8 @@ import common.AnalyzedSegment
        else {
 	       val head = attribs.head
 	       val matchVal = head._1 match {
-					         case "ActiveVerb"  => ((head._2.toInt != 0) == (segment.haveActiveVerb == true))
-					         case "ReflexivePron" => (head._2.toInt != 0) == (segment.haveReflexivePronoun)
+					         case "ActiveVerb"  => ((head._2.toInt != 0) == (segment.HaveActiveVerb == true))
+					         case "ReflexivePron" => (head._2.toInt != 0) == (segment.HaveReflexivePronoun)
 					         case _ => { 
 					            //println(head)
 					            false

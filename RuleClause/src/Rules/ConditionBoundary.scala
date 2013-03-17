@@ -32,13 +32,13 @@ import wordProperties.TagMatcher
          val condition = boundary.head
          val matchForm = { 
 	 		if (condition.contains("|")) {
-		       condition.split('|').map(t => t.trim).toList.contains(segment.boundary.head.form.trim)
+		       condition.split('|').map(t => t.trim).toList.contains(segment.morfWords.head.form.trim)
 		     }
 	         else if (condition.isEmpty) {
 	           true;
 	         }
 	         else {
-	           condition == segment.boundary.head.form 
+	           condition == segment.morfWords.head.form 
 	         }
 		}
          
@@ -51,7 +51,7 @@ import wordProperties.TagMatcher
        }
      }
      val formsBoundary = this.boundary.map(t => t._1)
-     formMatchSimple(segment.boundary,formsBoundary)
+     formMatchSimple(segment.morfWords,formsBoundary)
     
   }
   
@@ -65,13 +65,13 @@ import wordProperties.TagMatcher
           val condition = boundary.head
           val matchTag = {
               if (condition.contains("|")) {
-            	condition.split("|").foldLeft(false)((comp,compTag) => ( comp || TagMatcher.Match(segment.boundary.head.tag, compTag))) 
+            	condition.split("|").foldLeft(false)((comp,compTag) => ( comp || TagMatcher.Match(segment.morfWords.head.tag, compTag))) 
 			  }
 			  else if (condition.isEmpty){
 			    true
 			  }
 			  else {
-			    TagMatcher.Match(segment.boundary.head.tag, condition)
+			    TagMatcher.Match(segment.morfWords.head.tag, condition)
 			  }
            }
            if (matchTag) {
@@ -82,7 +82,7 @@ import wordProperties.TagMatcher
            }
         }
       }
-    tagMatchSimple(segment.boundary,this.boundary.map(t => t._2))
+    tagMatchSimple(segment.morfWords,this.boundary.map(t => t._2))
   }
 
   

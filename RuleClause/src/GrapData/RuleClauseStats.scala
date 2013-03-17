@@ -3,7 +3,7 @@ package GrapData
 import common.Directory
 import java.io.File
 import Pdt.MorfReader
-import readersAndWriters.SegReader
+import io.SegReader
 import Rules.AnalyzedSentence
 
 object RuleClauseStats extends App {

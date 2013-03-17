@@ -117,31 +117,31 @@ class Sentence(val sentence : List[Word], val ident : String  ) {
     	  }
       }
       else {
-        if (!inBracket && segments.head.haveOpeningBracket.size > 0) {
+        if (!inBracket && segments.head.HaveOpeningBracket.size > 0) {
          
            countEstimate(segments.tail,true,countBoundary,haveVerb,acc + 1)
         }
-        else if ((!inBracket) && segments.head.haveCloseBracket.size > 0) {
+        else if ((!inBracket) && segments.head.HaveCloseBracket.size > 0) {
          
           countEstimate(segments.tail,false,countBoundary,haveVerb,acc + 1)
         }
         else {
         val new_acc : Int = {
-         if (countBoundary && segments.head.isBoundarySegment ){
+         if (countBoundary && segments.head.IsBoundarySegment ){
            if (segments.tail.isEmpty) {
              acc + 1
            }
-           else if (segments.tail.head.isBoundarySegment){
+           else if (segments.tail.head.IsBoundarySegment){
              acc
            }
            else {
              acc +1
            }
          }
-         else if (!segments.head.isBoundarySegment && segments.head.haveActiveVerb){
+         else if (!segments.head.IsBoundarySegment && segments.head.HaveActiveVerb){
            acc + 1
          }
-         else if (segments.tail.isEmpty && segments.head.isBoundarySegment && !haveVerb) {
+         else if (segments.tail.isEmpty && segments.head.IsBoundarySegment && !haveVerb) {
            acc + 1
          }
          else {
@@ -149,11 +149,11 @@ class Sentence(val sentence : List[Word], val ident : String  ) {
          }
        }
    
-        if (segments.head.isBoundarySegment) {
+        if (segments.head.IsBoundarySegment) {
           
           countEstimate(segments.tail,inBracket,countBoundary,haveVerb,new_acc)
         }
-        else if (segments.head.haveActiveVerb) {
+        else if (segments.head.HaveActiveVerb) {
           countEstimate(segments.tail,false,true,true,new_acc)
         }
         else {
@@ -165,5 +165,5 @@ class Sentence(val sentence : List[Word], val ident : String  ) {
      }
       countEstimate(this.morfSegments,false, false,false, 0)
     }
- 
+ def segIdent = this.ident.replace("m-", "")
 }

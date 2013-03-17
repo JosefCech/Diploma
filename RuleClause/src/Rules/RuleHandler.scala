@@ -13,7 +13,7 @@ object RuleHandler extends Xml.XmlReader {
 
   def compareBaseSegment(segment : AnalyzedSegment, condition : ConditionBase) : Boolean  = condition match {
     case condition : ConditionSegment => 
-      {  if (segment.isBoundarySegment) {
+      {  if (segment.IsBoundarySegment) {
            false
          }
          else {
@@ -22,7 +22,7 @@ object RuleHandler extends Xml.XmlReader {
       }
     case condition : ConditionBoundary =>
       {
-       if (!segment.isBoundarySegment) {
+       if (!segment.IsBoundarySegment) {
          false
        }
        else {

@@ -6,44 +6,85 @@ import common.Sentence
 import Anx.AnxWriter
 
 /**
- * Segmenter app - create data for testing 
+ * segmenter app - create data for testing 
  * for each sentence create own file
  * get only sentence from golden set into own file 
  */
-object Segmenter extends App {
+object Segmenter  extends App {
   
     override def main(args: Array[String]) {
-     processFiles(args)
+      def files = common.Directory.ReadPdtMorfFiles(Configuration.PdtDataFolder).toArray;
+      processFiles(files)
     }
     
    /**
     * read whole file with morphologic information (.m)
     */
-   def parsedSegments(fileName : String) = {    
-       MorfReader.Read(new File(fileName)).toList
-   }
+   
+   def parsedSegments(file : Any): List[common.Sentence] = file match {
+     case file : File => {	try {
+    	 						
+    	 					MorfReader.Read(file).toList
+    	 					}
+     						catch  {
+     						  case e : Exception =>  {
+     							  		
+     							  		 println(file.getAbsolutePath())
+     							  		 
+			     						  List[common.Sentence]()
+			     						  }
+     						}
+     }
+     case file : String =>  { MorfReader.Read(new File(file)).toList
+     }
+     }
+   
    
    /**
     * process files from arguments
     */
-    def processFiles(files: Array[String]) {
-     def sentences = args.map(t => this.parsedSegments(t)).toList.flatten
-     writeAnxFile(sentences)
+    def processFiles(files: Any)  = files match {
+     
+      case files : Array[Any] => { 
+    	  							def sentences = files.map(t => this.parsedSegments(t)).toList.flatten
+    	  							writeAnxFile(sentences)
+    	  														   	
+                                  }
+      case _  => /*nothing*/ 
     }
     /**
      * write for each sentence into one file with morphologic
      * information without info from golden set
      */
     def writeAnxFile(sentences : List[Sentence]) = {
-      val resultFolder = new File("Results/");
-      resultFolder.mkdir();
-      if (resultFolder.exists() && resultFolder.canWrite()) {
+      val resultFolder = new File(Configuration.OutputGoldenFolder);
+      resultFolder.mkdir()
       
-      sentences.foreach(t => 
-        		{ val data = SegReader.ReadData("SegData/"+ t.ident + ".seg" )
-        		  //println(data);
-        		  Anx.AnxWriter.Write( resultFolder.getPath() + '/' + t.ident + ".anx", t.segments)
-        		} )
-      }
-    }
+      val resultOthersFolder = new File(Configuration.OutputOthersFolder); 
+      resultOthersFolder.mkdir()
+      
+      if (resultFolder.exists && resultFolder.canWrite &&
+          resultOthersFolder.exists && resultOthersFolder.canWrite
+          ) {
+       sentences.foreach(t => 
+	        		{ val data = SegReader.ReadData(Configuration.SegDataFolder + "/" + t.segIdent + ".seg" )
+	        		 println(Configuration.SegDataFolder + "/" + t.segIdent + ".seg")
+	        		 println(new File(Configuration.SegDataFolder + "/" + t.segIdent + ".seg").exists)
+	        		 var clauseNum = 0
+	        		  if (!data.isEmpty){
+	        		  val segments = data.zipWithIndex.map(f => 
+			        		     { 
+			        		       val segment = t.segments.apply(f._2)
+			        		       segment.SetLevel(f._1._1)
+			        		       segment
+			        		      })
+	        		  Anx.AnxWriter.Write( resultFolder.getPath() + '/' + t.segIdent + ".anx", segments.toList)
+	        		  }
+	        		  else {
+	        		     Anx.AnxWriter.Write( resultOthersFolder.getPath() + '/' + t.segIdent + ".anx", t.segments)
+	         		  }
+	        		} 
+	        	)
+	      }
+	    }
 }
