@@ -18,7 +18,7 @@ object RuleHelper {
   }
    
   
-  private  def getTemplate(template : Node) : List[ConditionBase] = {
+ private  def getTemplate(template : Node) : List[ConditionBase] = {
     
     def getSegmentCondition(cond : Node) : ConditionBase = {
      def getAttributes(att : List[Node] , acc : List[(String,String)]) : List[(String,String)] = {

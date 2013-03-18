@@ -1,4 +1,4 @@
-package GrapData
+package statistic
 
 
 import scala.swing.{MainFrame, SimpleSwingApplication, ScrollPane, Table}

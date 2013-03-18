@@ -10,8 +10,10 @@ object Clauser extends App {
   
  override def main(args: Array[String]) {
    
+   val sentencesWithData = getFiles("../GoldenData/OutputGolden").map(t => (t.getName,Anx.AnxReader.ReadSentence(t))).toList//.filter(p => p.size > 4).toList;
    val sentences = getFiles("../GoldenData/OutputGolden").map(t => (t.getName,Anx.AnxReader.ReadPureSentence(t))).toList//.filter(p => p.size > 4).toList;
-   println(sentences.size)
+    
+   println(sentences.size + " " + sentencesWithData.size)
    /*
    val data = sentences.map(f => (f._1,(f._2,new RuleClauser(f._2).estimationOfClause)))
    /*println(sentences.map(f => new RuleClauser(f._2).analyzeSentence).flatten.filterNot(p => p._2.isBoundarySegment).map(p => (p._1,p._2.isBoundarySegment,p._2.segment.ToString)).size)

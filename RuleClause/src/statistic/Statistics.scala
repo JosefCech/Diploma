@@ -1,4 +1,4 @@
-package GrapData
+package statistic
 
 import Main.Clauser
 import common.Directory
@@ -6,6 +6,7 @@ import java.io.File
 import Anx.AnxReader
 import Anx.AnxReader
 import common.TaggedSegment
+import common.SimpleClause
 
 
 object Statistics extends App {
@@ -26,8 +27,10 @@ object Statistics extends App {
     def filesGoldenData: List[File] = getFilesSeg(segDataFolder) 
     val sentences = filesAnxParsed.map(f => (AnxReader.ReadSentence(f))).map( t => t.map(f => new TaggedSegment(f)))
     val tagSegments = sentences.map(f =>  f.map(s => s.GetTag))
-    val clause = sentences.map(s => s.groupBy(c => c.segment.clause)).flatten.map()
+    val clause = sentences.map(s => s.groupBy(c => c.segment.clause)).map(s => s.map(c => (new SimpleClause(c._2.map(l => l.GetTag)), c._2.foldLeft("")((t,a) => t.concat(a.segment.ToString) )))).flatten
+                 .groupBy(c => c._1.toString).map(s => (s._1,s._2.size,s._2.head._2))
     
+    clause.toList.sortBy(f => f._2).foreach(f => println("Clause: " + f._1 + " count: " + f._2.toString + " example " + f._3))             
   }
   
   protected def baseSegmentsStatistic(tagSentences : List[List[String]]){

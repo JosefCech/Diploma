@@ -5,9 +5,7 @@ import common.AnalyzedSegment
  *    
  **/
 
- trait Condition  {
-  
-}
+ trait Condition
 
 class ConditionBase extends Condition {
   def isEmpty:Boolean = true

@@ -1,4 +1,4 @@
-package GrapData
+package statistic
 
 import common.Directory
 import java.io.File
