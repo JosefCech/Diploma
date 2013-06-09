@@ -1,7 +1,7 @@
 package common.Interfaces
 
-import common.TaggedSegment
-import common.Segment
+import common.segment.TaggedSegment
+import common.segment.Segment
 
 trait ISimpleClause {
   val tags : List[String]

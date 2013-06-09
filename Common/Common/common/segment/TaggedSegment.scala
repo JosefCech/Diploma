@@ -1,8 +1,9 @@
-package common
+package common.segment
 
+import common.Interfaces.ITaggedSegment
 
 class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
-  private def analyzed = new AnalyzedSegment(segment)
+  private def analyzed = new AnalyzedSegment2(segment)
   
   def GetTag() : String = {
     var tag = ""

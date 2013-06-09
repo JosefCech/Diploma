@@ -2,7 +2,11 @@ package common
 
 import java.io;
 
-class Word(val form : String ) {
+trait AbstractWord {
+  
+}
+
+class Word(val form : String ) extends AbstractWord {
 
   override def equals(that : Any) : Boolean = that match {
     case that : Word => that.form.toLowerCase == this.form.toLowerCase
@@ -23,10 +27,12 @@ class Word(val form : String ) {
   }
 }
 
-class MorfWord( form : String, val lemma: Lemma , val tag: String) extends Word(form) 
+class MorfWord( form : String, val lemma: Lemma , val tag: String , val ident: String) extends Word(form) 
 {
+  def this(form: String, lemma: Lemma, tag: String) = this(form, lemma, tag, "")
   def this(form: String, lemma : String, tag : String) = this(form,new Lemma(lemma),tag)
   def this(form : String , tag: String) =  this(form,"",tag)
+  def this(form: String, lemma : String, tag : String, ident : String) = this(form,new Lemma(lemma),tag, ident)
   
    override def equals(that : Any) : Boolean = that match {
     case that : MorfWord => (that.form.toLowerCase == this.form.toLowerCase && that.tag == this.tag && this.lemma == that.lemma)
@@ -52,5 +58,13 @@ class MorfWord( form : String, val lemma: Lemma , val tag: String) extends Word(
   def isSeparator = ((this.compareTag("J^") || this.compareTag("Z:")) && (!("%/+*><&".contains(form.trim))))
   
   def isSubFlag = (this.compareTag("J,") || this.compareTag("P9") || this.compareTag("P4") || this.compareTag("PE") || this.compareTag("PJ") || this.compareTag("PK") || this.compareTag("PQ") || this.compareTag("PY") || this.compareTag("C?") || this.compareTag("Cu") || this.compareTag("Cz"))
+
+}
+
+class AWord(val ident : String, val ord : Int, val clauseNum : Int){
+ }
+
+class AnalyzedWord (val word : MorfWord, val clauseNum : Int, val separator : Boolean) extends AbstractWord
+{
 
 }

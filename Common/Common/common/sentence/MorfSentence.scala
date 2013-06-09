@@ -1,4 +1,10 @@
-package common
+package common.sentence
+
+import common.segment.{ PureSegment, AnalyzedSegment2, Segment, Boundary }
+
+import common.{Word, MorfWord}
+
+
 
 /** Sentence from list of word. 
   * Base functions : 
@@ -14,7 +20,7 @@ package common
   * @param ident identificator  
   */
 
-class Sentence(val sentence : List[Word], val ident : String  ) {
+class MorfSentence(val sentence : List[Word], val ident : String  ) {
 
    def this(sentence : List[Word]) = this(sentence,"")
    /** List of MorfWords */
@@ -26,7 +32,7 @@ class Sentence(val sentence : List[Word], val ident : String  ) {
             } 
        ).filter(_.tag != "").toList
        
-   private def morfWords = sentence.map(
+   def morfWords = sentence.map(
        t => t match {
 			case t : MorfWord =>  t 
 			case t : Word => new MorfWord(t.form,"")   
@@ -102,12 +108,12 @@ class Sentence(val sentence : List[Word], val ident : String  ) {
    
    
    /** List segment with bonus properties on morphological information */
-   def morfSegments =  segments.map(t => new AnalyzedSegment(t)).toList 
+   def morfSegments =  segments.map(t => new AnalyzedSegment2(t)).toList 
    
    /** Estimation count of clause based on active verbs */
    def estimationOfClause : Int = {
      
-     def countEstimate(segments : List[AnalyzedSegment], inBracket : Boolean , countBoundary : Boolean, haveVerb : Boolean , acc : Int) : Int = {
+     def countEstimate(segments : List[AnalyzedSegment2], inBracket : Boolean , countBoundary : Boolean, haveVerb : Boolean , acc : Int) : Int = {
       if (segments.isEmpty){
     	  if (haveVerb) {
     	    acc

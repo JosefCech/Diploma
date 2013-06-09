@@ -1,4 +1,8 @@
-package common
+package common.segment
+
+
+import common.MorfWord
+import common.Word
 
 
 class Level(min : Int , max : Int) {
@@ -35,13 +39,18 @@ class Level(min : Int , max : Int) {
  }
 }
 
+trait ISegment {
+  
+}
 
 trait Segment {
   def words : List[Word]
   protected var _level : Level  =  new Level(-1,-1)
   protected var _clause : Int  = -1
+  protected var _startNewClause = false
   def level =  _level
   def clause = _clause
+  def startNewClause = _startNewClause
   
   
  def ToString : String  = words.map(s => s match {
@@ -64,14 +73,21 @@ trait Segment {
   def SetClause(c : Int) : Unit = {
     this.clause_=(c)
   }
+  
+  def SetStartNewClause() : Unit = {
+    this._startNewClause = true
+  }
 }
 
 
-class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int) extends Segment {
+class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int,  startNewClause : Boolean) extends Segment {
  
-  def this(data : List[Any], level : Int) = this(data,level,level)
+  def this(data : List[Any], level : Int,  startNewClause : Boolean) = this(data,level,level,startNewClause)
   
-  def this(data : List[Any]) = this(data,-1,-1)
+  def this(data : List[Any], level : Int ) = this(data,level,level,false)
+  
+  
+  def this(data : List[Any]) = this(data,-1,-1,false)
   
   this.level = new Level(lmin,lmax) 
   def words : List[Word] =
@@ -98,16 +114,19 @@ class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int) extends Segmen
     
 }
 
-class Boundary( data : List[Any] , lmin : Int , lmax : Int )
-extends BaseSegment(data, lmin, lmax) {
+class Boundary( data : List[Any] , lmin : Int , lmax : Int  )
+extends BaseSegment(data, lmin, lmax, false) {
   def this(data : List[Any], l: Int) = this(data,l,l)
   def this(data : List[Any]) = this(data,-1)	
 }
 
 
 
-class PureSegment(data : List[Any] , lmin : Int , lmax : Int ) 
-extends BaseSegment(data, lmin, lmax) {
- def this(data : List[Any], l: Int) = this(data,l,l)
-  def this(data : List[Any]) = this(data,-1,-1)
+class PureSegment(data : List[Any] , lmin : Int , lmax : Int , startNewClause : Boolean ) 
+extends BaseSegment(data, lmin, lmax , startNewClause) {
+ def this(data : List[Any], l: Int, startNewClause : Boolean) = this(data,l,l,startNewClause)
+ 
+  def this(data : List[Any], l: Int) = this(data,l,l,false)
+  
+  def this(data : List[Any]) = this(data,-1,-1,false)
 }

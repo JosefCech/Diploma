@@ -20,6 +20,13 @@ object Configuration {
   def OutputOthersFolder : String =  {
     Configuration.LoadAttributeFolder((root \ "OutputOthers").head.head)   
   } 
+  def ClauseDataGold : String = {
+    Configuration.LoadAttributeFolder((root \ "ClauseGoldData").head.head)   
+  }
+  def AnxDataFolder : String = {
+    Configuration.LoadAttributeFolder((root \ "AnxDataFolder").head.head)     
+  }
+  
  def LoadAttributeFolder(elem : Node) : String = Configuration.LoadAttribute(elem,"@Folder")   
  def LoadAttribute(elem : Node, attr : String ) : String = {
    (elem \ attr).toString() 

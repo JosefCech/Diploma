@@ -40,7 +40,7 @@ trait IAutomata {
    tag.substring(condition._1, condition._1 + condition._2.size).toString == condition._2
  }
  
- private def addLevel(p : Int) : Int = p+1
+ private def addLevel(p : Int) : Int = p + 1
  
  private def subtractLevel(p : Int) : Int = List( p-1, 0 ).max
  

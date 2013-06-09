@@ -1,6 +1,6 @@
-package common
+package common.clause
 
-import common.Interfaces._
+import common.Interfaces.ISimpleClause
 
 class SimpleClause(val tags : List[String]) extends ISimpleClause {
  override def toString : String = {

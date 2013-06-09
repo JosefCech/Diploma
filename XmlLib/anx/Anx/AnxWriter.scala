@@ -2,7 +2,7 @@ package Anx
 
 import Xml._
 import scala.xml._
-import common._
+import common.segment.Segment
 import java.io.File
 
 

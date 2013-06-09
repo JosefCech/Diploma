@@ -1,8 +1,11 @@
 package segmenter
 
 import java.io._
-import common.Sentence
-import Pdt._
+import common.sentence.{ Sentence , MorfSentence, AnxSentence , AnalyzedSentence}
+import common.{Tree, Directory, AWord, MorfWord}
+import common.segment.{Segment}
+import Anx.AnxReader
+import Pdt.{AReader, MorfReader}
 
 /**
  * segmenter app - create data for testing 
@@ -12,50 +15,107 @@ import Pdt._
 object Segmenter  extends App {
   
     override def main(args: Array[String]) {
-      def files = common.Directory.ReadPdtMorfFiles(Configuration.PdtDataFolder).toArray;
-      processFiles(files)
+      def files = common.Directory.ReadPdtMorfFiles(Configuration.PdtDataFolder).toArray
+      def analyticFiles = Directory.ReadAnalyticFiles(Configuration.PdtDataFolder).toArray
+      def anxFiles = common.Directory.ReadAnxFiles(Configuration.AnxDataFolder).toList
+      def anxSentences = anxFiles.map(t => readAnxFile(t))
+      processFiles(files,analyticFiles.toList,anxSentences)
     }
     
+    def readAnxFile(file : File) : AnxSentence = {
+      AnxReader.ReadSentence(file)
+    }
+    
+     def readMorfFile(file : File): List[MorfSentence] = {
+       try {
+			  MorfReader.Read(file).toList
+			}
+			catch  {
+			  case e : Exception =>  {
+				  		println(file.getAbsolutePath())
+				  		List[MorfSentence]()
+ 					  }
+			} 
+     }
+    
+     
+    def readAtree(file : File) : List[(Tree)] = {
+      AReader.CreateTrees(file)    
+    } 
    /**
     * read whole file with morphologic information (.m)
-    */
-   
-   def parsedSegments(file : Any): List[common.Sentence] = file match {
+    */   
+   def parsedSegments(file : Any): List[MorfSentence] = file match {
      case file : File => {	try {
-    	 						
-    	 					MorfReader.Read(file).toList
+    	 					  MorfReader.Read(file).toList
     	 					}
      						catch  {
      						  case e : Exception =>  {
-     							  		
-     							  		 println(file.getAbsolutePath())
-     							  		 
-			     						  List[common.Sentence]()
-			     						  }
+     							  		println(file.getAbsolutePath())
+     							  		List[MorfSentence]()
+			     					  }
      						}
      }
      case file : String =>  { MorfReader.Read(new File(file)).toList
      						}
      }
-   
-   
+  
    /**
     * process files from arguments
     */
-    def processFiles(files: Any)  = files match {
+    def processFiles(morfFiles: Any, aFiles : List[File], anxSentences : List[AnxSentence])  = morfFiles match {
      
-      case files : Array[Any] => { 
-    	  							def sentences = files.map(t => this.parsedSegments(t)).toList.flatten
-    	  							writeAnxFile(sentences)
-    	  														   	
+      case morfFiles : Array[File] => { 
+    	  							def sentences = morfFiles.map(
+    	  											t => {
+    	  												val morfSentences = this.readMorfFile(t)
+    	  											    val trees = this.readAtree(this.getAFile(t,aFiles));
+    	  												this.combineInformation(morfSentences,trees,anxSentences)
+    	  											    null
+    	  											}
+    	  											)
+    	  							
+    	  							morfFiles.head.getCanonicalPath
+    	  							// crate trees - tuples index a and tree
+    	  							// gp throw all sentences by index
+    	  							// 
+    	  							//writeAnxFile(sentences)   	  														   	
                                   }
       case _  => /*nothing*/ 
+    }
+    
+    def getAFile(file: File, aFiles : List[File]): File = {
+      val nameFile = file.getCanonicalPath
+      print(nameFile)
+      val nameAFile = nameFile.replaceFirst(".m.",".a.")
+      print(nameAFile)
+      aFiles.filter(p => p.getCanonicalFile == nameAFile).head
+     
+      
+    }
+   
+    
+    def combineInformation(morfSentences : List[MorfSentence], trees : List[Tree], anxSentences : List[AnxSentence]) : List[AnalyzedSentence] = {
+      morfSentences.map(m => {
+           val anxSentence = anxSentences.filter(a => a == m)
+           val tree = trees.filter(t => m.ident == t.ident)
+           createAnalyzedSentence(m.morfWords, anxSentence.head.Segments, tree.head.words) 
+      })
+      
+    }
+    
+    def createAnalyzedSentence(mWords : List[MorfWord], anxSentence : List[Segment], tWords : List[AWord] ) : AnalyzedSentence = {
+      
+     val segments =  anxSentence.map(t => t match {
+        t : PureSegment => t 
+     }
+     )
     }
     /**
      * write for each sentence into one file with morphologic
      * information without info from golden set
      */
-    def writeAnxFile(sentences : List[Sentence]) = {
+    def writeAnxFile(sentences : List[MorfSentence]) = {
       val resultFolder = new File(Configuration.OutputGoldenFolder);
       resultFolder.mkdir()
       

@@ -1,6 +1,8 @@
 <configuration>
   <Separators Folder="../GoldenData/Seg" />
   <SegmentationData Folder="../GoldenData/Seg" />
+  <ClauseGoldData Folder="../GoldenData/GoldClause" />
+  <ClauseOthersData Folder="../GoldenData/GoldOtherClause" />
   <PdtData Folder="../GoldenData/Morf" />
   <OutputGolden Folder="../GoldenData/OutputGolden" />
   <OutputOthers Folder="../GoldenData/OutputOthers" />

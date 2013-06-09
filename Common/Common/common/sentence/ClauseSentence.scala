@@ -1,4 +1,6 @@
-package common
+package common.sentence
+
+import common.clause.Clause
 
 class ClauseSentence(clauses : List[(Int,List[Clause])]) {
 

@@ -1,4 +1,6 @@
-package common
+package common.clause
+
+import common.segment.Segment
 /** Clause - group of tuples (Index,Segment)
   * Base functions : 
   * 		add segment

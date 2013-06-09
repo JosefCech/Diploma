@@ -1,6 +1,6 @@
 package Anx
-import common._
+import common.Word
 
-class AnxWord(form:String, tag:String, val sep:Boolean) extends MorfWord(form,tag) {
+class AnxWord(form:String, val sep:Boolean) extends Word(form) {
 
 }

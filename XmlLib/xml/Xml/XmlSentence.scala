@@ -1,5 +1,6 @@
 package Xml
-import common._
+import common.segment.Segment
+import common.{MorfWord, Word}
 import scala.xml._
 
 class XmlSentence(segments : List[Segment]) extends XmlWritable {

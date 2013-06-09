@@ -50,7 +50,7 @@ class BaseInfo(string : String) {
     }  
   ).toList.groupBy(f => f).map(f => (f._1,f._2.size)).toList
   
-    val sublflagsDetail = goldenSet.map(t => (t._1._1,t._2.parsedSegments(t._1._2.toList).map(s => new AnalyzedSegment(s)))).map(s => s._2).
+  val sublflagsDetail = goldenSet.map(t => (t._1._1,t._2.parsedSegments(t._1._2.toList).map(s => new AnalyzedSegment(s)))).map(s => s._2).
   						flatten.toList.filter(p => (!p.isBoundarySegment && p.segment.level == 0 && (p.haveSubFlag))).map(s => (s.segment.words.head.form, s.segment.ToString)).toList.
   						groupBy(s => s._1).toList
 }
