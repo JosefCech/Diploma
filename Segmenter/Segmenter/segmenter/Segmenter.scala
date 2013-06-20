@@ -2,8 +2,8 @@ package segmenter
 
 import java.io._
 import common.sentence.{ Sentence , MorfSentence, AnxSentence , AnalyzedSentence}
-import common.{Tree, Directory, AWord, MorfWord}
-import common.segment.{Segment}
+import common.{Tree, Directory, AWord, MorfWord, AnalyzedWord}
+import common.segment.{Segment, PureSegment}
 import Anx.AnxReader
 import Pdt.{AReader, MorfReader}
 
@@ -104,12 +104,23 @@ object Segmenter  extends App {
       
     }
     
-    def createAnalyzedSentence(mWords : List[MorfWord], anxSentence : List[Segment], tWords : List[AWord] ) : AnalyzedSentence = {
-      
+    def createAnalyzedSentence(mWords : List[MorfWord], anxSentence : List[Segment], tWords : List[AWord] ) : AnalyzedSentence = {      
+     val words = createAnalyzedWords(mWords,tWords, List[AnalyzedWord]() );
+     var countWords = 0;
      val segments =  anxSentence.map(t => t match {
-        t : PureSegment => t 
+       case   t : PureSegment => MapWordsSegments()
      }
      )
+    }
+    
+    def createAnalyzedWords(mWords : List[MorfWord],tWords : List[AWord],   acc :List[AnalyzedWord]) : List[AnalyzedWord] = {
+      if (mWords.isEmpty) acc.reverse
+      else {
+         val mWord = mWords.head
+         val tWord = tWords.filter(p => p.ident == mWord.ident).head
+         val aWord = new AnalyzedWord(mWord, tWord.clauseNum, false)
+    	 createAnalyzedWords(mWords.tail,tWords,aWord :: acc);
+      }
     }
     /**
      * write for each sentence into one file with morphologic

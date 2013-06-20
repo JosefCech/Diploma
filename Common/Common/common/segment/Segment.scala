@@ -50,7 +50,6 @@ trait Segment {
   protected var _startNewClause = false
   def level =  _level
   def clause = _clause
-  def startNewClause = _startNewClause
   
   
  def ToString : String  = words.map(s => s match {
@@ -80,7 +79,7 @@ trait Segment {
 }
 
 
-class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int,  startNewClause : Boolean) extends Segment {
+class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int, val startNewClause : Boolean) extends Segment {
  
   def this(data : List[Any], level : Int,  startNewClause : Boolean) = this(data,level,level,startNewClause)
   
@@ -89,7 +88,9 @@ class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int,  startNewClaus
   
   def this(data : List[Any]) = this(data,-1,-1,false)
   
+  
   this.level = new Level(lmin,lmax) 
+  
   def words : List[Word] =
 			 data.map( f => f match 
 		  					{
