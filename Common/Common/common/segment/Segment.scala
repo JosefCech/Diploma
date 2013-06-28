@@ -52,7 +52,7 @@ trait Segment {
   def clause = _clause
   
   
- def ToString : String  = words.map(s => s match {
+ override def toString : String  = words.map(s => s match {
     case s : Word => s.form
   	}
    ).mkString(" ") 
@@ -60,8 +60,9 @@ trait Segment {
   def level_=(l : Level) {
      this._level = l
   } 
-  def UpdateLevel(u : Int) : Unit = this.level += u 
-  def SetLevel(l : Int) : Unit = {
+  def updateLevel(u : Int) : Unit = this.level += u 
+ 
+  def setLevel(l : Int) : Unit = {
      this.level_=(new Level(l,l))
   }
   
@@ -69,13 +70,15 @@ trait Segment {
     _clause = c
   }
   
-  def SetClause(c : Int) : Unit = {
+  def setClause(c : Int) : Unit = {
     this.clause_=(c)
   }
   
-  def SetStartNewClause() : Unit = {
+  def setStartNewClause() : Unit = {
     this._startNewClause = true
   }
+  
+  def getStartNewClause : Boolean = this._startNewClause
 }
 
 

@@ -27,7 +27,7 @@ class BaseXmlSentence(val sentence : Any) extends Xml.XmlWritable {
   def wordData : (MetaData, List[Node]) = segment match {
     case segment : List[Any] => (null,segment.map(w => CreateWordNode(w)))
     case segment : AnalyzedSegment => { 
-    									var attributes = new UnprefixedAttribute("isStartClause",segment.startNewClause.toString,null)
+    									var attributes = new UnprefixedAttribute("isStartClause",segment.getStartNewClause.toString,null)
     									attributes.append(new UnprefixedAttribute("level",segment.level.toString,null))
                                         (attributes,segment.words.map(w => CreateWordNode(w)))
                                       }

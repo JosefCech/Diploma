@@ -3,7 +3,7 @@ package segmenter
 import java.io._
 import common.sentence.{ Sentence , MorfSentence, AnxSentence , AnalyzedSentence}
 import common.{Tree, Directory, AWord, MorfWord, AnalyzedWord}
-import common.segment.{Segment, PureSegment}
+import common.segment.{Segment, PureSegment, AnalyzedSegment}
 import Anx.AnxReader
 import Pdt.{AReader, MorfReader}
 
@@ -107,10 +107,8 @@ object Segmenter  extends App {
     def createAnalyzedSentence(mWords : List[MorfWord], anxSentence : List[Segment], tWords : List[AWord] ) : AnalyzedSentence = {      
      val words = createAnalyzedWords(mWords,tWords, List[AnalyzedWord]() );
      var countWords = 0;
-     val segments =  anxSentence.map(t => t match {
-       case   t : PureSegment => MapWordsSegments()
-     }
-     )
+     val segments =  mapWordsToSegments(anxSentence,words, List[Segment]());
+     new AnalyzedSentence(segments)
     }
     
     def createAnalyzedWords(mWords : List[MorfWord],tWords : List[AWord],   acc :List[AnalyzedWord]) : List[AnalyzedWord] = {
@@ -121,6 +119,25 @@ object Segmenter  extends App {
          val aWord = new AnalyzedWord(mWord, tWord.clauseNum, false)
     	 createAnalyzedWords(mWords.tail,tWords,aWord :: acc);
       }
+    }
+    
+    def mapWordsToSegments(segments : List[Segment],analyzedWords : List[AnalyzedWord], acc:List[Segment]) : List[Segment] =
+    {
+      if (segments.isEmpty) acc.reverse
+      else {
+    	  def pair : (Segment,List[AnalyzedWord]) = createAnalyzedSegment(segments.head,analyzedWords);
+          mapWordsToSegments(segments.tail,pair._2,pair._1 :: acc)
+      }
+    }
+    
+    def createAnalyzedSegment(s : Segment, words : List[AnalyzedWord] ) : (Segment, List[AnalyzedWord]) = 
+    {
+       val wordsCount = s.words.size;
+       val wordsOfSegments = words.take(wordsCount);
+       val restOfWords = words.takeRight(words.size-wordsCount);
+       val newSegment = new AnalyzedSegment(wordsOfSegments,s.level.getExactLevel,s.clause,s.getStartNewClause);
+       (newSegment, restOfWords)
+      
     }
     /**
      * write for each sentence into one file with morphologic
@@ -146,8 +163,8 @@ object Segmenter  extends App {
 	        		  val segments = data.zipWithIndex.map(f => 
 			        		     { 
 			        		       val segment = t.segments.apply(f._2)
-			        		       segment.SetLevel(f._1._1)
-			        		       segment.SetClause(clauseNum)
+			        		       segment.setLevel(f._1._1)
+			        		       segment.setClause(clauseNum)
 			        		       if (f._1._2 == 0 && !previousJoined) {
 			        		         clauseNum += 1
 			        		       }

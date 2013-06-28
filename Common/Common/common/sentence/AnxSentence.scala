@@ -7,7 +7,7 @@ class AnxSentence (val Segments : List[Segment]) extends Sentence(Segments.map(t
    override def toString = {
       
       var text = ""
-      this.Segments.foreach( f => text += f.ToString + "\n")
+      this.Segments.foreach( f => text += f.toString + "\n")
       text
       }
 }

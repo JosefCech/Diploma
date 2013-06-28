@@ -12,7 +12,8 @@ class ConfigTest extends FunSuite {
   
    test("read data folder") {
      val dirName = Configuration.DataFolder
-     assert(dirName == "Data")
+     print(dirName)
+     assert(dirName == "../GoldenData/Seg")
    }
    
     test("data files"){

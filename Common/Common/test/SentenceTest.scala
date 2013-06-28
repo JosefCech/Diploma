@@ -41,7 +41,7 @@ class SentenceTest extends FunSuite {
      val words =  List( new MorfWord ("rychlost","NNFS1-----A----") , new MorfWord ("(","Z:-------------"),  new MorfWord ("A","NNFXX-----A---8"),new MorfWord (")","Z:-------------"),new MorfWord (":","Z:-------------"))
       val sentence = new MorfSentence(words)
      sentence.segments.map(
-         p => { p.SetLevel(2)
+         p => { p.setLevel(2)
                 p
          }).foreach(p => println(p.level))
   }

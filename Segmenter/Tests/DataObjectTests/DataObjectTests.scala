@@ -6,7 +6,8 @@ import org.scalatest.junit.JUnitRunner
 import common._
 import scala.xml._
 import Anx.AnxWriter
-import dataObjects.Sentence
+import dataObjects.BaseXmlSentence
+import dataObjects.BaseXmlSentence
 
 @RunWith(classOf[JUnitRunner])
 class SentenceTest extends FunSuite {
@@ -38,7 +39,7 @@ class SentenceTest extends FunSuite {
   
  test("write xml file - XmlWritable object") {
   def segments =  GetSegments(4,4);
-  def sentence = new Sentence(segments)
+  def sentence = new BaseXmlSentence(segments)
   assert(AnxWriter.Write("../TestResource/text2.xml", sentence))
  }
 }
