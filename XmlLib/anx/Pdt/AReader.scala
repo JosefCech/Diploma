@@ -11,11 +11,17 @@ import java.io.File
 object AReader extends XmlReader {
 
   def CreateTrees(file : File) : List[Tree] = {
-   val source  = scala.xml.XML.loadFile(file)
-   val roots = (source\\"trees"\"LM").toList
-   roots.map(t => AReader.CreateTree(t)).toList
+    try {
+		   val source  = scala.xml.XML.loadFile(file)
+		   val roots = (source\\"trees"\"LM").toList
+		   roots.map(t => AReader.CreateTree(t)).toList
+    }
+   catch  {
+     case e : Exception => { 	println(file)
+    	 						List[Tree]()
+     						}
+     }
   }
-  
   def CreateTree(node : scala.xml.Node) : Tree = {
     val ident = (node\"s.rf").toList.head.text.split("#").tail.head 
     if ((node\"children").toList.isEmpty) {

@@ -62,9 +62,16 @@ class MorfWord( form : String, val lemma: Lemma , val tag: String , val ident: S
 }
 
 class AWord(val ident : String, val ord : Int, val clauseNum : Int){
+  override def toString = "ident : " + ident + " clause:" + clauseNum.toString + " ord:" + ord.toString
  }
 
-class AnalyzedWord (val word : MorfWord, val clauseNum : Int, val separator : Boolean) extends AbstractWord
-{
+class AnalyzedWord (val word : MorfWord, val clauseNum : Int, val separator : Boolean) extends AbstractWord{
+ }
 
+class ClauseInfo(val Ident : String, val ClauseNum : Int){
+   override def toString = "ident : " + Ident + " clause:" + ClauseNum.toString 
+}
+
+class SegmentInfo(val index : Int, val level: Int, val isJoined : Boolean) {
+  override def toString = "index : " + index.toString + " level:" + level.toString + " join: " + isJoined
 }

@@ -8,6 +8,7 @@ class Sentence(val Words : List[Word]) {
   override def equals(other : Any) : Boolean = other match {
     
     case other : Sentence =>  this.compareWords(other.Words)
+    case other : MorfSentence => this.compareWords(other.morfWords)
     case _  => false
   } 
   

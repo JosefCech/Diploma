@@ -3,7 +3,7 @@ import org.scalatest._
 import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-import common.sentence.AnxSentence
+import common.sentence.{AnxSentence, MorfSentence}
 import common.MorfWord
 import common.segment.{ Segment, BaseSegment  }
 import scala.xml._
@@ -23,7 +23,7 @@ class AnxSentenceTest extends FunSuite {
 	 val words =  List( new MorfWord ("a","J^------------") , new MorfWord ("který","J,------------"), new MorfWord ("a","J^------------"))
 	 val sentence = new AnxSentence( List[Segment](new BaseSegment(words)))
 	 val sentence2 = new AnxSentence( List[Segment](new BaseSegment(words)))
-	 sentence.compareWords(sentence2.Words)
+	 assert(true, sentence.compareWords(sentence2.Words))
 	}
 
 	 test("compare test anx sentence 2") {
@@ -31,10 +31,22 @@ class AnxSentenceTest extends FunSuite {
 	 val words2 =  List( new MorfWord ("a","J^------------") , new MorfWord ("který","J,------------"))     
      val sentence = new AnxSentence( List[Segment](new BaseSegment(words)))
      val sentence2 = new AnxSentence( List[Segment](new BaseSegment(words2)))
-     sentence!=sentence2
-	 }
+     assert(sentence!=sentence2)
+     }
 	  
+	test("compare test anx and morf sentences") {
+	 val words =  List( new MorfWord ("a","J^------------") , new MorfWord ("který","J,------------"), new MorfWord ("a","J^------------"))
+	 val words2 =  List( new MorfWord ("a","J^------------") , new MorfWord ("který","J,------------"))     
+     val sentence = new AnxSentence( List[Segment](new BaseSegment(words)))
+	 val sentence2 = new MorfSentence(words2)
+     assert(sentence!=sentence2)
+	 }
  
- 
+     test("compare test anx and morf sentences 2") {
+	 val words =  List( new MorfWord ("a","J^------------") , new MorfWord ("který","J,------------"), new MorfWord ("a","J^------------"))
+	  val sentence = new AnxSentence( List[Segment](new BaseSegment(words),new BaseSegment(words)))
+	 val sentence2 = new MorfSentence(words ::: words)
+     assert(sentence==sentence2)
+	 } 
 
 }

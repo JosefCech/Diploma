@@ -1,8 +1,8 @@
 package common.sentence
 
-import common.segment.{ PureSegment, AnalyzedSegment2, Segment, Boundary }
+import common.segment.{ PureSegment, AnalyzedSegment2, AnalyzedSegment, Segment, Boundary }
 
-import common.{Word, MorfWord}
+import common.{Word, MorfWord, ClauseInfo, SegmentInfo}
 
 
 
@@ -22,6 +22,10 @@ import common.{Word, MorfWord}
 
 class MorfSentence(val sentence : List[Word], val ident : String  ) {
 
+   var clauseInfo : List[ClauseInfo] = List[ClauseInfo]()
+   var segmentInfo : List[SegmentInfo] = List[SegmentInfo]()
+  
+   
    def this(sentence : List[Word]) = this(sentence,"")
    /** List of MorfWords */
    def morfSentence = sentence.map(
@@ -59,6 +63,7 @@ class MorfSentence(val sentence : List[Word], val ident : String  ) {
    
    /** List of tuple (Level,Segment) where Level has  value -1 from external source */
    def parsedSegments(levels : List[(Int,Int)]) : List[Segment] = {
+     
     def segments(words : List[MorfWord] , acc : List[Segment] , accWord : List[MorfWord], levels : List[(Int,Int)]) : List[Segment] = {
         var restLevels = List[(Int,Int)]();
         var	originLevels =  List[(Int,Int)]();
@@ -113,7 +118,7 @@ class MorfSentence(val sentence : List[Word], val ident : String  ) {
    /** Estimation count of clause based on active verbs */
    def estimationOfClause : Int = {
      
-     def countEstimate(segments : List[AnalyzedSegment2], inBracket : Boolean , countBoundary : Boolean, haveVerb : Boolean , acc : Int) : Int = {
+   def countEstimate(segments : List[AnalyzedSegment2], inBracket : Boolean , countBoundary : Boolean, haveVerb : Boolean , acc : Int) : Int = {
       if (segments.isEmpty){
     	  if (haveVerb) {
     	    acc
@@ -171,5 +176,55 @@ class MorfSentence(val sentence : List[Word], val ident : String  ) {
      }
       countEstimate(this.morfSegments,false, false,false, 0)
     }
- def segIdent = this.ident.replace("m-", "")
-}
+   
+   def segIdent = this.ident.replace("m-", "")
+   
+   /** AnalyzedData */
+   
+   def analyzedSegments : List[AnalyzedSegment] = {
+      this.segments.zipWithIndex.map(f => {
+    	 val clauseNum = getClauseNum(f._1)
+    	 val segmentData = getSegmentData(f._2)
+         val clause = new AnalyzedSegment(f._1,segmentData._1,clauseNum,!segmentData._2)
+    	 clause
+       }
+      )
+   }
+   
+   def getClauseNum(data : Segment) : Int =  {
+        
+        val words = data.words.map( w => w match { case w : MorfWord => w }).toList
+        def clauseData = this.clauseInfo.filter(
+        		c => { 
+        			words.filter( 
+        			    w => w.ident == c.Ident
+        			    ).length == 1
+        			 }
+        		).filterNot(p => p.ClauseNum == 0).groupBy(f => f.ClauseNum).toList
+         if (clauseData.length == 1) {
+           clauseData.head._2.head.ClauseNum
+         }
+         else{
+           -1
+         }
+        }
+    
+   def getSegmentData(index : Int) : (Int , Boolean) = {
+      if (this.segmentInfo.isEmpty)
+      {
+        (-1, false)
+      }
+      else {
+        (this.segmentInfo.apply(index).level , this.segmentInfo.apply(index).isJoined)
+      }
+      
+    }
+   
+   def isClauseAnalyzed = !this.clauseInfo.isEmpty
+   def isClauseConsistent = this.analyzedSegments.filter(p => p.clause == -1).length > 0
+   def isSegmentLevelAnalyzed = !this.segmentInfo.isEmpty
+   def isSegmentLevelConsinstent = this.segmentInfo.length == this.segments.length
+   
+  }
+   
+

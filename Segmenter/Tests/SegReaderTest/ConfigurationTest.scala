@@ -16,8 +16,9 @@ class ConfigurationTest extends FunSuite {
    Assertions.expect("../GoldenData/Morf")(Configuration.PdtDataFolder)
    Assertions.expect("../GoldenData/Seg")(Configuration.SegDataFolder)
    Assertions.expect("../GoldenData/Seg")(Configuration.DataFolder)
-   Assertions.expect("../GoldenData/Output")(Configuration.OutputGoldenFolder)
-   Assertions.expect("../GoldenData/Output")(Configuration.OutputOthersFolder)
+   Assertions.expect("../GoldenData/OutputGolden")(Configuration.OutputGoldenFolder)
+   Assertions.expect("../GoldenData/OutputOthers")(Configuration.OutputOthersFolder)
+   Assertions.expect("../GoldenData/AnxDataFolder")(Configuration.AnxDataFolder)
    1
   }
  
@@ -27,12 +28,14 @@ class ConfigurationTest extends FunSuite {
    def folderSeg = new File(Configuration.SegDataFolder).exists
    def folderGoldenOutput = new File(Configuration.OutputGoldenFolder).exists
    def folderOthersOutput = new File(Configuration.OutputOthersFolder).exists
+   def folderAnxData = new File(Configuration.AnxDataFolder).exists
    
    
    Assertions.expect(true)(folderMorf)
    Assertions.expect(true)(folderSeg)
    Assertions.expect(true)(folderGoldenOutput)
    Assertions.expect(true)(folderOthersOutput)  
+    Assertions.expect(true)(folderAnxData)  
    1
   }
 }

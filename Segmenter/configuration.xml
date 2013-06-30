@@ -4,6 +4,8 @@
   <ClauseGoldData Folder="../GoldenData/GoldClause" />
   <ClauseOthersData Folder="../GoldenData/GoldOtherClause" />
   <PdtData Folder="../GoldenData/Morf" />
+  <AnxDataFolder Folder="../GoldenData/AnxDataFolder" />
   <OutputGolden Folder="../GoldenData/OutputGolden" />
   <OutputOthers Folder="../GoldenData/OutputOthers" />
+  
 </configuration>

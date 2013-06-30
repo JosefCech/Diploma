@@ -2,7 +2,7 @@ package segmenter
 
 import java.io._
 import common.sentence.{ Sentence , MorfSentence, AnxSentence , AnalyzedSentence}
-import common.{Tree, Directory, AWord, MorfWord, AnalyzedWord}
+import common.{Tree, Directory, AWord, MorfWord, AnalyzedWord , ClauseInfo, SegmentInfo}
 import common.segment.{Segment, PureSegment, AnalyzedSegment}
 import Anx.AnxReader
 import Pdt.{AReader, MorfReader}
@@ -15,11 +15,16 @@ import Pdt.{AReader, MorfReader}
 object Segmenter  extends App {
   
     override def main(args: Array[String]) {
+      // read morf files
       def files = common.Directory.ReadPdtMorfFiles(Configuration.PdtDataFolder).toArray
-      def analyticFiles = Directory.ReadAnalyticFiles(Configuration.PdtDataFolder).toArray
+      // read analytic files
+      def analyticFiles = Directory.ReadAnalyticFiles(Configuration.PdtDataFolder).toList
+      // read anx files
       def anxFiles = common.Directory.ReadAnxFiles(Configuration.AnxDataFolder).toList
+      // read anx sentences
       def anxSentences = anxFiles.map(t => readAnxFile(t))
-      processFiles(files,analyticFiles.toList,anxSentences)
+      // add data from morf and analytics to anx
+      processFiles(files,analyticFiles)
     }
     
     def readAnxFile(file : File) : AnxSentence = {
@@ -28,10 +33,12 @@ object Segmenter  extends App {
     
      def readMorfFile(file : File): List[MorfSentence] = {
        try {
-			  MorfReader.Read(file).toList
+			 // Read morf file 
+    	   	 MorfReader.Read(file).toList
 			}
-			catch  {
+	   catch {
 			  case e : Exception =>  {
+			            // print no xml file
 				  		println(file.getAbsolutePath())
 				  		List[MorfSentence]()
  					  }
@@ -42,73 +49,85 @@ object Segmenter  extends App {
     def readAtree(file : File) : List[(Tree)] = {
       AReader.CreateTrees(file)    
     } 
+    
    /**
     * read whole file with morphologic information (.m)
     */   
    def parsedSegments(file : Any): List[MorfSentence] = file match {
-     case file : File => {	try {
-    	 					  MorfReader.Read(file).toList
-    	 					}
-     						catch  {
-     						  case e : Exception =>  {
-     							  		println(file.getAbsolutePath())
-     							  		List[MorfSentence]()
-			     					  }
-     						}
-     }
-     case file : String =>  { MorfReader.Read(new File(file)).toList
-     						}
-     }
-  
+     case file : File => {	this.readMorfFile(file)
+     					 }
+     case file : String =>  {	this.readMorfFile(new File(file))
+     					    }
+   }
+   
    /**
     * process files from arguments
     */
-    def processFiles(morfFiles: Any, aFiles : List[File], anxSentences : List[AnxSentence])  = morfFiles match {
+    def processFiles(morfFiles: Any, aFiles : List[File])  = morfFiles match {
      
       case morfFiles : Array[File] => { 
     	  							def sentences = morfFiles.map(
     	  											t => {
-    	  												val morfSentences = this.readMorfFile(t)
-    	  											    val trees = this.readAtree(this.getAFile(t,aFiles));
-    	  												this.combineInformation(morfSentences,trees,anxSentences)
-    	  											    null
-    	  											}
-    	  											)
-    	  							
-    	  							morfFiles.head.getCanonicalPath
-    	  							// crate trees - tuples index a and tree
-    	  							// gp throw all sentences by index
-    	  							// 
-    	  							//writeAnxFile(sentences)   	  														   	
+	    	  												// get sentences with morf information
+    	  													val morfSentences = this.readMorfFile(t)
+    	  													// get analytics data for previous sentences
+	    	  											    val trees = this.readAtree(this.getAFile(t,aFiles));
+    	  													// combine data from .anx .m .a files
+	    	  												this.combineInformation(morfSentences,trees)
+    	  											     }
+    	  									)
+    	  							// write each sentence into own file accord ident		
+    	  							writeAnxFile(sentences.flatten.toList)   	  														   	
                                   }
       case _  => /*nothing*/ 
     }
     
+    // read analytics data
     def getAFile(file: File, aFiles : List[File]): File = {
       val nameFile = file.getCanonicalPath
-      print(nameFile)
-      val nameAFile = nameFile.replaceFirst(".m.",".a.")
-      print(nameAFile)
-      aFiles.filter(p => p.getCanonicalFile == nameAFile).head
+      val nameAFile = nameFile.replaceFirst("\\.m","\\.a")
+      val result = aFiles.filter(p => {
+                                       p.getCanonicalPath == nameAFile
+      								  }
+                                 )
+      
+      result.head
      
       
     }
-   
     
-    def combineInformation(morfSentences : List[MorfSentence], trees : List[Tree], anxSentences : List[AnxSentence]) : List[AnalyzedSentence] = {
+    // combine info from files
+    def combineInformation(morfSentences : List[MorfSentence], trees : List[Tree]) : List[MorfSentence] = {
       morfSentences.map(m => {
-           val anxSentence = anxSentences.filter(a => a == m)
+           
+           val segData = "" // readDataFromSeg
            val tree = trees.filter(t => m.ident == t.ident)
-           createAnalyzedSentence(m.morfWords, anxSentence.head.Segments, tree.head.words) 
+           if (!tree.isEmpty)
+           {
+              val clauseWords = createAnalyzedSentence(tree.head.words)
+               m.clauseInfo = clauseWords
+              
+           }
+           val data = SegReader.ReadData(Configuration.SegDataFolder + "/" + m.segIdent + ".seg" )
+           var clauseNum = 0;
+		   var previousJoined : Boolean = false;
+		   if (!data.isEmpty){ 
+				  val segmentInfo = data.zipWithIndex.map(f => { 
+	        		      new SegmentInfo(f._2,f._1._1,f._1._2 == 1);
+		        	  }
+				  ).toList
+		    m.segmentInfo = segmentInfo;
+		   }
+          m
       })
       
     }
     
-    def createAnalyzedSentence(mWords : List[MorfWord], anxSentence : List[Segment], tWords : List[AWord] ) : AnalyzedSentence = {      
-     val words = createAnalyzedWords(mWords,tWords, List[AnalyzedWord]() );
-     var countWords = 0;
-     val segments =  mapWordsToSegments(anxSentence,words, List[Segment]());
-     new AnalyzedSentence(segments)
+ 
+    def createAnalyzedSentence(tWords : List[AWord] ) : List[ClauseInfo] = {      
+     tWords.map( t => {
+               new ClauseInfo(t.ident,t.clauseNum)
+         }).toList
     }
     
     def createAnalyzedWords(mWords : List[MorfWord],tWords : List[AWord],   acc :List[AnalyzedWord]) : List[AnalyzedWord] = {
@@ -121,68 +140,65 @@ object Segmenter  extends App {
       }
     }
     
-    def mapWordsToSegments(segments : List[Segment],analyzedWords : List[AnalyzedWord], acc:List[Segment]) : List[Segment] =
-    {
-      if (segments.isEmpty) acc.reverse
-      else {
-    	  def pair : (Segment,List[AnalyzedWord]) = createAnalyzedSegment(segments.head,analyzedWords);
-          mapWordsToSegments(segments.tail,pair._2,pair._1 :: acc)
-      }
-    }
-    
-    def createAnalyzedSegment(s : Segment, words : List[AnalyzedWord] ) : (Segment, List[AnalyzedWord]) = 
-    {
-       val wordsCount = s.words.size;
-       val wordsOfSegments = words.take(wordsCount);
-       val restOfWords = words.takeRight(words.size-wordsCount);
-       val newSegment = new AnalyzedSegment(wordsOfSegments,s.level.getExactLevel,s.clause,s.getStartNewClause);
-       (newSegment, restOfWords)
-      
-    }
+       
     /**
      * write for each sentence into one file with morphologic
      * information without info from golden set
      */
     def writeAnxFile(sentences : List[MorfSentence]) = {
+     
+      // get into which folder will be written result gold data
       val resultFolder = new File(Configuration.OutputGoldenFolder);
       resultFolder.mkdir()
       
+      // folder to write other data
       val resultOthersFolder = new File(Configuration.OutputOthersFolder); 
       resultOthersFolder.mkdir()
       
-      if (resultFolder.exists && resultFolder.canWrite &&
-          resultOthersFolder.exists && resultOthersFolder.canWrite
-          ) {
-       sentences.foreach(t => 
-	        		{ val data = SegReader.ReadData(Configuration.SegDataFolder + "/" + t.segIdent + ".seg" )
-	        		 println(Configuration.SegDataFolder + "/" + t.segIdent + ".seg")
-	        		 println(new File(Configuration.SegDataFolder + "/" + t.segIdent + ".seg").exists)
-	        		 var clauseNum = 0
-	        		 var previousJoined = false
-	        		  if (!data.isEmpty){
-	        		  val segments = data.zipWithIndex.map(f => 
-			        		     { 
-			        		       val segment = t.segments.apply(f._2)
-			        		       segment.setLevel(f._1._1)
-			        		       segment.setClause(clauseNum)
-			        		       if (f._1._2 == 0 && !previousJoined) {
-			        		         clauseNum += 1
-			        		       }
-			        		       else if (f._1._2 == 0 && previousJoined){
-			        		         previousJoined = false
-			        		       }
-			        		       else if (f._1._2 == 1){
-			        		         previousJoined=true
-			        		       }
-			        		       segment
-			        		      })
-	        		  Anx.AnxWriter.Write( resultFolder.getPath() + '/' + t.segIdent + ".anx", segments.toList)
-	        		  }
-	        		  else {
-	        		     Anx.AnxWriter.Write( resultOthersFolder.getPath() + '/' + t.segIdent + ".anx", t.segments)
-	         		  }
-	        		} 
-	        	)
-	      }
-	    }
+      // if is possible to all data write
+      if (resultFolder.exists && 
+          resultFolder.canWrite &&
+          resultOthersFolder.exists && 
+          resultOthersFolder.canWrite
+          ) 
+        {
+         var clauseInconsistent = 0
+         var segmentInconsistent = 0
+    	  sentences.foreach(t => {
+		       
+			  if (t.isClauseAnalyzed)
+			  { 
+			  
+			    if (!t.isClauseConsistent)
+			    {
+			      clauseInconsistent+= 1;
+			    }
+			    else if (t.isSegmentLevelAnalyzed && !t.isSegmentLevelConsinstent) 
+			    {
+			      segmentInconsistent += 1;
+			    }
+			    else 
+			    {
+			      if (t.segmentInfo.isEmpty)
+			      {
+			    	  Anx.AnxWriter.Write( resultOthersFolder.getPath() + '/' + t.segIdent + ".anx", t)
+			      }
+			      else 
+			      {
+			          Anx.AnxWriter.Write(resultFolder.getPath + '/' + t.segIdent + ".anx", t)
+			      }
+			    } 
+			  }
+			  else {
+			    println(t.segIdent)
+			    
+			  }
+		   }
+    	  )
+    	   println("clause inconsistent " + clauseInconsistent.toString)
+    	   println("segment inconsistent " + segmentInconsistent.toString)
+    	   
+		  
+        }
+    }
 }
