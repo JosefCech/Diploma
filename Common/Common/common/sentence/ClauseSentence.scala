@@ -1,6 +1,7 @@
 package common.sentence
 
-import common.segment.InfoSegment
+import common.segment.{ InfoSegment , TaggedSegment, Segment }
+import common.Tag
 
 trait ClauseSentence {
 
@@ -61,5 +62,29 @@ trait ClauseSentence {
        }
       }
      }
+  
+ def estimateMaxClause(segments : List[Segment]) : Int = segments.map(t => t.clause).toList.max
    
+ def estimateClauseNum(segments : List[TaggedSegment]) : List[Segment] = {
+    def estimateClauseNum(segments : List[TaggedSegment], previousTag : String, acc:List[Segment]) : List[Segment] = {
+      if (segments.isEmpty) acc.reverse
+      else {
+        val head = segments.head
+        val headTag = head.GetTag
+        println(headTag.tag)
+        if (headTag.isBoundary)
+        {
+          head.segment.setClause(0)
+          estimateClauseNum(segments.tail,headTag.tag, head.segment :: acc)
+        }
+        else 
+       {
+          head.segment.setClause(1)
+           estimateClauseNum(segments.tail,headTag.tag, head.segment :: acc)
+       }
+      }
+    }
+    estimateClauseNum(segments,"", List[Segment]())
+ }
+ 
 }

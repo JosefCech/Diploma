@@ -1,5 +1,8 @@
 package common.Interfaces
 
+import common.Tag
+
 trait ITaggedSegment {
-  def GetTag() : String
+  def GetTagString : String
+  def GetTag : Tag
 }

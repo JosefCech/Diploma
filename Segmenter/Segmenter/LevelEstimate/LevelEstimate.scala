@@ -7,7 +7,6 @@ import common.segment.{ Segment, AnalyzedSegment}
 object LevelEstimate extends App {
  override def main(args: Array[String]) {
     def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Develop")).toList
-    println(files.length.toString)
     
    val results = files.map(f => {
      val sentence = AnxReader.ReadAnalyzedSentence(f)

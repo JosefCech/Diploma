@@ -7,7 +7,7 @@ trait ISimpleClause {
   val tags : List[String]
   override def equals(x : Any) : Boolean = x match {
     case x : List[String] => this.compare(x,this.tags)
-    case x : List[Segment] => this.compare(x.map(s => (new TaggedSegment(s)).GetTag), this.tags)
+    case x : List[Segment] => this.compare(x.map(s => (new TaggedSegment(s)).GetTagString), this.tags)
     case _ => false
   }
   

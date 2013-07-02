@@ -1,6 +1,7 @@
 package common.segment
 
 import common.Interfaces.ITaggedSegment
+import common.Tag
 
 class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
   def analyzed = new InfoSegment(segment)
@@ -25,7 +26,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
     return tag;
   }
   
-  def GetTag() {
+  def GetTag : Tag = {
     new Tag(this.GetTagString)
   }
   /***************************************************************/

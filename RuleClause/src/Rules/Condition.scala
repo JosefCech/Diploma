@@ -1,11 +1,13 @@
 package Rules
-import common.AnalyzedSegment
+import common.segment.AnalyzedSegment
 /**
  *  trait  Rule should represented single different rule in each instance
  *    
  **/
 
- trait Condition {}
+ trait Condition {
+  
+}
 
 class ConditionBase extends Condition {
   def isEmpty:Boolean = true
