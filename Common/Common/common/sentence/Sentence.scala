@@ -23,4 +23,9 @@ class Sentence(val Words : List[Word]) {
     }
   compareWords(otherWords,this.Words)
   }
+  
+  override def toString = Words.map(s => s match {
+    case s : Word => s.form
+  	}
+   ).mkString(" ") 
 }

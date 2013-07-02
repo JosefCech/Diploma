@@ -18,6 +18,7 @@ object Directory {
    }
     else {
             println("Missing folder exception")
+            println(directory.getAbsoluteFile)
             List[File]()   
     }
   }

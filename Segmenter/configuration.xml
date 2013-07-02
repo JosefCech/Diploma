@@ -8,4 +8,9 @@
   <OutputGolden Folder="../GoldenData/OutputGolden" />
   <OutputOthers Folder="../GoldenData/OutputOthers" />
   
+  <DevelopData Folder="../GoldenData/OutputGolden/development" />
+  <HeldoutData Folder="../GoldenData/OutputGolden/heldout" />
+  <TestData Folder="../GoldenData/OutputGolden/test" />
+  
+  
 </configuration>

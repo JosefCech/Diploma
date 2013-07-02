@@ -1,31 +1,65 @@
 package common.sentence
 
-import common.clause.Clause
+import common.segment.InfoSegment
 
-class ClauseSentence(clauses : List[(Int,List[Clause])]) {
+trait ClauseSentence {
 
-   def addNewClause(clause : Clause, level : Int ) : ClauseSentence = {
-     def clauses = this.clauses.filter(t => t._1 == level).last._2
-     def openClauses = clauses.filter(p => p.isOpen)
-     if (openClauses.isEmpty)
-     {
-       def newClause = List[Clause](clause)
-       new ClauseSentence(this.clauses ::: List[(Int,List[Clause])]((level,newClause))) 
-     }
-     else {
-         def closed = clauses.filterNot(p => p.isOpen)
-         def open = openClauses.head   
+    /** Estimation count of clause based on active verbs */
+ def countEstimate(segments : List[InfoSegment], inBracket : Boolean , countBoundary : Boolean, haveVerb : Boolean , acc : Int) : Int = {
+      if (segments.isEmpty){
+    	  if (haveVerb) {
+    	    acc
+    	  }
+    	  else{
+    	    acc + 1
+    	  }
+      }
+      else {
+        if (!inBracket && segments.head.HaveOpeningBracket.size > 0) {
          
-         def newClause = List[Clause](this.mergeClauses(open,clause))
+           countEstimate(segments.tail,true,countBoundary,haveVerb,acc + 1)
+        }
+        else if ((!inBracket) && segments.head.HaveCloseBracket.size > 0) {
          
-         new ClauseSentence(this.clauses.filterNot(t => t._1 == level) ::: List[(Int,List[Clause])]((level,closed ::: newClause)))
+          countEstimate(segments.tail,false,countBoundary,haveVerb,acc + 1)
+        }
+        else {
+        val new_acc : Int = {
+         if (countBoundary && segments.head.IsBoundarySegment ){
+           if (segments.tail.isEmpty) {
+             acc + 1
+           }
+           else if (segments.tail.head.IsBoundarySegment){
+             acc
+           }
+           else {
+             acc +1
+           }
+         }
+         else if (!segments.head.IsBoundarySegment && segments.head.HaveActiveVerb){
+           acc + 1
+         }
+         else if (segments.tail.isEmpty && segments.head.IsBoundarySegment && !haveVerb) {
+           acc + 1
+         }
+         else {
+           acc
+         }
+       }
+   
+        if (segments.head.IsBoundarySegment) {
+          
+          countEstimate(segments.tail,inBracket,countBoundary,haveVerb,new_acc)
+        }
+        else if (segments.head.HaveActiveVerb) {
+          countEstimate(segments.tail,false,true,true,new_acc)
+        }
+        else {
+          countEstimate(segments.tail,false,false,haveVerb,new_acc)
+        }
+        
+       }
+      }
      }
-   } 
-   
-  
-   def mergeClauses(open : Clause , newClause : Clause) : Clause = {  
-     open.mergeClause(newClause)
-   }
-   
    
 }

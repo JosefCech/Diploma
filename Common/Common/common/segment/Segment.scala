@@ -53,7 +53,9 @@ trait Segment {
   
   
  override def toString : String  = words.map(s => s match {
+    case m : MorfWord => m.form + "("+ m.tag +")"
     case s : Word => s.form
+    
   	}
    ).mkString(" ") 
    
@@ -66,7 +68,7 @@ trait Segment {
      this.level_=(new Level(l,l))
   }
   
-  protected def clause_=(c : Int){
+  def clause_=(c : Int){
     _clause = c
   }
   
@@ -102,20 +104,19 @@ class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int, val startNewCl
 		  					    case f : Word => f
 		  					}
 		  			)	
-	def separators = words.takeWhile(p => p match {case p : MorfWord => p.isSeparator 
+  def separators = words.takeWhile(p => p match {case p : MorfWord => p.isSeparator 
 												 case p : Word => false
 	                                             }
 	                                       ).toList
 	                                       
-	def haveSubFlag = !words.filter(p => p match {case p : MorfWord => p.isSubFlag 
+  def haveSubFlag = !words.filter(p => p match {case p : MorfWord => p.isSubFlag 
 												  case p : Word => false
 	                                             }
 	                                       ).isEmpty
+
 	                                       
-	override def toString = words.foldLeft("")((a,f) => a + " " + f.form)                    
-	
-	
-    
+  override def toString = words.foldLeft("")((a,f) => a + " " + f.form)                 
+	 
 }
 
 class Boundary( data : List[Any] , lmin : Int , lmax : Int  )
@@ -123,8 +124,6 @@ extends BaseSegment(data, lmin, lmax, false) {
   def this(data : List[Any], l: Int) = this(data,l,l)
   def this(data : List[Any]) = this(data,-1)	
 }
-
-
 
 class PureSegment(data : List[Any] , lmin : Int , lmax : Int , startNewClause : Boolean ) 
 extends BaseSegment(data, lmin, lmax , startNewClause) {
@@ -134,3 +133,4 @@ extends BaseSegment(data, lmin, lmax , startNewClause) {
   
   def this(data : List[Any]) = this(data,-1,-1,false)
 }
+

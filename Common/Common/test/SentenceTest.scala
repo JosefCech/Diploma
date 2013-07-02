@@ -32,7 +32,7 @@ class SentenceTest extends FunSuite {
      val words =  List( new MorfWord ("a","J^------------") , new MorfWord ("ale","J^------------"), new MorfWord ("který","J,------------"), new MorfWord ("a","J^------------"))
      val levels = List((0,0),(1,0),(2,0),(3,0))
      val sentence = new MorfSentence(words)
-     sentence.parsedSegments(levels).foreach(f => { print(f.toString + " ")
+     sentence.parsedSegments(sentence.morfWords, levels).foreach(f => { print(f.toString + " ")
                                                     println(f.level)})
      0
   }
@@ -46,7 +46,7 @@ class SentenceTest extends FunSuite {
          }).foreach(p => println(p.level))
   }
   
-    test("test estimate clause") {
+ /*   test("test estimate clause") {
      val words =  List( new MorfWord ("rychlost","NNFS1-----A----") , new MorfWord ("(","Z:-------------"),  new MorfWord ("A","NNFXX-----A---8"),new MorfWord (")","Z:-------------"),new MorfWord (":","Z:-------------"))
      val sentence = new MorfSentence(words)
      println(sentence.estimationOfClause)
@@ -56,4 +56,5 @@ class SentenceTest extends FunSuite {
      val sentence = new MorfSentence(words)
      println(sentence.estimationOfClause)
   }
+  */
 }

@@ -8,5 +8,5 @@ class AnalyzedSentence(val Ident : String,  data : List[Segment])
   
   val segments  = data.map( s => s match { case s : AnalyzedSegment  => s } ) ;
   
-
+  override def toString =super.toString + "\n" + this.segments.map(s => s.toString + "\n").toList.reduce(_ + _ )
 }

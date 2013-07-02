@@ -20,9 +20,9 @@ class Word(val form : String ) extends AbstractWord {
     case "["  => "]"
     case "("  => ")"
     case "{"  => "}"
-    case "\"" => "\""
-    case "'"  => "'"
-    case "-"  => "-"
+   // case "\"" => "\""
+  //  case "'"  => "'"
+   // case "-"  => "-"
     case _ => ""
   }
 }
@@ -57,7 +57,7 @@ class MorfWord( form : String, val lemma: Lemma , val tag: String , val ident: S
   
   def isSeparator = ((this.compareTag("J^") || this.compareTag("Z:")) && (!("%/+*><&".contains(form.trim))))
   
-  def isSubFlag = (this.compareTag("J,") || this.compareTag("P9") || this.compareTag("P4") || this.compareTag("PE") || this.compareTag("PJ") || this.compareTag("PK") || this.compareTag("PQ") || this.compareTag("PY") || this.compareTag("C?") || this.compareTag("Cu") || this.compareTag("Cz"))
+  def isSubFlag = (this.compareTag("J,") || this.compareTag("P9") || this.compareTag("P4") || this.compareTag("PE") || this.compareTag("PJ") || this.compareTag("PK") || this.compareTag("PQ") || this.compareTag("PY") || this.compareTag("C?") || this.compareTag("Cu") || this.compareTag("Cz")) ||  this.form == "jak" 
 
 }
 

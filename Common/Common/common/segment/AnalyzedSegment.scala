@@ -2,14 +2,14 @@ package common.segment
 
 import common.{ AnalyzedWord , Word }
 
-class AnalyzedSegment( data : Segment,  level : Int , clause : Int,  startNewClause : Boolean ) 
+class AnalyzedSegment( val data : Segment,  level : Int , clause : Int,  startNewClause : Boolean ) 
 	extends Segment {
  
   def words : List[Word] =  data.words
   
-  override def toString = " level , clause " + this.level.toString + ", " + this.clause.toString + " " 
+  override def toString = " level , clause " + this.Level.toString + ", " + this.ClauseNum.toString + " " + this.Clausebeg.toString+ "\t\t" + super.toString
   
   def Level = this.level
   def ClauseNum = this.clause
-  def Clauseberg = this.startNewClause
+  def Clausebeg = this.startNewClause
 }

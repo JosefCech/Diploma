@@ -3,9 +3,9 @@ package common.segment
 import common.Interfaces.ITaggedSegment
 
 class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
-  private def analyzed = new AnalyzedSegment2(segment)
+  def analyzed = new InfoSegment(segment)
   
-  def GetTag() : String = {
+  def GetTagString() : String = {
     var tag = ""
     /*Boundary vs Segment   B x C(omplex) x S  */
      tag  += this.GetTypeOfSegment
@@ -23,6 +23,10 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
     tag += this.GetBoundaryType
     
     return tag;
+  }
+  
+  def GetTag() {
+    new Tag(this.GetTagString)
   }
   /***************************************************************/
   
@@ -48,7 +52,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
      "C"
    }
    else {
-     "X"
+     "-"
    }
   }
 
@@ -57,7 +61,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
       "C"
     }
     else {
-      "X"
+      "-"
     }
    }
  
@@ -72,7 +76,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
       }
     }
     else {
-      "X"
+      "-"
     }
   }
   
@@ -97,7 +101,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
        }
      }
      else {
-       "X"
+       "-"
      }
   }
 }

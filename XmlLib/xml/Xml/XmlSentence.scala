@@ -7,7 +7,9 @@ class XmlSentence(val segments : List[Segment] ) extends XmlWritable {
 
   def TransformXml = this.CreateSentenceNode(segments)
   protected def CreateSentenceNode(sentence : List[Segment]) : Node = {
-    val segments =  sentence.map(t => CreateSegmentNode(t)).toList
+    val segments =  sentence.map(t => {  CreateSegmentNode(t)
+    								}).toList
+    									
     <root>{segments}</root>
   }
   
@@ -16,7 +18,7 @@ class XmlSentence(val segments : List[Segment] ) extends XmlWritable {
   def CreateSegmentNodeData(segment : Segment, words : List[Node]) : Node = segment match {
     case segment : AnalyzedSegment => {
       
-           <segment level={segment.Level.toString }  clause={segment.ClauseNum.toString }  clauseberg={segment.Clauseberg.toString}>{words}</segment>
+           <segment level={segment.Level.toString }  clause={segment.ClauseNum.toString }  clausebeg={segment.Clausebeg.toString}>{words}</segment>
        }
     case _ =>  <segment>{words}</segment>
     

@@ -1,10 +1,9 @@
 package common.segment
 
-
 import common.{MorfWord,Word}
 import wordProperties.{ WordFormQuery, TagQuery }
 
-class AnalyzedSegment2(val segment : Segment) {
+class InfoSegment(val segment : Segment) {
   
   protected val subflags = segment.words.map(f => f match {
     case f : MorfWord => f

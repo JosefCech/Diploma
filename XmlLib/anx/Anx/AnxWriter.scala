@@ -3,7 +3,7 @@ package Anx
 import Xml._
 import scala.xml._
 import common.segment.Segment
-import common.sentence.MorfSentence
+import common.sentence.{MorfSentence, AnalyzedSentence}
 import java.io.File
 
 
@@ -12,7 +12,12 @@ object AnxWriter extends XmlWriter {
   val Encoding = "UTF-8"
     
   def  Write(f : String , sentence : MorfSentence) : Boolean = {
-     Write(f,new Xml.XmlSentence(sentence.analyzedSegments))
+     Write(f,new Xml.XmlSentence(sentence.segments))
+  }
+  
+  def Write(f : String, sentence : AnalyzedSentence) : Boolean =
+  {
+      Write(f,new Xml.XmlSentence(sentence.segments))   
   }
 
   def  Write(f : String , sentence : List[Segment]) : Boolean = {
