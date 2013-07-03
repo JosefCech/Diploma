@@ -48,11 +48,7 @@ class MorfSentence(val sentence : List[Word], val ident : String  ) extends Segm
     }
    
    /** Make simple string from words */
-   override def toString =   sentence.map(s => s match {
-    case m : MorfWord => m.form +" "+ m.tag
-    case s : Word => s.form
-  	}
-   ).mkString(" ") + "\n" + this.toStringSegments
+   override def toString = this.toStringSegments
   
    def toStringSegments = segments.map(s => s.toString).reduce(_ + _ + "\n")
    

@@ -9,7 +9,5 @@ class LevelAnalyzedSentence(sentence : List[Word], ident : String  )
   def this (sentence : MorfSentence) =  this(sentence.morfWords,sentence.ident)
    
   def estimatedSegments = this.estimateLevelSegments(this.segments)
-  override def toString = 
-    super.toString + "\n" +
-    this.estimatedSegments.map(t => t.level.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
+  override def toString =  this.estimatedSegments.map(t => t.level.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
 }

@@ -8,10 +8,15 @@ class Tag(val tag:String) {
   
   def haveSubflag : Boolean = !compare(4,"-")
   
-  def Level = this.tag.substring(1,2)
-  
-  private def compare(pos : Int, comp : String) : Boolean = 
+  def Level = {
+                if (this.isEmpty) -1 
+                else this.tag.substring(1,2)
+               }
+ def compare(pos : Int, comp : String) : Boolean = 
   {
-   this.tag.substring(pos,pos+1) == comp
+   if (this.isEmpty) false
+   else this.tag.substring(pos,pos+1) == comp
   }
+  
+  def isEmpty = this.tag.isEmpty
 }

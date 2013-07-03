@@ -53,11 +53,11 @@ trait Segment {
   
   
  override def toString : String  = words.map(s => s match {
-    case m : MorfWord => m.form + "("+ m.tag +")"
+    case m : MorfWord => m.form + " ("+ m.tag +")"
     case s : Word => s.form
     
   	}
-   ).mkString(" ") 
+   ).mkString(" ")
    
   def level_=(l : Level) {
      this._level = l
@@ -115,8 +115,7 @@ class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int, val startNewCl
 	                                       ).isEmpty
 
 	                                       
-  override def toString = words.foldLeft("")((a,f) => a + " " + f.form)                 
-	 
+ 	 
 }
 
 class Boundary( data : List[Any] , lmin : Int , lmax : Int  )

@@ -38,7 +38,7 @@ object AnxReader extends XmlReader {
     
    var level = -1
    var startClause = 0
-   var clauseNum = -1 
+   var clauseNum = 0
    if (use)
    {
 	   val levelString = (segment \\ "@level").toString
@@ -69,6 +69,10 @@ object AnxReader extends XmlReader {
    {
     newSegment = new PureSegment(words)
    } 
+   val clauseNum : Int = {
+     if (dataSegment._2 == -1) 0
+     else dataSegment._2
+   }
    val analyzedSegment = new AnalyzedSegment(newSegment, dataSegment._1, dataSegment._2, dataSegment._3 )
    analyzedSegment
   }

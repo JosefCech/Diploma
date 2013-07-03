@@ -27,8 +27,8 @@ trait LevelEstimateSentence {
       estimateLevels(segments.tail, actualLevel, dualBorder, boundary :: acc)
     }
     else if (segmentBoundary(segments.head)) {
-    	var boundary =  setLevelSegment(segments.head,actualLevel, false )
-        val opposite =  boundary.words.head.syntacticOpposite
+    	 var boundary =  setLevelSegment(segments.head,actualLevel, false )
+         val opposite =  boundary.words.head.syntacticOpposite
          var level = actualLevel
          val newDualBorder : List[String] = {
                  if (isRequiredDualBorder(boundary,dualBorder))

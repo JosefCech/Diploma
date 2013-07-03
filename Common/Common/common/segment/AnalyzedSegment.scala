@@ -7,9 +7,14 @@ class AnalyzedSegment( val data : Segment,  level : Int , clause : Int,  startNe
  
   def words : List[Word] =  data.words
   
-  override def toString = " level , clause " + this.Level.toString + ", " + this.ClauseNum.toString + " " + this.Clausebeg.toString+ "\t\t" + super.toString
+  override def toString =  "  level " + this.Level + "clause " + this.ClauseNum.toString + " segment : " + super.toString
   
-  def Level = this.level
-  def ClauseNum = this.clause
+  def Level =   this.level
+              
+  def ClauseNum = if (clause == -1) 0
+                  else {
+                    this.setClause(clause)
+                    clause
+                  }
   def Clausebeg = this.startNewClause
 }

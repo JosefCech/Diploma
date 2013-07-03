@@ -16,7 +16,7 @@ object LevelEstimate extends App {
     {
      println(sentence.analyzedSentence.toString)
     println(analyzed)
-      
+      println(result)
     }
     
     result

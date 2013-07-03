@@ -1,6 +1,6 @@
 package common.sentence
 import common.{ MorfWord, Word}
-import common.segment.Segment
+import common.segment.{Segment, PureSegment, Boundary, AnalyzedSegment}
 
 class AnxSentence (val Segments : List[Segment], val Ident : String) extends Sentence(Segments.map(t => t.words).flatten) {
  
@@ -8,7 +8,10 @@ class AnxSentence (val Segments : List[Segment], val Ident : String) extends Sen
  
    override def toString = { 
       var text = ""
-      this.Segments.foreach( f => text += f.toString + "\n")
+      this.Segments.foreach( f => f match { case f : PureSegment => text += f.toString + "\n"
+      										case f : Boundary => text += f.toString + "\n"
+      										case f : AnalyzedSegment => text += f.toString + "\n"
+      })
       text += this.Ident
       text
       }
