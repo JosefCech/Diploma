@@ -1,0 +1,17 @@
+<Rules>
+  <Rule Priority="1">
+    <Condition>
+      <Segment Tag="__XC" />
+      <Segment Tag="B"  >
+       <Word Form="," Tag="Z:" />
+       </Segment>
+      <Segment Tag="S_C" IsGroupped="1" />
+      <Segment isGroupped="1"/>	  
+      <Segment Tag="B"  >
+       <Word Form="," Tag="Z:" />
+       </Segment>
+      <Segment Tag="S_V" />	
+    </Condition>
+    <Effect EffectOn="$6" EffectType="set" Clause="$1"  />
+  </Rule>
+</Rules>

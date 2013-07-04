@@ -53,7 +53,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
      "C"
    }
    else {
-     "-"
+     "X"
    }
   }
 
@@ -62,7 +62,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
       "C"
     }
     else {
-      "-"
+      "X"
     }
    }
  
@@ -77,7 +77,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
       }
     }
     else {
-      "-"
+      "X"
     }
   }
   
@@ -102,7 +102,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
        }
      }
      else {
-       "-"
+       "X"
      }
   }
 }

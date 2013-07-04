@@ -1,5 +1,7 @@
 package wordProperties
+
 import common._
+
 object TagMatcher {
   
 	def Match(word : MorfWord , tag : String ) : Boolean = {
