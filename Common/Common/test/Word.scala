@@ -65,4 +65,14 @@ class WordTest extends FunSuite {
      
    assert(true)
   }
+   
+   test("rule word") {
+     val word = new RuleWord("", "P")
+     val word2 = new RuleWord("ja", "P")
+     val morfWord = new MorfWord("níž","P9FS6----------")
+     println(word.equals(morfWord))
+     println(wordProperties.TagMatcher.Match(morfWord, "P--------------"))
+     assert(word.equals(morfWord))
+     assert(!word2.equals(morfWord))
+   }
 }

@@ -3,7 +3,7 @@ package Rules
 import common.segment.TaggedSegment
 
 
-class RuleAutomata {
+object RuleAutomata {
  
   def ruleMatches( sentence : List[TaggedSegment], rule : Rule ) : List[MatchEffect] = {
     if (!rule.isEmptyCondition)
@@ -54,7 +54,13 @@ class RuleAutomata {
        {
             if (RuleHelper.compareSegmentTemplate(sentence.head._1, condition.head))
             {
-              val nextIndex = acc.head._1 + 1
+              val nextIndex = if (!acc.isEmpty){
+				                acc.head._1 + 1
+				              }
+              				  else {
+              				    1
+              				  } 
+              println(nextIndex)
               var matchEffect = conditionMatch(sentence.tail, condition.tail, condition.head, (nextIndex,List(sentence.head._1)) :: acc)
               if (matchEffect.isEmpty && prevSegmentTemplate.isGroup && RuleHelper.compareSegmentTemplate(sentence.head._1, prevSegmentTemplate))
               {
@@ -71,6 +77,7 @@ class RuleAutomata {
      } 
     
      val matchData = conditionMatch(sentence,rule.condition.segmentTemplate,new SegmentTemplate(),List[(Int, List[TaggedSegment])]())
+     println(matchData)
      if (matchData.isEmpty) {
        new MatchEffect(-1,-1)
      }
@@ -79,11 +86,82 @@ class RuleAutomata {
      }
   }
   
+  def conditionMatch(sentence : List[(TaggedSegment, Int)], condition : List[SegmentTemplate], prevSegmentTemplate : SegmentTemplate , acc : List[(Int, List[TaggedSegment])])  
+     : List[(Int, List[TaggedSegment])] = {
+       
+       if (condition.isEmpty) // create MatchEffect
+       {  
+         acc
+       }
+       else if (sentence.isEmpty)
+       {
+         List[(Int, List[TaggedSegment])]()
+       }
+       else 
+       {
+            if (RuleHelper.compareSegmentTemplate(sentence.head._1, condition.head))
+            {
+              val nextIndex = if (!acc.isEmpty){
+				                acc.head._1 + 1
+				              }
+              				  else {
+              				    1
+              				  } 
+              println(nextIndex)
+              var matchEffect = conditionMatch(sentence.tail, condition.tail, condition.head, (nextIndex,List(sentence.head._1)) :: acc)
+              if (matchEffect.isEmpty && prevSegmentTemplate.isGroup && RuleHelper.compareSegmentTemplate(sentence.head._1, prevSegmentTemplate))
+              {
+               val prevHead = acc.head 
+               val newAccHead =  (prevHead._1, sentence.head._1 :: prevHead._2)
+               matchEffect = conditionMatch(sentence.tail, condition.tail, prevSegmentTemplate, newAccHead :: acc)
+              }
+              matchEffect
+            }
+            else {
+              List[(Int, List[TaggedSegment])]()
+            }
+       } 
+     } 
+    
+  
   private def createMatchEffect(data : List[(Int, List[TaggedSegment])], effect : Effect) : MatchEffect = {
    // find effect on
    val indexObject : (Int,List[TaggedSegment]) = getObject(effect.effectOn, data)
    val clauseChange : Int =  getClauseNum(effect, data) 
-   new MatchEffect(indexObject._1,clauseChange)
+   println(clauseChange)
+   val clauseNum : Int = {
+      if (effect.effectType == "set")
+      {
+        clauseChange
+      }
+      else if (effect.effectType == "add")
+      {
+          println(indexObject._2.map(f => f.segment.clause))
+          val index = indexObject._2.map(f => f.segment.clause).groupBy(f => f).head._1 + clauseChange
+            println(index)
+          if (index < 0 ) {
+            0
+          }
+          else {
+            index
+          } 
+      }
+      else if (effect.effectType == "subtract")
+      {
+          val index = indexObject._2.map(f => f.segment.clause).groupBy(f => f).head._1 - clauseChange
+          if (index < 0 ) {
+            0
+          }
+          else {
+            index
+          }
+          index
+      }  
+      else{
+        0
+      }
+   }
+   new MatchEffect(indexObject._1,clauseNum)
   }
   
   private def getObject(index : String , data : List[(Int, List[TaggedSegment])]) 
@@ -127,4 +205,5 @@ class RuleAutomata {
       getIndex(effect.clause)
    }
    }
- }
+  
+} 

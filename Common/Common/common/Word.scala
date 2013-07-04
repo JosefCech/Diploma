@@ -2,8 +2,8 @@ package common
 
 import java.io;
 
+
 trait AbstractWord {
-  
 }
 
 class Word(val form : String ) extends AbstractWord {
@@ -25,6 +25,23 @@ class Word(val form : String ) extends AbstractWord {
    // case "-"  => "-"
     case _ => ""
   }
+}
+
+class RuleWord( form : String, tag : String) extends Word(form)
+{
+ val tags = tag.split(";") 
+ val emptyTag = "_______________"
+   
+ def createFullTag(tag : String) : String = tag + emptyTag.take(emptyTag.length-tag.length) 
+ 
+ override def equals(that : Any) : Boolean = that match {
+   case that : MorfWord => {
+                              val tagMatch = !this.tags.filter( p => wordProperties.TagMatcher.Match(that, this.createFullTag(p))).isEmpty
+                              if (this.form.isEmpty) tagMatch
+                              else form == that.form
+                             }
+   case _ => super.equals(that)
+ }
 }
 
 class MorfWord( form : String, val lemma: Lemma , val tag: String , val ident: String) extends Word(form) 
