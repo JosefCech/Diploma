@@ -14,9 +14,10 @@ object LevelEstimate extends App {
     val result = compareSentence(sentence.analyzedSentence, analyzed)
     if (result._3 > 0)
     {
-     println(sentence.analyzedSentence.toString)
-    println(analyzed)
-      println(result)
+    // println(sentence.analyzedSentence.toString)
+     println(analyzed)
+     println(sentence)
+    // println(result)
     }
     
     result

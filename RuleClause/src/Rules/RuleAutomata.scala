@@ -20,7 +20,7 @@ object RuleAutomata {
     List[MatchEffect]()
   }
   
-  def ruleMatch(sentence : List[(TaggedSegment, Int)] , firstSegment : List[(TaggedSegment,Int)], rule : Rule, acc : List[MatchEffect]) : List[MatchEffect] = {
+  private def ruleMatch(sentence : List[(TaggedSegment, Int)] , firstSegment : List[(TaggedSegment,Int)], rule : Rule, acc : List[MatchEffect]) : List[MatchEffect] = {
     if (firstSegment.isEmpty) {
       acc
     }

@@ -19,7 +19,6 @@ object RulesReader extends XmlReader {
   {
     val condition  = CreateCondition((ruleXml \\ "Condition").head)
     val effect = CreateEffect((ruleXml \\ "Effect").head)
-    println(effect)
     val rule = new Rule(condition,effect);
     rule
   }

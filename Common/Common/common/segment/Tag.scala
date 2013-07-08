@@ -6,11 +6,11 @@ class Tag(val tag:String) {
   
   def haveActiveVerb : Boolean = compare(2,"C")
   
-  def haveSubflag : Boolean = !compare(4,"-")
+  def haveSubflag : Boolean = !compare(4,"X")
   
-  def Level = {
+  def Level : Int = {
                 if (this.isEmpty) -1 
-                else this.tag.substring(1,2)
+                else this.tag.substring(1,2).toInt
                }
  def compare(pos : Int, comp : String) : Boolean = 
   {
@@ -19,4 +19,5 @@ class Tag(val tag:String) {
   }
   
   def isEmpty = this.tag.isEmpty
+ override def toString : String = tag
 }

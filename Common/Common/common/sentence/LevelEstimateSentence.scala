@@ -30,6 +30,15 @@ trait LevelEstimateSentence {
     	 var boundary =  setLevelSegment(segments.head,actualLevel, false )
          val opposite =  boundary.words.head.syntacticOpposite
          var level = actualLevel
+         val info = new InfoSegment(boundary)
+    	 val prevHaveVerb = {
+    	   if (acc.isEmpty) false
+    	   else new InfoSegment(acc.head).HaveActiveVerb
+    	 }
+    	  val prevHaveSubflag = {
+    	   if (acc.isEmpty) false
+    	   else new InfoSegment(acc.head).HaveSubFlag
+    	 }
          val newDualBorder : List[String] = {
                  if (isRequiredDualBorder(boundary,dualBorder))
                  {
@@ -49,14 +58,42 @@ trait LevelEstimateSentence {
               }
          if (nextSegmentSubflag(segments.tail))
 	    	{
-               val info = new InfoSegment(boundary)
+               
                if (!info.HaveCordConjuction) {
                  level += 1
+                 boundary.setLevel(0)
                }
                           
 	          val nextSegment = setLevelSegment(segments.tail.head,level, true )
 	          estimateLevels(segments.tail.tail,level, newDualBorder , nextSegment :: boundary :: acc)
 	    	}
+         else if ((info.HaveComma) && nextSegmentCordConjuction(segments.tail))
+         {
+           val nextLevel = {
+             if (level == 0) {
+               0
+             }
+             else {
+              level-1
+             }
+           }
+           boundary.setLevel(0)
+           estimateLevels(segments.tail, nextLevel , newDualBorder, boundary :: acc)
+         }
+         else if (prevHaveSubflag && prevHaveVerb && nextSegmentActiveVerb(segments.tail) && info.HaveComma)
+         {
+         val nextLevel = {
+             if (level == 0) {
+               0
+             }
+             else {
+              level-1
+             }
+           } 
+         boundary.setLevel(0)  
+         estimateLevels(segments.tail, nextLevel , newDualBorder, boundary :: acc)
+           
+         }
 	     else
 	        {
 	            estimateLevels(segments.tail, level, newDualBorder, boundary :: acc)
@@ -67,6 +104,13 @@ trait LevelEstimateSentence {
        if (nextSegmentSubflag(segments))
        {
          level+=1;
+       }
+       if (!acc.isEmpty)
+       {
+         val head = new InfoSegment(acc.head)
+         if (head.IsBoundarySegment && head.segment.level != level &&  nextSegmentActiveVerb(segments)){
+          acc.head.setLevel(0)
+         }
        }
         val nextSegment = setLevelSegment(segments.head,level,false)
         estimateLevels(segments.tail, actualLevel, dualBorder, nextSegment :: acc)
@@ -88,10 +132,9 @@ trait LevelEstimateSentence {
    }
   }
   
-  private def containSubflag(s : Segment) : Boolean = s match {
-    case s : Boundary => s.haveSubFlag
-    case s : PureSegment => s.haveSubFlag
-    case _ => false
+  private def containSubflag(s : Segment) : Boolean = {
+   val data = new InfoSegment(s)
+   data.HaveSubFlag
   }
 
   private def setLevelSegment(s : Segment, level : Int , startNewClause : Boolean) : Segment = {
@@ -106,6 +149,26 @@ trait LevelEstimateSentence {
      else {
 	 l.head.isInstanceOf[Boundary];
      }
+  }
+  
+  private def nextSegmentCordConjuction(l : List[Segment]) : Boolean ={
+    if (nextSegmentBoundary(l) &&  (new InfoSegment(l.head).HaveCordConjuction))
+    {
+       val coords = List("a","i")
+       l.head.words.filter(p => coords.contains(p.form)).length > 0
+    }
+    else {
+      false
+    }
+  }
+  
+  private def nextSegmentActiveVerb(l : List[Segment]) : Boolean = {
+    if (l.isEmpty) {
+      false
+    }
+    else {
+      new InfoSegment(l.head).HaveActiveVerb
+    }
   }
   
   private def isCommaSegment(s : Segment) : Boolean = 

@@ -2,15 +2,16 @@ package common.segment
 
 import common.{MorfWord,Word}
 import wordProperties.{ WordFormQuery, TagQuery }
+import wordProperties.TagMatcher
 
-class InfoSegment(val segment : Segment) {
+class InfoSegment(val segment : Segment){
   
-  protected val subflags = segment.words.map(f => f match {
-    case f : MorfWord => f
-    case f : Word => new MorfWord(f.form,"")
-  }).filter(f => f.isSubFlag)
-  def HaveSubFlag = subflags.size > 0
-  def FirstSubflag = subflags.head
+  protected val subflags = segment.words.map(f => this.CreateMorfWord(f)
+  ).filter(f => f.isSubFlag).toList
+  def HaveSubFlag = subflags.size > 0 || segment.words.head.form == "kdy" || segment.words.head.form == "kde" 
+  def FirstSubflag = { if (subflags.isEmpty) this.CreateMorfWord(segment.words.head)
+		  			   else subflags.head 
+                     }
   
   def morfWords = segment.words.map(f => f match {
     case f : MorfWord => f
@@ -38,6 +39,8 @@ class InfoSegment(val segment : Segment) {
   
   def HaveDash : Boolean = (segment.words.count(p => p.form == "-") > 0)
   
+  def HaveComma : Boolean = (segment.words.count(p => p.form == ",") > 0)
+  
   def CountWords = segment.words.size
   
   def IsBoundarySegment = segment match {
@@ -45,4 +48,9 @@ class InfoSegment(val segment : Segment) {
     case _  => false
   }
   
+  private def CreateMorfWord(f : Word) : MorfWord = f match
+  {
+   case f : MorfWord => f
+   case f : Word => new MorfWord(f.form,"")
+  }
 }

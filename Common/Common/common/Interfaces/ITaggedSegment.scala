@@ -6,3 +6,4 @@ trait ITaggedSegment {
   def GetTagString : String
   def GetTag : Tag
 }
+
