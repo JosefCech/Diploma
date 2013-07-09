@@ -15,6 +15,7 @@ class Word(val form : String ) extends AbstractWord {
   }
   
   override def hashCode = form.hashCode
+ 
   
   def syntacticOpposite : String = form match {
     case "["  => "]"
@@ -25,8 +26,17 @@ class Word(val form : String ) extends AbstractWord {
    // case "-"  => "-"
     case _ => ""
   }
+  
+  def isEmpty = form == ""
 }
 
+object Word {
+  def createEmptyWord = new Word("")
+  def createMorfWord(s : Word) : MorfWord = s match {
+    case s : MorfWord => s
+    case s : Word => new MorfWord(s.form,"")
+  }
+}
 class RuleWord( form : String, tag : String) extends Word(form)
 {
  val tags = tag.split(";") 

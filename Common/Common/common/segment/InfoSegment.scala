@@ -19,7 +19,10 @@ class InfoSegment(val segment : Segment){
   })
   
   protected val verbs = TagQuery.activeVerb(this.morfWords)
-  def ActiveVerb = verbs.head
+  def ActiveVerb = {
+                   if (verbs.isEmpty) new MorfWord("","")
+  				   else verbs.head
+  				   }
   def HaveActiveVerb = verbs.size > 0
   
   protected val cordConjuctions = TagQuery.cordConjuction(this.morfWords)

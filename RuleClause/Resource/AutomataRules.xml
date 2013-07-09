@@ -1,13 +1,17 @@
 <Rules>
   <Rule Priority="1">
-    <Template>
-      <Segment/>
-      <Boundary Form="i|nebo" Tag="J^" />
-      <Segment>
-    	 <Attribute Name="ActiveVerb" Value="0" />
-      </Segment>
-    </Template>
-    <Effect Segment="JoinWithPrevious" Level="ActualLevel" EffectOn="2" />
+    <Condition>
+      <Segment tag="__X" />
+      <Segment tag="_B"  >
+       <Word form="," tag="Z:" />
+       </Segment>
+      <Segment tag="__S" isGroupped="1" />
+      <Segment isGroupped="1"/>	  
+      <Segment tag="_B"  >
+       <Word form="," tag="Z:" />
+       </Segment>
+      <Segment tag="__V" />	
+    </Condition>
+    <Effect EffectOn="$6" EffectType="set" clause="$1"  />
   </Rule>
-
 </Rules>

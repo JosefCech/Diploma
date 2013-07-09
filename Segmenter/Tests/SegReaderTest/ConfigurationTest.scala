@@ -10,7 +10,7 @@ import java.io.File
 
 @RunWith(classOf[JUnitRunner])
 class ConfigurationTest extends FunSuite {
-  test("test exitst elements") {
+  test("test exist elements") {
    print( (Configuration.root \ "PdtData" \ "@Folder" ))
    print(Configuration.PdtDataFolder)
    Assertions.expect("../GoldenData/Morf")(Configuration.PdtDataFolder)
@@ -19,6 +19,7 @@ class ConfigurationTest extends FunSuite {
    Assertions.expect("../GoldenData/OutputGolden")(Configuration.OutputGoldenFolder)
    Assertions.expect("../GoldenData/OutputOthers")(Configuration.OutputOthersFolder)
    Assertions.expect("../GoldenData/AnxDataFolder")(Configuration.AnxDataFolder)
+     Assertions.expect("AutomataRules.xml")(Configuration.RuleFile)
    1
   }
  

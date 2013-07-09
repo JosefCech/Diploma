@@ -11,12 +11,14 @@ object LevelEstimate extends App {
    val results = files.map(f => {
      val sentence = AnxReader.ReadAnalyzedSentence(f)
      val analyzed = new LevelAnalyzedSentence(sentence.morfSentence)
+    // println(sentence.Ident)
     val result = compareSentence(sentence.analyzedSentence, analyzed)
     if (result._3 > 0)
+      
     {
-    // println(sentence.analyzedSentence.toString)
-     println(analyzed)
-     println(sentence)
+    
+    // println(analyzed)
+    // println(sentence)
     // println(result)
     }
     

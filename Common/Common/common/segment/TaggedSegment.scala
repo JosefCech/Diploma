@@ -20,7 +20,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
     /*contains subflag  and  what*/
     tag += this.GetSubflag
     
-    /*get Boundary type J x Z x I (JZ) x K (JJ) x L (ZZ) x C (more komplex)*/
+    /*get Boundary type J x Z x I x P x (,) x (JZ) x K (JJ) x L (ZZ) x C (more komplex)*/
     tag += this.GetBoundaryType
     
     return tag;
@@ -68,14 +68,8 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
  
   private def GetSubflag : String = {
     if (analyzed.HaveSubFlag){
-      val tag : String = analyzed.FirstSubflag.tag
-      if (tag.startsWith("J")){
-        tag.head.toString
+         analyzed.FirstSubflag.tag.tail.head.toString
       }
-      else {
-        tag.tail.head.toString
-      }
-    }
     else {
       "X"
     }
@@ -84,7 +78,12 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
   private def GetBoundaryType : String = {
      if (analyzed.IsBoundarySegment) {
        if (analyzed.CountWords == 1){
+           if (analyzed.morfWords.head.form == ",")
+           {
+             "P"
+           } else {
            analyzed.morfWords.head.tag.head.toString
+           }
        }
        else if (analyzed.CountWords == 2) {
          val double =  	analyzed.morfWords.head.tag.head.toString + 

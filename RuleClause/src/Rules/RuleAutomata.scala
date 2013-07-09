@@ -11,13 +11,17 @@ object RuleAutomata {
     val firstSegments = sentence.zipWithIndex.filter( s => RuleHelper.compareSegmentTemplate(s._1, rule.condition.segmentTemplate.head) && 
                                                            rule.numOfConditionObject <=  sentence.length - s._2)
     
+                                                           
+
     if (!firstSegments.isEmpty)                                                       
     {
       ruleMatch(sentence.zipWithIndex,firstSegments,rule,List[MatchEffect]())  
-    } 
-    List[MatchEffect]()
+    } else  { 
+    	List[MatchEffect]()
     }
-    List[MatchEffect]()
+    } else {
+    	List[MatchEffect]()
+    }
   }
   
   private def ruleMatch(sentence : List[(TaggedSegment, Int)] , firstSegment : List[(TaggedSegment,Int)], rule : Rule, acc : List[MatchEffect]) : List[MatchEffect] = {
@@ -27,6 +31,7 @@ object RuleAutomata {
     else {
       if (sentence.head._2 == firstSegment.head._2)
       {
+        println("match index")
         val matchEffect = conditionMatch(sentence,rule)
         ruleMatch(sentence.tail,firstSegment.tail, rule, matchEffect :: acc)
       }
@@ -39,9 +44,10 @@ object RuleAutomata {
   
   def conditionMatch(sentence : List[(TaggedSegment, Int)], rule : Rule) : MatchEffect = {
     
-     def conditionMatch(sentence : List[(TaggedSegment, Int)], condition : List[SegmentTemplate], prevSegmentTemplate : SegmentTemplate , acc : List[(Int, List[TaggedSegment])])  
+     def conditionMatch(sentence : List[(TaggedSegment, Int)], condition : List[SegmentTemplate], prevSegmentTemplate : SegmentTemplate ,
+         acc : List[(Int, List[TaggedSegment])] )  
      : List[(Int, List[TaggedSegment])] = {
-       
+ 
        if (condition.isEmpty) // create MatchEffect
        {  
          acc
@@ -52,7 +58,10 @@ object RuleAutomata {
        }
        else 
        {
-            if (RuleHelper.compareSegmentTemplate(sentence.head._1, condition.head))
+         val compareSegments = RuleHelper.compareSegmentTemplate(sentence.head._1, condition.head)
+         println(sentence.head._1.GetTagString)
+         println(compareSegments)
+            if (compareSegments)
             {
               val nextIndex = if (!acc.isEmpty){
 				                acc.head._1 + 1
@@ -60,15 +69,26 @@ object RuleAutomata {
               				  else {
               				    1
               				  } 
-              println(nextIndex)
-              var matchEffect = conditionMatch(sentence.tail, condition.tail, condition.head, (nextIndex,List(sentence.head._1)) :: acc)
-              if (matchEffect.isEmpty && prevSegmentTemplate.isGroup && RuleHelper.compareSegmentTemplate(sentence.head._1, prevSegmentTemplate))
+            
+              var newAcc = {
+                if (condition.tail.isEmpty)
+                {
+                  acc
+                }
+                else {
+                  (nextIndex,List(sentence.head._1)) :: acc
+                }
+              }
+              var matchData = conditionMatch(sentence.tail, condition.tail, condition.head, newAcc)
+              
+              if (matchData.isEmpty && condition.head.isGroup && RuleHelper.compareSegmentTemplate(sentence.head._1, condition.head))
               {
                val prevHead = acc.head 
-               val newAccHead =  (prevHead._1, sentence.head._1 :: prevHead._2)
-               matchEffect = conditionMatch(sentence.tail, condition.tail, prevSegmentTemplate, newAccHead :: acc)
+               val newAccHead =  (prevHead._1,  sentence.tail.head._1 :: sentence.head._1  :: prevHead._2)
+               println(newAccHead)
+               matchData = conditionMatch(sentence.tail, condition.tail, condition.head, newAccHead :: acc)
               }
-              matchEffect
+              matchData
             }
             else {
               List[(Int, List[TaggedSegment])]()
@@ -76,8 +96,8 @@ object RuleAutomata {
        } 
      } 
     
+
      val matchData = conditionMatch(sentence,rule.condition.segmentTemplate,new SegmentTemplate(),List[(Int, List[TaggedSegment])]())
-     println(matchData)
      if (matchData.isEmpty) {
        new MatchEffect(-1,-1)
      }
@@ -126,9 +146,12 @@ object RuleAutomata {
   
   private def createMatchEffect(data : List[(Int, List[TaggedSegment])], effect : Effect) : MatchEffect = {
    // find effect on
+    println(effect)
    val indexObject : (Int,List[TaggedSegment]) = getObject(effect.effectOn, data)
    val clauseChange : Int =  getClauseNum(effect, data) 
+   println(indexObject)
    println(clauseChange)
+   println("changeData")
    val clauseNum : Int = {
       if (effect.effectType == "set")
       {

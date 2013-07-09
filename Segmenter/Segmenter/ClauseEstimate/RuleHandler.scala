@@ -14,6 +14,8 @@ object RuleHandler {
   
   def applyRules(sentence : ClauseAnalyzedSentence) : ClauseAnalyzedSentence = {
     
+   rules.foreach(p => println(p))
+    
     val segments = sentence.analyzedSegments.map(p => new TaggedSegment(p)).toList
     val matches = rules.map(rule => RuleAutomata.conditionMatch(segments.zipWithIndex, rule))
     

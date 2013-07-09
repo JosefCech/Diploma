@@ -70,5 +70,7 @@ class  RuleAutomataTest extends FunSuite  {
     
     println(RuleAutomata.conditionMatch(sentence.zipWithIndex,rule))
    }
+   
+ 
 
 }

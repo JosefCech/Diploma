@@ -12,18 +12,29 @@ object RuleHelper {
   def compareSegmentTemplate(segment : TaggedSegment, template : SegmentTemplate) : Boolean = {
 
     val matchTag = !template.tags.split(";").filter(p => TagMatcher.Match(segment.GetTagString, p)).isEmpty
+  
     if (matchTag && !template.words.isEmpty)
     {
-     RuleHelper.wordSequenceMatch(template.words,segment.segment)
+       println(template.words.head.form)
+       println(template.words.head.tags.head)
+       println(segment.segment)
+     val data =  RuleHelper.wordSequenceMatch(template.words,segment.segment)
+     println(data)
+     data
+    } else {
+     matchTag
     }
-    matchTag
   }
  
   def  wordSequenceMatch(words : List[RuleWord], segment : Segment) : Boolean = {
     
      def wordsSequenceMatch(ruleWords : List[RuleWord], findWords : List[RuleWord], words : List[MorfWord], nextStart : List[MorfWord], tryMatch : Boolean ) 
      : Boolean = {
-       if (words.isEmpty) {
+   
+       if (ruleWords.isEmpty){
+         true
+       }
+       else if (words.isEmpty) {
          false
        }
        else {
@@ -45,7 +56,7 @@ object RuleHelper {
                  findWords.reverse ::: ruleWords
                }
             }
-            
+            println(nextRuleWords.head.equals(words.head))
             if (nextRuleWords.head.equals(words.head))
             {
               wordsSequenceMatch(nextRuleWords.tail,List(nextRuleWords.head),words.tail,words.tail,true)
@@ -71,4 +82,13 @@ object RuleHelper {
   }
   
   
+  def applyRule(effects : List[MatchEffect], sentence : List[Segment]) : List[Segment] = {
+     
+    val sorted = effects.groupBy(f => f.effectOnIndex).map(p => p._2.reverse.head).toList.sortBy(f => f.effectOnIndex)
+    
+    sorted.foreach(f => sentence.apply(f.effectOnIndex).setClause(f.clauseNum))
+    sentence
+      
+    sentence;
+  }
 }

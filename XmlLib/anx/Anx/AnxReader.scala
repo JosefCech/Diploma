@@ -38,7 +38,7 @@ object AnxReader extends XmlReader {
     
    var level = -1
    var startClause = 0
-   var clauseNum = 0
+   var clauseNum = -1
    if (use)
    {
 	   val levelString = (segment \\ "@level").toString
@@ -46,7 +46,7 @@ object AnxReader extends XmlReader {
 	   val clauseNumString = (segment \\ "@clauseNum").toString
 	   level  = GetParametr(levelString, -1)
 	   startClause = GetParametr(startClauseString,0)
-	   clauseNum = GetParametr(clauseNumString,0);
+	   clauseNum = GetParametr(clauseNumString,-1);
    }
    var segmentGenerate: Segment = null
    val words = (segment\\"word").map(t => CreateMorfWord(t)).toList

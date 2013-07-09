@@ -164,13 +164,15 @@ object Segmenter  extends App {
         {
          var clauseInconsistent = 0
          var segmentInconsistent = 0
+         var analyzedSentence = 0
     	  sentences.foreach(t => {
 		       
 			  if (t.isClauseAnalyzed)
 			  { 
 			  
-			    if (!t.isClauseConsistent)
+			    if (!t.isClauseConsistent && t.isSegmentLevelAnalyzed)
 			    {
+			     // println(new AnalyzedSentence(t.ident, t.analyzedSegments))
 			      clauseInconsistent+= 1;
 			    }
 			    else if (t.isSegmentLevelAnalyzed && !t.isSegmentLevelConsinstent) 
@@ -179,13 +181,15 @@ object Segmenter  extends App {
 			    }
 			    else 
 			    {
+			      val analyzed = new AnalyzedSentence(t.ident, t.analyzedSegments) 
 			      if (t.segmentInfo.isEmpty)
 			      {
-			    	  Anx.AnxWriter.Write( resultOthersFolder.getPath() + '/' + t.segIdent + ".anx", t)
+			    	  Anx.AnxWriter.Write( resultOthersFolder.getPath() + '/' + t.segIdent + ".anx", analyzed)
 			      }
 			      else 
 			      {
-			          Anx.AnxWriter.Write(resultFolder.getPath + '/' + t.segIdent + ".anx", t)
+			          analyzedSentence += 1;
+			          Anx.AnxWriter.Write(resultFolder.getPath + '/' + t.segIdent + ".anx", analyzed)
 			      }
 			    } 
 			  }
@@ -197,7 +201,8 @@ object Segmenter  extends App {
     	  )
     	   println("clause inconsistent " + clauseInconsistent.toString)
     	   println("segment inconsistent " + segmentInconsistent.toString)
-    	   
+    	    println("analyzed sentence " + analyzedSentence.toString)
+    	  
 		  
         }
     }

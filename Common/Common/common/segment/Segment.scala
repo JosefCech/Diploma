@@ -51,6 +51,7 @@ trait Segment {
   def level =  _level
   def clause = _clause
   
+  def isSimpleComma : Boolean = words.filter(p => p.form == ",").length > 0
   
  override def toString : String  = words.map(s => s match {
     case m : MorfWord => m.form + " ("+ m.tag +")"
@@ -81,6 +82,7 @@ trait Segment {
   }
   
   def getStartNewClause : Boolean = this._startNewClause
+  
 }
 
 
@@ -114,8 +116,10 @@ class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int, val startNewCl
 	                                             }
 	                                       ).isEmpty
 
-	                                       
- 	 
+}
+object BaseSegment
+{
+  def createEmptySegment : Segment = new BaseSegment(List[Word](),-1) 	 
 }
 
 class Boundary( data : List[Any] , lmin : Int , lmax : Int  )

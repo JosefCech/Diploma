@@ -11,6 +11,6 @@
   <DevelopData Folder="../GoldenData/OutputGolden/development" />
   <HeldoutData Folder="../GoldenData/OutputGolden/heldout" />
   <TestData Folder="../GoldenData/OutputGolden/test" />
-  
+  <RuleFile File="AutomataRules.xml" />
   
 </configuration>
