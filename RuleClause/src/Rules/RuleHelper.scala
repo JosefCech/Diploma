@@ -86,7 +86,7 @@ object RuleHelper {
      
     val sorted = effects.groupBy(f => f.effectOnIndex).map(p => p._2.reverse.head).toList.sortBy(f => f.effectOnIndex)
     
-    sorted.foreach(f => sentence.apply(f.effectOnIndex).setClause(f.clauseNum))
+    sorted.foreach(f => sentence.apply(f.effectOnIndex).setClause(f.levelNum))
     sentence
       
     sentence;

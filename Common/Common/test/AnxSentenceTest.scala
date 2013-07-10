@@ -15,7 +15,7 @@ class AnxSentenceTest extends FunSuite {
 	 test("test anx sentence") {
 	 val words =  List( new MorfWord ("a","J^------------") , new MorfWord ("který","J,------------"), new MorfWord ("a","J^------------"))
 	 val sentence = new AnxSentence( List[Segment](new BaseSegment(words)))
-	 println(sentence.Segments.toString)   
+	 println(sentence.segments.toString)   
 	 0
 	 }
   

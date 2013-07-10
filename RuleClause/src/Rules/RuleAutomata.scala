@@ -31,7 +31,7 @@ object RuleAutomata {
     else {
       if (sentence.head._2 == firstSegment.head._2)
       {
-        println("match index")
+      
         val matchEffect = conditionMatch(sentence,rule)
         ruleMatch(sentence.tail,firstSegment.tail, rule, matchEffect :: acc)
       }
@@ -59,8 +59,6 @@ object RuleAutomata {
        else 
        {
          val compareSegments = RuleHelper.compareSegmentTemplate(sentence.head._1, condition.head)
-         println(sentence.head._1.GetTagString)
-         println(compareSegments)
             if (compareSegments)
             {
               val nextIndex = if (!acc.isEmpty){
@@ -147,8 +145,8 @@ object RuleAutomata {
   private def createMatchEffect(data : List[(Int, List[TaggedSegment])], effect : Effect) : MatchEffect = {
    // find effect on
     println(effect)
-   val indexObject : (Int,List[TaggedSegment]) = getObject(effect.effectOn, data)
-   val clauseChange : Int =  getClauseNum(effect, data) 
+   val indexObject : (Int,List[TaggedSegment]) = getObject(evalRefInt(effect.effectOn)._1, data)
+   val clauseChange : Int =  getLevel(effect.level, data) 
    println(indexObject)
    println(clauseChange)
    println("changeData")
@@ -187,10 +185,9 @@ object RuleAutomata {
    new MatchEffect(indexObject._1,clauseNum)
   }
   
-  private def getObject(index : String , data : List[(Int, List[TaggedSegment])]) 
+  private def getObject(index : Int , data : List[(Int, List[TaggedSegment])]) 
   : (Int, List[TaggedSegment]) = {
-    val indexInt = getIndex(index)
-    val result = data.filter(p => p._1 == indexInt)
+    val result = data.filter(p => p._1 == index)
     if (result.isEmpty) {
       (-1, List[TaggedSegment]())
     }
@@ -199,34 +196,38 @@ object RuleAutomata {
     }
   }
   
-  private def getIndex(index : String) : Int = {
-	  evalRefInt(index)
-  }
-  
-  
-  private def evalRefInt(index : String) : Int = {
-     try { 
-    index.replace("$", "").toInt
-    }
-    catch {
-      case  _ => -1; 
-    }
-  } 
-  private def getClauseNum(effect : Effect ,data : List[(Int, List[TaggedSegment])]  ) : Int = {
-   if (effect.clause.contains("$"))
-   {
-    val segmentData = getObject(effect.clause, data)
-    if (segmentData._2.isEmpty) {
+  private def getLevel(index : String, data : List[(Int,List[TaggedSegment])] ) : Int = {
+    val evalRef = evalRefInt(index)
+    val segObject = getObject(evalRef._1, data)
+    if (segObject._2.head.segment.level.getExactLevel + evalRef._2 < 0) {
       0
     }
     else {
-      segmentData._2.map(p => p.segment.clause).groupBy(f => f).head._1
+      segObject._2.head.segment.level.getExactLevel + evalRef._2
     }
-   }
-   else 
-   {
-      getIndex(effect.clause)
-   }
-   }
+  }
+  
+  private def evalRefInt(index : String) : (Int,Int) = {
+    
+    try { 
+      var refIndexLevel = ""
+      if (index.contains("+")) {
+        val data  = index.split("+")
+        (data.head.replace("$", "").toInt, data.tail.head.toInt)
+      }
+      else if  (index.contains("-"))
+      {
+        val data = index.split("-")
+        (data.head.replace("$", "").toInt, 0 - data.tail.head.toInt)
+      }
+      else {
+    	  (index.replace("$", "").toInt,0)
+      }
+    }
+    catch {
+      case  _ =>  (-1,0); 
+    }
+  } 
+
   
 } 

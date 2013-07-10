@@ -1,0 +1,5793 @@
+---Start-----------
+  level 0clause 1 segment : pøesto (Dg-------1A----) se (P7-X4----------)
+  level 0clause 1 segment : i (J^-------------)
+  level 0clause 1 segment : potom (Db-------------) mùe (VB-S---3P-AA---) stát (Vf--------A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) náhodné (AANS1----1A----)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : chvilkové (AANS1----1A----) rušení (NNNS1-----A----) na (RR--6----------) lince (NNFS6-----A----) poruší (VB-S---3P-AA---) pøedávanou (AAFS4----1A----) zprávu (NNFS4-----A----) a (J,-------------) k (RR--3----------) neèitelnosti (NNFS3-----N----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9406-001-p7s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 3 2 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2potom (Db-------------) mùe (VB-S---3P-AA---) stát (Vf--------A----)
+add 1 :3
+S0CXXX
+
+add 3 :4
+add 1 :5
+S1XX,X
+
+add 3 :6
+add 1 :7
+S2CX,X
+
+1 / 1 / 1 / 0 / 2 / 0 / 3 / 0
+
+---End-------------
+1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 3 2 true 
+ 0 0 false 
+   level 0clause 1 segment : pøesto (Dg-------1A----) se (P7-X4----------)
+  level 0clause 1 segment : i (J^-------------)
+  level 0clause 1 segment : potom (Db-------------) mùe (VB-S---3P-AA---) stát (Vf--------A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) náhodné (AANS1----1A----)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : chvilkové (AANS1----1A----) rušení (NNNS1-----A----) na (RR--6----------) lince (NNFS6-----A----) poruší (VB-S---3P-AA---) pøedávanou (AAFS4----1A----) zprávu (NNFS4-----A----) a (J,-------------) k (RR--3----------) neèitelnosti (NNFS3-----N----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9406-001-p7s1add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2potom (Db-------------) mùe (VB-S---3P-AA---) stát (Vf--------A----)
+add 1 :3
+S0CXXX
+
+add 3 :4
+add 1 :5
+S1XX,X
+
+add 3 :6
+add 1 :7
+S2CX,X
+
+1 / 1 / 1 / 0 / 2 / 0 / 3 / 0
+
+1 / true---Start-----------
+  level 0clause 0 segment : - (Z:-------------)
+  level 0clause 1 segment : ze (RV--2----------) zdrojù (NNIP2-----A----) blízkıch (AAIP2----1A----) ministerstvu (NNNS3-----A----) hospodáøství (NNNS2-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : svazu (NNIS3-----A----) prùmyslu (NNIS2-----A----) èr (NNFXX-----A---8) jsme (VB-P---1P-AA---) se (P7-X4----------) dovìdìli (VpMP---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) uzavøely (VpTP---XR-AA---) mezi (RR--7----------) sebou (P6-X7----------) tichou (AAFS4----1A----) dentlmenskou (AAFS4----1A----) dohodu (NNFS4-----A----) vzájemnì (Dg-------1A----) se (P7-X4----------) navrhovat (Vf--------A----) do (RR--2----------) bankrotu (NNIS2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9406-002-p14s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ add 8:0
+add 8:true
+true true
+add 8:1
+add 8:false
+false true
+add 1 :2
+S0XXXX
+
+add 4 :3svazu (NNIS3-----A----) prùmyslu (NNIS2-----A----) èr (NNFXX-----A---8) jsme (VB-P---1P-AA---) se (P7-X4----------) dovìdìli (VpMP---XR-AA---)
+add 1 :4
+S0CXXX
+
+add 3 :5
+add 1 :6
+S1CC,X
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : mùe (VB-S---3P-AA---) jím (PPZS7--3-------) bıt (Vf--------A----) kupní (AAFS1----1A----) smlouva (NNFS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : dìdické (AANS1----1A----) rozhodnutí (NNNS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : dohoda (NNFS1-----A----) o (RR--6----------) vydání (NNNS6-----A----) vìci (NNFS2-----A----)
+  level 0clause 0 segment : ( (Z:-------------)
+  level 1clause 2 segment : jedná (VB-S---3P-AA---)
+  level 1clause 2 segment : - (Z:-------------)
+  level 1clause 2 segment : li (TT-------------) se (P7-X4----------) o (RR--4----------) restituci (NNFS4-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : prostì (Dg-------1A----) nabıvací (AAIS1----1A----) titul (NNIS1-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9407-025-p13s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2dìdické (AANS1----1A----) rozhodnutí (NNNS1-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4dohoda (NNFS1-----A----) o (RR--6----------) vydání (NNNS6-----A----) vìci (NNFS2-----A----)
+add 10 :5false false
+add 10 :6true false
+add 10 :7true true
+add 5:8
+add 10 :9false false
+end update bracked( (Z:-------------)
+end update bracked
+add 1 :10
+B0XXXZ
+
+add 6 :false
+add 6 :1
+add 7 :11
+add 1 :12
+S0XXXX
+
+1 / 1 / 1 / 1 / 1 / 0 / 3 / 3 / 3 / 0 / 0 / 4 / 0
+
+prevLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange4 /0 / 11/1/11
+
+1
+
+1
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : napøíklad (Db-------------) inzertní (AAFS1----1A----) stránka (NNFS1-----A----) v (RR--6----------) èasopisu (NNIS6-----A---1) profit (NNIS1-----A----) reality (NNFP1-----A----) stojí (VB-S---3P-AA---) dvacet (Cn-S4----------) ètyøi (ClXP4----------) tisíc (ClXS2----------) korun (NNFP2-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 2 segment : za (RR--4----------) standardní (AAIS4----1A----) jednookénkovı (AAIS4----1A----) inzerát (NNIS4-----A----)
+  level 0clause 2 segment : tudí (J^-------------)
+  level 0clause 2 segment : zaplatíte (VB-P---2P-AA---) asi (TT-------------) dva (ClYP4----------)
+  level 0clause 2 segment : a (J^-------------)
+  level 0clause 2 segment : pùl (NNFS4-----A----) tisíce (NNIS2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9407-025-p7s41 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2za (RR--4----------) standardní (AAIS4----1A----) jednookénkovı (AAIS4----1A----) inzerát (NNIS4-----A----)
+add 1 :3
+S0XXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 4 :6pùl (NNFS4-----A----) tisíce (NNIS2-----A----)
+add 1 :7
+S0XXXX
+
+---End-------------
+---Start-----------
+  level 1clause 1 segment : pokud (J,-------------) jí (PPFS3--3-------) vyhoví (VB-S---3P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : je (VB-S---3P-AA---) povinen (ACYS------A----) urèit (Vf--------A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : jak (Db-------------) budou (VB-P---3F-AA---) vedeny (VsTP---XX-AP---) záznamní (AAFP1----1A----) povinnosti (NNFP1-----A----)
+  level 1clause 3 segment : ( (Z:-------------)
+  level 2clause 3 segment : § (NNIXX-----A---1) 11 (C=-------------) zákona (NNIS2-----A----) 337 (C=-------------) / (Z:-------------) 1992 (C=-------------) sb (NNFXX-----A---8)
+  level 2clause 3 segment : . (Z:-------------)
+  level 1clause 3 segment : ) (Z:-------------)
+  level 1clause 3 segment : a (J^-------------)
+  level 1clause 3 segment : individuální (AAIS4----1A----) zpùsob (NNIS4-----A----) stanovení (NNNS2-----A----) daòové (AAFS2----1A----) povinnosti (NNFS2-----A----)
+  level 1clause 3 segment : ( (Z:-------------)
+  level 2clause 3 segment : pomìrnım (AAIS7----1A----) odpoètem (NNIS7-----A----)
+  level 1clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9416-005-p12s31 1 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 0 false 
+ 3 0 false 
+ 0 1 false 
+ 3 1 false 
+ 3 0 false 
+ 3 0 false 
+ 3 0 false 
+ 3 0 false 
+ 3 1 false 
+ 0 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0CXXX
+
+add 5:4
+add 10 :5false false
+add 10 :6true false
+add 10 :7true false
+add 10 :8true false
+add 1 :9
+B0XXXZ
+
+add 6 :false
+add 6 :0
+add 7 :10
+add 10 :11false false
+add 10 :12true false
+add 10 :13true false
+add 1 :14
+B0XXXZ
+
+1 / 0 / 2 / 0 / 3 / 3 / 0 / 3 / 3 / 0 / 4 / 4 / 4 / 0 / 0
+
+prevLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange4 /0 / 10/3/12
+
+3
+
+3
+
+3
+
+3
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : štoèek (NNIS1-----A----)
+  level 0clause 0 segment : : (Z:-------------)
+  level 0clause 2 segment : chtìli (VpMP---XR-AA---) jste (VB-P---2P-AA---) vìdìt (Vf--------A----)
+cmpr9416-005-p2s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2chtìli (VpMP---XR-AA---) jste (VB-P---2P-AA---) vìdìt (Vf--------A----)
+---End-------------
+---Start-----------
+  level 0clause 1 segment : stabilizace (NNFS1-----A----) chodu (NNIS2-----A----) firmy (NNFS2-----A----) se (RV--7----------) spolehlivımi (AAMP7----1A----) lidmi (NNMP7-----A----) je (VB-S---3P-AA---) podmínkou (NNFS7-----A----) pro (RR--4----------) to (PDNS4----------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : aby (J,-------------) se (P7-X4----------) majitelka (NNFS1-----A----) mohla (VpQW---XR-AA---) více (Dg-------2A----) vìnovat (Vf--------A----) návrháøské (AAFS3----1A----) práci (NNFS3-----A----)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : a (J^-------------)
+  level 1clause 2 segment : vedle (RR--2----------) konfekce (NNFS2-----A----) pro (RR--4----------) obchodní (AAIP4----1A----) domy (NNIP4-----A----) vytváøet (Vf--------A----) vıluènìjší (AAFP4----2A----) kolekce (NNFP4-----A----) pro (RR--4----------) módní (AAIP4----1A----) salony (NNIP4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9416-025-p17s11 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1CX,X
+
+add 1 :4
+B0XXXP
+
+add 6 :true
+add 6 :1
+add 6 :5
+add 1 :6
+S0XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : obecnì (Dg-------1A----) lze (VB-S---3P-AA---) øíci (Vf--------A---1)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) zamìstnanec (NNMS1-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 2clause 3 segment : kterı (P4YS1----------) na (RR--6----------) základì (NNIS6-----A----) dohody (NNFS2-----A----) o (RR--6----------) hmotné (AAFS6----1A----) odpovìdnosti (NNFS6-----A----) pøevzal (VpYS---XR-AA---) tuto (PDFS4----------) odpovìdnost (NNFS4-----A----) za (RR--4----------) svìøené (AAIP4----1A----) pøedmìty (NNIP4-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : v (RR--6----------) pøípadì (NNIS6-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 2clause 4 segment : e (J,-------------) pøi (RR--6----------) vyúètování (NNNS6-----A----)
+  level 2clause 0 segment : - (Z:-------------)
+  level 3clause 5 segment : které (P4NS4----------) je (VB-S---3P-AA---) zamìstnanec (NNMS1-----A----) povinen (ACYS------A----) provést (Vf--------A----)
+  level 2clause 0 segment : - (Z:-------------)
+  level 2clause 4 segment : vznikne (VB-S---3P-AA---) schodek (NNIS1-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : nese (VB-S---3P-AA---) za (RR--4----------) takto (Db-------------) vzniklı (AAIS4----1A----) schodek (NNIS4-----A----) odpovìdnost (NNFS4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9416-035-p10s11 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 3 2 true 
+ 3 2 false 
+ 3 2 false 
+ 0 0 false 
+ 4 3 true 
+ 4 3 false 
+ 4 3 true 
+ 0 3 false 
+ 5 3 false 
+ 0 3 false 
+ 6 3 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1XX,X
+
+add 3 :4
+add 1 :5
+S2CX4X
+
+add 4 :6v (RR--6----------) pøípadì (NNIS6-----A----)
+add 1 :7
+S2XXXX
+
+add 3 :8
+add 10 :9false true
+add 10 :10true false
+add 10 :11true true
+add 5:12
+add 1 :13
+S3CXXX
+
+add 5:14
+add 1 :15
+S3CXXX
+
+1 / 0 / 2 / 0 / 3 / 3 / 3 / 0 / 4 / 4 / 4 / 0 / 5 / 0 / 6 / 0
+
+---End-------------
+1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 3 2 true 
+ 3 2 false 
+ 3 2 false 
+ 0 0 false 
+ 4 3 true 
+ 4 3 false 
+ 4 3 true 
+ 0 3 false 
+ 5 3 false 
+ 0 3 false 
+ 6 3 false 
+ 0 0 false 
+   level 0clause 1 segment : obecnì (Dg-------1A----) lze (VB-S---3P-AA---) øíci (Vf--------A---1)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) zamìstnanec (NNMS1-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 2clause 3 segment : kterı (P4YS1----------) na (RR--6----------) základì (NNIS6-----A----) dohody (NNFS2-----A----) o (RR--6----------) hmotné (AAFS6----1A----) odpovìdnosti (NNFS6-----A----) pøevzal (VpYS---XR-AA---) tuto (PDFS4----------) odpovìdnost (NNFS4-----A----) za (RR--4----------) svìøené (AAIP4----1A----) pøedmìty (NNIP4-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : v (RR--6----------) pøípadì (NNIS6-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 2clause 4 segment : e (J,-------------) pøi (RR--6----------) vyúètování (NNNS6-----A----)
+  level 2clause 0 segment : - (Z:-------------)
+  level 3clause 5 segment : které (P4NS4----------) je (VB-S---3P-AA---) zamìstnanec (NNMS1-----A----) povinen (ACYS------A----) provést (Vf--------A----)
+  level 2clause 0 segment : - (Z:-------------)
+  level 2clause 4 segment : vznikne (VB-S---3P-AA---) schodek (NNIS1-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : nese (VB-S---3P-AA---) za (RR--4----------) takto (Db-------------) vzniklı (AAIS4----1A----) schodek (NNIS4-----A----) odpovìdnost (NNFS4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9416-035-p10s1add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1XX,X
+
+add 3 :4
+add 1 :5
+S2CX4X
+
+add 4 :6v (RR--6----------) pøípadì (NNIS6-----A----)
+add 1 :7
+S2XXXX
+
+add 3 :8
+add 10 :9false true
+add 10 :10true false
+add 10 :11true true
+add 5:12
+add 1 :13
+S3CXXX
+
+add 5:14
+add 1 :15
+S3CXXX
+
+1 / 0 / 2 / 0 / 3 / 3 / 3 / 0 / 4 / 4 / 4 / 0 / 5 / 0 / 6 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : v (RR--6----------) pøípadech (NNIP6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kde (Db-------------) se (P7-X4----------) uzavírá (VB-S---3P-AA---) dohoda (NNFS1-----A----) o (RR--6----------) kolektivní (AAFS6----1A----) hmotné (AAFS6----1A----) odpovìdnosti (NNFS6-----A----) za (RR--4----------) škodu (NNFS4-----A----) s (RR--7----------) více (Dg-------2A----) zamìstnanci (NNMP7-----A----) najednou (Db-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : mùe (VB-S---3P-AA---) zamìstnanec (NNMS1-----A----) od (RR--2----------) této (PDFS2----------) kolektivní (AAFS2----1A----) dohody (NNFS2-----A----) odstoupit (Vf--------A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : kdy (J,-------------) je (VB-S---3P-AA---) na (RR--4----------) pracovištì (NNNS4-----A----) zaøazován (VsYS---XX-AP---) jinı (AAMS1----1A----) zamìstnanec (NNMS1-----A----)
+  level 0clause 0 segment : nebo (J^-------------)
+  level 1clause 4 segment : je (VB-S---3P-AA---) ustanovován (VsYS---XX-AP---) jinı (AAMS1----1A----) vedoucí (NNMS1-----A----)
+  level 1clause 4 segment : nebo (J^-------------)
+  level 1clause 4 segment : jeho (PSXXXZS3-------) zástupce (NNMS1-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9416-035-p15s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 0 1 false 
+ 4 1 false 
+ 4 1 false 
+ 4 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2kde (Db-------------) se (P7-X4----------) uzavírá (VB-S---3P-AA---) dohoda (NNFS1-----A----) o (RR--6----------) kolektivní (AAFS6----1A----) hmotné (AAFS6----1A----) odpovìdnosti (NNFS6-----A----) za (RR--4----------) škodu (NNFS4-----A----) s (RR--7----------) více (Dg-------2A----) zamìstnanci (NNMP7-----A----) najednou (Db-------------)
+add 1 :3
+S0CXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 3 :6
+add 1 :7
+S1CX,X
+
+add 5:8
+add 1 :9
+S1CXXX
+
+add 4 :10jeho (PSXXXZS3-------) zástupce (NNMS1-----A----)
+add 1 :11
+S1XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : pøevánì (Dg-------1A----) jde (VB-S---3P-AA---) o (RR--4----------) nápady (NNIP4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : jak (Db-------------) pøekonat (Vf--------A----) drobné (AAFP4----1A----)
+  level 0clause 1 segment : i (J^-------------)
+  level 0clause 1 segment : vìtší (AAFP4----2A----) potíe (NNFP4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : jak (Db-------------) v (RR--6----------) obchodì (NNIS6-----A----)
+  level 0clause 1 segment : èi (J^-------------)
+  level 0clause 1 segment : provozovnì (NNFS6-----A----) slueb (NNFP2-----A----) získávat (Vf--------A----) další (AAMP4----1A----) zákazníky (NNMP4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : èím (PQ--7----------) obohatit (Vf--------A----) nabídku (NNFS4-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : zlepšit (Vf--------A----) sluby (NNFP4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9417-017-p3s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2jak (Db-------------) pøekonat (Vf--------A----) drobné (AAFP4----1A----)
+add 1 :3
+S0XXXX
+
+add 4 :4vìtší (AAFP4----2A----) potíe (NNFP4-----A----)
+add 1 :5
+S0XXXX
+
+add 4 :6jak (Db-------------) v (RR--6----------) obchodì (NNIS6-----A----)
+add 1 :7
+S0XXXX
+
+add 4 :8provozovnì (NNFS6-----A----) slueb (NNFP2-----A----) získávat (Vf--------A----) další (AAMP4----1A----) zákazníky (NNMP4-----A----)
+add 1 :9
+S0XXXX
+
+add 3 :10
+add 1 :11
+S1XXQX
+
+add 4 :12zlepšit (Vf--------A----) sluby (NNFP4-----A----)
+add 1 :13
+S1XXXX
+
+1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 0 / 2 / 2 / 2 / 0
+
+---End-------------
+1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+   level 0clause 1 segment : pøevánì (Dg-------1A----) jde (VB-S---3P-AA---) o (RR--4----------) nápady (NNIP4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : jak (Db-------------) pøekonat (Vf--------A----) drobné (AAFP4----1A----)
+  level 0clause 1 segment : i (J^-------------)
+  level 0clause 1 segment : vìtší (AAFP4----2A----) potíe (NNFP4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : jak (Db-------------) v (RR--6----------) obchodì (NNIS6-----A----)
+  level 0clause 1 segment : èi (J^-------------)
+  level 0clause 1 segment : provozovnì (NNFS6-----A----) slueb (NNFP2-----A----) získávat (Vf--------A----) další (AAMP4----1A----) zákazníky (NNMP4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : èím (PQ--7----------) obohatit (Vf--------A----) nabídku (NNFS4-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : zlepšit (Vf--------A----) sluby (NNFP4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9417-017-p3s2add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2jak (Db-------------) pøekonat (Vf--------A----) drobné (AAFP4----1A----)
+add 1 :3
+S0XXXX
+
+add 4 :4vìtší (AAFP4----2A----) potíe (NNFP4-----A----)
+add 1 :5
+S0XXXX
+
+add 4 :6jak (Db-------------) v (RR--6----------) obchodì (NNIS6-----A----)
+add 1 :7
+S0XXXX
+
+add 4 :8provozovnì (NNFS6-----A----) slueb (NNFP2-----A----) získávat (Vf--------A----) další (AAMP4----1A----) zákazníky (NNMP4-----A----)
+add 1 :9
+S0XXXX
+
+add 3 :10
+add 1 :11
+S1XXQX
+
+add 4 :12zlepšit (Vf--------A----) sluby (NNFP4-----A----)
+add 1 :13
+S1XXXX
+
+1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 0 / 2 / 2 / 2 / 0
+
+1 / true---Start-----------
+  level 1clause 1 segment : kdy (J,-------------) se (P7-X4----------) dívám (VB-S---1P-AA---) na (RR--4----------) velkoplošné (AAFP4----1A----) reklamy (NNFP4-----A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : trièka (NNNP4-----A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : do (RR--2----------) novin (NNFP2-----A----)
+  level 1clause 1 segment : a (J^-------------)
+  level 1clause 1 segment : èasopisù (NNIP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : tak (Db-------------) si (P7-X3----------) øíkám (VB-S---1P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : e (J,-------------) co (PQ--1----------) nevidìt (Vf--------N----) bychom (Vc-P---1-------) tu (Db------------1) mìli (VpMP---XR-AA---) mít (Vf--------A----) pìknou (AAFS4----1A----) cauzièku (NNFS4-----A----)
+  level 1clause 3 segment : , (Z:-------------)
+  level 1clause 3 segment : zabıvající (AGFS4-----A----) se (P7-X4----------) ochranou (NNFS7-----A----) bankovek (NNFP2-----A----)
+  level 1clause 3 segment : , (Z:-------------)
+  level 1clause 3 segment : mincí (NNFP2-----A----)
+  level 1clause 3 segment : a (J^-------------)
+  level 1clause 3 segment : vùbec (Db-------------) symbolù (NNIP2-----A----) našich (PSXP2-P1-------) penìz (NNIP2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9417-027-p3s11 1 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0XXXX
+
+add 4 :4do (RR--2----------) novin (NNFP2-----A----)
+add 1 :5
+S0XXXX
+
+add 4 :6èasopisù (NNIP2-----A----)
+add 1 :7
+S0XXXX
+
+add 4 :8tak (Db-------------) si (P7-X3----------) øíkám (VB-S---1P-AA---)
+add 1 :9
+S0CXXX
+
+add 3 :10
+add 1 :11
+S1CX,X
+
+add 4 :12zabıvající (AGFS4-----A----) se (P7-X4----------) ochranou (NNFS7-----A----) bankovek (NNFP2-----A----)
+add 1 :13
+S1XXXX
+
+add 4 :14mincí (NNFP2-----A----)
+add 1 :15
+S1XXXX
+
+add 4 :16vùbec (Db-------------) symbolù (NNIP2-----A----) našich (PSXP2-P1-------) penìz (NNIP2-----A----)
+add 1 :17
+S1XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : a (J,-------------) mi (PH-S3--1-------) to (PDNS1----------) nìkdy (Db-------------) pøipadá (VB-S---3P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) vıtvarníci (NNMP1-----A----)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : textaøi (NNMP1-----A----)
+  level 1clause 2 segment : a (J^-------------)
+  level 1clause 2 segment : vùbec (Db-------------) lidé (NNMP1-----A---1) z (RR--2----------) propagace (NNFS2-----A----) nemají (VB-P---3P-NA---) nápady (NNIP4-----A----)
+  level 1clause 2 segment : a (J^-------------)
+  level 1clause 2 segment : inspiraci (NNFS4-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 1clause 3 segment : navíc (Db-------------) nevìdí (VB-P---3P-NA--1)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 4 segment : e (J,-------------) peníze (NNIP4-----A----) je (VB-S---3P-AA---) moné (AANS1----1A----) a (J,-------------) na (RR--4----------) vıjimky (NNFP4-----A----)
+  level 2clause 0 segment : - (Z:-------------)
+  level 3clause 5 segment : které (P4YP4----------) stanoví (VB-S---3P-AA---) vyhláška (NNFS1-----A----) èeské (AAFS2----1A----) národní (AAFS2----1A----) banky (NNFS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 4clause 6 segment : kterou (P4FS4----------) tímto (PDZS7----------) doporuèuji (VB-S---1P-AA--1) k (RR--3----------) prostudování (NNNS3-----A----)
+  level 2clause 0 segment : - (Z:-------------)
+  level 2clause 4 segment : reprodukovat (Vf--------A----) jen (TT-------------) se (RV--7----------) souhlasem (NNIS7-----A----) ènb (NNFXX-----A---8)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9417-027-p3s21 1 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 0 1 false 
+ 3 1 false 
+ 0 0 false 
+ 4 2 true 
+ 4 2 false 
+ 0 2 true 
+ 4 0 false 
+ 4 3 true 
+ 4 3 false 
+ 4 3 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 3 :2
+add 1 :3
+S1XX,X
+
+add 4 :4textaøi (NNMP1-----A----)
+add 1 :5
+S1XXXX
+
+add 4 :6vùbec (Db-------------) lidé (NNMP1-----A---1) z (RR--2----------) propagace (NNFS2-----A----) nemají (VB-P---3P-NA---) nápady (NNIP4-----A----)
+add 1 :7
+S1CXXX
+
+add 4 :8inspiraci (NNFS4-----A----)
+add 1 :9
+S1XXXX
+
+add 5:10
+add 1 :11
+S1CXXX
+
+add 3 :12
+add 10 :13false true
+add 10 :14true false
+add 10 :15true false
+add 10 :16true false
+add 10 :17true true
+add 5:18
+add 1 :19
+S3XXXX
+
+1 / 0 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 0 / 3 / 0 / 4 / 4 / 0 / 4 / 4 / 0 / 5 / 0
+
+prevLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange5 /3 / 18/4/18
+
+4
+
+4
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : podnikatelé (NNMP1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : obchodníci (NNMP1-----A----)
+  level 0clause 1 segment : i (J^-------------)
+  level 0clause 1 segment : zákazníci (NNMP1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : právnické (AAFP1----1A----)
+  level 1clause 1 segment : i (J^-------------)
+  level 1clause 1 segment : fyzické (AAFP1----1A----) osoby (NNFP1-----A----)
+  level 0clause 1 segment : ) (Z:-------------)
+  level 0clause 1 segment : by (Vc-------------) si (P7-X3----------) mìli (VpMP---XR-AA---) zafixovat (Vf--------A----) do (RR--2----------) pamìti (NNFS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) mohou (VB-P---3P-AA--1) odmítnout (Vf--------A----) pøijetí (NNNS4-----A----) mincí (NNFP2-----A----) nad (RR--4----------) deset (Cn-S4----------) kusù (NNIP2-----A----) stejné (AAFS2----1A----) nominální (AAFS2----1A----) hodnoty (NNFS2-----A----)
+  level 1clause 2 segment : nebo (J^-------------)
+  level 1clause 2 segment : mincí (NNFP2-----A----) nad (RR--4----------) èástku (NNFS4-----A----) sto (NNNS1-----A----) korun (NNFP2-----A----) v (RR--6----------) pøípadì (NNIS6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 3 segment : e (J,-------------) by (Vc-------------) šlo (VpNS---XR-AA---) o (RR--4----------) mince (NNFP4-----A----) do (RR--2----------) hodnoty (NNFS2-----A----) deset (Cn-S1----------) korun (NNFP2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+cmpr9417-027-p6s31 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+ 3 2 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2obchodníci (NNMP1-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4zákazníci (NNMP1-----A----)
+add 10 :5false false
+add 10 :6true false
+add 10 :7true false
+add 10 :8true false
+add 10 :9true false
+add 6 :true
+add 6 :1
+add 6 :10
+add 1 :11
+S0CXXX
+
+add 3 :12
+add 1 :13
+S1CX,X
+
+add 5:14
+add 1 :15
+S1XXXX
+
+add 3 :16
+add 1 :17
+S2CX,X
+
+1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 0 / 1 / 0 / 2 / 0 / 3 / 0 / 4 / 0
+
+prevLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange3 /1 / 14/2/14
+
+2
+
+2
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : stanislav (NNMS1-----A----) berger (NNMS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : trenér (NNMS1-----A----) sparty (NNFP1-----A----)
+  level 0clause 0 segment : : (Z:-------------)
+  level 0clause 0 segment : " (Z:-------------)
+  level 1clause 2 segment : nezachytili (VpMP---XR-NA---) jsme (VB-P---1P-AA---) zaèátek (NNIS4-----A----) utkání (NNNP1-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-032-p2s31 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2trenér (NNMS1-----A----) sparty (NNFP1-----A----)
+add 1 :3
+S0XXXX
+
+add 1 :4
+B0XXXZ
+
+add 5:5
+add 1 :6
+S0CXXX
+
+1 / 1 / 1 / 0 / 0 / 2 / 0
+
+nextLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange1 /0 / 0/2/5
+
+add0| 1 | 0 | 5 | 2
+add1| 1 | 0 | 5 | 2
+add2| 1 | 0 | 5 | 2
+change3/ 1
+add3| 1 | 0 | 5 | 2
+change4/ 1
+add4| 1 | 0 | 5 | 2
+change5/ 1
+add5| 1 | 0 | 5 | 2
+add6| 0 | 0 | 5 | 2
+---End-------------
+---Start-----------
+  level 0clause 1 segment : litvínov (NNIS1-----A----)
+  level 0clause 1 segment : - (Z:-------------)
+  level 0clause 1 segment : jihlava (NNFS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : 6 (C=-------------)
+  level 1clause 1 segment : : (Z:-------------)
+  level 1clause 1 segment : 4 (C=-------------)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+ln95040-032-p2s5A1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : uvedla (VpQW---XR-AA---) jej (PPZS4--3------2) v (RR--6----------) reii (NNFS6-----A----) jany (NNFS2-----A----) kališové (NNFS2-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 0 segment : pod (RR--7----------) novım (AAIS7----1A----) názvem (NNIS7-----A----) konì (NNMP1-----A----) o (RR--6----------) tom (PDZS6----------) nemusej (VB-P---3P-NA--6)
+  level 0clause 2 segment : ' (Z:-------------)
+  level 0clause 2 segment : vìdìt (Vf--------A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-042-p2s41 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 5:2
+add 1 :3
+S0CXXX
+
+add 4 :4vìdìt (Vf--------A----)
+add 1 :5
+S0XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : reijní (AAFS1----1A----) interpretace (NNFS1-----A----) jany (NNFS2-----A----) kališové (NNFS2-----A----) je (VB-S---3P-AA---) nesena (VsQW---XX-AP---) vlnobitím (NNNS7-----A----) sentimentu (NNIS2-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 2 segment : ve (RV--6----------) chvílích (NNFP6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : kdy (Db-------------) se (P7-X4----------) jianskı (AAIS1----1A----) temperament (NNIS1-----A----) neodbytnì (Dg-------1N----) dere (VB-S---3P-AA---) na (RR--4----------) povrch (NNIS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : reisérka (NNFS1-----A----) odvánì (Dg-------1A----) nasazuje (VB-S---3P-AA---) prostøedky (NNIP4-----A----) silné (AAFS2----1A----) exprese (NNFS2-----A----)
+  level 0clause 2 segment : a (J^-------------)
+  level 0clause 2 segment : naturalismu (NNIS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 4 segment : které (P4IP1----------)
+  level 1clause 4 segment : však (J^-------------)
+  level 1clause 4 segment : jsou (VB-P---3P-AA---) pouhou (AAFS7----1A----) vnìjší (AAFS7----1A----) ilustrací (NNFS7-----A----)
+  level 1clause 4 segment : ( (Z:-------------)
+  level 2clause 4 segment : napøíklad (Db-------------) scéna (NNFS1-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 3clause 5 segment : kdy (Db-------------) pepe (NNMS1-----A----) znásilní (VB-S---3P-AA---) marii (NNFS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 4 segment : èi (J^-------------)
+  level 3clause 4 segment : závìreèná (AAFS1----1A----) rvaèka (NNFS1-----A----) obou (ClXP2----------) milencù (NNMP2-----A----) s (RR--7----------) následnou (AAFS7----1A----) katarzí (NNFS7-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-042-p4s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 0 false 
+ 3 0 false 
+ 3 0 false 
+ 0 0 false 
+ 4 1 true 
+ 4 1 false 
+ 4 1 false 
+ 0 1 false 
+ 5 2 false 
+ 5 2 false 
+ 5 2 false 
+ 5 2 false 
+ 5 2 false 
+ 5 2 false 
+ 0 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2ve (RV--6----------) chvílích (NNFP6-----A----)
+add 1 :3
+S0XXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 5:6
+add 1 :7
+S0CXXX
+
+add 4 :8naturalismu (NNIS2-----A----)
+add 1 :9
+S0XXXX
+
+add 3 :10
+add 1 :11
+S1XX4X
+
+add 4 :12jsou (VB-P---3P-AA---) pouhou (AAFS7----1A----) vnìjší (AAFS7----1A----) ilustrací (NNFS7-----A----)
+add 10 :13false false
+add 10 :14true false
+add 10 :15true false
+add 10 :16true false
+add 10 :17true false
+add 10 :18true false
+add 10 :19true false
+add 10 :20true false
+end update bracked( (Z:-------------)
+end update bracked
+add 1 :21
+B1XXXZ
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : na (RR--4----------) rozdíl (NNIS4-----A----) od (RR--2----------) èeskıch (AAFP2----1A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : moravskıch (AAFP2----1A----) hor (NNFP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kde (Db-------------) jsou (VB-P---3P-AA---) lidská (AANP1----1A----) sídla (NNNP1-----A----) poloena (VsQW---XX-AP---) v (RR--6----------) údolích (NNNP6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : leí (VB-S---3P-AA---) boí (AAIS1----1A----) dar (NNIS1-----A----) na (RR--6----------) vysoké (AAFS6----1A----) náhorní (AAFS6----1A----) plošinì (NNFS6-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-062-p10s121 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2moravskıch (AAFP2----1A----) hor (NNFP2-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4kde (Db-------------) jsou (VB-P---3P-AA---) lidská (AANP1----1A----) sídla (NNNP1-----A----) poloena (VsQW---XX-AP---) v (RR--6----------) údolích (NNNP6-----A----)
+add 1 :5
+S0CXXX
+
+add 5:6
+add 1 :7
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 0 segment : sny (NNIP1-----A----) pro (RR--4----------) èlovìka (NNMS4-----A----) svázaného (AAMS4----1A----) nekompromisnì (Dg-------1N----) šedım (AANS7----1A----) zamìstnáním (NNNS7-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : odsouzeného (AAMS4----1A----) k (RR--3----------) ivotu (NNIS3-----A----) uprostøed (Db-------------) hektickıch (AAIP2----1A----) panelákù (NNIP2-----A----)
+  level 0clause 2 segment : a (J^-------------)
+  level 0clause 2 segment : k (RR--3----------) øevu (NNIS3-----A----)
+  level 0clause 2 segment : a (J^-------------)
+  level 0clause 2 segment : špínì (NNFS3-----A----) velkomìsta (NNNS2-----A----) znamená (VB-S---3P-AA---) pobyt (NNIS1-----A----) v (RR--6----------) tisícimetrové (AAFS6----1A----) vıšce (NNFS6-----A----) na (RR--6----------) vrcholu (NNIS6-----A----) zvlnìného (AAIS2----1A----) høebenu (NNIS2-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : vysoko (Dg-------1A----) nad (RR--7----------) údolím (NNNS7-----A----) ohøe (NNFS2-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : v (RR--6----------) krápající (AGFS6-----A----) krajinì (NNFS6-----A----) plné (AAFS6----1A----) civilizovanıch (AAIP2----1A----) lesù (NNIP2-----A----)
+  level 0clause 2 segment : a (J^-------------)
+  level 0clause 2 segment : velikıch (AAIP2----1A----) jeøábù (NNIP2-----A----) kolem (RR--2----------) cest (NNFP2-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : v (RR--6----------) domì (NNIS6-----A----) obklopeném (AAIS6----1A----) ze (RV--2----------) všech (PLXP2----------) stran (NNFP2-----A----) lesem (NNIS7-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : zcela (Db-------------) oddìlenı (AAIS4----1A----) jinı (AAIS4----1A----) pøíbìh (NNIS4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-062-p10s141 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2odsouzeného (AAMS4----1A----) k (RR--3----------) ivotu (NNIS3-----A----) uprostøed (Db-------------) hektickıch (AAIP2----1A----) panelákù (NNIP2-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4k (RR--3----------) øevu (NNIS3-----A----)
+add 1 :5
+S0XXXX
+
+add 5:6
+add 1 :7
+S0CXXX
+
+add 4 :8vysoko (Dg-------1A----) nad (RR--7----------) údolím (NNNS7-----A----) ohøe (NNFS2-----A----)
+add 1 :9
+S0XXXX
+
+add 4 :10v (RR--6----------) krápající (AGFS6-----A----) krajinì (NNFS6-----A----) plné (AAFS6----1A----) civilizovanıch (AAIP2----1A----) lesù (NNIP2-----A----)
+add 1 :11
+S0XXXX
+
+add 4 :12velikıch (AAIP2----1A----) jeøábù (NNIP2-----A----) kolem (RR--2----------) cest (NNFP2-----A----)
+add 1 :13
+S0XXXX
+
+add 4 :14v (RR--6----------) domì (NNIS6-----A----) obklopeném (AAIS6----1A----) ze (RV--2----------) všech (PLXP2----------) stran (NNFP2-----A----) lesem (NNIS7-----A----)
+add 1 :15
+S0XXXX
+
+add 4 :16zcela (Db-------------) oddìlenı (AAIS4----1A----) jinı (AAIS4----1A----) pøíbìh (NNIS4-----A----)
+add 1 :17
+S0XXXX
+
+1 / 1 / 1 / 1 / 1 / 0 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 0
+
+nextLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange1 /0 / 0/2/16
+
+add0| 1 | 0 | 16 | 2
+add1| 1 | 0 | 16 | 2
+add2| 1 | 0 | 16 | 2
+add3| 1 | 0 | 16 | 2
+add4| 1 | 0 | 16 | 2
+change5/ 1
+add5| 1 | 0 | 16 | 2
+change6/ 1
+add6| 1 | 0 | 16 | 2
+change7/ 1
+add7| 1 | 0 | 16 | 2
+change8/ 1
+add8| 1 | 0 | 16 | 2
+change9/ 1
+add9| 1 | 0 | 16 | 2
+change10/ 1
+add10| 1 | 0 | 16 | 2
+change11/ 1
+add11| 1 | 0 | 16 | 2
+change12/ 1
+add12| 1 | 0 | 16 | 2
+change13/ 1
+add13| 1 | 0 | 16 | 2
+change14/ 1
+add14| 1 | 0 | 16 | 2
+change15/ 1
+add15| 1 | 0 | 16 | 2
+change16/ 1
+add16| 1 | 0 | 16 | 2
+add17| 0 | 0 | 16 | 2
+---End-------------
+---Start-----------
+  level 1clause 1 segment : zatímco (J,-------------) jim (PPXP3--3-------) vypráví (VB-S---3P-AA---) dìsivé (AAFP4----1A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : avšak (J^-------------)
+  level 1clause 1 segment : pravdivé (AAFP4----1A----) pøíhody (NNFP4-----A----) o (RR--6----------) øádìní (NNNS6-----A----) tajemného (AAMS2----1A----) obyvatele (NNMS2-----A----) rašeliniš (NNNP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : jeho (PSXXXZS3-------) syn (NNMS1-----A----) vykuchává (VB-S---3P-AA---) mrtvé (AANS4----1A----) tìlo (NNNS4-----A----) zajíce (NNMS2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-062-p2s61 1 false 
+ 0 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 1 :2
+B0XXXP
+
+add 6 :false
+add 6 :0
+add 7 :3
+add 1 :4
+S0XXXX
+
+add 4 :5jeho (PSXXXZS3-------) syn (NNMS1-----A----) vykuchává (VB-S---3P-AA---) mrtvé (AANS4----1A----) tìlo (NNNS4-----A----) zajíce (NNMS2-----A----)
+add 1 :6
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : pod (RR--7----------) dohledem (NNIS7-----A----) obecního (AAMS2----1A----) policisty (NNMS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kterı (P4YS1----------) stojí (VB-S---3P-AA---) uprostøed (Db-------------) køiovatky (NNFS2-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 1clause 3 segment : pohrává (VB-S---3P-AA---) si (P7-X3----------) se (RV--7----------) svım (P8ZS7----------) obuškem (NNIS7-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : pøecházejí (VB-P---3P-AA---) silnici (NNFS4-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 4 segment : míøí (VB-P---3P-AA---) k (RR--3----------) pestrobarevnım (AAIP3----1A----) stánkùm (NNIP3-----A----) s (RR--7----------) cigaretami (NNFP7-----A----)
+  level 0clause 4 segment : a (J^-------------)
+  level 0clause 4 segment : alkoholem (NNIS7-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-062-p4s21 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 1 false 
+ 3 1 false 
+ 0 1 false 
+ 4 1 false 
+ 0 1 false 
+ 5 1 false 
+ 5 1 false 
+ 5 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 1 :3
+S1CX4X
+
+add 5:4
+add 1 :5
+S1CXXX
+
+add 5:6
+add 1 :7
+S1CXXX
+
+add 5:8
+add 1 :9
+S1CXXX
+
+add 4 :10alkoholem (NNIS7-----A----)
+add 1 :11
+S1XXXX
+
+1 / 0 / 2 / 0 / 3 / 0 / 4 / 0 / 5 / 5 / 5 / 0
+
+---End-------------
+1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 1 false 
+ 3 1 false 
+ 0 1 false 
+ 4 1 false 
+ 0 1 false 
+ 5 1 false 
+ 5 1 false 
+ 5 1 false 
+ 0 0 false 
+   level 0clause 1 segment : pod (RR--7----------) dohledem (NNIS7-----A----) obecního (AAMS2----1A----) policisty (NNMS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kterı (P4YS1----------) stojí (VB-S---3P-AA---) uprostøed (Db-------------) køiovatky (NNFS2-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 1clause 3 segment : pohrává (VB-S---3P-AA---) si (P7-X3----------) se (RV--7----------) svım (P8ZS7----------) obuškem (NNIS7-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : pøecházejí (VB-P---3P-AA---) silnici (NNFS4-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 4 segment : míøí (VB-P---3P-AA---) k (RR--3----------) pestrobarevnım (AAIP3----1A----) stánkùm (NNIP3-----A----) s (RR--7----------) cigaretami (NNFP7-----A----)
+  level 0clause 4 segment : a (J^-------------)
+  level 0clause 4 segment : alkoholem (NNIS7-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-062-p4s2add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 1 :3
+S1CX4X
+
+add 5:4
+add 1 :5
+S1CXXX
+
+add 5:6
+add 1 :7
+S1CXXX
+
+add 5:8
+add 1 :9
+S1CXXX
+
+add 4 :10alkoholem (NNIS7-----A----)
+add 1 :11
+S1XXXX
+
+1 / 0 / 2 / 0 / 3 / 0 / 4 / 0 / 5 / 5 / 5 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : nìmecké (AAFP1----1A----) babièky (NNFP1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : kurt (NNMS1-----A----)
+  level 0clause 1 segment : èi (J^-------------)
+  level 0clause 1 segment : oswald (NNMS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : obecní (AAMS1----1A----) policista (NNMS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : starosta (NNMS1-----A----) jan (NNMS1-----A----) horník (NNMS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : nájemci (NNMP1-----A----) stánkù (NNIP2-----A----)
+  level 0clause 0 segment : ( (Z:-------------)
+  level 1clause 2 segment : v (RR--6----------) létì (NNNS6-----A----) jich (PPXP2--3-------) je (VB-S---3P-AA---) a (TT-------------) osmdesát (Cn-S1----------)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : vietnamec (NNMS1-----A----) pøezdívanı (AAMS1----1A----) kachnièka (NNFS1-----A----)
+  level 0clause 0 segment : ( (Z:-------------)
+  level 1clause 3 segment : vlastní (VB-S---3P-AA---) nejvíce (Dg-------3A----) stánkù (NNIP2-----A----)
+  level 1clause 0 segment : a (J^-------------)
+  level 1clause 4 segment : jí (VB-S---3P-AA---) jenom (TT-------------) peèenou (AAFS4----1A----) kachnu (NNFS4-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : celé (AANS1----1A----) mìsteèko (NNNS1-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-062-p4s61 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 false 
+ 0 0 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2kurt (NNMS1-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4oswald (NNMS1-----A----)
+add 1 :5
+S0XXXX
+
+add 4 :6obecní (AAMS1----1A----) policista (NNMS1-----A----)
+add 1 :7
+S0XXXX
+
+add 4 :8starosta (NNMS1-----A----) jan (NNMS1-----A----) horník (NNMS1-----A----)
+add 1 :9
+S0XXXX
+
+add 4 :10nájemci (NNMP1-----A----) stánkù (NNIP2-----A----)
+add 10 :11false false
+add 10 :12true false
+add 10 :13true false
+end update bracked( (Z:-------------)
+end update bracked
+add 1 :14
+B0XXXZ
+
+add 6 :true
+add 6 :1
+add 6 :15
+add 10 :16false false
+add 10 :17true false
+add 10 :18true false
+add 10 :19true false
+add 10 :20true false
+end update bracked( (Z:-------------)
+end update bracked
+add 1 :21
+B0XXXZ
+
+add 6 :true
+add 6 :1
+add 6 :22
+add 1 :23
+S0XXXX
+
+1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 0 / 2 / 0 / 0 / 1 / 0 / 3 / 3 / 3 / 1 / 0 / 1 / 0
+
+---End-------------
+1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 false 
+ 0 0 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+   level 0clause 1 segment : nìmecké (AAFP1----1A----) babièky (NNFP1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : kurt (NNMS1-----A----)
+  level 0clause 1 segment : èi (J^-------------)
+  level 0clause 1 segment : oswald (NNMS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : obecní (AAMS1----1A----) policista (NNMS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : starosta (NNMS1-----A----) jan (NNMS1-----A----) horník (NNMS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : nájemci (NNMP1-----A----) stánkù (NNIP2-----A----)
+  level 0clause 0 segment : ( (Z:-------------)
+  level 1clause 2 segment : v (RR--6----------) létì (NNNS6-----A----) jich (PPXP2--3-------) je (VB-S---3P-AA---) a (TT-------------) osmdesát (Cn-S1----------)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : vietnamec (NNMS1-----A----) pøezdívanı (AAMS1----1A----) kachnièka (NNFS1-----A----)
+  level 0clause 0 segment : ( (Z:-------------)
+  level 1clause 3 segment : vlastní (VB-S---3P-AA---) nejvíce (Dg-------3A----) stánkù (NNIP2-----A----)
+  level 1clause 0 segment : a (J^-------------)
+  level 1clause 4 segment : jí (VB-S---3P-AA---) jenom (TT-------------) peèenou (AAFS4----1A----) kachnu (NNFS4-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : celé (AANS1----1A----) mìsteèko (NNNS1-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-062-p4s6add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2kurt (NNMS1-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4oswald (NNMS1-----A----)
+add 1 :5
+S0XXXX
+
+add 4 :6obecní (AAMS1----1A----) policista (NNMS1-----A----)
+add 1 :7
+S0XXXX
+
+add 4 :8starosta (NNMS1-----A----) jan (NNMS1-----A----) horník (NNMS1-----A----)
+add 1 :9
+S0XXXX
+
+add 4 :10nájemci (NNMP1-----A----) stánkù (NNIP2-----A----)
+add 10 :11false false
+add 10 :12true false
+add 10 :13true false
+end update bracked( (Z:-------------)
+end update bracked
+add 1 :14
+B0XXXZ
+
+add 6 :true
+add 6 :1
+add 6 :15
+add 10 :16false false
+add 10 :17true false
+add 10 :18true false
+add 10 :19true false
+add 10 :20true false
+end update bracked( (Z:-------------)
+end update bracked
+add 1 :21
+B0XXXZ
+
+add 6 :true
+add 6 :1
+add 6 :22
+add 1 :23
+S0XXXX
+
+1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 0 / 2 / 0 / 0 / 1 / 0 / 3 / 3 / 3 / 1 / 0 / 1 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : touha (NNFS1-----A----) rychle (Dg-------1A----) zbohatnout (Vf--------A----) se (P7-X4----------) tu (Db------------1) projevuje (VB-S---3P-AA---) pøekotnım (AANS7----1A----) støídáním (NNNS7-----A----) nájemníkù (NNMP2-----A----) mnoha (Ca--2----------) penziónù (NNIP2-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : restaurací (NNFP2-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : dvojími (CdXP7----------) cenami (NNFP7-----A----)
+  level 0clause 1 segment : - (Z:-------------)
+  level 1clause 1 segment : pro (RR--4----------) domácí (NNMP4-----A----)
+  level 1clause 1 segment : a (J^-------------)
+  level 1clause 1 segment : cizince (NNMP4-----A----)
+  level 1clause 0 segment : ( (Z:-------------)
+  level 2clause 2 segment : osmdesát (Cn-S1----------) procent (NNNP2-----A----) hostù (NNMP2-----A----) je (VB-S---3P-AA---) ze (RV--2----------) zahranièí (NNNS2-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : nezájmem (NNIS7-----A----) o (RR--4----------) ivot (NNIS4-----A----) obce (NNFS2-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : jeho (PSXXXZS3-------) minulost (NNFS4-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : tradici (NNFS4-----A----) zvláš (Db-------------)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-062-p5s61 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2restaurací (NNFP2-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4dvojími (CdXP7----------) cenami (NNFP7-----A----)
+add 1 :5
+S0XXXX
+
+add 4 :6pro (RR--4----------) domácí (NNMP4-----A----)
+add 1 :7
+S0XXXX
+
+add 4 :8cizince (NNMP4-----A----)
+add 10 :9false false
+add 10 :10true false
+add 10 :11true false
+end update bracked( (Z:-------------)
+end update bracked
+add 1 :12
+B0XXXZ
+
+add 6 :true
+add 6 :1
+add 6 :13
+add 1 :14
+S0XXXX
+
+add 4 :15jeho (PSXXXZS3-------) minulost (NNFS4-----A----)
+add 1 :16
+S0XXXX
+
+add 4 :17tradici (NNFS4-----A----) zvláš (Db-------------)
+add 1 :18
+S0XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : na (RR--6----------) konci (NNIS6-----A----) záøí (NNNS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kdy (Db-------------) usedal (VpYS---XR-AA---) do (RR--2----------) køesla (NNNS2-----A----) generálního (AAMS2----1A----) tajemníka (NNMS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : si (P7-X3----------) pìtapadesátiletı (AAMS1----1A----) diplomat (NNMS1-----A----) podle (RR--2----------) svıch (P8XP2----------) slov (NNNP2-----A----) lámal (VpYS---XR-AA---) hlavu (NNFS4-----A----) pøedevším (Db-------------) tím (PDZS7----------)
+  level 0clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : jaké (P4NS4----------) stanovisko (NNNS4-----A----) zaujmout (Vf--------A----) ke (RV--3----------) dvìma (ClXP3----------) problémùm (NNIP3-----A----)
+  level 1clause 1 segment : : (Z:-------------)
+  level 1clause 1 segment : situaci (NNFS3-----A----) v (RR--6----------) bosnì (NNFS6-----A----)
+  level 1clause 1 segment : a (J^-------------)
+  level 1clause 1 segment : vnitøní (AAFS3----1A----) rozpolcenosti (NNFS3-----A----) nato (NNNXX-----A---8) v (RR--6----------) otázce (NNFS6-----A----) rozšiøování (NNNS2-----A----) na (RR--4----------) vıchod (NNIS4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-072-p2s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2kdy (Db-------------) usedal (VpYS---XR-AA---) do (RR--2----------) køesla (NNNS2-----A----) generálního (AAMS2----1A----) tajemníka (NNMS2-----A----)
+add 1 :3
+S0CXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 3 :6
+add 1 :7
+S1XX4X
+
+add 4 :8situaci (NNFS3-----A----) v (RR--6----------) bosnì (NNFS6-----A----)
+add 1 :9
+S1XXXX
+
+add 4 :10vnitøní (AAFS3----1A----) rozpolcenosti (NNFS3-----A----) nato (NNNXX-----A---8) v (RR--6----------) otázce (NNFS6-----A----) rozšiøování (NNNS2-----A----) na (RR--4----------) vıchod (NNIS4-----A----)
+add 1 :11
+S1XXXX
+
+1 / 1 / 1 / 0 / 2 / 0 / 3 / 3 / 3 / 3 / 3 / 0
+
+---End-------------
+1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 0 0 false 
+   level 0clause 1 segment : na (RR--6----------) konci (NNIS6-----A----) záøí (NNNS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kdy (Db-------------) usedal (VpYS---XR-AA---) do (RR--2----------) køesla (NNNS2-----A----) generálního (AAMS2----1A----) tajemníka (NNMS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : si (P7-X3----------) pìtapadesátiletı (AAMS1----1A----) diplomat (NNMS1-----A----) podle (RR--2----------) svıch (P8XP2----------) slov (NNNP2-----A----) lámal (VpYS---XR-AA---) hlavu (NNFS4-----A----) pøedevším (Db-------------) tím (PDZS7----------)
+  level 0clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : jaké (P4NS4----------) stanovisko (NNNS4-----A----) zaujmout (Vf--------A----) ke (RV--3----------) dvìma (ClXP3----------) problémùm (NNIP3-----A----)
+  level 1clause 1 segment : : (Z:-------------)
+  level 1clause 1 segment : situaci (NNFS3-----A----) v (RR--6----------) bosnì (NNFS6-----A----)
+  level 1clause 1 segment : a (J^-------------)
+  level 1clause 1 segment : vnitøní (AAFS3----1A----) rozpolcenosti (NNFS3-----A----) nato (NNNXX-----A---8) v (RR--6----------) otázce (NNFS6-----A----) rozšiøování (NNNS2-----A----) na (RR--4----------) vıchod (NNIS4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-072-p2s2add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2kdy (Db-------------) usedal (VpYS---XR-AA---) do (RR--2----------) køesla (NNNS2-----A----) generálního (AAMS2----1A----) tajemníka (NNMS2-----A----)
+add 1 :3
+S0CXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 3 :6
+add 1 :7
+S1XX4X
+
+add 4 :8situaci (NNFS3-----A----) v (RR--6----------) bosnì (NNFS6-----A----)
+add 1 :9
+S1XXXX
+
+add 4 :10vnitøní (AAFS3----1A----) rozpolcenosti (NNFS3-----A----) nato (NNNXX-----A---8) v (RR--6----------) otázce (NNFS6-----A----) rozšiøování (NNNS2-----A----) na (RR--4----------) vıchod (NNIS4-----A----)
+add 1 :11
+S1XXXX
+
+1 / 1 / 1 / 0 / 2 / 0 / 3 / 3 / 3 / 3 / 3 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : nyní (Db-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kdy (Db-------------) by (Vc-------------) patrnì (Dg-------1A----) chtìli (VpMP---XR-AA---) vlastního (AAMS4----1A----) vyvoleného (AAMS4----1A----) odstøelit (Vf--------A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : je (VB-S---3P-AA---) ji (Db-------------) pozdì (Dg-------1A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-072-p7s71 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2kdy (Db-------------) by (Vc-------------) patrnì (Dg-------1A----) chtìli (VpMP---XR-AA---) vlastního (AAMS4----1A----) vyvoleného (AAMS4----1A----) odstøelit (Vf--------A----)
+add 1 :3
+S0CXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : z (RR--2----------) nìmecka (NNNS2-----A----) se (P7-X4----------) vrací (VB-S---3P-AA---) zaèátkem (NNIS7-----A----) roku (NNIS2-----A---1) 1990 (C=-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 2 segment : se (RV--7----------) svımi (P8XP7----------) politickımi (AAMP7----1A----) pøáteli (NNMP7-----A----) podporuje (VB-S---3P-AA---) obèanské (AANS4----1A----) fórum (NNNS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : na (RR--4----------) jeho (P1XXXZS3-------) budoucí (AAFP4----1A----) obtíe (NNFP4-----A----) dovedl (VpYS---XR-AA---) upozoròovat (Vf--------A----) v (RR--6----------) dobì (NNFS6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 4 segment : kdy (Db-------------) mnozí (AAMP1----1A----)
+  level 2clause 4 segment : , (Z:-------------)
+  level 2clause 4 segment : zaujati (VsMP---XX-AP---) problémy (NNIP7-----A----) dne (NNIS2-----A----)
+  level 2clause 4 segment : i (J^-------------)
+  level 2clause 4 segment : rutinní (AAFS7----1A----) politickou (AAFS7----1A----) prací (NNFS7-----A----)
+  level 2clause 4 segment : , (Z:-------------)
+  level 2clause 4 segment : pomíjeli (VpMP---XR-AA---) politiku (NNFS4-----A----) jako (J,-------------) meze (NNFP4-----A----) moného (AANS2----1A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-122-p2s111 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 0 1 false 
+ 4 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 5:2
+add 1 :3
+S0CXXX
+
+add 3 :4
+add 1 :5
+S1CX1X
+
+add 4 :6kdy (Db-------------) mnozí (AAMP1----1A----)
+add 1 :7
+S1XXXX
+
+add 4 :8zaujati (VsMP---XX-AP---) problémy (NNIP7-----A----) dne (NNIS2-----A----)
+add 1 :9
+S1XXXX
+
+add 4 :10rutinní (AAFS7----1A----) politickou (AAFS7----1A----) prací (NNFS7-----A----)
+add 1 :11
+S1XXXX
+
+add 5:12
+add 1 :13
+S1CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : i (J^-------------)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : vıhody (NNFS2-----A----)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : tohoto (PDZS2----------) zamìstnání (NNNS2-----A----) byl (VpYS---XR-AA---) zbaven (VsYS---XX-AP---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : ale (J^-------------)
+  level 0clause 2 segment : zato (J,-------------) zùstal (VpYS---XR-AA---) pod (RR--7----------) trvalım (AAIS7----1A----) dozorem (NNIS7-----A----) státní (AAFS2----1A----) bezpeènosti (NNFS2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95040-122-p2s81 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 true 
+ 0 0 false 
+ add 8:0
+add 8:true
+true true
+add 1 :1
+B0XXXJ
+
+add 8:2
+add 8:false
+false true
+add 1 :3
+S0XXXX
+
+add 4 :4tohoto (PDZS2----------) zamìstnání (NNNS2-----A----) byl (VpYS---XR-AA---) zbaven (VsYS---XX-AP---)
+add 1 :5
+S0CXXX
+
+add 11 :6
+add 4 :7zato (J,-------------) zùstal (VpYS---XR-AA---) pod (RR--7----------) trvalım (AAIS7----1A----) dozorem (NNIS7-----A----) státní (AAFS2----1A----) bezpeènosti (NNFS2-----A----)
+add 1 :8
+S0CX,X
+
+---End-------------
+---Start-----------
+  level 1clause 1 segment : zatímco (J,-------------) na (RR--6----------) poèátku (NNIS6-----A----) devadesátıch (CrNP2----------) let (NNNP2-----A----) bylo (VpNS---XR-AA---) vykupováno (VsNS---XX-AP---) asi (TT-------------) 92 (C=-------------) procent (NNNP2-----A----) králíkù (NNMP2-----A----) z (RR--2----------) malochovù (NNIP2-----A----)
+  level 1clause 1 segment : a (J^-------------)
+  level 1clause 1 segment : jen (TT-------------) osm (Cn-S1----------) procent (NNNP2-----A----) z (RR--2----------) velkıch (AAFP2----1A----) farem (NNFP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : loni (Db------------1) u (Db-------------) byl (VpYS---XR-AA---) tento (PDYS1----------) pomìr (NNIS1-----A----) témìø (Db-------------) 60 (C=-------------) ku (RV--3---------1) 40 (C=-------------)
+  level 0clause 0 segment : . (Z:-------------)
+ln95041-002-p3s41 1 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0XXXX
+
+add 4 :4loni (Db------------1) u (Db-------------) byl (VpYS---XR-AA---) tento (PDYS1----------) pomìr (NNIS1-----A----) témìø (Db-------------) 60 (C=-------------) ku (RV--3---------1) 40 (C=-------------)
+add 1 :5
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : jaká (P4FS1----------) je (VB-S---3P-AA---) vùbec (Db-------------) úloha (NNFS1-----A----)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : slaïáku (NNIS2-----A----)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : v (RR--6----------) pop (AAXXX----1A----) music (NNFXX-----A----)
+  level 0clause 0 segment : ? (Z:-------------)
+ln95041-042-p8s21 1 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX4X
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0XXXX
+
+add 4 :4v (RR--6----------) pop (AAXXX----1A----) music (NNFXX-----A----)
+add 1 :5
+S0XXXX
+
+1 / 0 / 2 / 2 / 2 / 0
+
+---End-------------
+1 1 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+   level 0clause 1 segment : jaká (P4FS1----------) je (VB-S---3P-AA---) vùbec (Db-------------) úloha (NNFS1-----A----)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : slaïáku (NNIS2-----A----)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : v (RR--6----------) pop (AAXXX----1A----) music (NNFXX-----A----)
+  level 0clause 0 segment : ? (Z:-------------)
+ln95041-042-p8s2add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX4X
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0XXXX
+
+add 4 :4v (RR--6----------) pop (AAXXX----1A----) music (NNFXX-----A----)
+add 1 :5
+S0XXXX
+
+1 / 0 / 2 / 2 / 2 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : zelení (AAMP1----1A----) podle (RR--2----------) jeho (PSXXXZS3-------) slov (NNNP2-----A----) nerozlišují (VB-P---3P-NA---) mezi (RR--7----------) pravicí (NNFS7-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : levicí (NNFS7-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 2 segment : jsou (VB-P---3P-AA---) ochotni (ACMP------A----) diskutovat (Vf--------A----) s (RR--7----------) kadım (AAMS7----1A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 3 segment : integraci (NNFS4-----A----)
+  level 0clause 3 segment : však (J^-------------)
+  level 0clause 3 segment : odmítají (VB-P---3P-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+ln95041-082-p5s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2levicí (NNFS7-----A----)
+add 1 :3
+S0XXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 4 :6integraci (NNFS4-----A----)
+add 1 :7
+S0XXXX
+
+add 5:8
+add 1 :9
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : snad (Db-------------) bychom (Vc-P---1-------) mìli (VpMP---XR-AA---) mít (Vf--------A----) z (RR--2----------) kadé (AAFS2----1A----) vıpùjèky (NNFS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : pokud (J,-------------) ovšem (TT-------------) není (VB-S---3P-NA---) v (RR--6----------) rozporu (NNIS6-----A----) se (RV--7----------) systémem (NNIS7-----A----) daného (AAIS2----1A----) jazyka (NNIS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : radost (NNFS4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95042-009-p13s31 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1CX,X
+
+add 4 :4radost (NNFS4-----A----)
+add 1 :5
+S1XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 0 segment : " (Z:-------------)
+  level 0clause 1 segment : soupeø (NNMS1-----A----) hrál (VpYS---XR-AA---) velmi (Db-------------) dobøe (Dg-------1A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : z (RR--2----------) nás (PP-P2--1-------)
+  level 0clause 2 segment : ale (J^-------------)
+  level 0clause 2 segment : postupnì (Dg-------1A----) opadávala (VpQW---XR-AA---) nervozita (NNFS1-----A----)
+  level 0clause 2 segment : i (J^-------------)
+  level 0clause 2 segment : respekt (NNIS1-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 3 segment : zaslouenì (Dg-------1A----) jsme (VB-P---1P-AA---) vyhráli (VpMP---XR-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+ln95042-029-p3s40 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 0 false 
+ 0 0 false 
+ add 2:0
+add 8:1
+add 8:false
+false true
+add 1 :2
+S0CXXX
+
+add 4 :3z (RR--2----------) nás (PP-P2--1-------)
+add 1 :4
+S0XXXX
+
+add 5:5
+add 1 :6
+S0CXXX
+
+add 4 :7respekt (NNIS1-----A----)
+add 1 :8
+S0XXXX
+
+add 5:9
+add 1 :10
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : je (VB-S---3P-AA---) tøeba (ACNS------A----) nalézt (Vf--------A----) systém (NNIS4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : jakım (P4ZS7----------) udret (Vf--------A----) tato (PDNP4----------) zaøízení (NNNP4-----A----) v (RR--6----------) chodu (NNIS6-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : nedovolit (Vf--------N----) jejich (PSXXXXP3-------) chátrání (NNNS4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95042-059-p4s21 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1XX4X
+
+add 4 :4nedovolit (Vf--------N----) jejich (PSXXXXP3-------) chátrání (NNNS4-----A----)
+add 1 :5
+S1XXXX
+
+1 / 0 / 2 / 2 / 2 / 0
+
+---End-------------
+1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+   level 0clause 1 segment : je (VB-S---3P-AA---) tøeba (ACNS------A----) nalézt (Vf--------A----) systém (NNIS4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : jakım (P4ZS7----------) udret (Vf--------A----) tato (PDNP4----------) zaøízení (NNNP4-----A----) v (RR--6----------) chodu (NNIS6-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : nedovolit (Vf--------N----) jejich (PSXXXXP3-------) chátrání (NNNS4-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95042-059-p4s2add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1XX4X
+
+add 4 :4nedovolit (Vf--------N----) jejich (PSXXXXP3-------) chátrání (NNNS4-----A----)
+add 1 :5
+S1XXXX
+
+1 / 0 / 2 / 2 / 2 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : èlenové (NNMP1-----A----) rady (NNFS2-----A----) podle (RR--2----------) hùlové (NNFS2-----A----) ji (Db-------------) mezi (RR--7----------) sebou (P6-X7----------) hovoøili (VpMP---XR-AA---)
+  level 0clause 1 segment : i (J^-------------)
+  level 0clause 1 segment : o (RR--6----------) pøípadné (AAFS6----1A----) iniciativì (NNFS6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : která (P4FS1----------) by (Vc-------------) investièní (AAFS4----1A----)
+  level 1clause 2 segment : a (J^-------------)
+  level 1clause 2 segment : poštovní (AAFS4----1A----) banku (NNFS4-----A----) pøimìla (VpQW---XR-AA---) urychlit (Vf--------A----) uzavøení (NNNS4-----A----) vıbìrového (AANS2----1A----) øízení (NNNS2-----A----) na (RR--4----------) koupi (NNFS4-----A----) minoritního (AAIS2----1A----) podílu (NNIS2-----A----) v (RR--6----------) televizní (AAFS6----1A----) stanici (NNFS6-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-003-p3s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 1 false 
+ 3 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CCXX
+
+add 4 :2o (RR--6----------) pøípadné (AAFS6----1A----) iniciativì (NNFS6-----A----)
+add 1 :3
+S0XXXX
+
+add 3 :4
+add 1 :5
+S1CX4X
+
+add 5:6
+add 1 :7
+S1CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : podle (RR--2----------) informací (NNFP2-----A----) ln (NNFPX-----A---8) je (VB-S---3P-AA---) mezi (RR--7----------) ètyømi (ClXP7----------) kandidáty (NNMP7-----A----) spoleènost (NNFS1-----A----) scandinavian (AAXXX----1A----) broadcasting (AAXXX----1A----) systems (NNIPX-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : sbs (NNIPX-----A---8)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : která (P4FS1----------) je (VB-S---3P-AA---) z (RR--2----------) nejvìtší (AAFS2----3A----) èásti (NNFS2-----A----) vlastnìna (VsQW---XX-AP---) americkou (AAFS7----1A----) spoleèností (NNFS7-----A----) abc (NNFXX-----A---8)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : rozhlasová (AAFS1----1A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : televizní (AAFS1----1A----) spoleènost (NNFS1-----A----) radio (NNNS1-----A----) television (NNFXX-----A----) luxemburg (NNIS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : rtl (NNNXX-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-003-p5s11 0 false 
+ 1 0 false 
+ 1 1 false 
+ 0 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 1 false 
+ 0 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 10 :1false false
+add 10 :2true false
+add 10 :3true false
+add 1 :4
+B0XXXZ
+
+add 3 :5
+add 1 :6
+S1CX4X
+
+add 1 :7
+B0XXXP
+
+add 6 :true
+add 6 :1
+add 6 :8
+add 1 :9
+S0XXXX
+
+add 4 :10televizní (AAFS1----1A----) spoleènost (NNFS1-----A----) radio (NNNS1-----A----) television (NNFXX-----A----) luxemburg (NNIS1-----A----)
+add 10 :11false false
+add 10 :12true false
+add 10 :13true false
+add 1 :14
+B0XXXZ
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : takovou (PDFS4----------) atmosféru (NNFS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : v (RR--6----------) jaké (P4FS6----------) bylo (VpNS---XR-AA---) odehráno (VsNS---XX-AP---) páteèní (AANS1----1A----) praské (AANS1----1A----) derby (NNNXX-----A----) sparta (NNFS1-----A----)
+  level 1clause 2 segment : - (Z:-------------)
+  level 1clause 2 segment : slavia (NNFS1-----A---1)
+  level 1clause 2 segment : ( (Z:-------------)
+  level 2clause 2 segment : 6 (C=-------------)
+  level 2clause 2 segment : : (Z:-------------)
+  level 2clause 2 segment : 4 (C=-------------)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : by (Vc-------------) si (P7-X3----------) jistì (Dg-------1A----) pøál (VpYS---XR-AA---) mít (Vf--------A----) kadı (AAIS1----1A----) klub (NNIS1-----A----) pøi (RR--6----------) svém (P8ZS6----------) domácím (AAIS6----1A----) zápase (NNIS6-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-023-p2s1D1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 2 false 
+ 2 2 false 
+ 2 2 false 
+ 0 1 false 
+ 0 1 false 
+ 3 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 1 :3
+S1CX4X
+
+add 4 :4slavia (NNFS1-----A---1)
+add 10 :5false false
+add 10 :6true false
+add 10 :7true false
+add 10 :8true false
+add 10 :9true false
+add 1 :10
+B1XXXZ
+
+add 6 :false
+add 6 :0
+add 7 :11
+add 1 :12
+S1CXXX
+
+1 / 0 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 0 / 0 / 3 / 0
+
+---End-------------
+1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 2 false 
+ 2 2 false 
+ 2 2 false 
+ 0 1 false 
+ 0 1 false 
+ 3 1 false 
+ 0 0 false 
+   level 0clause 1 segment : takovou (PDFS4----------) atmosféru (NNFS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : v (RR--6----------) jaké (P4FS6----------) bylo (VpNS---XR-AA---) odehráno (VsNS---XX-AP---) páteèní (AANS1----1A----) praské (AANS1----1A----) derby (NNNXX-----A----) sparta (NNFS1-----A----)
+  level 1clause 2 segment : - (Z:-------------)
+  level 1clause 2 segment : slavia (NNFS1-----A---1)
+  level 1clause 2 segment : ( (Z:-------------)
+  level 2clause 2 segment : 6 (C=-------------)
+  level 2clause 2 segment : : (Z:-------------)
+  level 2clause 2 segment : 4 (C=-------------)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : by (Vc-------------) si (P7-X3----------) jistì (Dg-------1A----) pøál (VpYS---XR-AA---) mít (Vf--------A----) kadı (AAIS1----1A----) klub (NNIS1-----A----) pøi (RR--6----------) svém (P8ZS6----------) domácím (AAIS6----1A----) zápase (NNIS6-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-023-p2s1Dadd 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 1 :3
+S1CX4X
+
+add 4 :4slavia (NNFS1-----A---1)
+add 10 :5false false
+add 10 :6true false
+add 10 :7true false
+add 10 :8true false
+add 10 :9true false
+add 1 :10
+B1XXXZ
+
+add 6 :false
+add 6 :0
+add 7 :11
+add 1 :12
+S1CXXX
+
+1 / 0 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 0 / 0 / 3 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : o (RR--6----------) osudu (NNIS6-----A----) utkání (NNNS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : které (P4NS1----------) hrálo (VpNS---XR-AA---) velkou (AAFS4----1A----) roli (NNFS4-----A----) v (RR--6----------) boji (NNIS6-----A----) o (RR--4----------) postup (NNIS4-----A----) do (RR--2----------) play (NNFXX-----A----) off (TT-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 1clause 3 segment : domácí (AAMP1----1A----) v (RR--6----------) tabulce (NNFS6-----A----) hosty (NNMP4-----A----) z (RR--2----------) edenu (NNIS2-----A----) pøeskoèili (VpMP---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : se (P7-X4----------) rozhodovalo (VpNS---XR-AA---) v (RR--6----------) posledních (AAFP6----1A----) vteøinách (NNFP6-----A----) pøi (RR--6----------) power (AAXXX----1A----) play (NNFXX-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-023-p2s31 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 1 false 
+ 3 1 false 
+ 0 1 false 
+ 4 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 1 :3
+S1CX4X
+
+add 5:4
+add 1 :5
+S1CXXX
+
+add 5:6
+add 1 :7
+S1CXXX
+
+1 / 0 / 2 / 0 / 3 / 0 / 4 / 0
+
+---End-------------
+1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 1 false 
+ 3 1 false 
+ 0 1 false 
+ 4 1 false 
+ 0 0 false 
+   level 0clause 1 segment : o (RR--6----------) osudu (NNIS6-----A----) utkání (NNNS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : které (P4NS1----------) hrálo (VpNS---XR-AA---) velkou (AAFS4----1A----) roli (NNFS4-----A----) v (RR--6----------) boji (NNIS6-----A----) o (RR--4----------) postup (NNIS4-----A----) do (RR--2----------) play (NNFXX-----A----) off (TT-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 1clause 3 segment : domácí (AAMP1----1A----) v (RR--6----------) tabulce (NNFS6-----A----) hosty (NNMP4-----A----) z (RR--2----------) edenu (NNIS2-----A----) pøeskoèili (VpMP---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : se (P7-X4----------) rozhodovalo (VpNS---XR-AA---) v (RR--6----------) posledních (AAFP6----1A----) vteøinách (NNFP6-----A----) pøi (RR--6----------) power (AAXXX----1A----) play (NNFXX-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-023-p2s3add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 1 :3
+S1CX4X
+
+add 5:4
+add 1 :5
+S1CXXX
+
+add 5:6
+add 1 :7
+S1CXXX
+
+1 / 0 / 2 / 0 / 3 / 0 / 4 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : pohlednice (NNFP4-----A----) rozdávají (VB-P---3P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : ty (PDFP1----------) jsou (VB-P---3P-AA---) mi (PH-S3--1-------) pak (Db-------------) zasílány (VsTP---XX-AP---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 0 segment : a (J^-------------)
+  level 1clause 3 segment : protoe (J,-------------) jsou (VB-P---3P-AA---) nìkteré (PZFP1----------) z (RR--2----------) nich (P5XP2--3-------) bez (RR--2----------) podpisu (NNIS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 4 segment : je (VB-S---3P-AA---) moné (AANS1----1A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 5 segment : e (J,-------------) je (PPXP4--3-------) rozesílají (VB-P---3P-AA---) sami (PLMP1----------)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-053-p2s31 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 0 false 
+ 3 0 true 
+ 0 0 false 
+ 4 0 false 
+ 0 0 false 
+ 5 1 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 5:2
+add 1 :3
+S0CXXX
+
+add 11 :4
+add 4 :5protoe (J,-------------) jsou (VB-P---3P-AA---) nìkteré (PZFP1----------) z (RR--2----------) nich (P5XP2--3-------) bez (RR--2----------) podpisu (NNIS2-----A----)
+add 1 :6
+S0CX,X
+
+add 5:7
+add 1 :8
+S0CXXX
+
+add 3 :9
+add 1 :10
+S1CX,X
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : pøipravujeme (VB-P---1P-AA---) racionalizaci (NNFS4-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : modernizaci (NNFS4-----A----) dùchodového (AAIS2----1A----) systému (NNIS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : jejich (P1XXXXP3-------) cílem (NNIS7-----A----) je (VB-S---3P-AA---) vytvoøení (NNNS1-----A----) systému (NNIS2-----A----) co (Db-------------) nejspravedlivìjšího (AAIS2----3A----)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : systému (NNIS2-----A----) rozumnì (Dg-------1A----) solidárního (AAIS2----1A----)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : systému (NNIS2-----A----) se (RV--7----------) sociálními (AAIP7----1A----) aspekty (NNIP7-----A----)
+  level 1clause 2 segment : ( (Z:-------------)
+  level 2clause 2 segment : tedy (Db-------------) ne (TT-------------) pouze (Db-------------) systému (NNIS2-----A----) tzv (AAXXX----1A---8)
+  level 2clause 2 segment : . (Z:-------------)
+  level 2clause 2 segment : zásluhového (AAIS2----1A----)
+  level 1clause 2 segment : ) (Z:-------------)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : ale (J^-------------)
+  level 1clause 2 segment : souèasnì (Dg-------1A----) systému (NNIS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 3 segment : kterı (P4YS1----------) bude (VB-S---3F-AA---) ufinancovatelnı (AAIS1----1A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-053-p3s31 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 0 2 false 
+ 2 2 false 
+ 2 2 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+ 3 2 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2modernizaci (NNFS4-----A----) dùchodového (AAIS2----1A----) systému (NNIS2-----A----)
+add 1 :3
+S0XXXX
+
+add 3 :4
+add 1 :5
+S1CX1X
+
+add 4 :6systému (NNIS2-----A----) rozumnì (Dg-------1A----) solidárního (AAIS2----1A----)
+add 1 :7
+S1XXXX
+
+add 4 :8systému (NNIS2-----A----) se (RV--7----------) sociálními (AAIP7----1A----) aspekty (NNIP7-----A----)
+add 10 :9false false
+add 10 :10true false
+add 10 :11true false
+add 10 :12true false
+add 10 :13true false
+add 1 :14
+B1XXXZ
+
+add 1 :15
+B1XXXP
+
+add 6 :false
+add 6 :0
+add 7 :16
+add 1 :17
+S1XXXX
+
+add 3 :18
+add 1 :19
+S2CX4X
+
+1 / 1 / 1 / 0 / 2 / 2 / 2 / 2 / 2 / 2 / 0 / 2 / 2 / 0 / 0 / 0 / 3 / 0 / 4 / 0
+
+prevLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange3 /1 / 16/2/16
+
+2
+
+2
+
+2
+
+2
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : sladit (Vf--------A----) všechny (PLYP4----------) tyto (PDIP4----------) leckdy (Db-------------) konkurenèní (AAIP4----1A----) cíle (NNIP4-----A----) není (VB-S---3P-NA---) lehké (AANS1----1A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 2 segment : udìlat (Vf--------A----) líbivé (AANS4----1A----) vylepšení (NNNS4-----A----) v (RR--6----------) kterémkoli (PZZS6---------1) z (RR--2----------) nich (P5XP2--3-------)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : znamená (VB-S---3P-AA---) zkomplikovat (Vf--------A----) dosaení (NNNS4-----A----) cílù (NNIP2-----A----) druhıch (AAIP2----1A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-053-p3s51 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2udìlat (Vf--------A----) líbivé (AANS4----1A----) vylepšení (NNNS4-----A----) v (RR--6----------) kterémkoli (PZZS6---------1) z (RR--2----------) nich (P5XP2--3-------)
+add 1 :3
+S0XXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : vláda (NNFS1-----A----) opakuje (VB-S---3P-AA---) svùj (P8IS4----------) závazek (NNIS4-----A----) zvyšovat (Vf--------A----) dùchody (NNIP4-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : a (J^-------------)
+  level 1clause 1 segment : to (PDNS4----------) nejen (TT-------------) v (RR--6----------) souladu (NNIS6-----A----) s (RR--7----------) inflací (NNFS7-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : ale (J^-------------)
+  level 0clause 2 segment : nemùe (VB-S---3P-NA---) to (PDNS4----------) dìlat (Vf--------A----) jinak (Db-------------) ne (J,-------------) v (RR--6----------) závislosti (NNFS6-----A----) na (RR--6----------) rùstu (NNIS6-----A----) toho (PDZS2----------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : co (PQ--4----------) v (RR--6----------) této (PDFS6----------) zemi (NNFS6-----A----) spoleènì (Dg-------1A----) vytvoøíme (VB-P---1P-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-053-p3s71 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 1 false 
+ 0 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 true 
+ 0 0 false 
+ 3 1 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 10 :1false false
+add 10 :2true false
+add 10 :3true false
+add 10 :4true false
+add 1 :5
+B0XXXZ
+
+add 11 :6
+add 6 :false
+add 6 :1
+add 7 :7
+add 1 :8
+S0CX,X
+
+add 3 :9
+add 1 :10
+S1CXQX
+
+1 / 1 / 1 / 1 / 0 / 0 / 2 / 3 / 0 / 4 / 0
+
+nextLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange2 /0 / 6/3/7
+
+add0| 1 | 6 | 7 | 3
+add1| 1 | 6 | 7 | 3
+add2| 1 | 6 | 7 | 3
+add3| 1 | 6 | 7 | 3
+add4| 0 | 6 | 7 | 3
+add5| 0 | 6 | 7 | 3
+add6| 2 | 6 | 7 | 3
+change7/ 2
+add7| 2 | 6 | 7 | 3
+add8| 0 | 6 | 7 | 3
+add9| 3 | 6 | 7 | 3
+add10| 0 | 6 | 7 | 3
+---End-------------
+---Start-----------
+  level 1clause 1 segment : zda (J,-------------) to (PDNS1----------) bude (VB-S---3F-AA---) 45 (C=-------------) % (Z:-------------)
+  level 1clause 1 segment : èi (J^-------------)
+  level 1clause 1 segment : 50 (C=-------------) % (Z:-------------) v (RR--6----------) prùmìru (NNIS6-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 2 segment : v (RR--6----------) kadé (AAFS6----1A----) chvíli (NNFS6-----A----) je (VB-S---3P-AA---) otázkou (NNFS7-----A----) makroekonomického (AAIS2----1A----) propoètu (NNIS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : kterı (P4IS4----------) dìláme (VB-P---1P-AA---) s (RR--7----------) nejvìtší (AAFS7----3A----) zodpovìdností (NNFS7-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 1clause 4 segment : kterı (P4YS1----------) se (P7-X4----------) mùe (VB-S---3P-AA---) v (RR--6----------) budoucnu (NNNS6-----A---1) podle (RR--2----------) disponibilních (AAIP2----1A----) prostøedkù (NNIP2-----A----) nepochybnì (Dg-------1A----) mìnit (Vf--------A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-053-p4s81 1 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 0 1 false 
+ 4 1 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0XXXX
+
+add 4 :4v (RR--6----------) kadé (AAFS6----1A----) chvíli (NNFS6-----A----) je (VB-S---3P-AA---) otázkou (NNFS7-----A----) makroekonomického (AAIS2----1A----) propoètu (NNIS2-----A----)
+add 1 :5
+S0CXXX
+
+add 3 :6
+add 1 :7
+S1CX4X
+
+add 5:8
+add 1 :9
+S1CX4X
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : zdùrazòuji (VB-S---1P-AA--1)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) to (PDNS4----------) nikdo (PWM-1----------) z (RR--2----------) nás (PP-P2--1-------) nemá (VB-S---3P-NA---) v (RR--6----------) úmyslu (NNIS6-----A---1)
+  level 0clause 0 segment : a (J^-------------)
+  level 1clause 3 segment : e (J,-------------) spor (NNIS1-----A----) je (VB-S---3P-AA---) pouze (Db-------------) o (RR--4----------) to (PDNS4----------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 4 segment : v (RR--6----------) jak (Db-------------) dlouhém (AANS6----1A----)
+  level 2clause 4 segment : ( (Z:-------------)
+  level 3clause 4 segment : èi (J^-------------)
+  level 3clause 4 segment : krátkém (AANS6----1A----)
+  level 2clause 4 segment : ) (Z:-------------)
+  level 2clause 4 segment : èasovém (AANS6----1A----) období (NNNS6-----A----) to (PDNS1----------) má (VB-S---3P-AA---) bez (RR--2----------) vıjimky (NNFS2-----A----) platit (Vf--------A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-053-p6s21 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 1 false 
+ 3 1 true 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 2 false 
+ 3 2 false 
+ 0 1 false 
+ 4 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1CX,X
+
+add 5:4
+add 1 :5
+S1CX,X
+
+add 4 :6v (RR--6----------) jak (Db-------------) dlouhém (AANS6----1A----)
+add 10 :7false false
+add 10 :8true false
+add 10 :9true false
+add 10 :10true false
+add 6 :false
+add 6 :0
+add 7 :11
+add 1 :12
+S1CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : buï (J^-------------)
+  level 0clause 1 segment : je (VB-S---3P-AA---) toti (Db-------------) pevnım (AAIS7----1A----) bodem (NNIS7-----A----) to (PDNS1----------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : co (PQ--1----------) se (P7-X4----------)
+  level 1clause 2 segment : ( (Z:-------------)
+  level 2clause 2 segment : od (RR--2----------) letošních (AAMP2----1A----) plátcù (NNMP2-----A----) dùchodového (AANS2----1A----) pojištìní (NNNS2-----A----)
+  level 1clause 2 segment : ) (Z:-------------)
+  level 1clause 2 segment : vybere (VB-S---3P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 3 segment : to (PDNS1----------) se (P7-X4----------) pak (Db-------------) má (VB-S---3P-AA---) letošním (AAMP3----1A----) pøíjemcùm (NNMP3-----A----) dùchodù (NNIP2-----A----)
+  level 0clause 0 segment : ( (Z:-------------)
+  level 1clause 4 segment : co (PE--1----------) jsou (VB-P---3P-AA---) úplnì (Dg-------1A----) jiní (AAMP1----1A----) lidé (NNMP1-----A---1)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 3 segment : beze (RV--2----------) zbytku (NNIS2-----A----) vyplatit (Vf--------A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : nebo (J^-------------)
+  level 0clause 5 segment : je (VB-S---3P-AA---) pevnım (AAIS7----1A----) bodem (NNIS7-----A----) zákonnı (AAIS1----1A----) nárok (NNIS1-----A----) pøíjemcù (NNMP2-----A----) dùchodù (NNIP2-----A----)
+  level 0clause 5 segment : ( (Z:-------------)
+  level 1clause 5 segment : vèetnì (RR--2----------) valorizaèních (AAFP2----1A----) úprav (NNFP2-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 6 segment : na (RR--4----------) to (PDNS4----------) stát (NNIS1-----A----) peníze (NNIP4-----A----) v (RR--6----------) kadém (AAIS6----1A----) roce (NNIS6-----A---1)
+  level 0clause 6 segment : - (Z:-------------)
+  level 1clause 6 segment : dnes (Db-------------)
+  level 1clause 6 segment : i (J^-------------)
+  level 1clause 6 segment : zítra (Db-------------)
+  level 0clause 6 segment : - (Z:-------------)
+  level 0clause 6 segment : mít (Vf--------A----) musí (VB-S---3P-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-053-p6s41 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 2 false 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+ 0 0 false 
+ 3 0 false 
+ 0 0 false 
+ 4 1 true 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ 0 0 false 
+ 5 0 false 
+ 5 0 false 
+ 5 1 false 
+ 5 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 6 0 false 
+ 0 0 false 
+ add 8:0
+add 8:true
+true true
+add 8:1
+add 8:false
+false true
+add 1 :2
+S0CXXX
+
+add 3 :3
+add 10 :4false false
+add 10 :5true false
+add 10 :6true false
+add 6 :false
+add 6 :0
+add 7 :7
+add 1 :8
+S1CXXX
+
+add 1 :9
+B0XXXP
+
+add 6 :false
+add 6 :1
+add 7 :10
+add 10 :11false false
+add 10 :12true false
+add 10 :13true false
+end update bracked( (Z:-------------)
+end update bracked
+add 6 :true
+add 6 :1
+add 6 :14
+add 1 :15
+S0XXXX
+
+add 1 :16
+B0XXXP
+
+add 5:17
+add 10 :18false false
+add 10 :19true false
+add 10 :20true false
+add 1 :21
+B0XXXZ
+
+add 6 :true
+add 6 :1
+add 6 :22
+add 10 :23false true
+add 10 :24true false
+add 10 :25true false
+add 10 :26true false
+add 10 :27true true
+add 5:28
+add 1 :29
+S0CXXX
+
+1 / 1 / 0 / 2 / 2 / 2 / 0 / 3 / 0 / 0 / 4 / 0 / 5 / 0 / 1 / 0 / 0 / 6 / 6 / 6 / 6 / 0 / 1 / 1 / 1 / 1 / 1 / 0 / 7 / 0
+
+nextLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange2 /1 / 3/3/7
+
+add0| 1 | 3 | 7 | 3
+add1| 1 | 3 | 7 | 3
+add2| 0 | 3 | 7 | 3
+add3| 2 | 3 | 7 | 3
+add4| 2 | 3 | 7 | 3
+add5| 2 | 3 | 7 | 3
+change6/ 2
+add6| 2 | 3 | 7 | 3
+change7/ 2
+add7| 2 | 3 | 7 | 3
+add8| 0 | 3 | 7 | 3
+add9| 0 | 3 | 7 | 3
+add10| 3 | 3 | 7 | 3
+add11| 0 | 3 | 7 | 3
+add12| 4 | 3 | 7 | 3
+add13| 0 | 3 | 7 | 3
+add14| 1 | 3 | 7 | 3
+add15| 0 | 3 | 7 | 3
+add16| 0 | 3 | 7 | 3
+add17| 5 | 3 | 7 | 3
+add18| 5 | 3 | 7 | 3
+add19| 5 | 3 | 7 | 3
+add20| 5 | 3 | 7 | 3
+add21| 0 | 3 | 7 | 3
+add22| 1 | 3 | 7 | 3
+add23| 1 | 3 | 7 | 3
+add24| 1 | 3 | 7 | 3
+add25| 1 | 3 | 7 | 3
+add26| 1 | 3 | 7 | 3
+add27| 0 | 3 | 7 | 3
+add28| 6 | 3 | 7 | 3
+add29| 0 | 3 | 7 | 3
+---End-------------
+---Start-----------
+  level 0clause 1 segment : témìø (Db-------------) ádná (PWFS1----------) odboráøská (AAFS1----1A----) dopisnice (NNFS1-----A----) nemìla (VpQW---XR-NA---) zpáteèní (AAFS4----1A----) adresu (NNFS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 0 segment : proto (J^-------------)
+  level 0clause 2 segment : mi (PH-S3--1-------) nezbıvá (VB-S---3P-NA---)
+  level 0clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : ne (J,-------------) odpovìdìt (Vf--------A----) touto (PDFS7----------) formou (NNFS7-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-053-p7s11 0 false 
+ 0 0 false 
+ 0 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 1 :2
+B0XXXP
+
+add 1 :3
+B0XXXJ
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 3 :6
+add 1 :7
+S1XX,X
+
+1 / 0 / 0 / 0 / 2 / 0 / 3 / 0
+
+---End-------------
+1 0 false 
+ 0 0 false 
+ 0 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 0 0 false 
+   level 0clause 1 segment : témìø (Db-------------) ádná (PWFS1----------) odboráøská (AAFS1----1A----) dopisnice (NNFS1-----A----) nemìla (VpQW---XR-NA---) zpáteèní (AAFS4----1A----) adresu (NNFS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 0 segment : proto (J^-------------)
+  level 0clause 2 segment : mi (PH-S3--1-------) nezbıvá (VB-S---3P-NA---)
+  level 0clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : ne (J,-------------) odpovìdìt (Vf--------A----) touto (PDFS7----------) formou (NNFS7-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-053-p7s1add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 1 :2
+B0XXXP
+
+add 1 :3
+B0XXXJ
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 3 :6
+add 1 :7
+S1XX,X
+
+1 / 0 / 0 / 0 / 2 / 0 / 3 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : titulky (NNIP1-----A----)
+  level 0clause 0 segment : " (Z:-------------)
+  level 1clause 2 segment : havel (NNMS1-----A----) ádá (VB-S---3P-AA---) konec (NNIS4-----A----) jednostranného (AANS2----1A----) obviòování (NNNS2-----A----)
+  level 0clause 0 segment : " (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : " (Z:-------------)
+  level 1clause 3 segment : obhájce (NNMS1-----A----) dialogu (NNIS2-----A----)
+  level 1clause 3 segment : a (J^-------------)
+  level 1clause 3 segment : porozumìní (NNNS2-----A----)
+  level 0clause 3 segment : " (Z:-------------)
+  level 0clause 3 segment : , (Z:-------------)
+  level 0clause 3 segment : " (Z:-------------)
+  level 1clause 3 segment : václav (NNMS1-----A----) havel (NNMS1-----A----) ádá (VB-S---3P-AA---) zahájení (NNNS4-----A----) kooperace (NNFS2-----A----)
+  level 0clause 3 segment : " (Z:-------------)
+  level 0clause 3 segment : , (Z:-------------)
+  level 0clause 3 segment : " (Z:-------------)
+  level 0clause 3 segment : tolerance (NNFS1-----A----) mezi (RR--7----------) sousedy (NNMP7-----A----)
+  level 0clause 0 segment : " (Z:-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 0 segment : " (Z:-------------)
+  level 1clause 4 segment : havel (NNMS1-----A----)
+  level 1clause 4 segment : : (Z:-------------)
+  level 1clause 4 segment : minulost (NNFS1-----A----) se (P7-X4----------) nesmí (VB-S---3P-NA---) stát (Vf--------A----) programem (NNIS7-----A----)
+  level 0clause 0 segment : " (Z:-------------)
+  level 0clause 1 segment : uvedly (VpTP---XR-AA---) zpravodajství (NNNP4-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : komentáøe (NNIP4-----A----) hlavních (AAIP2----1A----) sobotních (AAIP2----1A----) nìmeckıch (AAIP2----1A----) deníkù (NNIP2-----A----) k (RR--3----------) projevu (NNIS3-----A----) václava (NNMS2-----A----) havla (NNMS2-----A----) k (RR--3----------) èesko (A2--------A----)
+  level 0clause 1 segment : - (Z:-------------)
+  level 0clause 1 segment : nìmeckım (AAIP3----1A----) vztahùm (NNIP3-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95043-113-p3s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 0 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 0 false 
+ 0 0 false 
+ 4 0 false 
+ 4 0 false 
+ 4 0 false 
+ 4 0 false 
+ 4 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 5:2
+add 1 :3
+S0CXXX
+
+add 1 :4
+B0XXXZ
+
+add 1 :5
+B0XXXP
+
+add 4 :6obhájce (NNMS1-----A----) dialogu (NNIS2-----A----)
+add 1 :7
+S0XXXX
+
+add 4 :8porozumìní (NNNS2-----A----)
+add 1 :9
+S0XXXX
+
+add 1 :10
+B0XXXZ
+
+add 1 :11
+B0XXXP
+
+add 5:12
+add 1 :13
+S0CXXX
+
+add 1 :14
+B0XXXZ
+
+add 1 :15
+B0XXXP
+
+add 4 :16tolerance (NNFS1-----A----) mezi (RR--7----------) sousedy (NNMP7-----A----)
+add 1 :17
+S0XXXX
+
+add 1 :18
+B0XXXZ
+
+add 1 :19
+B0XXXJ
+
+add 4 :20havel (NNMS1-----A----)
+add 1 :21
+S0XXXX
+
+add 5:22
+add 1 :23
+S0CXXX
+
+add 5:24
+add 1 :25
+S0CXXX
+
+add 4 :26komentáøe (NNIP4-----A----) hlavních (AAIP2----1A----) sobotních (AAIP2----1A----) nìmeckıch (AAIP2----1A----) deníkù (NNIP2-----A----) k (RR--3----------) projevu (NNIS3-----A----) václava (NNMS2-----A----) havla (NNMS2-----A----) k (RR--3----------) èesko (A2--------A----)
+add 1 :27
+S0XXXX
+
+add 4 :28nìmeckım (AAIP3----1A----) vztahùm (NNIP3-----A----)
+add 1 :29
+S0XXXX
+
+1 / 0 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 0 / 0 / 0 / 3 / 3 / 3 / 3 / 3 / 3 / 3 / 3 / 3 / 0 / 4 / 0 / 5 / 5 / 5 / 5 / 5 / 0
+
+nextLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange1 /0 / 0/2/8
+
+add0| 1 | 0 | 8 | 2
+change1/ 1
+add1| 1 | 0 | 8 | 2
+change2/ 1
+add2| 1 | 0 | 8 | 2
+change3/ 1
+add3| 1 | 0 | 8 | 2
+change4/ 1
+add4| 1 | 0 | 8 | 2
+change5/ 1
+add5| 1 | 0 | 8 | 2
+change6/ 1
+add6| 1 | 0 | 8 | 2
+change7/ 1
+add7| 1 | 0 | 8 | 2
+change8/ 1
+add8| 1 | 0 | 8 | 2
+add9| 0 | 0 | 8 | 2
+add10| 0 | 0 | 8 | 2
+add11| 0 | 0 | 8 | 2
+add12| 2 | 0 | 8 | 2
+add13| 2 | 0 | 8 | 2
+add14| 2 | 0 | 8 | 2
+add15| 2 | 0 | 8 | 2
+add16| 2 | 0 | 8 | 2
+add17| 2 | 0 | 8 | 2
+add18| 2 | 0 | 8 | 2
+add19| 2 | 0 | 8 | 2
+add20| 2 | 0 | 8 | 2
+add21| 0 | 0 | 8 | 2
+add22| 3 | 0 | 8 | 2
+add23| 0 | 0 | 8 | 2
+add24| 4 | 0 | 8 | 2
+add25| 4 | 0 | 8 | 2
+add26| 4 | 0 | 8 | 2
+add27| 4 | 0 | 8 | 2
+add28| 4 | 0 | 8 | 2
+add29| 0 | 0 | 8 | 2
+---End-------------
+---Start-----------
+  level 0clause 1 segment : klub (NNIS4-----A----) toti (Db-------------) posílil (VpYS---XR-AA---) nejlepší (AAMS1----3A----) podzimní (AAMS1----1A----) kanonır (NNMS1-----A----) msfl (NNXXX-----A---8) zemánek (NNMS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : ratíškovice (NNFP1-----A----)
+  level 0clause 1 segment : ) (Z:-------------)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : zkušenı (NNMS1-----A----) sedláèek (NNMS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : kdysi (Db-------------) olomouc (NNFS1-----A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : naposledy (Db-------------) jablonec (NNIS1-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-018-p3s21 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 1 false 
+ 1 1 false 
+ 1 1 false 
+ 0 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 10 :1false false
+add 10 :2true false
+add 10 :3true false
+add 1 :4
+B0XXXZ
+
+add 6 :true
+add 6 :1
+add 6 :5
+add 10 :6false false
+add 10 :7true false
+add 10 :8true false
+add 10 :9true false
+add 10 :10true false
+add 1 :11
+B0XXXZ
+
+---End-------------
+---Start-----------
+  level 0clause 0 segment : ( (Z:-------------)
+  level 1clause 1 segment : ln (NNFPX-----A---8) 31 (C=-------------)
+  level 1clause 1 segment : . (Z:-------------)
+  level 1clause 1 segment : 1 (C=-------------)
+  level 1clause 1 segment : . (Z:-------------)
+  level 1clause 1 segment : 1995 (C=-------------)
+  level 0clause 1 segment : ) (Z:-------------)
+  level 0clause 1 segment : hynku (NNMS3-----A---1) krátkému (NNMS3-----A----) z (RR--2----------) jeho (PSXXXZS3-------) èlánku (NNIS2-----A----) úplnì (Dg-------1A----) zmizela (VpQW---XR-AA---) uèilištì (NNNP1-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-059-p2s10 0 false 
+ 0 1 false 
+ 1 1 false 
+ 0 1 false 
+ 0 1 false 
+ 0 1 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 12 :0
+add 10 :1true false
+add 10 :2true false
+add 10 :3true false
+add 10 :4true false
+add 10 :5true false
+add 10 :6true false
+add 6 :false
+add 6 :0
+add 7 :7
+add 1 :8
+S0CXXX
+
+0 / 0 / 1 / 0 / 1 / 1 / 0 / 2 / 0
+
+prevLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange1 /1 / 2/0/5
+
+0
+
+0
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : naopak (Db-------------) ák (NNMS1-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kterı (P4YS1----------) je (VB-S---3P-AA---) v (RR--6----------) ákovském (AAIS6----1A----) pomìru (NNIS6-----A----) k (RR--3----------) uèilišti (NNNS3-----A----)
+  level 1clause 2 segment : ( (Z:-------------)
+  level 2clause 2 segment : støední (AAFS3----1A----) integrované (AAFS3----1A----) škole (NNFS3-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : je (VB-S---3P-AA---) financován (VsYS---XX-AP---) státním (AAIS7----1A----) rozpoètem (NNIS7-----A----)
+  level 0clause 1 segment : anebo (J^------------1)
+  level 0clause 1 segment : sponzorem (NNMS7-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-059-p4s31 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 2 false 
+ 0 1 false 
+ 0 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 10 :3false false
+add 10 :4true false
+add 10 :5true false
+add 1 :6
+B1XXXZ
+
+add 6 :false
+add 6 :0
+add 7 :7
+add 1 :8
+S1CXXX
+
+add 4 :9sponzorem (NNMS7-----A----)
+add 1 :10
+S1XXXX
+
+1 / 0 / 2 / 2 / 2 / 0 / 0 / 3 / 3 / 3 / 0
+
+---End-------------
+1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 2 false 
+ 0 1 false 
+ 0 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 0 0 false 
+   level 0clause 1 segment : naopak (Db-------------) ák (NNMS1-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kterı (P4YS1----------) je (VB-S---3P-AA---) v (RR--6----------) ákovském (AAIS6----1A----) pomìru (NNIS6-----A----) k (RR--3----------) uèilišti (NNNS3-----A----)
+  level 1clause 2 segment : ( (Z:-------------)
+  level 2clause 2 segment : støední (AAFS3----1A----) integrované (AAFS3----1A----) škole (NNFS3-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : je (VB-S---3P-AA---) financován (VsYS---XX-AP---) státním (AAIS7----1A----) rozpoètem (NNIS7-----A----)
+  level 0clause 1 segment : anebo (J^------------1)
+  level 0clause 1 segment : sponzorem (NNMS7-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-059-p4s3add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 10 :3false false
+add 10 :4true false
+add 10 :5true false
+add 1 :6
+B1XXXZ
+
+add 6 :false
+add 6 :0
+add 7 :7
+add 1 :8
+S1CXXX
+
+add 4 :9sponzorem (NNMS7-----A----)
+add 1 :10
+S1XXXX
+
+1 / 0 / 2 / 2 / 2 / 0 / 0 / 3 / 3 / 3 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : jestlie (J,-------------) døíve (Dg-------2A----) uèni (NNMS3-----A----) vstup (NNIS4-----A----) do (RR--2----------) atraktivního (AAIS2----1A----) oboru (NNIS2-----A----) umoòoval (VpYS---XR-AA---) takzvanı (AAIS1----1A----)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : sociální (AAIS1----1A----) kapitál (NNIS1-----A----)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : tedy (Db-------------) protekce (NNFS1-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : dnes (Db-------------) je (VB-S---3P-AA---) to (PDNS1----------) prostì (Dg-------1A----) jen (TT-------------) kapitál (NNIS1-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : tedy (Db-------------) peníze (NNIP1-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-059-p5s11 1 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0XXXX
+
+add 1 :4
+B0XXXZ
+
+add 4 :5tedy (Db-------------) protekce (NNFS1-----A----)
+add 1 :6
+S0XXXX
+
+add 4 :7dnes (Db-------------) je (VB-S---3P-AA---) to (PDNS1----------) prostì (Dg-------1A----) jen (TT-------------) kapitál (NNIS1-----A----)
+add 1 :8
+S0CXXX
+
+add 4 :9tedy (Db-------------) peníze (NNIP1-----A----)
+add 1 :10
+S0XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : páteèním (AAIS7----1A----) projevem (NNIS7-----A----) prezidenta (NNMS2-----A----) havla (NNMS2-----A----) toto (PDNS1----------) období (NNNS1-----A----) svobody (NNFS2-----A----) rozumu (NNIS2-----A----) bez (RR--2----------) opor (NNFP2-----A----)
+  level 0clause 1 segment : nebo (J^-------------)
+  level 0clause 1 segment : s (RR--7----------) oporami (NNFP7-----A----) cizími (AAFP7----1A----) zøejmì (Dg-------1A----) skuteènì (Dg-------1A----) konèí (VB-S---3P-AA---)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 2 segment : tradièní (AAFP1----1A----)
+  level 0clause 2 segment : i (J^-------------)
+  level 0clause 2 segment : nové (AAFP1----1A----) hodnoty (NNFP1-----A----) dostávají (VB-P---3P-AA---) místa (NNNP4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : je (PJXP1----------) jim (PPXP3--3-------) náleí (VB-P---3P-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-069-p4s31 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2s (RR--7----------) oporami (NNFP7-----A----) cizími (AAFP7----1A----) zøejmì (Dg-------1A----) skuteènì (Dg-------1A----) konèí (VB-S---3P-AA---)
+add 1 :3
+S0CXXX
+
+add 4 :4tradièní (AAFP1----1A----)
+add 1 :5
+S0XXXX
+
+add 5:6
+add 1 :7
+S0CXXX
+
+add 3 :8
+add 1 :9
+S1CXJX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : vedoucí (NNFS1-----A----) oddìlení (NNNS2-----A----) sociální (AAFS2----1A----) péèe (NNFS2-----A----) na (RR--6----------) praze (NNFS6-----A----) 3 (C=-------------) vìra (NNFS1-----A----) hlubíková (NNFS1-----A----) uvádí (VB-S---3P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) za (RR--4----------) minulı (AAIS4----1A----) rok (NNIS4-----A----) vyplatil (VpYS---XR-AA---) odbor (NNIS1-----A----) sociálnì (Dg-------1A----) potøebnım (AAMP3----1A----) dùchodcùm (NNMP3-----A----)
+  level 1clause 2 segment : a (J^-------------)
+  level 1clause 2 segment : invalidním (AAMP3----1A----) obèanùm (NNMP3-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 0 segment : jejich (P1XXXXP3-------) pøíjem (NNIS1-----A----) nepøesahuje (VB-S---3P-NA---) 1.4 (C=-------------) násobek (NNIS4-----A----) ivotního (AANS2----1A----) minima (NNNS2-----A----) 1464 (C=-------------) jednorázovıch (AAFP2----1A----) dávek (NNFP2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-109-p4s11 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+ 3 2 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1CX,X
+
+add 4 :4invalidním (AAMP3----1A----) obèanùm (NNMP3-----A----)
+add 1 :5
+S1XXXX
+
+add 3 :6
+add 1 :7
+S2CX1X
+
+---End-------------
+---Start-----------
+  level 1clause 1 segment : kdy (J,-------------) stát (NNIS1-----A----) vloni (Db-------------) zvıšil (VpYS---XR-AA---) pøíspìvek (NNIS4-----A----) na (RR--4----------) dietu (NNFS4-----A----) o (RR--4----------) sto (NNNS4-----A----) korun (NNFP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : získala (VpQW---XR-AA---) pøíspìvek (NNIS4-----A----) 165 (C=-------------) kè (NNFXX-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 3 segment : poté (Db-------------)
+  level 0clause 3 segment : však (J^-------------)
+  level 0clause 3 segment : byly (VpTP---XR-AA---) v (RR--6----------) prosinci (NNIS6-----A----) zvıšeny (VsTP---XX-AP---) dùchody (NNIP1-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 4 segment : adatelce (NNFS3-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 5 segment : protoe (J,-------------) pøekroèila (VpQW---XR-AA---) tehdy (Db-------------) platné (AANS4----1A----) ivotní (AANS4----1A----) minimum (NNNS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 4 segment : byl (VpYS---XR-AA---) pøíspìvek (NNIS1-----A----) zastaven (VsYS---XX-AP---)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-109-p5s41 1 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 0 false 
+ 3 0 false 
+ 3 0 false 
+ 0 0 false 
+ 4 1 true 
+ 0 0 false 
+ 5 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0CXXX
+
+add 4 :4poté (Db-------------)
+add 1 :5
+S0XXXX
+
+add 5:6
+add 1 :7
+S0CXXX
+
+add 4 :8adatelce (NNFS3-----A----)
+add 1 :9
+S0XXXX
+
+add 3 :10
+add 1 :11
+S1CX,X
+
+add 6 :false
+add 6 :0
+add 7 :12
+add 1 :13
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : ovšem (J^-------------)
+  level 0clause 1 segment : jen (TT-------------) na (RR--4----------) mìsíc (NNIS4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : protoe (J,-------------) od (RR--2----------) letošního (AAIS2----1A----) ledna (NNIS2-----A----) ivotní (AANS1----1A----) minimum (NNNS1-----A----) vzrostlo (VpNS---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : take (J,-------------) má (VB-S---3P-AA---) nyní (Db-------------) nárok (NNIS4-----A----) na (RR--4----------) 125 (C=-------------) korun (NNFP2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-109-p5s51 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 3 2 true 
+ 0 0 false 
+ add 8:0
+add 8:true
+true true
+add 8:1
+add 8:false
+false true
+add 1 :2
+S0XXXX
+
+add 3 :3
+add 1 :4
+S1CX,X
+
+add 3 :5
+add 1 :6
+S2CX,X
+
+1 / 1 / 0 / 2 / 0 / 3 / 0
+
+---End-------------
+1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 3 2 true 
+ 0 0 false 
+   level 0clause 1 segment : ovšem (J^-------------)
+  level 0clause 1 segment : jen (TT-------------) na (RR--4----------) mìsíc (NNIS4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : protoe (J,-------------) od (RR--2----------) letošního (AAIS2----1A----) ledna (NNIS2-----A----) ivotní (AANS1----1A----) minimum (NNNS1-----A----) vzrostlo (VpNS---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : take (J,-------------) má (VB-S---3P-AA---) nyní (Db-------------) nárok (NNIS4-----A----) na (RR--4----------) 125 (C=-------------) korun (NNFP2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+ln95044-109-p5s5add 8:0
+add 8:true
+true true
+add 8:1
+add 8:false
+false true
+add 1 :2
+S0XXXX
+
+add 3 :3
+add 1 :4
+S1CX,X
+
+add 3 :5
+add 1 :6
+S2CX,X
+
+1 / 1 / 0 / 2 / 0 / 3 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : investièní (AAFS1----1A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : poštovní (AAFS1----1A----) banka (NNFS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : ipb (NNFXX-----A---8)
+  level 0clause 1 segment : ) (Z:-------------)
+  level 0clause 1 segment : zaèala (VpQW---XR-AA---) úèty (NNIP4-----A----) podobné (AAIP4----1A----) sporoiru (NNNS3-----A----) zøizovat (Vf--------A----) v (RR--6----------) záøí (NNNS6-----A----) roku (NNIS2-----A---1) 1993 (C=-------------)
+  level 0clause 0 segment : ; (Z:-------------)
+ln95044-119-p3s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 1 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2poštovní (AAFS1----1A----) banka (NNFS1-----A----)
+add 10 :3false false
+add 10 :4true false
+add 10 :5true false
+add 6 :true
+add 6 :1
+add 6 :6
+add 1 :7
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : poslední (AAMP1----1A----) kapøi (NNMP1-----A----)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : zmizeli (VpMP---XR-AA---)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : z (RR--2----------) prodejních (AANP2----1A----) míst (NNNP2-----A----) napøíklad (Db-------------) na (RR--6----------) olomoucku (NNNS6-----A----) po (RR--6----------) vyèerpání (NNNS6-----A----) zásob (NNFP2-----A----) ji (Db-------------) v (RR--4----------) nedìli (NNFS4-----A----)
+  level 0clause 0 segment : ( (Z:-------------)
+  level 0clause 0 segment : ! (Z:-------------)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91301-017-p3s31 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 1 false 
+ 0 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2zmizeli (VpMP---XR-AA---)
+add 1 :3
+S0CXXX
+
+add 4 :4z (RR--2----------) prodejních (AANP2----1A----) míst (NNNP2-----A----) napøíklad (Db-------------) na (RR--6----------) olomoucku (NNNS6-----A----) po (RR--6----------) vyèerpání (NNNS6-----A----) zásob (NNFP2-----A----) ji (Db-------------) v (RR--4----------) nedìli (NNFS4-----A----)
+add 10 :5false false
+add 10 :6true false
+add 10 :7true false
+add 1 :8
+B0XXXZ
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : obèanská (AAFS1----1A----) demokratická (AAFS1----1A----) strana (NNFS1-----A----) by (Vc-------------) v (RR--6----------) pøípadì (NNIS6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) by (Vc-------------) se (P7-X4----------) nyní (Db-------------) konaly (VpTP---XR-AA---) volby (NNFP1-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : získala (VpQW---XR-AA---) 18 (C=-------------) procent (NNNP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 3 segment : to (PDNS1----------) je (VB-S---3P-AA---) nejvíce (Dg-------3A----) hlasù (NNIP2-----A----) v (RR--6----------) ústí (NNNS6-----A----) nad (RR--7----------) labem (NNNS7-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91301-047-p3s11 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 3 0 false 
+ 0 0 false 
+ 4 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1CX,X
+
+add 6 :false
+add 6 :1
+add 7 :4
+add 1 :5
+S0CXXX
+
+add 5:6
+add 1 :7
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 0 segment : ( (Z:-------------)
+  level 0clause 1 segment : v (NNMXX-----A---8)
+  level 0clause 1 segment : . (Z:-------------)
+  level 0clause 1 segment : havel (NNMS1-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : l (NNMXX-----A---8)
+  level 0clause 1 segment : . (Z:-------------)
+  level 0clause 1 segment : kantor (NNMS1-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+lnd91303-054-p1s31 0 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 1clause 0 segment : 2 (C=-------------) / (Z:-------------) a (J,-------------) bude (VB-S---3F-AA---) nejhùø (Dg-------3A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 3 segment : šoupnem (VB-P---1P-AA--6) to (PDNS4----------) o (RR--4----------) nepatrnı (AAIS4----1N----)
+  level 0clause 3 segment : , (Z:-------------)
+  level 0clause 3 segment : opravdu (Db-------------) nepatrnı (AAIS4----1N----) kouštíèek (NNIS4-----A----) doleva (Db-------------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-054-p2s11 1 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0CXXX
+
+add 4 :4opravdu (Db-------------) nepatrnı (AAIS4----1N----) kouštíèek (NNIS4-----A----) doleva (Db-------------)
+add 1 :5
+S0XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 0 segment : ( (Z:-------------)
+  level 1clause 1 segment : j (NNMXX-----A---8)
+  level 1clause 1 segment : . (Z:-------------)
+  level 1clause 1 segment : ruml (NNMS1-----A----)
+  level 1clause 1 segment : a (J^-------------)
+  level 1clause 1 segment : r (NNMXX-----A---8)
+  level 1clause 1 segment : . (Z:-------------)
+  level 1clause 1 segment : hrušínskı (AAMS1----1A----)
+  level 0clause 0 segment : ) (Z:-------------)
+lnd91303-054-p5s31 0 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 0 segment : ( (Z:-------------)
+  level 1clause 1 segment : j (NNMXX-----A---8)
+  level 1clause 1 segment : . (Z:-------------)
+  level 1clause 1 segment : dienstbier (NNMS1-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+lnd91303-054-p6s21 0 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : 7 (C=-------------) / (Z:-------------) ètvrtá (CrFS1----------) cesta (NNFS1-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-054-p7s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : jistì (Dg-------1A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : nebıvá (VB-S---3P-NA---) to (PDNS1----------) dìjinnı (AAIS1----1A----) ohòostroj (NNIS1-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 3 segment : nepíše (VB-S---3P-NA---) to (PDNS1----------) velkou (AAFS4----1A----) historii (NNFS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : ale (J^-------------)
+  level 0clause 4 segment : také (Db-------------) to (PDNS1----------) není (VB-S---3P-NA---) pøízemní (AANS1----1A----)
+  level 0clause 4 segment : , (Z:-------------)
+  level 0clause 4 segment : spíše (Dg-------2A---1) dané (AANS1----1A----)
+  level 0clause 4 segment : a (J^-------------)
+  level 0clause 4 segment : logické (AANS1----1A----)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-064-p12s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 0 0 false 
+ 3 0 false 
+ 3 0 false 
+ 3 0 false 
+ 3 0 false 
+ 3 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2nebıvá (VB-S---3P-NA---) to (PDNS1----------) dìjinnı (AAIS1----1A----) ohòostroj (NNIS1-----A----)
+add 1 :3
+S0CXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 1 :6
+B0XXXP
+
+add 5:7
+add 1 :8
+S0CXXX
+
+add 4 :9spíše (Dg-------2A---1) dané (AANS1----1A----)
+add 1 :10
+S0XXXX
+
+add 4 :11logické (AANS1----1A----)
+add 1 :12
+S0XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : na (RR--4----------) polozdevastovanou (AAFS4----1A----) zemi (NNFS4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : na (RR--4----------) otrávenı (AAIS4----1A----) vzduch (NNIS4-----A----)
+  level 0clause 1 segment : i (J^-------------)
+  level 0clause 1 segment : otrávené (AAFP4----1A----) duše (NNFP4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : na (RR--4----------) bídnı (AAIS4----1A----) stav (NNIS4-----A----) škol (NNFP2-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : nemocnic (NNFP2-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : vlastního (AANS2----1A----) kadodenního (AANS2----1A----) svìdomí (NNNS2-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : na (RR--4----------) staré (AAIP4----1A----) kádry (NNIP4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : které (P4IP1----------) si (P7-X3----------) nakradly (VpTP---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : odpudivé (AAMP4----1A----) komunisty (NNMP4-----A----) pøipínající (AGMP4-----A----) si (P7-X3----------) hvìzdu (NNFS4-----A----) holokaustovıch (AAMP2----1A----) muèedníkù (NNMP2-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : na (RR--4----------) arogantní (AAMP4----1A----) poslance (NNMP4-----A----) nedbající (AGMP4-----A----) miliónù (NNIP2-----A----) hlasù (NNIP2-----A----) volièù (NNMP2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-064-p13s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 0 1 false 
+ 0 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2na (RR--4----------) otrávenı (AAIS4----1A----) vzduch (NNIS4-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4otrávené (AAFP4----1A----) duše (NNFP4-----A----)
+add 1 :5
+S0XXXX
+
+add 4 :6na (RR--4----------) bídnı (AAIS4----1A----) stav (NNIS4-----A----) škol (NNFP2-----A----)
+add 1 :7
+S0XXXX
+
+add 4 :8nemocnic (NNFP2-----A----)
+add 1 :9
+S0XXXX
+
+add 4 :10vlastního (AANS2----1A----) kadodenního (AANS2----1A----) svìdomí (NNNS2-----A----)
+add 1 :11
+S0XXXX
+
+add 4 :12na (RR--4----------) staré (AAIP4----1A----) kádry (NNIP4-----A----)
+add 1 :13
+S0XXXX
+
+add 3 :14
+add 1 :15
+S1CX4X
+
+add 4 :16odpudivé (AAMP4----1A----) komunisty (NNMP4-----A----) pøipínající (AGMP4-----A----) si (P7-X3----------) hvìzdu (NNFS4-----A----) holokaustovıch (AAMP2----1A----) muèedníkù (NNMP2-----A----)
+add 1 :17
+S1XXXX
+
+add 4 :18na (RR--4----------) arogantní (AAMP4----1A----) poslance (NNMP4-----A----) nedbající (AGMP4-----A----) miliónù (NNIP2-----A----) hlasù (NNIP2-----A----) volièù (NNMP2-----A----)
+add 1 :19
+S1XXXX
+
+add 1 :20
+B1XXXZ
+
+add 1 :21
+B1XXXZ
+
+1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 0 / 2 / 2 / 2 / 2 / 2 / 0 / 0 / 0
+
+---End-------------
+1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 0 1 false 
+ 0 1 false 
+ 0 0 false 
+   level 0clause 1 segment : na (RR--4----------) polozdevastovanou (AAFS4----1A----) zemi (NNFS4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : na (RR--4----------) otrávenı (AAIS4----1A----) vzduch (NNIS4-----A----)
+  level 0clause 1 segment : i (J^-------------)
+  level 0clause 1 segment : otrávené (AAFP4----1A----) duše (NNFP4-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : na (RR--4----------) bídnı (AAIS4----1A----) stav (NNIS4-----A----) škol (NNFP2-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : nemocnic (NNFP2-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : vlastního (AANS2----1A----) kadodenního (AANS2----1A----) svìdomí (NNNS2-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : na (RR--4----------) staré (AAIP4----1A----) kádry (NNIP4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : které (P4IP1----------) si (P7-X3----------) nakradly (VpTP---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : odpudivé (AAMP4----1A----) komunisty (NNMP4-----A----) pøipínající (AGMP4-----A----) si (P7-X3----------) hvìzdu (NNFS4-----A----) holokaustovıch (AAMP2----1A----) muèedníkù (NNMP2-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : na (RR--4----------) arogantní (AAMP4----1A----) poslance (NNMP4-----A----) nedbající (AGMP4-----A----) miliónù (NNIP2-----A----) hlasù (NNIP2-----A----) volièù (NNMP2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-064-p13s2add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2na (RR--4----------) otrávenı (AAIS4----1A----) vzduch (NNIS4-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4otrávené (AAFP4----1A----) duše (NNFP4-----A----)
+add 1 :5
+S0XXXX
+
+add 4 :6na (RR--4----------) bídnı (AAIS4----1A----) stav (NNIS4-----A----) škol (NNFP2-----A----)
+add 1 :7
+S0XXXX
+
+add 4 :8nemocnic (NNFP2-----A----)
+add 1 :9
+S0XXXX
+
+add 4 :10vlastního (AANS2----1A----) kadodenního (AANS2----1A----) svìdomí (NNNS2-----A----)
+add 1 :11
+S0XXXX
+
+add 4 :12na (RR--4----------) staré (AAIP4----1A----) kádry (NNIP4-----A----)
+add 1 :13
+S0XXXX
+
+add 3 :14
+add 1 :15
+S1CX4X
+
+add 4 :16odpudivé (AAMP4----1A----) komunisty (NNMP4-----A----) pøipínající (AGMP4-----A----) si (P7-X3----------) hvìzdu (NNFS4-----A----) holokaustovıch (AAMP2----1A----) muèedníkù (NNMP2-----A----)
+add 1 :17
+S1XXXX
+
+add 4 :18na (RR--4----------) arogantní (AAMP4----1A----) poslance (NNMP4-----A----) nedbající (AGMP4-----A----) miliónù (NNIP2-----A----) hlasù (NNIP2-----A----) volièù (NNMP2-----A----)
+add 1 :19
+S1XXXX
+
+add 1 :20
+B1XXXZ
+
+add 1 :21
+B1XXXZ
+
+1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 1 / 0 / 2 / 2 / 2 / 2 / 2 / 0 / 0 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : je (VB-S---3P-AA---) to (PDNS1----------) sice (Db-------------) prokazatelnì (Dg-------1A----) slabá (AAFS1----1A----) útìcha (NNFS1-----A----) poukazovat (Vf--------A----) na (RR--4----------) to (PDNS4----------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 2 segment : e (J,-------------) zatímco (J,-------------) doma (Db-------------)
+  level 2clause 2 segment : ( (Z:-------------)
+  level 3clause 2 segment : v (RR--6----------) rodinì (NNFS6-----A----)
+  level 3clause 2 segment : , (Z:-------------)
+  level 3clause 2 segment : v (RR--6----------) obci (NNFS6-----A----)
+  level 3clause 2 segment : , (Z:-------------)
+  level 3clause 2 segment : ve (RV--6----------) státì (NNIS6-----A----)
+  level 2clause 2 segment : ) (Z:-------------)
+  level 2clause 2 segment : není (VB-S---3P-NA---) zvláš (Db-------------) dobøe (Dg-------1A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : jinde (Db-------------) je (VB-S---3P-AA---) ještì (Db-------------) hùø (Dg-------2A----)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-064-p15s21 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 0 2 false 
+ 2 2 false 
+ 0 2 false 
+ 2 2 false 
+ 2 2 false 
+ 2 1 false 
+ 2 1 false 
+ 0 1 false 
+ 3 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 10 :3false false
+add 10 :4true false
+add 10 :5true false
+add 10 :6true false
+add 10 :7true false
+add 10 :8true false
+add 10 :9true false
+add 6 :false
+add 6 :0
+add 7 :10
+add 1 :11
+S1CXXX
+
+add 5:12
+add 1 :13
+S1CXXX
+
+1 / 0 / 2 / 2 / 0 / 2 / 0 / 2 / 2 / 0 / 3 / 0 / 4 / 0
+
+nextLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange2 /1 / 2/3/10
+
+add0| 1 | 2 | 10 | 3
+add1| 0 | 2 | 10 | 3
+add2| 2 | 2 | 10 | 3
+add3| 2 | 2 | 10 | 3
+add4| 0 | 2 | 10 | 3
+add5| 2 | 2 | 10 | 3
+add6| 0 | 2 | 10 | 3
+add7| 2 | 2 | 10 | 3
+add8| 2 | 2 | 10 | 3
+change9/ 2
+add9| 2 | 2 | 10 | 3
+change10/ 2
+add10| 2 | 2 | 10 | 3
+add11| 0 | 2 | 10 | 3
+add12| 3 | 2 | 10 | 3
+add13| 0 | 2 | 10 | 3
+---End-------------
+---Start-----------
+  level 0clause 1 segment : tentokrát (Db-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : aspoò (Db-------------) se (P7-X4----------) tak (Db-------------) zdá (VB-S---3P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : je (VB-S---3P-AA---) vìštìní (NNNS1-----A----) z (RR--2----------) té (PDFS2----------) sklenìné (AAFS2----1A----) koule (NNFS2-----A----) obezøetnìjší (AANS1----2A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : ne (J,-------------) bıvá (VB-S---3P-AA---) v (RR--6----------) kraji (NNIS6-----A----) zvykem (NNIS7-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-064-p2s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2aspoò (Db-------------) se (P7-X4----------) tak (Db-------------) zdá (VB-S---3P-AA---)
+add 1 :3
+S0CXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 3 :6
+add 1 :7
+S1CX,X
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : pravı (AAIS1----1A----) opak (NNIS1-----A----) se (P7-X4----------) stal (VpYS---XR-AA---) skutkem (NNIS7-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : pravda (NNFS1-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : chtìlo (VpNS---XR-AA---) to (PDNS1----------) èas (NNIS4-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : ale (J^-------------)
+  level 0clause 2 segment : zato (J,-------------) jaká (P4FS1----------) monumentální (AAFS1----1A----) mılka (NNFS1-----A----)
+  level 0clause 0 segment : ! (Z:-------------)
+lnd91303-064-p3s1B1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2pravda (NNFS1-----A----)
+add 1 :3
+S0XXXX
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 11 :6
+add 4 :7zato (J,-------------) jaká (P4FS1----------) monumentální (AAFS1----1A----) mılka (NNFS1-----A----)
+add 1 :8
+S0XX,X
+
+1 / 1 / 1 / 0 / 2 / 0 / 3 / 3 / 0
+
+prevLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange3 /0 / 6/2/7
+
+2
+
+2
+
+2
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : ale (J^-------------)
+  level 0clause 1 segment : ani (J^-------------)
+  level 0clause 1 segment : západní (AAMP1----1A----) obvykle (Dg-------1A----) støízliví (AAMP1----1A----) pozorovatelé (NNMP1-----A----) svìtové (AAFS2----1A----) scény (NNFS2-----A----) se (P7-X4----------) po (RR--6----------) pádu (NNIS6-----A---1) berlínské (AAFS2----1A----) zdi (NNFS2-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : všeho (PLZS2----------) neèekaného (AANS2----1N----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : co (PQ--1----------) následovalo (VpNS---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : nevyhnuli (VpMP---XR-NA---) prorocké (AAFS3----1A----) euforii (NNFS3-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-064-p5s11 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:true
+true true
+add 1 :1
+B0XXXJ
+
+add 8:2
+add 8:false
+false true
+add 1 :3
+S0XXXX
+
+add 4 :4všeho (PLZS2----------) neèekaného (AANS2----1N----)
+add 1 :5
+S0XXXX
+
+add 3 :6
+add 1 :7
+S1CXQX
+
+add 6 :true
+add 6 :1
+add 6 :8
+add 1 :9
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 0 segment : " (Z:-------------)
+  level 1clause 1 segment : nastala (VpQW---XR-AA---) doba (NNFS1-----A----) zázrakù (NNIP2-----A----)
+  level 0clause 0 segment : " (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : pøedvídal (VpYS---XR-AA---) jeden (ClYS1----------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : " (Z:-------------)
+  level 1clause 3 segment : konec (NNIS1-----A----) anti (TT-------------) dìjin (NNFP2-----A----)
+  level 0clause 3 segment : " (Z:-------------)
+  level 0clause 3 segment : , (Z:-------------)
+  level 0clause 3 segment : vyhlásil (VpYS---XR-AA---) jinı (AAMS1----1A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 4 segment : tøetí (CrMS1----------) dospìl (VpYS---XR-AA---) ke (RV--3----------) zjištìní (NNNS3-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 5 segment : e (J,-------------) lidstvo (NNNS1-----A----) se (P7-X4----------) ocitlo (VpNS---XR-AA--1)
+  level 1clause 5 segment : " (Z:-------------)
+  level 1clause 5 segment : na (RR--6----------) konci (NNIS6-----A----) dìjin (NNFP2-----A----)
+  level 0clause 0 segment : " (Z:-------------)
+  level 0clause 0 segment : : (Z:-------------)
+  level 1clause 6 segment : ty (PDFP1----------) byly (VpTP---XR-AA---) toti (Db-------------) uzavøeny (VsTP---XX-AP---) nezvratitelnım (AANS7----1N----) vítìzstvím (NNNS7-----A----)
+  level 1clause 6 segment : " (Z:-------------)
+  level 1clause 6 segment : liberální (AAFS2----1A----) demokracie (NNFS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 7 segment : která (P4FS1----------) perspektivnì (Dg-------1A----) u (Db-------------) nebude (VB-S---3F-NA---) mít (Vf--------A----) konkurenta (NNMS4-----A----)
+  level 2clause 0 segment : " (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-064-p5s20 0 false 
+ 1 0 false 
+ 0 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ 0 0 false 
+ 3 0 false 
+ 0 0 false 
+ 0 0 false 
+ 4 0 false 
+ 0 0 false 
+ 5 1 true 
+ 5 1 false 
+ 5 1 false 
+ 0 1 false 
+ 0 1 false 
+ 6 1 false 
+ 6 1 false 
+ 6 1 false 
+ 0 0 false 
+ 7 2 true 
+ 0 2 false 
+ 0 0 false 
+ add 2:0
+add 8:1
+add 8:false
+false true
+add 1 :2
+S0CXXX
+
+add 1 :3
+B0XXXZ
+
+add 5:4
+add 1 :5
+S0CXXX
+
+add 1 :6
+B0XXXP
+
+add 4 :7konec (NNIS1-----A----) anti (TT-------------) dìjin (NNFP2-----A----)
+add 1 :8
+S0XXXX
+
+add 1 :9
+B0XXXZ
+
+add 5:10
+add 1 :11
+S0CXXX
+
+add 1 :12
+B0XXXP
+
+add 5:13
+add 1 :14
+S0CXXX
+
+add 3 :15
+add 1 :16
+S1CX,X
+
+add 4 :17na (RR--6----------) konci (NNIS6-----A----) dìjin (NNFP2-----A----)
+add 1 :18
+S1XXXX
+
+add 1 :19
+B1XXXZ
+
+add 5:20
+add 1 :21
+S1CXXX
+
+add 4 :22liberální (AAFS2----1A----) demokracie (NNFS2-----A----)
+add 1 :23
+S1XXXX
+
+add 3 :24
+add 1 :25
+S2CX4X
+
+add 1 :26
+B2XXXZ
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : jen (TT-------------) o (RR--4----------) dva (ClYP4----------) roky (NNIP4-----A----) pozdìji (Dg-------2A----) tí (PDMP1----------) proroci (NNMP1-----A----) se (P7-X4----------) museli (VpMP---XR-AA---)
+  level 0clause 1 segment : buï (J^-------------)
+  level 0clause 1 segment : odmlèet (Vf--------A----)
+  level 0clause 1 segment : nebo (J^-------------)
+  level 0clause 1 segment : pøiznat (Vf--------A----) omyl (NNIS4-----A----)
+  level 0clause 0 segment : : (Z:-------------)
+  level 0clause 2 segment : ta (PDFS1----------) vítìzná (AAFS1----1A----) liberální (AAFS1----1A----) demokracie (NNFS1-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : " (Z:-------------)
+  level 0clause 2 segment : jediná (AAFS1----1A----) síla (NNFS1-----A----) zbylá (AAFS1----1A----) na (RR--6----------) troskách (NNFP6-----A----) všech (PLXP2----------) ideologií (NNFP2-----A----)
+  level 0clause 2 segment : " (Z:-------------)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : zaèala (VpQW---XR-AA---) vysílat (Vf--------A----) signály (NNIP4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : je (PJXP4----------) nebylo (VpNS---XR-NA---) moné (AANS1----1A----) nerozeznat (Vf--------N----)
+  level 1clause 3 segment : , (Z:-------------)
+  level 1clause 3 segment : tím (PDZS7----------) ménì (Dg-------2A----) pøehlédnout (Vf--------A----)
+  level 0clause 0 segment : : (Z:-------------)
+  level 0clause 2 segment : o (RR--6----------) narùstající (AGFS6-----A----)
+  level 0clause 2 segment : a (J^-------------)
+  level 0clause 2 segment : zøejmì (Dg-------1A----) ne (TT-------------) snad (Db-------------) jen (TT-------------) pøechodné (AAFS6----1A----) hospodáøské (AAFS6----1A----) krizi (NNFS6-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : o (RR--6----------) katastrofálnì (Dg-------1A----) stoupající (AGFS6-----A----) nezamìstnanosti (NNFS6-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : o (RR--6----------) spoleèenské (AAFS6----1A----) škodlivosti (NNFS6-----A----) narkománie (NNFS2-----A----)
+  level 0clause 0 segment : - (Z:-------------)
+  level 2clause 4 segment : abychom (J,-P---1-------) se (P7-X4----------) zmínili (VpMP---XR-AA---) jen (TT-------------) o (RR--6----------) tìch (PDXP6----------) prokazatelnıch (AANP6----1A----) zlech (NNNP6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 3clause 5 segment : která (P4NP4----------) sice (Db-------------) proroci (NNMP1-----A----) z (RR--2----------) let (NNNP2-----A----) osmdesátıch (CrNP2----------) znali (VpMP---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : ale (J^-------------)
+  level 3clause 6 segment : podcenili (VpMP---XR-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-064-p5s31 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 0 1 false 
+ 4 1 true 
+ 0 0 false 
+ 5 2 true 
+ 0 2 false 
+ 0 2 false 
+ 6 2 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2odmlèet (Vf--------A----)
+add 1 :3
+S0XXXX
+
+add 4 :4pøiznat (Vf--------A----) omyl (NNIS4-----A----)
+add 1 :5
+S0XXXX
+
+add 4 :6ta (PDFS1----------) vítìzná (AAFS1----1A----) liberální (AAFS1----1A----) demokracie (NNFS1-----A----)
+add 1 :7
+S0XXXX
+
+add 1 :8
+B0XXXP
+
+add 4 :9jediná (AAFS1----1A----) síla (NNFS1-----A----) zbylá (AAFS1----1A----) na (RR--6----------) troskách (NNFP6-----A----) všech (PLXP2----------) ideologií (NNFP2-----A----)
+add 1 :10
+S0XXXX
+
+add 1 :11
+B0XXXZ
+
+add 5:12
+add 1 :13
+S0CXXX
+
+add 3 :14
+add 1 :15
+S1CXJX
+
+add 4 :16tím (PDZS7----------) ménì (Dg-------2A----) pøehlédnout (Vf--------A----)
+add 1 :17
+S1XXXX
+
+add 4 :18o (RR--6----------) narùstající (AGFS6-----A----)
+add 1 :19
+S1XXXX
+
+add 4 :20zøejmì (Dg-------1A----) ne (TT-------------) snad (Db-------------) jen (TT-------------) pøechodné (AAFS6----1A----) hospodáøské (AAFS6----1A----) krizi (NNFS6-----A----)
+add 1 :21
+S1XXXX
+
+add 4 :22o (RR--6----------) katastrofálnì (Dg-------1A----) stoupající (AGFS6-----A----) nezamìstnanosti (NNFS6-----A----)
+add 1 :23
+S1XXXX
+
+add 4 :24o (RR--6----------) spoleèenské (AAFS6----1A----) škodlivosti (NNFS6-----A----) narkománie (NNFS2-----A----)
+add 1 :25
+S1XXXX
+
+add 3 :26
+add 1 :27
+S1CX,X
+
+add 3 :28
+add 1 :29
+S2CX4X
+
+add 1 :30
+B2XXXP
+
+add 5:31
+add 1 :32
+S2CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 0 segment : " (Z:-------------)
+  level 1clause 1 segment : vstoupili (VpMP---XR-AA---) jsme (VB-P---1P-AA---)
+  level 1clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : utìšuje (VB-S---3P-AA---) sebe (P6-X4----------)
+  level 1clause 2 segment : i (J^-------------)
+  level 1clause 2 segment : nás (PP-P4--1-------) nepøíliš (Db-------------) pøesvìdèivì (Dg-------1A----) pfaff (NNMS1-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 1clause 1 segment : do (RR--2----------)
+  level 1clause 1 segment : " (Z:-------------)
+  level 1clause 1 segment : post (A2--------A----) ideologické (AAFS2----1A----) dekády (NNFS2-----A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : vìdomi (ACMP------A----) si (P7-X3----------) skuteènosti (NNFS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 3 segment : e (J,-------------) štìstí (NNNS2-----A----)
+  level 2clause 3 segment : a (J^-------------)
+  level 2clause 3 segment : ctnosti (NNFS2-----A----) lze (VB-S---3P-AA---) dosáhnout (Vf--------A----) jen (TT-------------) individuálním (AANS7----1A----)
+  level 2clause 3 segment : , (Z:-------------)
+  level 2clause 3 segment : nikoli (Db------------1) kolektivním (AANS7----1A----) úsilím (NNNS7-----A----)
+  level 0clause 0 segment : " (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-064-p7s4C0 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 3 1 false 
+ 0 1 false 
+ 0 0 false 
+ add 2:0
+add 8:1
+add 8:false
+false true
+add 1 :2
+S0CXXX
+
+add 5:3
+add 1 :4
+S0CCXX
+
+add 4 :5nás (PP-P4--1-------) nepøíliš (Db-------------) pøesvìdèivì (Dg-------1A----) pfaff (NNMS1-----A----)
+add 1 :6
+S0XXXX
+
+add 4 :7do (RR--2----------)
+add 1 :8
+S0XXXX
+
+add 4 :9post (A2--------A----) ideologické (AAFS2----1A----) dekády (NNFS2-----A----)
+add 1 :10
+S0XXXX
+
+add 4 :11vìdomi (ACMP------A----) si (P7-X3----------) skuteènosti (NNFS2-----A----)
+add 1 :12
+S0XXXX
+
+add 3 :13
+add 1 :14
+S1XX,X
+
+add 4 :15ctnosti (NNFS2-----A----) lze (VB-S---3P-AA---) dosáhnout (Vf--------A----) jen (TT-------------) individuálním (AANS7----1A----)
+add 1 :16
+S1CXXX
+
+add 4 :17nikoli (Db------------1) kolektivním (AANS7----1A----) úsilím (NNNS7-----A----)
+add 1 :18
+S1XXXX
+
+add 1 :19
+B1XXXZ
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : pan (NNMS1-----A----) poslanec (NNMS1-----A----) fs (NNNXX-----A---8) i (NNMXX-----A---8)
+  level 0clause 1 segment : . (Z:-------------)
+  level 0clause 1 segment : rynda (NNMS1-----A----) sice (Db-------------) oznaèil (VpYS---XR-AA---) tyto (PDIP4----------) produkty (NNIP4-----A----) za (RR--4----------) zdraví (NNNS3-----A----) škodlivé (AAIP4----1A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : ale (J^-------------)
+  level 0clause 2 segment : vzápìtí (Db-------------) zástupce (NNMS1-----A----) firmy (NNFS2-----A----) procter (NNIXX-----A----)
+  level 0clause 2 segment : and (J^-------------)
+  level 0clause 2 segment : gamble (NNIXX-----A----) pan (NNMS1-----A----) homola (NNMS1-----A----) tomuto (PDZS3----------) naøèení (NNNS3-----A----) rezolutnì (Dg-------1A----) oponoval (VpYS---XR-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+lnd91303-074-p4s21 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2rynda (NNMS1-----A----) sice (Db-------------) oznaèil (VpYS---XR-AA---) tyto (PDIP4----------) produkty (NNIP4-----A----) za (RR--4----------) zdraví (NNNS3-----A----) škodlivé (AAIP4----1A----)
+add 1 :3
+S0CXXX
+
+add 1 :4
+B0XXXP
+
+add 4 :5vzápìtí (Db-------------) zástupce (NNMS1-----A----) firmy (NNFS2-----A----) procter (NNIXX-----A----)
+add 1 :6
+S0XXXX
+
+add 5:7
+add 1 :8
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : j (NNMXX-----A---8)
+  level 0clause 1 segment : . (Z:-------------)
+  level 0clause 1 segment : fištejn (NNMS1-----A----)
+  level 0clause 0 segment : - (Z:-------------)
+  level 0clause 2 segment : gorbaèov (NNMS1-----A----) odešel (VpYS---XR-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : ale (J^-------------)
+  level 0clause 3 segment : nic (PW--4----------) nepochopil (VpYS---XR-NA---)
+  level 0clause 0 segment : - (Z:-------------)
+  level 0clause 1 segment : 2 (C=-------------)
+lnd91303-109-p2s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2fištejn (NNMS1-----A----)
+add 10 :3false true
+add 10 :4true false
+add 10 :5true false
+add 10 :6true false
+add 10 :7true false
+add 10 :8true true
+add 4 :92 (C=-------------)
+---End-------------
+---Start-----------
+  level 0clause 1 segment : t (NNMXX-----A---8)
+  level 0clause 1 segment : . (Z:-------------)
+  level 0clause 1 segment : marjanoviè (NNMS1-----A----)
+  level 0clause 0 segment : - (Z:-------------)
+  level 0clause 2 segment : chorvatsko (NNNS1-----A----) uznané (AANS1----1A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : válka (NNFS1-----A----) pokraèuje (VB-S---3P-AA---)
+  level 0clause 0 segment : - (Z:-------------)
+  level 0clause 1 segment : 10 (C=-------------)
+lnd91303-109-p8s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2marjanoviè (NNMS1-----A----)
+add 10 :3false true
+add 10 :4true false
+add 10 :5true false
+add 10 :6true false
+add 10 :7true true
+add 4 :810 (C=-------------)
+---End-------------
+---Start-----------
+  level 0clause 1 segment : praha (NNFS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : ika (NNXXX-----A---8)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : - (Z:-------------)
+lnd94101-001-p1s1D1 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : v (RR--6----------) okamiku (NNIS6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kdy (Db-------------) záleí (VB-S---3P-AA---) pouze (Db-------------) na (RR--6----------) dobré (AAFS6----1A----) vùli (NNFS6-----A----) našich (PSXP2-P1-------) stran (NNFP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 3 segment : zda (J,-------------) své (P8YP4---------1) mecenáše (NNMP4-----A----) zveøejní (VB-P---3P-AA---)
+  level 2clause 3 segment : èi (J^-------------)
+  level 2clause 3 segment : nikoliv (Db-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : je (VB-S---3P-AA---) jasné (AANS1----1A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 4 segment : e (J,-------------) málokterá (PZFS1----------) z (RR--2----------) nich (P5XP2--3-------) to (PDNS4----------) udìlá (VB-S---3P-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94101-011-p1s151 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 1 false 
+ 3 1 false 
+ 0 0 false 
+ 4 2 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2kdy (Db-------------) záleí (VB-S---3P-AA---) pouze (Db-------------) na (RR--6----------) dobré (AAFS6----1A----) vùli (NNFS6-----A----) našich (PSXP2-P1-------) stran (NNFP2-----A----)
+add 1 :3
+S0CXXX
+
+add 3 :4
+add 1 :5
+S1CX,X
+
+add 4 :6nikoliv (Db-------------)
+add 1 :7
+S1XXXX
+
+add 5:8
+add 1 :9
+S1CXXX
+
+add 3 :10
+add 1 :11
+S2CX,X
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : podle (RR--2----------) jeho (PSXXXZS3-------) slov (NNNP2-----A----) rozhodne (VB-S---3P-AA---) o (RR--6----------) poètu (NNIS6-----A----) klientù (NNMP2-----A----) fondù (NNIP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kterıch (P4XP2----------) má (VB-S---3P-AA---) vzniknout (Vf--------A----) asi (TT-------------) 60 (C=-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : solidnost (NNFS1-----A----) jejich (PSXXXXP3-------) zázemí (NNNS2-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 0 segment : rychlost (NNFS1-----A----) s (RR--7----------) jakou (P4FS7----------) odstartují (VB-P---3P-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94101-021-p1s5A1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 1 false 
+ 3 1 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1CX4X
+
+add 4 :4solidnost (NNFS1-----A----) jejich (PSXXXXP3-------) zázemí (NNNS2-----A----)
+add 1 :5
+S1XXXX
+
+add 5:6
+add 1 :7
+S1CX4X
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : wall (AAXXX----1A----) street (NNIS1-----A----) journal (NNIS1-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : spolu (Db-------------) s (RR--7----------) mnoha (Ca--7----------) dalšími (AAMP7----1A----) poouchlíky (NNMP7-----A----)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : klade (VB-S---3P-AA---) otázku (NNFS4-----A----)
+  level 0clause 0 segment : : (Z:-------------)
+  level 0clause 0 segment : " (Z:-------------)
+  level 1clause 2 segment : vytáhl (VpYS---XR-AA---) il (AAXXX----1A----) signore (NNMS1-----A----) do (RR--2----------) boje (NNIS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 3 segment : aby (J,-------------)
+  level 2clause 3 segment : ' (Z:-------------)
+  level 2clause 3 segment : zachránil (VpYS---XR-AA---) itálii (NNFS4-----A----)
+  level 2clause 0 segment : ' (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 3clause 4 segment : jak (Db-------------) tvrdí (VB-S---3P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : nebo (J^-------------)
+  level 2clause 5 segment : aby (J,-------------) se (P7-X4----------) pokusil (VpYS---XR-AA---) zachránit (Vf--------A----) své (P8NS4---------1) tìce (Dg-------1A----) zadluené (AANS4----1A----) obchodní (AANS4----1A----) impérium (NNNS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 3clause 6 segment : jak (Db-------------) øíkají (VB-P---3P-AA---) jeho (PSXXXZS3-------) kritici (NNMP1-----A----)
+  level 0clause 0 segment : ? (Z:-------------)
+  level 0clause 0 segment : " (Z:-------------)
+lnd94101-052-p1s32A1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 3 1 false 
+ 3 1 false 
+ 0 1 false 
+ 0 1 false 
+ 4 1 false 
+ 0 1 false 
+ 5 1 false 
+ 5 1 true 
+ 0 0 false 
+ 6 0 false 
+ 0 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2spolu (Db-------------) s (RR--7----------) mnoha (Ca--7----------) dalšími (AAMP7----1A----) poouchlíky (NNMP7-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4klade (VB-S---3P-AA---) otázku (NNFS4-----A----)
+add 1 :5
+S0CXXX
+
+add 1 :6
+B0XXXZ
+
+add 5:7
+add 1 :8
+S0CXXX
+
+add 3 :9
+add 1 :10
+S1XX,X
+
+add 4 :11zachránil (VpYS---XR-AA---) itálii (NNFS4-----A----)
+add 1 :12
+S1CXXX
+
+add 1 :13
+B1XXXZ
+
+add 5:14
+add 1 :15
+S1CXXX
+
+add 11 :16
+add 4 :17aby (J,-------------) se (P7-X4----------) pokusil (VpYS---XR-AA---) zachránit (Vf--------A----) své (P8NS4---------1) tìce (Dg-------1A----) zadluené (AANS4----1A----) obchodní (AANS4----1A----) impérium (NNNS4-----A----)
+add 1 :18
+S1CX,X
+
+add 6 :false
+add 6 :1
+add 7 :19
+add 1 :20
+S0CXXX
+
+add 1 :21
+B0XXXZ
+
+---End-------------
+---Start-----------
+  level 1clause 1 segment : aby (J,-------------) rozptılil (VpYS---XR-AA---) jakékoli (PZNS4---------1) podezøení (NNNS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : aby (J,-------------) splnil (VpYS---XR-AA---) striktní (AAFP4----1A----) podmínky (NNFP4-----A----) koalièního (AAMS2----1A----) partnera (NNMS2-----A----) umberta (NNMS2-----A----) bossiho (NNMS2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 0 segment : a (J^-------------)
+  level 1clause 3 segment : hlavnì (Dg-------1A----) aby (J,-------------) nezklamal (VpYS---XR-NA---) 8 (C=-------------) miliónù (NNIP2-----A----) volièù (NNMP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 4 segment : kteøí (P4MP1----------) mu (PHZS3--3-------) dali (VpMP---XR-AA---) hlas (NNIS4-----A----) v (RR--6----------) dobré (AAFS6----1A----) víøe (NNFS6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 3clause 5 segment : e (J,-------------) je (VB-S---3P-AA---) skuteènì (Dg-------1A----)
+  level 3clause 5 segment : " (Z:-------------)
+  level 3clause 5 segment : novı (AAMS1----1A----)
+  level 3clause 5 segment : " (Z:-------------)
+  level 3clause 5 segment : èlovìk (NNMS1-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 6 segment : u (Db-------------) formálnì (Dg-------1A----) pøedal (VpYS---XR-AA---) berlusconi (NNMS1-----A----) øízení (NNNS4-----A----) holdingu (NNIS2-----A----) svım (P8XP3----------) spolupracovníkùm (NNMP3-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 7 segment : 50 (C=-------------) % (Z:-------------) akcií (NNFP2-----A----) nakladatelství (NNNS2-----A----) mondadori (NNNS1-----A----) nabídl (VpYS---XR-AA--1) k (RR--3----------) prodeji (NNIS3-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 8 segment : ponechal (VpYS---XR-AA---) si (P7-X3----------) jen (TT-------------) milovanı (AAIS4----1A----) ac (NNIXX-----A---8) milano (NNNS1-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94101-052-p1s32B1 1 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 3 0 false 
+ 3 0 true 
+ 0 0 false 
+ 4 1 true 
+ 0 1 false 
+ 5 1 true 
+ 5 1 false 
+ 5 1 false 
+ 5 1 false 
+ 5 1 false 
+ 0 1 false 
+ 6 1 false 
+ 0 1 false 
+ 7 1 false 
+ 0 1 false 
+ 8 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CX,X
+
+add 3 :2
+add 1 :3
+S1CX,X
+
+add 11 :4
+add 6 :false
+add 6 :0
+add 7 :5
+add 1 :6
+S0CX,X
+
+add 3 :7
+add 1 :8
+S1CX4X
+
+add 3 :9
+add 1 :10
+S1CX,X
+
+add 4 :11novı (AAMS1----1A----)
+add 1 :12
+S1XXXX
+
+add 4 :13èlovìk (NNMS1-----A----)
+add 1 :14
+S1XXXX
+
+add 5:15
+add 1 :16
+S1CXXX
+
+add 5:17
+add 1 :18
+S1CXXX
+
+add 5:19
+add 1 :20
+S1CXXX
+
+1 / 0 / 2 / 0 / 3 / 4 / 0 / 5 / 0 / 6 / 6 / 6 / 6 / 6 / 0 / 7 / 0 / 8 / 0 / 9 / 0
+
+nextLevelSegments
+indexClause / levelClause / indexStartClause / changeClause / indexEndChange3 /0 / 4/4/5
+
+add0| 1 | 4 | 5 | 4
+add1| 0 | 4 | 5 | 4
+add2| 2 | 4 | 5 | 4
+add3| 0 | 4 | 5 | 4
+add4| 3 | 4 | 5 | 4
+change5/ 3
+add5| 3 | 4 | 5 | 4
+add6| 0 | 4 | 5 | 4
+add7| 4 | 4 | 5 | 4
+add8| 0 | 4 | 5 | 4
+add9| 5 | 4 | 5 | 4
+add10| 5 | 4 | 5 | 4
+add11| 5 | 4 | 5 | 4
+add12| 5 | 4 | 5 | 4
+add13| 5 | 4 | 5 | 4
+add14| 0 | 4 | 5 | 4
+add15| 6 | 4 | 5 | 4
+add16| 0 | 4 | 5 | 4
+add17| 7 | 4 | 5 | 4
+add18| 0 | 4 | 5 | 4
+add19| 8 | 4 | 5 | 4
+add20| 0 | 4 | 5 | 4
+---End-------------
+---Start-----------
+  level 0clause 1 segment : náš (PSYS1-P1-------) ivot (NNIS1-----A----) po (RR--6----------) twin (AAXXX----1A----) peaks (NNIPX-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94101-072-p1s11 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : co (PQ--1----------) je (VB-S---3P-AA---) pøíèina (NNFS1-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : co (PQ--1----------) následek (NNIS1-----A----)
+  level 0clause 0 segment : ? (Z:-------------)
+lnd94101-072-p1s221 1 false 
+ 0 0 false 
+ 2 0 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S1CXQX
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0XXQX
+
+1 / 0 / 2 / 0
+
+---End-------------
+1 1 false 
+ 0 0 false 
+ 2 0 true 
+ 0 0 false 
+   level 0clause 1 segment : co (PQ--1----------) je (VB-S---3P-AA---) pøíèina (NNFS1-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : co (PQ--1----------) následek (NNIS1-----A----)
+  level 0clause 0 segment : ? (Z:-------------)
+lnd94101-072-p1s22add 8:0
+add 8:false
+false true
+add 1 :1
+S1CXQX
+
+add 6 :false
+add 6 :0
+add 7 :2
+add 1 :3
+S0XXQX
+
+1 / 0 / 2 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : jistìjší (AANS1----2A----) je (VB-S---3P-AA---) to (PDNS1----------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) v (RR--6----------) letech (NNNP6-----A----) 1990 (C=-------------)
+  level 1clause 2 segment : - (Z:-------------)
+  level 1clause 2 segment : 92 (C=-------------) inicioval (VpYS---XR-AA---) pozornı (AAMS1----1A----) tatínek (NNMS1-----A----) zmínìné (AAFS2----1A----) mladé (AAFS2----1A----) spisovatelky (NNFS2-----A----)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : proslulı (AAMS1----1A----) filmovı (AAMS1----1A----) reisér (NNMS1-----A----) david (NNMS1-----A----) lynch (NNMS1-----A----)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : s (RR--7----------) kolegou (NNMS7-----A----) markem (NNMS7-----A----) frostem (NNMS7-----A----) jeden (ClIS4----------) z (RR--2----------) nejdrzejších (AAIP2----3A----) intelektuálskıch (AAIP2----1A----) pokusù (NNIP2-----A----)
+  level 0clause 2 segment : , (Z:-------------)
+  level 2clause 2 segment : jak (Db-------------) vstoupit (Vf--------A----) do (RR--2----------) svatynì (NNFS2-----A----) televizních (AAIP2----1A----) seriálù (NNIP2-----A----)
+  level 2clause 2 segment : , (Z:-------------)
+  level 2clause 2 segment : a (J^-------------)
+  level 2clause 2 segment : to (PDNS4----------) hlavní (AAFS7----1A----) branou (NNFS7-----A---1)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94101-072-p1s71 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 3 :2
+add 1 :3
+S1XX,X
+
+add 4 :492 (C=-------------) inicioval (VpYS---XR-AA---) pozornı (AAMS1----1A----) tatínek (NNMS1-----A----) zmínìné (AAFS2----1A----) mladé (AAFS2----1A----) spisovatelky (NNFS2-----A----)
+add 1 :5
+S1CXXX
+
+add 4 :6proslulı (AAMS1----1A----) filmovı (AAMS1----1A----) reisér (NNMS1-----A----) david (NNMS1-----A----) lynch (NNMS1-----A----)
+add 1 :7
+S1XXXX
+
+add 4 :8s (RR--7----------) kolegou (NNMS7-----A----) markem (NNMS7-----A----) frostem (NNMS7-----A----) jeden (ClIS4----------) z (RR--2----------) nejdrzejších (AAIP2----3A----) intelektuálskıch (AAIP2----1A----) pokusù (NNIP2-----A----)
+add 1 :9
+S1XXXX
+
+add 4 :10jak (Db-------------) vstoupit (Vf--------A----) do (RR--2----------) svatynì (NNFS2-----A----) televizních (AAIP2----1A----) seriálù (NNIP2-----A----)
+add 1 :11
+S1XXXX
+
+add 1 :12
+B0XXXP
+
+add 6 :true
+add 6 :1
+add 6 :13
+add 1 :14
+S0XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : calgary (NNNXX-----A----) 3 (C=-------------)
+  level 0clause 1 segment : : (Z:-------------)
+  level 0clause 1 segment : 2 (C=-------------) po (RR--6----------) prodl (NNNXX-----A---8)
+  level 0clause 1 segment : . (Z:-------------)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : 3 (C=-------------)
+  level 1clause 1 segment : : (Z:-------------)
+  level 1clause 1 segment : 3 (C=-------------)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94101-082-p1s61 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 1clause 1 segment : jak (Db-------------) øekl (VpYS---XR-AA---) kapitán (NNMS1-----A----) evan (NNMS1-----A----) johnson (NNMS1-----A----)
+  level 1clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : farmáø (NNMS1-----A----) manie (NNMS1-----A----) maritz (NNMS1-----A----)
+  level 1clause 2 segment : , (Z:-------------)
+  level 1clause 2 segment : jeden (ClYS1----------) ze (RV--2----------) zakladatelù (NNMP2-----A----) awb (NNNXX-----A---8)
+  level 0clause 2 segment : , (Z:-------------)
+  level 0clause 2 segment : je (VB-S---3P-AA---) mezi (RR--7----------) 160 (C=-------------) bìlochy (NNMP7-----A----) ijícími (AGMP7-----A----) na (RR--6----------) farmì (NNFS6-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : kterı (P4YS1----------) je (VB-S---3P-AA---) v (RR--6----------) souvislosti (NNFS6-----A----) s (RR--7----------) objevem (NNIS7-----A----) vyslıchán (VsYS---XX-AP---)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94101-114-p1s121 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2farmáø (NNMS1-----A----) manie (NNMS1-----A----) maritz (NNMS1-----A----)
+add 1 :3
+S0XXXX
+
+add 4 :4jeden (ClYS1----------) ze (RV--2----------) zakladatelù (NNMP2-----A----) awb (NNNXX-----A---8)
+add 1 :5
+S0XXXX
+
+add 5:6
+add 1 :7
+S0CXXX
+
+add 3 :8
+add 1 :9
+S1CX4X
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : praha (NNFS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : haš (NNXXX-----A---8)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : - (Z:-------------)
+lnd94104-005-p1s21 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : praha (NNFS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : kva (NNXXX-----A---8)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : - (Z:-------------)
+lnd94104-017-p1s21 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : praha (NNFS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : haš (NNXXX-----A---8)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : - (Z:-------------)
+lnd94104-037-p1s21 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : barnesùv (AUIS1M---------) paradox (NNIS1-----A----)
+  level 0clause 0 segment : - (Z:-------------)
+  level 1clause 2 segment : šílenı (AAMS1----1A----) hrabì (NNMS1-----A----) chce (VB-S---3P-AA---) svìt (NNIS4-----A----) spasit (Vf--------A----) láskou (NNFS7-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : vyléèenı (AAMS1----1A----)
+  level 1clause 3 segment : , (Z:-------------)
+  level 1clause 3 segment : " (Z:-------------)
+  level 1clause 3 segment : normální (AAMS1----1A----)
+  level 1clause 3 segment : " (Z:-------------)
+  level 1clause 3 segment : gurney (NNMS1-----A----) bere (VB-S---3P-AA---) do (RR--2----------) ruky (NNFS2-----A----) nù (NNIS4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 4 segment : aby (J,-------------) vradil (VpYS---XR-AA---)
+  level 0clause 0 segment : - (Z:-------------)
+  level 0clause 1 segment : se (P7-X4----------) tím (PDZS7----------)
+  level 0clause 1 segment : ovšem (J^-------------)
+  level 0clause 1 segment : oslabuje (VB-S---3P-AA---)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94104-087-p1s141 0 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 1 true 
+ 0 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 10 :1false true
+add 10 :2true false
+add 10 :3true false
+add 10 :4true false
+add 10 :5true false
+add 10 :6true false
+add 10 :7true false
+add 10 :8true false
+add 10 :9true false
+add 10 :10true false
+add 10 :11true false
+add 10 :12true true
+add 5:13
+add 1 :14
+S1XXXX
+
+add 4 :15oslabuje (VB-S---3P-AA---)
+add 1 :16
+S1CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 0 segment : " (Z:-------------)
+  level 0clause 1 segment : doufáme (VB-P---1P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : e (J,-------------) se (P7-X4----------) støedeèní (AANS1----1A----) hlasování (NNNS1-----A----) obejde (VB-S---3P-AA---) bez (RR--2----------) velkıch (AANP2----1A----) pøekvapení (NNNP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 3 segment : jisti (ACMP------A----) si (P7-X3----------)
+  level 0clause 3 segment : však (J^-------------)
+  level 0clause 3 segment : bıt (Vf--------A----) nemùeme (VB-P---1P-NA---)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94104-140-p1s40 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 1 false 
+ 3 1 false 
+ 0 0 false 
+ add 2:0
+add 8:1
+add 8:false
+false true
+add 1 :2
+S0CXXX
+
+add 3 :3
+add 1 :4
+S1CX,X
+
+add 4 :5jisti (ACMP------A----) si (P7-X3----------)
+add 1 :6
+S1XXXX
+
+add 5:7
+add 1 :8
+S1CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 0 segment : bylo (VpNS---XR-AA---) to (PDNS1----------) obrácenì (Dg-------1A----)
+  level 0clause 2 segment : : (Z:-------------)
+  level 0clause 2 segment : první (CrIS1----------) impuls (NNIS1-----A----) vyšel (VpYS---XR-AA---) od (RR--2----------) nás (PP-P2--1-------)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94105-013-p1s121 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 5:2
+add 1 :3
+S0CXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : na (RR--6----------) fnm (NNIXX-----A---8) jsme (VB-P---1P-AA---) se (P7-X4----------) podívali (VpMP---XR-AA---) na (RR--4----------) privatizaèní (AAIS4----1A----) projekt (NNIS4-----A----)
+  level 0clause 0 segment : a (J^-------------)
+  level 0clause 2 segment : zjistili (VpMP---XR-AA---) jsme (VB-P---1P-AA---)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : e (J,-------------) usnesení (NNNS1-----A----) vlády (NNFS2-----A----) nesouhlasí (VB-S---3P-NA---) s (RR--7----------) tím (PDZS7----------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 2clause 4 segment : co (PQ--1----------) je (VB-S---3P-AA---) uvedeno (VsNS---XX-AP---) v (RR--6----------) privatizaèním (AAIS6----1A----) projektu (NNIS6-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94105-013-p1s151 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ 3 2 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2zjistili (VpMP---XR-AA---) jsme (VB-P---1P-AA---)
+add 1 :3
+S0CXXX
+
+add 3 :4
+add 1 :5
+S1CX,X
+
+add 3 :6
+add 1 :7
+S2CXQX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : praha (NNFS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : em (NNXXX-----A---8)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : - (Z:-------------)
+lnd94105-032-p1s21 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : praha (NNFS1-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : ge (NNXXX-----A---8)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : - (Z:-------------)
+lnd94105-076-p1s21 0 false 
+ 1 0 false 
+ 1 1 false 
+ 1 0 false 
+ 0 0 false 
+ ---End-------------
+---Start-----------
+  level 0clause 1 segment : finanèní (AAFS4----1A----)
+  level 0clause 1 segment : nebo (J^-------------)
+  level 0clause 1 segment : materiálovou (AAFS4----1A----) podporu (NNFS4-----A----) poskytuje (VB-S---3P-AA---) ministerstvo (NNNS1-----A----) prùmyslu (NNIS2-----A----)
+  level 0clause 1 segment : a (J^-------------)
+  level 0clause 1 segment : obchodu (NNIS2-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : mpo (NNNXX-----A---8)
+  level 0clause 1 segment : ) (Z:-------------)
+  level 0clause 1 segment : v (RR--6----------) rámci (NNIS6-----A----) své (P8FS2---------1) proexportní (AAFS2----1A----) politiky (NNFS2-----A----) podnikùm (NNIP3-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : které (P4IP1----------) se (P7-X4----------) úèastní (VB-P---3P-AA---) nìkterıch (PZXP2----------) zahranièních (AAIP2----1A----) veletrhù (NNIP2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94105-076-p1s31 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 1 false 
+ 0 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 4 :2materiálovou (AAFS4----1A----) podporu (NNFS4-----A----) poskytuje (VB-S---3P-AA---) ministerstvo (NNNS1-----A----) prùmyslu (NNIS2-----A----)
+add 1 :3
+S0CXXX
+
+add 4 :4obchodu (NNIS2-----A----)
+add 10 :5false false
+add 10 :6true false
+add 10 :7true false
+add 6 :true
+add 6 :1
+add 6 :8
+add 1 :9
+S0XXXX
+
+add 3 :10
+add 1 :11
+S1CX4X
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : za (RR--4----------) posledních (AANP2----1A----) patnáct (Cn-S4----------) let (NNNP2-----A----) se (P7-X4----------) to (PDNS1----------) podaøilo (VpNS---XR-AA---) pouze (Db-------------) tøem (ClXP3----------) velikánùm (NNMP3-----A----)
+  level 0clause 1 segment : - (Z:-------------)
+  level 1clause 1 segment : hakeemu (NNMS3-----A----) olajuwonovi (NNMS3-----A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : dvakrát (Cv-------------) davidu (NNMS3-----A---1) robinsonovi (NNMS3-----A----)
+  level 1clause 1 segment : a (J^-------------)
+  level 1clause 1 segment : kareemu (NNMS3-----A----) abdul (NNMS1-----A----)
+  level 1clause 1 segment : - (Z:-------------)
+  level 1clause 1 segment : jabbarovi (NNMS3-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+lnd94105-090-p1s81 0 false 
+ 1 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 10 :1false true
+add 10 :2true false
+add 10 :3true false
+add 10 :4true false
+add 10 :5true false
+add 10 :6true false
+add 10 :7true true
+add 4 :8jabbarovi (NNMS3-----A----)
+add 1 :9
+S0XXXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : v (RR--6----------) tém (PDZS6---------1) mìsíci (NNIS6-----A----) budeme (VB-P---1F-AA---) poprvé (Cv-------------)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : za (RR--4----------) víc (Dg-------2A---1)
+  level 0clause 1 segment : " (Z:-------------)
+  level 0clause 1 segment : kupovat (Vf--------A----) síové (AAFP4----1A----) jízdenky (NNFP4-----A----) v (RR--6----------) praze (NNFS6-----A----)
+  level 0clause 1 segment : ( (Z:-------------)
+  level 1clause 1 segment : 200 (C=-------------) korun (NNFP2-----A----) mìsíèní (AAFS1----1A----) jízdenka (NNFS1-----A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : 500 (C=-------------) ètvrtletní (AAFS1----1A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : 1700 (C=-------------) roèní (AAFS1----1A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : 70 (C=-------------) pro (RR--4----------) základní (AAFP4----1A----) školy (NNFP4-----A----)
+  level 1clause 1 segment : , (Z:-------------)
+  level 1clause 1 segment : 80 (C=-------------) pro (RR--4----------) vš (NNFXX-----A---8)
+  level 1clause 1 segment : a (J^-------------)
+  level 1clause 1 segment : sš (NNFXX-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : dopravní (AAIP1----1A----) podniky (NNIP1-----A----) upozoròují (VB-P---3P-AA---)
+  level 0clause 2 segment : i (J^-------------)
+  level 0clause 2 segment : na (RR--4----------) zvıšení (NNNS4-----A----) pøedprodeje (NNIS2-----A----) 25 (C=-------------) jízdenek (NNFP2-----A----) pro (RR--4----------) jednotlivou (AAFS4----1A----) jízdu (NNFS4-----A----)
+  level 0clause 2 segment : ( (Z:-------------)
+  level 1clause 2 segment : 75 (C=-------------) korun (NNFP2-----A----) pro (RR--4----------) metro (NNNS4-----A----)
+  level 1clause 2 segment : a (J^-------------)
+  level 1clause 2 segment : tramvaj (NNFS4-----A----)
+  level 0clause 2 segment : ) (Z:-------------)
+  level 0clause 2 segment : a (J^-------------)
+  level 0clause 2 segment : turistickıch (AAFP2----1A----) jízdenek (NNFP2-----A----)
+  level 0clause 2 segment : ( (Z:-------------)
+  level 1clause 2 segment : z (RR--2----------) 25 (C=-------------) korun (NNFP2-----A----) na (RR--4----------) den (NNIS4-----A----) na (RR--4----------) 30 (C=-------------) korun (NNFP2-----A----) na (RR--4----------) den (NNIS4-----A----)
+  level 0clause 0 segment : ) (Z:-------------)
+  level 0clause 0 segment : . (Z:-------------)
+mf920901-015-p10s31 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 1 false 
+ 1 1 false 
+ 0 1 false 
+ 1 1 false 
+ 0 1 false 
+ 1 1 false 
+ 0 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 1 1 false 
+ 0 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 1 false 
+ 2 1 false 
+ 2 1 false 
+ 2 0 false 
+ 0 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 1 false 
+ 0 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 4 :2za (RR--4----------) víc (Dg-------2A---1)
+add 1 :3
+S0XXXX
+
+add 4 :4kupovat (Vf--------A----) síové (AAFP4----1A----) jízdenky (NNFP4-----A----) v (RR--6----------) praze (NNFS6-----A----)
+add 10 :5false false
+add 10 :6true false
+add 10 :7true false
+add 10 :8true false
+add 10 :9true false
+add 10 :10true false
+add 10 :11true false
+add 10 :12true false
+add 10 :13true false
+add 10 :14true false
+add 10 :15true false
+add 10 :16true false
+add 10 :17true false
+add 1 :18
+B0XXXZ
+
+add 6 :false
+add 6 :1
+add 7 :19
+add 1 :20
+S0CXXX
+
+add 4 :21na (RR--4----------) zvıšení (NNNS4-----A----) pøedprodeje (NNIS2-----A----) 25 (C=-------------) jízdenek (NNFP2-----A----) pro (RR--4----------) jednotlivou (AAFS4----1A----) jízdu (NNFS4-----A----)
+add 10 :22false false
+add 10 :23true false
+add 10 :24true false
+add 10 :25true false
+add 10 :26true false
+add 1 :27
+B0XXXZ
+
+add 6 :true
+add 6 :1
+add 6 :28
+add 10 :29false false
+add 10 :30true false
+add 10 :31true false
+add 1 :32
+B0XXXZ
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : druhı (AAIS1----1A----) dùvod (NNIS1-----A----) rùstu (NNIS2-----A----) cen (NNFP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kterı (P4YS1----------) se (P7-X4----------)
+  level 1clause 2 segment : ovšem (J^-------------)
+  level 1clause 2 segment : obèanù (NNMP2-----A----) jako (J,-------------) pøímıch (AAMP2----1A----) spotøebitelù (NNMP2-----A----) dotkne (VB-S---3P-AA---) rychleji (Dg-------2A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : jsou (VB-P---3P-AA---) úpravy (NNFP1-----A----) nìkterıch (PZXP2----------) tak (Db-------------) zvanıch (AAFP2----1A----) zvláštních (AAFP2----1A----) sazeb (NNFP2-----A----) danì (NNFS2-----A----) z (RR--2----------) obratu (NNIS2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+mf920901-015-p2s51 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 1 false 
+ 3 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 1 :3
+S1XX4X
+
+add 4 :4obèanù (NNMP2-----A----) jako (J,-------------) pøímıch (AAMP2----1A----) spotøebitelù (NNMP2-----A----) dotkne (VB-S---3P-AA---) rychleji (Dg-------2A----)
+add 1 :5
+S1CXXX
+
+add 5:6
+add 1 :7
+S1CXXX
+
+1 / 0 / 2 / 2 / 2 / 0 / 3 / 0
+
+---End-------------
+1 0 false 
+ 0 0 false 
+ 2 1 true 
+ 2 1 false 
+ 2 1 false 
+ 0 1 false 
+ 3 1 false 
+ 0 0 false 
+   level 0clause 1 segment : druhı (AAIS1----1A----) dùvod (NNIS1-----A----) rùstu (NNIS2-----A----) cen (NNFP2-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 2 segment : kterı (P4YS1----------) se (P7-X4----------)
+  level 1clause 2 segment : ovšem (J^-------------)
+  level 1clause 2 segment : obèanù (NNMP2-----A----) jako (J,-------------) pøímıch (AAMP2----1A----) spotøebitelù (NNMP2-----A----) dotkne (VB-S---3P-AA---) rychleji (Dg-------2A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 1 segment : jsou (VB-P---3P-AA---) úpravy (NNFP1-----A----) nìkterıch (PZXP2----------) tak (Db-------------) zvanıch (AAFP2----1A----) zvláštních (AAFP2----1A----) sazeb (NNFP2-----A----) danì (NNFS2-----A----) z (RR--2----------) obratu (NNIS2-----A----)
+  level 0clause 0 segment : . (Z:-------------)
+mf920901-015-p2s5add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 3 :2
+add 1 :3
+S1XX4X
+
+add 4 :4obèanù (NNMP2-----A----) jako (J,-------------) pøímıch (AAMP2----1A----) spotøebitelù (NNMP2-----A----) dotkne (VB-S---3P-AA---) rychleji (Dg-------2A----)
+add 1 :5
+S1CXXX
+
+add 5:6
+add 1 :7
+S1CXXX
+
+1 / 0 / 2 / 2 / 2 / 0 / 3 / 0
+
+1 / true---Start-----------
+  level 0clause 1 segment : proè (Db-------------) ne (TT-------------)
+  level 0clause 1 segment : , (Z:-------------)
+  level 0clause 1 segment : vdy (J^-------------)
+  level 0clause 1 segment : úspìch (NNIS1-----A----) není (VB-S---3P-NA---) høích (NNIS1-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 0clause 2 segment : naopak (Db-------------)
+  level 0clause 2 segment : : (Z:-------------)
+  level 0clause 2 segment : jedinì (Dg-------1A----) s (RR--7----------) úspìšnımi (AAIP7----1A----) vzory (NNIP7-----A----) se (P7-X4----------) mùeme (VB-P---1P-AA---) pomìøovat (Vf--------A----)
+  level 0clause 2 segment : a (J^-------------)
+  level 0clause 2 segment : zlepšovat (Vf--------A----) tak (Db-------------) sami (PLMP1----------) sebe (P6-X4----------)
+  level 0clause 0 segment : . (Z:-------------)
+mf920901-025-p5s31 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 1 0 false 
+ 0 0 false 
+ 2 0 false 
+ 2 0 false 
+ 2 0 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0XXXX
+
+add 1 :2
+B0XXXP
+
+add 4 :3úspìch (NNIS1-----A----) není (VB-S---3P-NA---) høích (NNIS1-----A----)
+add 1 :4
+S0CXXX
+
+add 4 :5naopak (Db-------------)
+add 1 :6
+S0XXXX
+
+add 5:7
+add 1 :8
+S0CXXX
+
+add 4 :9zlepšovat (Vf--------A----) tak (Db-------------) sami (PLMP1----------) sebe (P6-X4----------)
+add 1 :10
+S0XCXX
+
+---End-------------
+---Start-----------
+  level 0clause 1 segment : situace (NNFS1-----A----) se (P7-X4----------) trochu (Db-------------) zmìnila (VpQW---XR-AA---)
+  level 0clause 0 segment : : (Z:-------------)
+  level 0clause 2 segment : pùvodnì (Dg-------1A----) jsme (VB-P---1P-AA---) opravdu (Db-------------) oslovovali (VpMP---XR-AA---) instituce (NNFP4-----A----)
+  level 0clause 0 segment : , (Z:-------------)
+  level 1clause 3 segment : které (P4FP1----------) by (Vc-------------) mohly (VpTP---XR-AA---) mít (Vf--------A----) na (RR--6----------) konkrétním (AAIS6----1A----) portrétu (NNIS6-----A----) zájem (NNIS4-----A----)
+  level 1clause 0 segment : - (Z:-------------)
+  level 2clause 2 segment : tøeba (Db-------------) u (RR--2----------) spisovatelù (NNMP2-----A----) jejich (PSXXXXP3-------) kmenová (AANP1----1A----) nakladatelství (NNNP1-----A----) apod (Db------------8)
+  level 0clause 0 segment : . (Z:-------------)
+mf920901-025-p7s11 0 false 
+ 0 0 false 
+ 2 0 false 
+ 0 0 false 
+ 3 1 true 
+ 3 1 false 
+ 3 1 false 
+ 0 0 false 
+ add 8:0
+add 8:false
+false true
+add 1 :1
+S0CXXX
+
+add 5:2
+add 1 :3
+S0CXXX
+
+add 3 :4
+add 1 :5
+S1CX4X
+
+add 4 :6tøeba (Db-------------) u (RR--2----------) spisovatelù (NNMP2-----A----) jejich (PSXXXXP3-------) kmenová (AANP1----1A----) nakladatelství (NNNP1-----A----) apod (Db------------8)
+add 1 :7
+S1XXXX
+
+---End-------------

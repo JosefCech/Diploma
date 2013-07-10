@@ -10,11 +10,26 @@ class Tag(val tag:String) {
   
   def haveSimpleConj : Boolean = compare(5,"P") || compare(5,"J")
   
+  def haveComma : Boolean = compare(5,"P")
+  
+  def interpunction : Boolean = compare(5,"Z")
+  
+  def haveDash : Boolean = compare(5,"D")
+  
   def haveCordConj : Boolean = compare(5,"J")
   
   def Level : Int = {
                 if (this.isEmpty) -1 
-                else this.tag.substring(1,2).toInt
+                else {
+                  try {
+                  this.tag.substring(1,2).toInt
+                  }
+                  catch {
+                   case _ => { println(this.tag) 
+                              -1  
+                             }
+                  }
+                }
                }
  def compare(pos : Int, comp : String) : Boolean = 
   {

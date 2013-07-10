@@ -5,7 +5,7 @@ import common.MorfWord
 import common.Word
 
 
-class Level(min : Int , max : Int) {
+class Level(val min : Int , val max : Int) {
  def this(level : Int) = this(level,level)
  
  def updateLevelMax(u : Int) : Level = new Level(min,List(min,max+u).max)
@@ -36,6 +36,12 @@ class Level(min : Int , max : Int) {
    else {
      "min : " + min.toString + " max : " + max.toString
    }
+ }
+ 
+ override def equals(other : Any) : Boolean = other match {
+   case other : Level => this.min == other.min && this.max == other.max
+   case other : Int => this.getExactLevel == other
+   case  _ => false
  }
 }
 
@@ -120,6 +126,7 @@ class BaseSegment(val data : List[Any] , lmin : Int , lmax : Int, val startNewCl
 object BaseSegment
 {
   def createEmptySegment : Segment = new BaseSegment(List[Word](),-1) 	 
+  def createInfoSegment(segment : Segment) : InfoSegment = new InfoSegment(segment)
 }
 
 class Boundary( data : List[Any] , lmin : Int , lmax : Int  )

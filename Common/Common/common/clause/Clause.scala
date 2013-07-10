@@ -4,6 +4,7 @@ import common.segment.Segment
 import common.segment.InfoSegment
 import common.Word
 import wordProperties.TagMatcher
+import common.LingvisticAggreement
 /** Clause - group of tuples (Index,Segment)
   * Base functions : 
   * 		add segment
@@ -66,6 +67,7 @@ class Clause( segments : List[(Int,Segment)],  openClause : Boolean ) {
   }
   def tryAddSegment(s : Segment) : Boolean = {
     open && this.verbsQuery(s) && (this.level == s.level.getExactLevel)
+
   } 
   
   def close = open = false
@@ -90,7 +92,7 @@ class Clause( segments : List[(Int,Segment)],  openClause : Boolean ) {
  
     
     if (oneIsWithoutVerb) {
-      true
+       LingvisticAggreement.verbAgreement(this.data.map(p => p._2).toList, s)
     }
     else {
      
@@ -123,7 +125,7 @@ class Clause( segments : List[(Int,Segment)],  openClause : Boolean ) {
           
           val condition : Boolean = TagMatcher.Match(myVerb, "Vc") && TagMatcher.Match(nextVerb, "Vp") && pastCondition
            
-          (participle || condition)
+         (participle || condition)
       }
     }
     

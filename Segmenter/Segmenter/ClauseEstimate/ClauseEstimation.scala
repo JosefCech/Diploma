@@ -7,6 +7,8 @@ import java.io.File
 import Rules.RuleHelper
 import Rules.RuleAutomata
 import common.segment.InfoSegment
+import common.sentence.Sentence
+import common.segment.TaggedSegment
 
 
 object ClauseEstimation extends App
@@ -17,35 +19,36 @@ object ClauseEstimation extends App
    val pw = new java.io.PrintWriter(new File("logError"))
    val results = files.map(f => {
        val sentence = AnxReader.ReadAnalyzedSentence(f)
-       val analyzed = new ClauseAnalyzedSentence(sentence.morfSentence)
-      // val matches = RuleHandler.rules.map( rule=>RuleAutomata.ruleMatches(analyzed.taggedSegments, rule)).toList.flatten
+       val analyzed2 = new ClauseAnalyzedSentence(sentence.morfSentence)
+       val analyzed1 = new ClauseAnalyzedSentence(sentence.sentenceWithLevel,sentence.Ident)
+       // val matches = RuleHandler.rules.map( rule=>RuleAutomata.ruleMatches(analyzed.taggedSegments, rule)).toList.flatten
       //println(matches)
-       val result = compareSentence(sentence.analyzedSentence,analyzed)
+       val result = compareSentence(sentence.analyzedSentence,analyzed2)
     //   analyzed.addToLog("test")
        
-       if (result._2 > 0 && result._7)
+       if (result._2 > 0)
        {
         // println(sentence)
        //  println(analyzed)
        //  println("-----celkem------------")
       //   println(analyzed.log)
      //     println("----konec------------")
-      //   pw.write("---Start-----------\n")
-       //  pw.write(sentence.toString)
-       //  pw.write(analyzed.toString)
-       //  pw.write(analyzed.log.toString)
-       //  pw.write("---End-------------\n")
-      //  println(result)
+         pw.write("---Start-----------\n")
+        pw.write(sentence.toString)
+        pw.write(analyzed2.toString)
+        pw.write(analyzed2.log.toString)
+        pw.write("---End-------------\n")
+     
        }
-        val countWithoutVerb = analyzed.estimatedSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
-         val existWithVerb =analyzed.estimatedSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
+        val countWithoutVerb = analyzed2.estimatedSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
+         val existWithVerb =analyzed2.estimatedSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
        
        if (result._2 > 0 && countWithoutVerb > 0 && existWithVerb  )
        
        {
-         pw.write(analyzed.toString)
+         pw.write(analyzed2.toString)
          pw.write(sentence.toString)
-         pw.write(analyzed.log.toString)
+         pw.write(analyzed2.log.toString)
          pw.write(countWithoutVerb.toString + " / " + existWithVerb.toString)
          notGood +=1
        }
@@ -131,6 +134,25 @@ object ClauseEstimation extends App
     println("Spravne urcene vetys s dirou : ")
     println(clauseData.filter(p => p._4 && p._2 == 0 && p._3 == 0).toList.length.doubleValue / clauseData.filter(p => p._4).length)
     
+    println("Pomìr u chybových vìt")
+    val rightCountError = results.filter(a => a._2 > 0).map(a => a._1).toList.sum
+    val wrongCountError = results.filter(a => a._2 > 0).map(a => a._2).toList.sum
+    println(wrongCountError / rightCountError.toDouble)
+   val max  = 55
+   var i :  Int = 10
+    while ( i < max)
+    {
+    val wholeCount10 = results.filter(a => a._1 + a._2 > i ).map( a => a._1 + a._2).toList.sum
+    val rightCount10 = results.filter(a => a._1 + a._2 > i ).map(a => a._1).toList.sum
+    val wrongCount10 = results.filter(a => a._1 + a._2 > i ).map(a => a._2).toList.sum
+    println("Right Segments:" + i.toString)
+    println(rightCount10.doubleValue/wholeCount10 )
+    println(rightCount10.toString + " " + wholeCount10.toString)
+    println("Wrong Segments:")
+    println(wrongCount10.doubleValue/wholeCount10 )
+    println(wrongCount10.toString + " " + wholeCount10.toString)
+    i+=5
+    }
  }
   
  def compareSentence(sentence : AnalyzedSentence , test : ClauseAnalyzedSentence ) : 

@@ -5,13 +5,19 @@ import common.Tag
 import common.segment.AnalyzedSegment
 import common.clause.Clause
 import common.clause.Clause
+import common.Word
+import common.MorfWord
+import common.segment.BaseSegment
 
 
 trait ClauseSentence {
 
  private var clauses : List[(Int,Clause)] = List[(Int,Clause)]() ;
  private var lastClause : Int = 0
-  var log : String = ""
+ var inBracket : Boolean = false
+ var containsVerb : Boolean = false 
+ var countDash : Int = 0
+ var log : String = ""
  def addToLog(text : String) : Unit
 
  private def maxClauseNum =
@@ -23,8 +29,8 @@ trait ClauseSentence {
    }
  
  private def tryAddSegment(c :  Int, s : Segment) : Boolean = {
-   if (clauses.isEmpty || this.maxClauseNum < c) {
-     true
+   if (clauses.isEmpty || this.maxClauseNum < c || c == 0) {
+     false
    }
    else {
      val clausesSelected : List[(Int,Clause)] = clauses.filter(p => p._1 == c).toList
@@ -34,7 +40,7 @@ trait ClauseSentence {
       clause.tryAddSegment(s)
      }
      else{
-       true
+       false
      }
    }
  }
@@ -44,8 +50,6 @@ trait ClauseSentence {
     def getPreviousClause(actual : Int) : Int =
 	 {
 	   val data = this.clauses.filter(p => p._2.level <= actual && p._2.isOpen).toList.sortBy(f => f._1).toList.reverse
-	   this.addToLog("previous")
-	   this.addToLog(data.toString)
 	   if (data.isEmpty) {
 	     0
 	   }
@@ -57,8 +61,6 @@ trait ClauseSentence {
     def getSuperiorClause(actual : Int) : Int = 
   {  
    val data = this.clauses.filter(p => p._2.level < actual && p._2.isOpen).toList.filter(p => p._1 != 0).sortBy(f => f._1).toList.reverse
-    this.addToLog("superior")
-	this.addToLog(data.toString)
    if (data.isEmpty){
      getPreviousClause(actual)
    }
@@ -74,8 +76,6 @@ trait ClauseSentence {
      val actualLevel = s.level.getExactLevel
      val previous = getPreviousClause(actualLevel)
      val superior = getSuperiorClause(actualLevel)
-      this.addToLog("create " + c.toString)
-    this.addToLog(previous.toString + "/" + superior.toString + " / "+ actualLevel.toString)
      val newClauses = (c, new Clause(List[(Int,Segment)]((i,s)),true)) :: this.clauses
      this.clauses = newClauses; 
      this.clauses.head._2.setPreviousClause(previous)
@@ -118,7 +118,7 @@ private  def getNextClause =
   else clauses.map(p => p._1).toList.max + 1
 
 private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
-   if (new InfoSegment(acc.head).IsBoundarySegment) {
+   if (new InfoSegment(acc.head).IsBoundarySegment && !new InfoSegment(acc.head).HaveCordConjuction) {
      acc.head.setClause(0)
    }
  }
@@ -134,11 +134,11 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
     	  }
       }
       else {
-        if (!inBracket && segments.head.HaveOpeningBracket.size > 0) {
+        if (!inBracket && segments.head.HaveOpeningBracket) {
          
            countEstimate(segments.tail,true,countBoundary,haveVerb,acc + 1)
         }
-        else if ((!inBracket) && segments.head.HaveCloseBracket.size > 0) {
+        else if ((!inBracket) && segments.head.HaveCloseBracket) {
          
           countEstimate(segments.tail,false,countBoundary,haveVerb,acc + 1)
         }
@@ -181,8 +181,132 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
       }
      }
   
+ 
  def estimateMaxClause(segments : List[Segment]) : Int = segments.map(t => t.clause).toList.max
    
+ def estimateClause(segments : List[TaggedSegment]) : List[Segment] = {
+   countDash = segments.map(t => t.analyzed.morfWords).flatten.filter(p => p.form == "-" && p.compareTag("Z:")).length
+   val firstEstimate =  estimateClauseNum(segments)
+   val firstClauses = firstEstimate.zipWithIndex.groupBy(p => p._1.clause).filter(p => p._1 != 0).toList
+   val clauseWithoutVerb = firstClauses.filter(p => p._2.filter(s => new TaggedSegment(s._1).GetTag.haveActiveVerb).length == 0)
+   val haveActiveVerb  =  firstEstimate.filter(s => new TaggedSegment(s).GetTag.haveActiveVerb).length > 0
+
+   if (!clauseWithoutVerb.isEmpty && haveActiveVerb)
+   {
+    addToLog(segments.map(p => p.segment.clause).mkString(" / ") + "\n")
+    correctEstimation(clauseWithoutVerb,firstEstimate)
+   }
+   else {
+   firstEstimate
+   }
+ }
+ 
+ def correctEstimation(clauses : List[(Int,List[(Segment,Int)])], segments : List[Segment]) : List[Segment] = {
+   if (clauses.isEmpty){
+     segments
+   }
+   else{
+     // update
+     val emptyClause : Int = clauses.head._1
+     val levelClause : Int = clauses.head._2.head._1.level.getExactLevel
+     val indexStartClause : Int = clauses.head._2.head._2
+       val indexedSegments : List[(Segment,Int)] = segments.zipWithIndex.filterNot(p => new TaggedSegment(p._1).analyzed.IsBoundarySegment )
+      
+        
+     val nextLevelSegments = indexedSegments.filter(p => p._1.level == levelClause && p._1.clause > emptyClause).toList
+     val prevLevelSegments = indexedSegments.filter(p => p._1.level == levelClause && p._1.clause < emptyClause).toList
+     val nextSegments = indexedSegments.filter(p =>  p._1.clause > emptyClause).toList
+     val prevSegments = indexedSegments.filter(p =>  p._1.clause < emptyClause).toList
+     
+     if (!nextLevelSegments.isEmpty){
+      var changeClause = nextLevelSegments.head._1.clause
+       var indexEndChange = nextLevelSegments.filter(p => p._1.clause == changeClause).sortBy(f => f._2).reverse.head._2
+        this.addToLog("nextLevelSegments")
+        this.addToLog("indexClause / levelClause / indexStartClause / changeClause / indexEndChange" + emptyClause.toString + 
+            " /"+levelClause.toString+" / "+ indexStartClause.toString +"/"+ changeClause.toString+ "/" + indexEndChange.toString + "\n")
+  
+       var i = 0
+       segments.foreach(f => {
+         val noExistsOtherClauses : Boolean = 
+            indexedSegments.filter(p => {
+                          p._2 > i-2 && p._2 < indexEndChange && p._1.clause != changeClause && p._1.clause != emptyClause
+            }).isEmpty
+         if (i > indexStartClause && ( (f.clause == 0 && noExistsOtherClauses ) || f.clause == changeClause) &&  i <= indexEndChange  ) {
+           f.setClause(emptyClause)
+           addToLog("change" + i.toString + "/ " + emptyClause.toString)
+         }
+         else if (f.clause > changeClause)
+         {
+            if (f.clause != 0 )
+             {
+               val newIndex = f.clause - 1
+               f.setClause(newIndex)
+             }  
+         }
+          addToLog("add" + i.toString + "| " + f.clause.toString + " | " + indexStartClause.toString + " | " + indexEndChange.toString  + " | "+ changeClause.toString)
+         i+=1
+       })
+     }
+     else if(!prevLevelSegments.isEmpty)  {
+       var changeClause : Int = prevLevelSegments.sortBy(f => f._1.clause).reverse.head._1.clause
+        var indexStartChange : Int = prevLevelSegments.sortBy(f => f._1.clause).reverse.head._2
+        var indexEndChange : Int = clauses.head._2.sortBy(p => p._2).reverse.head._2
+         this.addToLog("prevLevelSegments")
+         this.addToLog("indexClause / levelClause / indexStartClause / changeClause / indexEndChange" + emptyClause.toString + 
+            " /"+levelClause.toString+" / "+ indexStartClause.toString +"/"+ changeClause.toString+ "/" + indexEndChange.toString + "\n")
+       var i = 0
+       segments.foreach(f => {
+         val noExistsOtherClauses : Boolean = 
+            indexedSegments.filter(p => {
+                          p._2 > i-2 && p._2 < indexEndChange && p._1.clause != changeClause && p._1.clause != emptyClause
+            }).isEmpty
+         if (i > indexStartChange && ((f.clause == 0 && noExistsOtherClauses ) || f.clause == emptyClause) &&  i <= indexEndChange  ) {
+           f.setClause(changeClause)
+           addToLog(f.clause.toString + "\n")
+         }
+         else if (indexEndChange < i)
+         {
+             if (f.clause != 0 )
+             {
+               val newIndex = f.clause - 1
+               f.setClause(newIndex)
+             }  
+           
+         }
+         i+=1
+       })
+     }
+     /*
+     else if (!nextSegments.isEmpty) {
+        def changeClause = nextSegments.head._1.clause
+       def indexEndChange = nextSegments.filter(p => p._1.clause == changeClause).sortBy(f => f._2).reverse.head._2
+        this.addToLog("indexClause / levelClause / indexStartClause / changeClause / indexEndChange" + emptyClause.toString + 
+            " /"+levelClause.toString+" / "+ indexStartClause.toString +"/"+ changeClause.toString+ "/" + indexEndChange.toString)
+  
+       var i = 0
+       segments.foreach(f => {
+         if (i > indexStartClause && (f.clause == 0 || f.clause == changeClause) &&  i <= indexEndChange  ) {
+           f.setClause(emptyClause)
+         }
+         i+=1
+       })
+     }
+     else if (!prevSegments.isEmpty) {
+        def changeClause : Int = prevSegments.sortBy(f => f._1.clause).reverse.head._1.clause
+        def indexStartChange : Int = prevSegments.sortBy(f => f._1.clause).reverse.head._2
+        def indexEndChange : Int = clauses.head._2.sortBy(p => p._2).reverse.head._2
+       var i = 0
+       segments.foreach(f => {
+         if (i > indexStartChange && (f.clause == 0 || f.clause == emptyClause) &&  i <= indexEndChange  ) {
+           f.setClause(changeClause)
+         }
+         i+=1
+       })
+     }*/
+     correctEstimation(clauses.tail,segments)
+   }
+   }
+ 
  def estimateClauseNum(segments : List[TaggedSegment]) : List[Segment] = {
    
     def estimateClauseNum(segments : List[(TaggedSegment,Int)], previousTag : String, actualClause : Int, acc:List[Segment]) : List[Segment] = {
@@ -195,9 +319,60 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
         val headTag = head._1.GetTag
         val segment = head._1
         val index = head._2
-        if (headTag.isBoundary && !acc.isEmpty)
+        val prevTag : Tag = new Tag(previousTag)
+        val prevPureSegment : Tag = getPreviousSegmentTag(acc);
+         val nextClause = {
+               this.getNextClause
+          }
+        
+        if (segment.analyzed.IsBoundarySegment && (segment.analyzed.HaveOpeningBracket) && acc.isEmpty)
         {
-       this.addToLog( "add 1 :" + index.toString )
+          this.addToLog( "add 12 :" + index.toString )
+          this.inBracket = true
+          segment.segment.setClause(0)
+          this.addSegment(0, index, segment.segment)
+	      estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
+        }
+        else if ((segment.analyzed.IsBoundarySegment && (segment.analyzed.HaveOpeningBracket || segment.analyzed.HaveCloseBracket || (segment.analyzed.HaveDash && this.countDash == 2) ) ) || 
+           ((this.inBracket ) ))
+        {
+          this.addToLog( "add 10 :" + index.toString + this.inBracket.toString + " " +segment.analyzed.HaveDash.toString)
+          
+          if (segment.analyzed.HaveOpeningBracket || (segment.analyzed.HaveDash && !this.inBracket))  this.inBracket = true
+          else if (segment.analyzed.HaveCloseBracket || (segment.analyzed.HaveDash && this.inBracket)) this.inBracket = false
+          
+          if (segment.analyzed.HaveCloseBracket && this.containsVerb){
+    
+            this.updateInBracket(acc,nextClause,index-1,false)
+            this.containsVerb = false
+          }
+          else if (this.inBracket && headTag.haveActiveVerb) {
+            this.containsVerb = true
+          }
+          
+          if (!segments.tail.isEmpty && (segments.tail.head._1.analyzed.HavePunct || segments.tail.head._1.analyzed.HaveComma) && (!segments.tail.head._1.analyzed.HaveDash))
+          {
+            segment.segment.setClause(0)
+            this.addSegment(0, index, segment.segment)
+	          estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
+          }
+          else {
+            segment.segment.setClause(actualClause)
+	          this.addSegment(actualClause, index, segment.segment)
+	          estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
+          }
+        }
+        else if (headTag.isBoundary && headTag.haveCordConj && (prevTag.haveComma || prevTag.interpunction) && !segments.tail.isEmpty && segments.tail.head._1.analyzed.HaveSubFlag)
+        {
+          this.addToLog( "add 11 :" + index.toString )
+          segment.segment.setClause(nextClause)
+          this.addSegment(nextClause, index, segment.segment)
+          estimateClauseNum(segments.tail,headTag.tag,nextClause, segment.segment :: acc)
+        }
+        else if (headTag.isBoundary && !acc.isEmpty)
+        {
+         this.addToLog( "add 1 :" + index.toString )
+         this.addToLog(prevTag.tag + "\n")
           segment.segment.setClause(0)
           this.addSegment(0, index, segment.segment)
           estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
@@ -215,13 +390,7 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
         else 
        {
          
-          val prevTag : Tag = new Tag(previousTag)
-          val prevPureSegment : Tag = getPreviousSegmentTag(acc);
-              
-          val nextClause = {
-               this.getNextClause
-          }
-          
+         
           if ((headTag.haveSubflag ) && !acc.isEmpty && !prevTag.haveCordConj)
           {
              this.addToLog("add 3 :" + index.toString)
@@ -234,8 +403,7 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
           }
           else if (prevTag.isBoundary &&  headTag.Level == prevPureSegment.Level)
           {
-          
-        
+                  
             // predchozi segment byla carka nebo jednoducha spojka
             val addToClauseSegment = this.tryAddSegment(actualClause, segment.segment)
           
@@ -258,12 +426,13 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
              estimateClauseNum(segments.tail,headTag.tag, nextClause, segment.segment :: acc)
             }
           }                
-          else if ((headTag.Level < prevPureSegment.Level && !prevPureSegment.isEmpty) )
+          else if ((headTag.Level < prevPureSegment.Level && !prevPureSegment.isEmpty) && !prevTag.haveDash)
           {
             
-            val superiorClause = this.getSuperiorClause(actualClause)
-         this.addToLog("superior clause " + superiorClause.toString)
-            val addToClauseSegment = this.tryAddSegment(superiorClause, segment.segment)
+            val superiorClause = this.getSuperiorClause(headTag.Level)
+             val addToClauseSegment = this.tryAddSegment(superiorClause, segment.segment)
+               this.addToLog("add 6 :" + addToClauseSegment)
+                this.addToLog("add 6 :" + superiorClause)
              this.setNullBoundaryClause(acc)      
             if (addToClauseSegment){
               this.addToLog("add 6 :" + index.toString)
@@ -280,7 +449,7 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
              estimateClauseNum(segments.tail,headTag.tag, nextClause, segment.segment :: acc)
             }       
           }  
-          else if ((headTag.Level > prevPureSegment.Level && !prevPureSegment.isEmpty) )
+          else if ((headTag.Level > prevPureSegment.Level && !prevPureSegment.isEmpty) && !prevTag.haveDash )
           {
           //  println("add 9 :" + index.toString + " / " + segment.segment)
              this.addToLog("add 9 :" + index.toString + " / " + headTag.Level.toString + ":" + prevPureSegment.Level.toString)
@@ -291,7 +460,9 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
           else 
           {
               this.addToLog("add 8:" + index.toString )
-              
+              this.addToLog("add 8:" + headTag.isBoundary )
+              this.addToLog(segment.analyzed.IsBoundarySegment + " " + (segment.analyzed.CountWords > 0) 
+              )
 	          this.addSegment(actualClause, index, segment.segment)
               segment.segment.setClause(actualClause)
 	          estimateClauseNum(segments.tail,headTag.tag,  actualClause, segment.segment :: acc)
@@ -329,7 +500,8 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
      getSimpleClause(segments.tail, nextSegment :: acc)
    }
  }
-private def updateClause(actualClause : Int, acc: List[Segment]) : Boolean = {
+
+ private def updateClause(actualClause : Int, acc: List[Segment]) : Boolean = {
   if (acc.isEmpty) false
   else {
      val infoSeg = new InfoSegment(acc.head)
@@ -348,6 +520,7 @@ private def updateClause(actualClause : Int, acc: List[Segment]) : Boolean = {
      }
 } 
  
+
 private def getPreviousSegment(segments : List[Segment]) : Segment = {
    
     if (segments.isEmpty) null // nema nastat
@@ -358,7 +531,34 @@ private def getPreviousSegment(segments : List[Segment]) : Segment = {
     }
    
  }
- 
+
+ def updateInBracket(data : List[Segment], actualClause : Int, index : Int, haveAlreadyVerb : Boolean) : Int =
+{
+ if (data.isEmpty || BaseSegment.createInfoSegment(data.head).HaveOpeningBracket) 
+   { 
+     if (!data.isEmpty) { 
+       data.head.setClause(0)
+          addToLog("end update bracked" + data.head.toString )
+     }
+     else {
+       addToLog("end sentence \n" )
+     }
+     addToLog("end update bracked" )
+     actualClause
+   }
+ else {
+   var clause = actualClause
+   if (haveAlreadyVerb  && BaseSegment.createInfoSegment(data.head).HaveActiveVerb)
+   {
+     clause += 1
+   }
+   println("clause " + clause.toString + "\n")
+   data.head.setClause(clause)
+   this.addSegment(clause, index, data.head)
+   updateInBracket(data.tail, clause,index-1,BaseSegment.createInfoSegment(data.head).HaveActiveVerb)
+ }
+}
+
 private def getPreviousSegmentTag(segments : List[Segment]) : Tag = {
    
     if (segments.isEmpty || !containsPureSegment(segments)) new Tag("")

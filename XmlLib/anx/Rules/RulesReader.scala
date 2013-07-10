@@ -46,8 +46,8 @@ object RulesReader extends XmlReader {
     
     val effectOn = this.getTextAttribute(effectXml,"EffectOn")
     val effectType = this.getTextAttribute(effectXml, "EffectType")
-    val clauseNum = this.getTextAttribute(effectXml,"Clause")
-    val effect = new Effect(effectOn,effectType,clauseNum)
+    val segmentNum = this.getTextAttribute(effectXml,"Level")
+    val effect = new Effect(effectOn,effectType,segmentNum)
     effect
   }
   

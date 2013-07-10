@@ -81,7 +81,12 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
            if (analyzed.morfWords.head.form == ",")
            {
              "P"
-           } else {
+           }
+           else if (analyzed.morfWords.head.form == "-")
+           {
+             "D"
+           }
+           else {
            analyzed.morfWords.head.tag.head.toString
            }
        }

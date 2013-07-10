@@ -8,7 +8,7 @@ class InfoSegment(val segment : Segment){
   
   protected val subflags = segment.words.map(f => this.CreateMorfWord(f)
   ).filter(f => f.isSubFlag).toList
-  def HaveSubFlag = subflags.size > 0 || segment.words.head.form == "kdy" || segment.words.head.form == "kde" 
+  def HaveSubFlag = subflags.size > 0 
   def FirstSubflag = { if (subflags.isEmpty) this.CreateMorfWord(segment.words.head)
 		  			   else subflags.head 
                      }
@@ -23,6 +23,8 @@ class InfoSegment(val segment : Segment){
                    if (verbs.isEmpty) new MorfWord("","")
   				   else verbs.head
   				   }
+ 
+  def ActiveVerbs =  verbs
   def HaveActiveVerb = verbs.size > 0
   
   protected val cordConjuctions = TagQuery.cordConjuction(this.morfWords)
@@ -34,9 +36,9 @@ class InfoSegment(val segment : Segment){
   def HaveReflexivePronoun = reflexivePronouns.size > 0
   
 
-  def HaveOpeningBracket = WordFormQuery.openBracket(this.morfWords) 
+  def HaveOpeningBracket : Boolean  = WordFormQuery.openBracket(this.morfWords).length > 0 
 
-  def HaveCloseBracket = WordFormQuery.closeBracket(this.morfWords)
+  def HaveCloseBracket : Boolean = WordFormQuery.closeBracket(this.morfWords).length > 0
   
   def HaveQuotationMark = WordFormQuery.quotationMark(this.morfWords)
   
@@ -44,11 +46,20 @@ class InfoSegment(val segment : Segment){
   
   def HaveComma : Boolean = (segment.words.count(p => p.form == ",") > 0)
   
+  def HavePunct : Boolean = (segment.words.count(p => p.form == ".") > 0)
+  
   def CountWords = segment.words.size
   
   def IsBoundarySegment = segment match {
     case s : Boundary => true
     case _  => false
+  }
+  
+  def Subject : List[MorfWord] = {
+      val tags = "NN__1;PP__1"
+     this.morfWords.filter(p => {
+      TagMatcher.MatchSet(p.tag, tags.split(";").toList)
+    })
   }
   
   private def CreateMorfWord(f : Word) : MorfWord = f match

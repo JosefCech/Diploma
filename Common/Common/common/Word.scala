@@ -84,8 +84,19 @@ class MorfWord( form : String, val lemma: Lemma , val tag: String , val ident: S
   
   def isSeparator = ((this.compareTag("J^") || this.compareTag("Z:")) && (!("%/+*><&".contains(form.trim))))
   
-  def isSubFlag = (this.compareTag("J,") || this.compareTag("P9") || this.compareTag("P4") || this.compareTag("PE") || this.compareTag("PJ") || this.compareTag("PK") || this.compareTag("PQ") || this.compareTag("PY") || this.compareTag("C?") || this.compareTag("Cu") || this.compareTag("Cz") || this.compareTag("P1")) && this.form != "jako" 
-
+  def isSubFlag = (this.compareTag("J,") || this.compareTag("P9") || this.compareTag("P4") || this.compareTag("PE") || this.compareTag("PJ") || this.compareTag("PK") || this.compareTag("PQ") || this.compareTag("PY") || this.compareTag("C?") || this.compareTag("Cu") || this.compareTag("Cz") || this.compareTag("P1"))   && this.form != "jako" 
+  
+  def isSingular = tag.charAt(3) == 'S'
+  
+  def isPronome = this.compareTag("P")
+  
+  def getGender : Char = tag.charAt(2)
+  def getPerson : Char = tag.charAt(7)
+  def getNumber : Char = tag.charAt(3)
+  
+  
+  override def toString =  this.form + " / " + this.tag
+  
 }
 
 class AWord(val ident : String, val ord : Int, val clauseNum : Int){
