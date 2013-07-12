@@ -3,26 +3,26 @@ package LevelEstimate
 import Anx.AnxReader
 import common.sentence.{ LevelEstimateSentence, AnalyzedSentence }
 import common.segment.{ Segment, AnalyzedSegment}
+import java.io.File
 
 object LevelEstimate extends App {
+  
  override def main(args: Array[String]) {
     def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Develop")).toList
-    
-   val results = files.map(f => {
+     val pw = new java.io.PrintWriter(new File("logErrorLevel"))
+     val results = files.map(f => {
      val sentence = AnxReader.ReadAnalyzedSentence(f)
      val analyzed = new LevelAnalyzedSentence(sentence.morfSentence)
-    // println(sentence.Ident)
     val result = compareSentence(sentence.analyzedSentence, analyzed)
     if (result._3 > 0)
-      
-    {
-    
-    // println(analyzed)
-    // println(sentence)
-    // println(result)
-    }
-    
-    result
+     {
+        pw.write("---Start-----------\n")
+        pw.write(sentence.toString)
+        pw.write(analyzed.toString)
+        pw.write(analyzed.getLog)
+        pw.write("---End-------------\n")
+     }
+     result
     }).toList
     
     val wholeCount = results.map( a => a._2 + a._3).toList.sum

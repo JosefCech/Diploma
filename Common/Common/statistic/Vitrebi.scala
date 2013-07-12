@@ -1,0 +1,5 @@
+package statistic
+
+trait Vitrebi {
+
+}

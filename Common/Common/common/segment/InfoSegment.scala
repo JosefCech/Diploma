@@ -12,6 +12,7 @@ class InfoSegment(val segment : Segment){
   def FirstSubflag = { if (subflags.isEmpty) this.CreateMorfWord(segment.words.head)
 		  			   else subflags.head 
                      }
+  def HaveFakeSubflag = this.HaveSubFlag && segment.words.map(f => this.CreateMorfWord(f)).zipWithIndex.filter(f => f._1.isSubFlag && f._2 < 2).length == 0
   
   def morfWords = segment.words.map(f => f match {
     case f : MorfWord => f

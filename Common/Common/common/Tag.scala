@@ -2,6 +2,11 @@ package common
 
 class Tag(val tag:String) {
 
+  val simpleTag = { 
+            val (left, right) = tag.splitAt(1)
+            (left + right.tail).toString
+  }
+  
   def isBoundary : Boolean = compare(0, "B") || compare(0, "C") 
   
   def haveActiveVerb : Boolean = compare(2,"C")

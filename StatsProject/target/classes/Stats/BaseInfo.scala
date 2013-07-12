@@ -4,6 +4,8 @@ import java.io._
 import xml._
 import Pdt.MorfReader
 
+
+
 class BaseInfo(string : String) {
   val segDir= string + "/seg"
   val morfDir = string + "/morf"

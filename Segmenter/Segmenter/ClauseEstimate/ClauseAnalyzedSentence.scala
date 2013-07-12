@@ -31,13 +31,6 @@ class ClauseAnalyzedSentence(sentence : List[Word], ident : String , val levelWi
   
   override def toString =  this.clauseEstimateSegments.map(t => t.clause.toString + " " + t.level.toString +" "+t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
 
-  override def addToLog(s : String) : Unit = {
-      if (this.log == null) this.log = ""
-      this.log += s
-     // println(this.log)
-      this.log+= "\n"
-    }
-  
   
    
   def applyMatches(matches : List[MatchEffect] ) = {

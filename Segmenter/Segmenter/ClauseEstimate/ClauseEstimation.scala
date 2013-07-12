@@ -36,7 +36,7 @@ object ClauseEstimation extends App
          pw.write("---Start-----------\n")
         pw.write(sentence.toString)
         pw.write(analyzed2.toString)
-        pw.write(analyzed2.log.toString)
+        pw.write(analyzed2.getLog)
         pw.write("---End-------------\n")
      
        }

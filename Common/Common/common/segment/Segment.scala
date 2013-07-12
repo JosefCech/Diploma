@@ -59,6 +59,12 @@ trait Segment {
   
   def isSimpleComma : Boolean = words.filter(p => p.form == ",").length > 0
   
+  def isBoundary : Boolean = this.isInstanceOf[Boundary]
+  
+  def createInfoSegment = new InfoSegment(this)
+  
+  def isCommaSegment = this.createInfoSegment.HaveComma
+  
  override def toString : String  = words.map(s => s match {
     case m : MorfWord => m.form + " ("+ m.tag +")"
     case s : Word => s.form
@@ -127,6 +133,7 @@ object BaseSegment
 {
   def createEmptySegment : Segment = new BaseSegment(List[Word](),-1) 	 
   def createInfoSegment(segment : Segment) : InfoSegment = new InfoSegment(segment)
+  def createTaggedSegment(segment : Segment) : TaggedSegment = new TaggedSegment(segment)
 }
 
 class Boundary( data : List[Any] , lmin : Int , lmax : Int  )

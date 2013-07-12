@@ -8,17 +8,17 @@ import common.clause.Clause
 import common.Word
 import common.MorfWord
 import common.segment.BaseSegment
+import log.SimpleLog
 
-
-trait ClauseSentence {
+trait ClauseSentence extends SimpleLog {
 
  private var clauses : List[(Int,Clause)] = List[(Int,Clause)]() ;
  private var lastClause : Int = 0
  var inBracket : Boolean = false
  var containsVerb : Boolean = false 
  var countDash : Int = 0
- var log : String = ""
- def addToLog(text : String) : Unit
+ //var log : String = ""
+ //def addToLog(text : String) : Unit
 
  private def maxClauseNum =
    if (clauses.isEmpty) {
