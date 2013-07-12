@@ -1,5 +1,0 @@
-package statistic
-
-trait Vitrebi {
-
-}

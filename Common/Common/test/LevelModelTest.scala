@@ -7,38 +7,38 @@ import common._
 import scala.xml._
 import statistic.LevelSegmentModel
 
-
-
-@RunWith(classOf[JUnitRunner])
-class LevelModelTest extends FunSuite {
- 
-  class LevelTest extends LevelSegmentModel {
+ class LevelTest extends LevelSegmentModel {
      val simpleTags : List[List[Tag]] = List(
       List(
        new Tag("B0XXXZ"),  
        new Tag("S0XXXX"),
        new Tag("B0XXXZ"),  
-       new Tag("S0XXXX"),
+       new Tag("S2XXXX"),
        new Tag("B0XXXZ"),  
        new Tag("B0XXXJ"),
-       new Tag("B0XXXZ"),  
+       new Tag("B1XXXZ"),  
        new Tag("S0XXXX")
       ),
       List(
        new Tag("B0XXXZ"),  
-       new Tag("S0XXXX"),
+       new Tag("S1XXXX"),
        new Tag("B0XXXZ"),  
-       new Tag("S0XXXX"),
+       new Tag("S1XXXX"),
        new Tag("B0XXXZ"),  
        new Tag("S1CX,X"),
        new Tag("B0XXXZ"),  
        new Tag("S1XX,X")
       ) 
      )
+     
      override val getSimpleTags = this.simpleTags
      override val toString : String =  super.toString
   }
-   
+ 
+
+@RunWith(classOf[JUnitRunner])
+class LevelModelTest extends FunSuite {
+  
    test("base class") {
      val simpleClass = new LevelTest
      println(simpleClass.toString)

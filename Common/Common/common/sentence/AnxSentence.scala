@@ -1,6 +1,8 @@
 package common.sentence
 import common.{ MorfWord, Word}
 import common.segment.{Segment, PureSegment, Boundary, AnalyzedSegment}
+import common.segment.BaseSegment
+import common.Tag
 
 class AnxSentence ( Segments : List[Segment], val Ident : String) extends Sentence(Segments.map(t => t.words).flatten) {
  
@@ -38,5 +40,7 @@ class AnxSentence ( Segments : List[Segment], val Ident : String) extends Senten
                                              })
                                              data
                                             }
-  }
-                                                                            
+  
+  
+  def getTagsOnly : List[Tag] = this.sentenceWithLevel.map(segment => BaseSegment.createTaggedSegment(segment).GetTag)
+}

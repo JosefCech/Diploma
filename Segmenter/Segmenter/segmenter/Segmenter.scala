@@ -201,7 +201,7 @@ object Segmenter  extends App {
     	  )
     	   println("clause inconsistent " + clauseInconsistent.toString)
     	   println("segment inconsistent " + segmentInconsistent.toString)
-    	    println("analyzed sentence " + analyzedSentence.toString)
+    	   println("analyzed sentence " + analyzedSentence.toString)
     	  
 		  
         }

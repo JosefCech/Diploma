@@ -6,8 +6,8 @@ import org.scalatest.junit.JUnitRunner
 import common._
 import scala.xml._
 import Anx.AnxWriter
-import dataObjects.BaseXmlSentence
-import dataObjects.BaseXmlSentence
+import DataObjects.BaseXmlSentence
+import DataObjects.BaseXmlSentence
 
 @RunWith(classOf[JUnitRunner])
 class SentenceTest extends FunSuite {

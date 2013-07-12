@@ -1,8 +1,11 @@
 package common
 
-class Tag(val tag:String) {
+trait ITag {
+  
+}
+class Tag(val tag:String) extends ITag  {
 
-  val simpleTag = { 
+  lazy val simpleTag = { 
             val (left, right) = tag.splitAt(1)
             (left + right.tail).toString
   }
@@ -44,4 +47,14 @@ class Tag(val tag:String) {
   
   def isEmpty = this.tag.isEmpty
  override def toString : String = tag
+ 
+ def addLevelToSimpleTag(l : Int) : Tag = {
+     val (left, right) = tag.splitAt(1)
+     new Tag((left + l.toString + right.tail).toString)
+  }
+}
+
+// WithoutLevel
+class SimpleTag(tag : String) extends ITag {
+  
 }

@@ -44,7 +44,14 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
   }
   
   private def GetLevel : String = {
+    if (analyzed.segment.level == 0)
+    {
     analyzed.segment.level.toString
+    }
+    else
+    {
+     "0"  
+    }
   }
   
   private def GetContainsVerb : String = {
