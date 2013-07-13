@@ -5,9 +5,9 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import common._
 import scala.xml._
-import statistic.LevelSegmentModel
+import statistic.Models.UnigLevelModel
 
- class LevelTest extends LevelSegmentModel {
+ class LevelTest extends UnigLevelModel {
      val simpleTags : List[List[Tag]] = List(
       List(
        new Tag("B0XXXZ"),  
@@ -53,4 +53,6 @@ class LevelModelTest extends FunSuite {
         val simpleClass = new LevelTest
         println(simpleClass.getProbability(1,"BCCCJ"))
    }
+      
+  
 }

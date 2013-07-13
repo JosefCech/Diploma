@@ -1,4 +1,4 @@
-package dataObjects
+package DataObjects
 import Xml.XmlWritable
 import scala.xml._
 import common.{MorfWord, Word, AnalyzedWord }

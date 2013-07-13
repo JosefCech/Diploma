@@ -1,12 +1,14 @@
 package statistic
 
 import common.Tag
+import statistic.Models.UnigLevelModel
+import statistic.Models.ConditionalLevelModel
 
 trait Viterbi {
 
-  val getLevelModel :  LevelSegmentModel
-  val getConditionModel : SegmentConditionalModel
-  val getAllStates : List[Int]
+  val getLevelModel :  UnigLevelModel
+  val getConditionModel : ConditionalLevelModel
+  val getAllStates : List[Int] = (0 to 9).toList
   
   def getBestPath(sentence : List[Tag], paths : List[(Double, List[(Int,(Tag,Tag))])]) : (Double, List[(Int,(Tag,Tag))]) =
   {
@@ -62,5 +64,11 @@ trait Viterbi {
       getBestPath(sentence.tail, newPaths)
      
    }
+  }
+  
+  def getBestPath(sentence : List[Tag]) : List[Int] = {
+    val double = this.getBestPath(sentence,List((1.0,List((-1,(new Tag("*"),new Tag("*")))))))
+    // list of levels
+    double._2.reverse.tail.map(f => f._1)
   }
 }

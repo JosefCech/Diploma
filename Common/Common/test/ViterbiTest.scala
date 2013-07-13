@@ -5,14 +5,14 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import common._
 import scala.xml._
-import statistic.LevelSegmentModel
-import statistic.SegmentConditionalModel
 import statistic.Viterbi
+import statistic.Models.UnigLevelModel
+import statistic.Models.ConditionalLevelModel
 
-class ViterbiInstance(val levelModel : LevelSegmentModel , val conditionModel : SegmentConditionalModel) extends Viterbi
+class ViterbiInstance(val levelModel : UnigLevelModel , val conditionModel : ConditionalLevelModel) extends Viterbi
 {
- override val getLevelModel : LevelSegmentModel = this.levelModel
- override val getConditionModel : SegmentConditionalModel = this.conditionModel
+ override val getLevelModel : UnigLevelModel = this.levelModel
+ override val getConditionModel : ConditionalLevelModel = this.conditionModel
  
  override val getAllStates: List[Int] = (0 to 5).toList
  

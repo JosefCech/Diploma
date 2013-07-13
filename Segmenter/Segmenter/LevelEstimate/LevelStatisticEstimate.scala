@@ -4,6 +4,8 @@ import Anx.AnxReader
 import common.sentence.{ LevelEstimateSentence, AnalyzedSentence }
 import common.segment.{ Segment, AnalyzedSegment}
 import java.io.File
+import DataObjects.EstimateSentence
+import StatisticModul.StatisticEstimate
 
 
 object LevelStatisticEstimate extends App {
@@ -11,16 +13,17 @@ object LevelStatisticEstimate extends App {
  override def main(args: Array[String]) {
     def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Heldout")).toList
      val pw = new java.io.PrintWriter(new File("logErrorLevel"))
+     val statisticModel = new StatisticEstimate
      val results = files.map(f => {
      val sentence = AnxReader.ReadAnalyzedSentence(f)
-     val analyzed = new LevelAnalyzedSentence(sentence.morfSentence)
+     val analyzed = statisticModel.StatisticEstimateLevel(sentence)
     val result = compareSentence(sentence.analyzedSentence, analyzed)
     if (result._3 > 0)
      {
         pw.write("---Start-----------\n")
         pw.write(sentence.toString)
         pw.write(analyzed.toString)
-        pw.write(analyzed.getLog)
+     //   pw.write(analyzed.getLog)
         pw.write("---End-------------\n")
      }
      result
@@ -46,7 +49,7 @@ object LevelStatisticEstimate extends App {
     println(results.length.toString)
     
  }
- def compareSentence(sentence : AnalyzedSentence , test : LevelAnalyzedSentence ) : 
+ def compareSentence(sentence : AnalyzedSentence , test : EstimateSentence ) : 
   (Boolean,Int,Int , AnalyzedSentence) = 
   {
     def segmentsCompare(segments : List[AnalyzedSegment], testSegments : List[Segment], acc : (Int,Int)) 
@@ -66,8 +69,8 @@ object LevelStatisticEstimate extends App {
        if (a.Level == t.level.getExactLevel) segmentsCompare(segments.tail,testSegments.tail,(acc._1 + 1, acc._2 ))
        else segmentsCompare(segments.tail,testSegments.tail,(acc._1 , acc._2 + 1 ))      }
     } 
-   val compare = segmentsCompare(sentence.segments,test.estimatedSegments,(0,0))
-   (sentence.segments.length == test.estimatedSegments.length,compare._1,compare._2, sentence)
+   val compare = segmentsCompare(sentence.segments,test.getEstimateSegments,(0,0))
+   (sentence.segments.length == test.getEstimateSegments.length,compare._1,compare._2, sentence)
   }
  
  }
