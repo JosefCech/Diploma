@@ -5,7 +5,7 @@ import common.sentence.{ LevelEstimateSentence, AnalyzedSentence }
 import common.segment.{ Segment, AnalyzedSegment}
 import java.io.File
 import DataObjects.EstimateSentence
-import StatisticModul.StatisticEstimate
+import StatisticModul.StatisticLevelEstimate
 
 
 object LevelStatisticEstimate extends App {
@@ -13,7 +13,7 @@ object LevelStatisticEstimate extends App {
  override def main(args: Array[String]) {
     def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Heldout")).toList
      val pw = new java.io.PrintWriter(new File("logErrorLevel"))
-     val statisticModel = new StatisticEstimate
+     val statisticModel = new StatisticLevelEstimate
      val results = files.map(f => {
      val sentence = AnxReader.ReadAnalyzedSentence(f)
      val analyzed = statisticModel.StatisticEstimateLevel(sentence)

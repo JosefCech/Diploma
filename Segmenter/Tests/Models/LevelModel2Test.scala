@@ -10,7 +10,8 @@ import StatisticModul.Models._
 import org.scalatest._
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-import StatisticModul.StatisticEstimate
+import StatisticModul.StatisticLevelEstimate
+import StatisticModul.Models.ConditionalLevelModel
 
 @RunWith(classOf[JUnitRunner])
 class LevelModelTest2 extends FunSuite {
@@ -22,15 +23,35 @@ class LevelModelTest2 extends FunSuite {
     
   }
   
-  test("init codition")
+  test("init level codition")
   {
-    val firstModel = ConditionModel
+    val firstModel = ConditionalLevelModel
      println(firstModel.toString)
   }
   
   
-  test("init Estimam"){
-    var test = new StatisticEstimate
+  test("init level Estimam"){
+    var test = new StatisticLevelEstimate
+    println(test.getConditionModel)
+    println(test.getLevelModel)
+  }
+  
+   test("init clause segment") {
+    val firstLevelModel = ClauseModel
+    
+    println(firstLevelModel.toString)
+    
+  }
+  
+  test("init clause codition")
+  {
+    val firstModel = ConditionalClauseModel
+     println(firstModel.toString)
+  }
+  
+  
+  test("init clause Estimam"){
+    var test = new StatisticLevelEstimate
     println(test.getConditionModel)
     println(test.getLevelModel)
   }

@@ -28,6 +28,9 @@ class AnxSentence ( Segments : List[Segment], val Ident : String) extends Senten
    }
    def morfSentence = new MorfSentence(this.Words.map(p => p match {case c : MorfWord => c}).toList, Ident)
    
+   def sentenceWithData =  analyzedSentence.segments
+  
+   
    def sentenceWithLevel : List[Segment] = { val data = Segments.map( p => p match {
                                                  case  p : AnalyzedSegment => p.data
                                                  case  p : PureSegment => p
@@ -41,6 +44,13 @@ class AnxSentence ( Segments : List[Segment], val Ident : String) extends Senten
                                              data
                                             }
   
-  
-  def getTagsOnly : List[Tag] = this.sentenceWithLevel.map(segment => BaseSegment.createTaggedSegment(segment).GetTag)
+  def getTagsWithClause : List[(Int,Tag)] = 
+  {
+    this.sentenceWithData.map( segment => {
+      (segment.clause, segment.taggedSegment.GetTag )  
+    })
+    
+  }
+   
+  def getTagsOnly : List[Tag] = this.sentenceWithData.map(segment => segment.taggedSegment.GetTag)
 }

@@ -4,7 +4,7 @@ import common.segment.Segment
 import common.segment.InfoSegment
 import common.Word
 import wordProperties.TagMatcher
-import common.LingvisticAggreement
+import common.LinguisticAggreement
 /** Clause - group of tuples (Index,Segment)
   * Base functions : 
   * 		add segment
@@ -88,11 +88,11 @@ class Clause( segments : List[(Int,Segment)],  openClause : Boolean ) {
   {
      
     val infoSeg : InfoSegment = this.createInfoSegment(s)
-    val oneIsWithoutVerb : Boolean= ((!infoSeg.HaveActiveVerb || !this.haveActiveVerb))
+    val oneIsWithoutVerb : Boolean = ((!infoSeg.HaveActiveVerb || !this.haveActiveVerb))
  
     
     if (oneIsWithoutVerb) {
-       LingvisticAggreement.verbAgreement(this.data.map(p => p._2).toList, s)
+       LinguisticAggreement.verbAgreement(this.data.map(p => p._2).toList, s)
     }
     else {
      
@@ -106,7 +106,7 @@ class Clause( segments : List[(Int,Segment)],  openClause : Boolean ) {
       }
       else {
           val forms = List("jsme","jsem","jsi","jste")
-          val conditionForms = List("by","bychom","byste","bys")
+          val conditionForms = List("by","bychom","byste","bys", "bych", "býval")
           val myVerb = Word.createMorfWord(myVerbs.head)
           val numberCondition = myVerb.tag.charAt(3) == nextVerb.tag.charAt(3)
           val myPerson = myVerb.tag.charAt(7).toString

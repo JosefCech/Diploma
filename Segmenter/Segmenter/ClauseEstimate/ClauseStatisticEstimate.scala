@@ -1,31 +1,28 @@
 package ClauseEstimate
 
+import StatisticModul.StatisticClauseEstimate
 import Anx.AnxReader
-import common.sentence.{AnalyzedSentence }
-import common.segment.{AnalyzedSegment, Segment}
 import java.io.File
-import Rules.RuleHelper
-import Rules.RuleAutomata
+import common.sentence.AnalyzedSentence
+import DataObjects.EstimateSentence
+import common.segment.AnalyzedSegment
+import common.segment.Segment
 import common.segment.InfoSegment
-import common.sentence.Sentence
-import common.segment.TaggedSegment
 
 
-object ClauseEstimation extends App
-{
-  override def main(args: Array[String]) {
-    def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Develop")).toList
-   var notGood = 0
-   val pw = new java.io.PrintWriter(new File("logError"))
-   val results = files.map(f => {
-       val sentence = AnxReader.ReadAnalyzedSentence(f)
-       val analyzed1 = new ClauseAnalyzedSentence(sentence.morfSentence)
-       val analyzed2 = new ClauseAnalyzedSentence(sentence.sentenceWithLevel,sentence.Ident)
-       // val matches = RuleHandler.rules.map( rule=>RuleAutomata.ruleMatches(analyzed.taggedSegments, rule)).toList.flatten
-      //println(matches)
-       val result = compareSentence(sentence.analyzedSentence,analyzed2)
-    //   analyzed.addToLog("test")
-       
+object ClauseStatisticEstimate extends App{
+
+   override def main(args: Array[String]) {
+ 
+   def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Heldout")).toList
+     val pw = new java.io.PrintWriter(new File("logErrorLevel"))
+     val statisticModel = new StatisticClauseEstimate
+     var notGood = 0
+     val results = files.map(f => {
+     val sentence = AnxReader.ReadAnalyzedSentence(f)
+     val analyzed2 = statisticModel.StatisticEstimateClause(sentence)
+    val result = compareSentence(sentence.analyzedSentence, analyzed2)
+
        if (result._2 > 0)
        {
         // println(sentence)
@@ -36,19 +33,19 @@ object ClauseEstimation extends App
          pw.write("---Start-----------\n")
         pw.write(sentence.toString)
         pw.write(analyzed2.toString)
-        pw.write(analyzed2.getLog)
+       // pw.write(analyzed2.getLog)
         pw.write("---End-------------\n")
      
        }
-        val countWithoutVerb = analyzed2.estimatedSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
-         val existWithVerb =analyzed2.estimatedSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
+        val countWithoutVerb = analyzed2.getEstimateSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
+         val existWithVerb =analyzed2.getEstimateSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
        
        if (result._2 > 0 && countWithoutVerb > 0 && existWithVerb  )
        
        {
          pw.write(analyzed2.toString)
          pw.write(sentence.toString)
-         pw.write(analyzed2.log.toString)
+        // pw.write(analyzed2.log.toString)
          pw.write(countWithoutVerb.toString + " / " + existWithVerb.toString)
          notGood +=1
        }
@@ -155,20 +152,21 @@ object ClauseEstimation extends App
     }
  }
   
- def compareSentence(sentence : AnalyzedSentence , test : ClauseAnalyzedSentence ) : 
+ def compareSentence(sentence : AnalyzedSentence , test : EstimateSentence ) : 
   (Int,Int , AnalyzedSentence, Int, Int,(Int,Int,Int), Boolean) = 
   {
-   val compare = segmentsCompare(sentence.segments, test.clauseEstimateSegments,(0,0))
+   val compare = segmentsCompare(sentence.segments, test.getEstimateSegments,(0,0))
+   
    val estimatedCount = {
-            test.estimationOfClause - sentence.countClause
+            test.getEstimationOfCountClause - sentence.countClause
         }
    val estimationCountResult = {
-        test.countOfClause - sentence.countClause //test.estimationOfClause
+        test.getCountOfClause - sentence.countClause //test.estimationOfClause
 
         
    }
    
-   val estimatedClause = this.clauseCompare(sentence.clause.toList,test.clause.toList,(0,0,0))
+   val estimatedClause = this.clauseCompare(sentence.clause.toList,test.getClause.toList,(0,0,0))
    val containsBreakClause = !sentence.clause.filter(p => containsGap(p._2.sorted)).filter(f => f._1 != 0).isEmpty
   // if (containsBreakClause) println(sentence.clause)
    (compare._1,compare._2, sentence, estimatedCount, estimationCountResult,estimatedClause, containsBreakClause)

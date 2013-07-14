@@ -5,6 +5,7 @@ import common.{ AnalyzedWord , Word }
 class AnalyzedSegment( val data : Segment,  level : Int , clause : Int,  startNewClause : Boolean ) 
 	extends Segment {
  
+
   def words : List[Word] =  data.words
   
   override def toString =  "  level " + this.Level + "clause " + this.ClauseNum.toString + " segment : " + super.toString
@@ -19,4 +20,8 @@ class AnalyzedSegment( val data : Segment,  level : Int , clause : Int,  startNe
                     clause
                   }
   def Clausebeg = this.startNewClause
+  
+  def taggedSegment : TaggedSegment = {  
+     new TaggedSegment(data)   
+  }
 }

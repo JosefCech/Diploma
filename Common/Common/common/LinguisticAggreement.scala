@@ -2,7 +2,7 @@ package common
 
 import common.segment.{Segment, BaseSegment}
 
-object LingvisticAggreement {
+object LinguisticAggreement {
  def verbAgreement(clause : List[Segment], addSegment : Segment) : Boolean = {
    val segment = BaseSegment.createInfoSegment(addSegment)
    val addVerbs = segment.ActiveVerbs
@@ -11,23 +11,20 @@ object LingvisticAggreement {
    val clauseInfo = clause.map(p => BaseSegment.createInfoSegment(p))
    val clauseVerbs = clauseInfo.map(p => p.ActiveVerbs).toList.flatten
    val clauseNom = clauseInfo.map( p => p.Subject).toList.flatten
-  
-   if (!addNom.isEmpty && addNom.head.form == "obèanství")
+   var aggreementInClause : Boolean = false
+   var aggreementInSegment : Boolean = false
+   if (!addVerbs.isEmpty  && !addNom.isEmpty)
    {
-      println(segment.segment)
-   println("slovesa")
-   println(clauseVerbs.map(p => p.toString).mkString(" "))
-   println("nom")
-   println(addNom.map(p => p.toString).mkString(" "))
-   
-   println("----------------------------------------")
-   println("slovesa")
-   println(addVerbs.map(p => p.toString).mkString(" "))
-   println("nom")
-   println(clauseNom.map(p => p.toString).mkString(" "))
-    println("----------------End------------------------")
+     aggreementInSegment = this.compareVerbsAndNouns(addVerbs, addNom) 
    }
-  
+   if (!clauseVerbs.isEmpty && !clauseNom.isEmpty )
+   {
+     aggreementInClause = this.compareVerbsAndNouns(clauseVerbs, clauseNom)
+   }
+   if (aggreementInClause || aggreementInSegment)
+   {
+     false
+   }
    if (!addVerbs.isEmpty && !clauseNom.isEmpty) {
    /*   println(segment.segment)
    println("slovesa")
@@ -84,20 +81,28 @@ object LingvisticAggreement {
      }
       
      val countSubjects = subjects.length
-     println( verbGender.toString + verbNumber.toString + verbPerson.toString) 
-     if (verbPerson == '1' ) {
-       println(subjects)
-       println(subjects.filter(p => p.isPronome).length)
-       subjects.filter(p => p.isPronome).length > 0
-     }
-     else if (verbPerson != '3')
+     //println( verbGender.toString + verbNumber.toString + verbPerson.toString) 
+     if (verbPerson != '3' ) 
      {
-      true  
+       val pronomeSubject = subjects.filter(p => p.isPronome)
+       if (pronomeSubject.isEmpty && subjects.length == 1)
+       {
+         false
+       }
+       else if (pronomeSubject.isEmpty)
+       {
+         true
+       }
+       else
+       {
+         pronomeSubject.filter(p => p.getPerson == verbPerson && p.getNumber == verbNumber).length > 0
+       }
+       
      }
      else {
-       if (verbNumber == 'S' && subjects.filter(p => p.isSingular).length == 0 ) {
-          println(subjects.filter(p => p.isSingular).length)
-         false
+       if (verbNumber == 'S' && subjects.filter(p => p.isSingular).length == 0 )
+        {
+        false
        } 
        else if (verbNumber == 'P' && countSubjects == 1 && subjects.head.isSingular )
        {
@@ -107,8 +112,12 @@ object LingvisticAggreement {
        {
          false
        }
-       else {
-         println("true")
+       else if (subjects.filter(s => s.getPerson == verbPerson || (s.compareTag("N") && s.getNumber == verbNumber)).length == 0)
+       {
+         false
+       }
+       else 
+       {
        true
        }
      }

@@ -184,7 +184,8 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
  
  def estimateMaxClause(segments : List[Segment]) : Int = segments.map(t => t.clause).toList.max
    
- def estimateClause(segments : List[TaggedSegment]) : List[Segment] = {
+ def estimateClause(segments : List[TaggedSegment]) : List[Segment] = 
+ {
    countDash = segments.map(t => t.analyzed.morfWords).flatten.filter(p => p.form == "-" && p.compareTag("Z:")).length
    val firstEstimate =  estimateClauseNum(segments)
    val firstClauses = firstEstimate.zipWithIndex.groupBy(p => p._1.clause).filter(p => p._1 != 0).toList
@@ -321,9 +322,10 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
         val index = head._2
         val prevTag : Tag = new Tag(previousTag)
         val prevPureSegment : Tag = getPreviousSegmentTag(acc);
-         val nextClause = {
-               this.getNextClause
-          }
+        val nextClause = 
+        {
+        		this.getNextClause
+        }
         
         if (segment.analyzed.IsBoundarySegment && (segment.analyzed.HaveOpeningBracket) && acc.isEmpty)
         {
@@ -333,20 +335,29 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
           this.addSegment(0, index, segment.segment)
 	      estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
         }
-        else if ((segment.analyzed.IsBoundarySegment && (segment.analyzed.HaveOpeningBracket || segment.analyzed.HaveCloseBracket || (segment.analyzed.HaveDash && this.countDash == 2) ) ) || 
-           ((this.inBracket ) ))
+        else if (
+        			(segment.analyzed.IsBoundarySegment && 
+        		    (segment.analyzed.HaveOpeningBracket || segment.analyzed.HaveCloseBracket || (segment.analyzed.HaveDash && this.countDash == 2) ) ) ||
+        		    ((this.inBracket ) ))
         {
           this.addToLog( "add 10 :" + index.toString + this.inBracket.toString + " " +segment.analyzed.HaveDash.toString)
           
-          if (segment.analyzed.HaveOpeningBracket || (segment.analyzed.HaveDash && !this.inBracket))  this.inBracket = true
-          else if (segment.analyzed.HaveCloseBracket || (segment.analyzed.HaveDash && this.inBracket)) this.inBracket = false
+          if (segment.analyzed.HaveOpeningBracket || (segment.analyzed.HaveDash && !this.inBracket)) 
+          {
+            this.inBracket = true
+          }
+          else if (segment.analyzed.HaveCloseBracket || (segment.analyzed.HaveDash && this.inBracket)) 
+          {
+            this.inBracket = false
+          }
           
-          if (segment.analyzed.HaveCloseBracket && this.containsVerb){
-    
+          if (segment.analyzed.HaveCloseBracket && this.containsVerb)
+          {
             this.updateInBracket(acc,nextClause,index-1,false)
             this.containsVerb = false
           }
-          else if (this.inBracket && headTag.haveActiveVerb) {
+          else if (this.inBracket && headTag.haveActiveVerb) 
+          {
             this.containsVerb = true
           }
           
@@ -354,12 +365,13 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
           {
             segment.segment.setClause(0)
             this.addSegment(0, index, segment.segment)
-	          estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
+	        estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
           }
-          else {
+          else 
+          {
             segment.segment.setClause(actualClause)
-	          this.addSegment(actualClause, index, segment.segment)
-	          estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
+	        this.addSegment(actualClause, index, segment.segment)
+	        estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
           }
         }
         else if (headTag.isBoundary && headTag.haveCordConj && (prevTag.haveComma || prevTag.interpunction) && !segments.tail.isEmpty && segments.tail.head._1.analyzed.HaveSubFlag)
@@ -371,26 +383,21 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
         }
         else if (headTag.isBoundary && !acc.isEmpty)
         {
-         this.addToLog( "add 1 :" + index.toString )
-         this.addToLog(prevTag.tag + "\n")
+          this.addToLog( "add 1 :" + index.toString )
+          this.addToLog(prevTag.tag + "\n")
           segment.segment.setClause(0)
           this.addSegment(0, index, segment.segment)
           estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
         }
-        else if (headTag.isBoundary && 
-                 headTag.compare(5, "Z") && 
-                 acc.isEmpty
-                )
+        else if (headTag.isBoundary &&  headTag.compare(5, "Z") &&  acc.isEmpty )
         {
-       addToLog("add 2:" + index.toString )
+          addToLog("add 2:" + index.toString )
           segment.segment.setClause(0)
           this.addSegment(0, index, segment.segment)         
           estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
         }        
         else 
        {
-         
-         
           if ((headTag.haveSubflag ) && !acc.isEmpty && !prevTag.haveCordConj)
           {
              this.addToLog("add 3 :" + index.toString)
@@ -406,8 +413,7 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
                   
             // predchozi segment byla carka nebo jednoducha spojka
             val addToClauseSegment = this.tryAddSegment(actualClause, segment.segment)
-          
-           
+  
             if (addToClauseSegment)
             {
              this.addToLog("add 4 :" + index.toString + segment.segment.toString)
@@ -417,9 +423,10 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
              this.updateClause(actualClause, acc)
              estimateClauseNum(segments.tail,headTag.tag, actualClause, segment.segment :: acc)
             }
-            else {
+            else 
+            {
                this.addToLog("add 5:" + index.toString)
-              this.closeClause(actualClause)
+               this.closeClause(actualClause)
                this.setNullBoundaryClause(acc)     
                segment.segment.setClause(nextClause)
               this.addSegment(nextClause, index, segment.segment)
@@ -428,12 +435,12 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
           }                
           else if ((headTag.Level < prevPureSegment.Level && !prevPureSegment.isEmpty) && !prevTag.haveDash)
           {
+            val superiorClause = this.getSuperiorClause(prevPureSegment.Level)
+            val addToClauseSegment = this.tryAddSegment(superiorClause, segment.segment)
+            this.addToLog("add 6 :" + addToClauseSegment)
+            this.addToLog("add 6 :" + superiorClause)
+            this.setNullBoundaryClause(acc)      
             
-            val superiorClause = this.getSuperiorClause(headTag.Level)
-             val addToClauseSegment = this.tryAddSegment(superiorClause, segment.segment)
-               this.addToLog("add 6 :" + addToClauseSegment)
-                this.addToLog("add 6 :" + superiorClause)
-             this.setNullBoundaryClause(acc)      
             if (addToClauseSegment){
               this.addToLog("add 6 :" + index.toString)
               this.closeClause(actualClause)
@@ -453,7 +460,7 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
           {
           //  println("add 9 :" + index.toString + " / " + segment.segment)
              this.addToLog("add 9 :" + index.toString + " / " + headTag.Level.toString + ":" + prevPureSegment.Level.toString)
-              this.addSegment(nextClause, index, segment.segment)
+             this.addSegment(nextClause, index, segment.segment)
              segment.segment.setClause(nextClause)
              estimateClauseNum(segments.tail,headTag.tag, nextClause, segment.segment :: acc)
           }
@@ -461,8 +468,7 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
           {
               this.addToLog("add 8:" + index.toString )
               this.addToLog("add 8:" + headTag.isBoundary )
-              this.addToLog(segment.analyzed.IsBoundarySegment + " " + (segment.analyzed.CountWords > 0) 
-              )
+              this.addToLog(segment.analyzed.IsBoundarySegment + " " + (segment.analyzed.CountWords > 0))
 	          this.addSegment(actualClause, index, segment.segment)
               segment.segment.setClause(actualClause)
 	          estimateClauseNum(segments.tail,headTag.tag,  actualClause, segment.segment :: acc)
@@ -473,9 +479,10 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
     
     if (segments.filter(t => t.analyzed.HaveActiveVerb).length > 0)
     {
-    estimateClauseNum(segments.zipWithIndex.toList,"", 1, List[Segment]())
+      estimateClauseNum(segments.zipWithIndex.toList,"", 1, List[Segment]())
     }
-    else {
+    else 
+    {
       getSimpleClause(segments,List[Segment]())
     }
  }

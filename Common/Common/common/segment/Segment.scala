@@ -51,9 +51,9 @@ trait ISegment {
 
 trait Segment {
   def words : List[Word]
-  protected var _level : Level  =  new Level(-1,-1)
-  protected var _clause : Int  = -1
-  protected var _startNewClause = false
+ var _level : Level  =  new Level(-1,-1)
+  var _clause : Int  = -1
+  var _startNewClause = false
   def level =  _level
   def clause = _clause
   

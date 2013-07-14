@@ -51,7 +51,7 @@ object AnxReader extends XmlReader {
    var segmentGenerate: Segment = null
    val words = (segment\\"word").map(t => CreateMorfWord(t)).toList
    segmentGenerate = new PureSegment(words,level , startClause != 0)
-   segmentGenerate.clause = clauseNum
+   segmentGenerate.setClause(clauseNum)
    segmentGenerate
   }
   
@@ -60,20 +60,22 @@ object AnxReader extends XmlReader {
    val dataSegment = this.GetSegmentData(segment);
    val words = (segment\\"word").map(t => CreateMorfWord(t)).toList
    var newSegment: Segment = null
-   
-   if (words.filter(p => p.isSeparator).length > 0)
-   {
-      newSegment = new Boundary(words)
-   }
-   else 
-   {
-    newSegment = new PureSegment(words)
-   } 
-   val clauseNum : Int = {
+     val clauseNum : Int = {
      if (dataSegment._2 == -1) 0
      else dataSegment._2
    }
-   val analyzedSegment = new AnalyzedSegment(newSegment, dataSegment._1, dataSegment._2, dataSegment._3 )
+   if (words.filter(p => p.isSeparator).length > 0)
+   {
+      newSegment = new Boundary(words,dataSegment._1)
+      
+   }
+   else 
+   {
+    newSegment = new PureSegment(words,dataSegment._1)
+   } 
+   newSegment.setClause(clauseNum)
+  
+   val analyzedSegment = new AnalyzedSegment(newSegment, dataSegment._1, clauseNum, dataSegment._3 )
    analyzedSegment
   }
   
@@ -97,7 +99,7 @@ object AnxReader extends XmlReader {
    val startClauseString  = (segment \\ "@clausebeg").toString
    val clauseNumString = (segment \\ "@clause").toString
    
-    ( GetParametr(levelString, -1),
+    ( GetParametr(levelString, 0),
       GetParametr(clauseNumString,0),
       GetBoolParametr(startClauseString,false)
     )

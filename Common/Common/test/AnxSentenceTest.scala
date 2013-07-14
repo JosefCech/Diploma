@@ -7,6 +7,8 @@ import common.sentence.{AnxSentence, MorfSentence}
 import common.MorfWord
 import common.segment.{ Segment, BaseSegment  }
 import scala.xml._
+import common.segment.PureSegment
+import common.segment.Boundary
 
 
 @RunWith(classOf[JUnitRunner])
@@ -48,5 +50,16 @@ class AnxSentenceTest extends FunSuite {
 	 val sentence2 = new MorfSentence(words ::: words)
      assert(sentence==sentence2)
 	 } 
+     
+    test("sentence with standart segment") {
+	 val words =  List( new MorfWord ("a","J^------------") , new MorfWord ("který","J,------------"), new MorfWord ("a","J^------------"))
+	 val words2 =  List( new MorfWord ("a","J^------------") , new MorfWord ("který","J,------------"))     
+     val segment = new PureSegment(words,0)
+	 segment.setClause(1)
+	 val boundary = new Boundary(words,0)
+	 boundary.setClause(0)
+     val sentence2 = new AnxSentence( List[Segment](segment,boundary))
+     println(sentence2.getTagsWithClause)
+     }
 
 }

@@ -1,15 +1,17 @@
 package test
 
-import statistic.Models.UnigClauseModel
-import common.Tag
 import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import common._
 import scala.xml._
+import statistic.LevelSegmentModel
+import statistic.Models.ConditionalClauseModel
 
- class ClauseTest2 extends UnigClauseModel {
-     val simpleTags : List[List[(Int,Tag)]] = List(
+
+
+  class ConditionalClauseModelTest extends ConditionalClauseModel {
+       val simpleTags : List[List[(Int,Tag)]] = List(
       List(
      (0,  new Tag("B0XXXZ")),  
      (1,  new Tag("S0XXXX")),
@@ -36,20 +38,26 @@ import scala.xml._
      override val toString : String =  super.toString
   }
 
+
 @RunWith(classOf[JUnitRunner])
-class ClauseModelTest extends FunSuite {
-  test("base class 21 ") {
-     val simpleClass = new ClauseTest2
+class ConditionClauseModelTest extends FunSuite {
+     
+   test("base class segmentCondition") {
+     val simpleClass = new ConditionalClauseModelTest
      println(simpleClass.toString)
      
    }
-   
-   test("existing prob 2") {
-        val simpleClass = new ClauseTest2
-        println(simpleClass.getProbability(0,"BXXXJ"))
+
+      test("get existing prob") {
+     val simpleClass = new SegmentConditionalModelTest
+    
+     println(simpleClass.getProbability(0, "S0XXXX","B0XXXZ"))
+       println(simpleClass.getProbability(-1, "S0XXXX","B0XXXZ"))
+     
    }
-      test("unknown prob 2") {
-        val simpleClass = new ClauseTest2
-        println(simpleClass.getProbability(1,"BCCCJ"))
+     test("non existing prob") {
+     val simpleClass = new SegmentConditionalModelTest
+     println(simpleClass.getProbability(2, "S0XXXX","B0XXXZ"))
+     
    }
 }

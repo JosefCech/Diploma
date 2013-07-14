@@ -16,6 +16,10 @@ class LevelAnalyzedSentence(sentence : List[Word], ident : String  )
   override def toString =  this.estimatedSegments.map(t => t.level.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
   
   override val getEstimateSegments = this.estimatedSegments
+  
+   override val getEstimationOfCountClause : Int = 0
+   override val getCountOfClause :Int = 0
+   override val getClause : Map[Int,List[Int]] = Map[Int,List[Int]]()
 }
 
 class LevelStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
@@ -47,4 +51,8 @@ class LevelStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
   override def toString =  this.estimatedSegments.map(t => t.level.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
   
   override val getEstimateSegments = this.estimatedSegments
+   override val getEstimationOfCountClause : Int = 0
+   override val getCountOfClause :Int = 0
+   override val getClause : Map[Int,List[Int]] = Map[Int,List[Int]]()
+ 
 }

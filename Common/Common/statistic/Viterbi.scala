@@ -1,13 +1,14 @@
 package statistic
 
 import common.Tag
-import statistic.Models.UnigLevelModel
-import statistic.Models.ConditionalLevelModel
+
+import statistic.BaseModel.UnigModel
+import statistic.BaseModel.ConditionalModel
 
 trait Viterbi {
 
-  val getLevelModel :  UnigLevelModel
-  val getConditionModel : ConditionalLevelModel
+  val getLevelModel :  UnigModel
+  val getConditionModel : ConditionalModel
   val getAllStates : List[Int] = (0 to 9).toList
   
   def getBestPath(sentence : List[Tag], paths : List[(Double, List[(Int,(Tag,Tag))])]) : (Double, List[(Int,(Tag,Tag))]) =
@@ -25,41 +26,38 @@ trait Viterbi {
       {
         if (maxActual * minGrow > minActual * maxGrow)
         {
-          paths.sortBy(f => f._1).toList.dropWhile(p => p._1 * maxGrow < maxActual * minGrow).toList
+          paths.sortBy(f => f._1).toList.reverse.takeWhile(p => p._1 * maxGrow > maxActual * minGrow).toList.take(100)
         }
         else
         {
-          paths
+          paths.take(100)
         }
         
       }
    
-      var actualUsedStates  = paths.map(f => f._2.head).toSet.toList
+      var actualUsedStates  = prunePaths.map(f => f._2.head).toSet.toList
   
       val actualTag = sentence.head
- 
-      val maxEdges = this.getAllStates.map(nextNode => {
-      val maxNext =  actualUsedStates.map(actualNode => {
-           val levelProb = this.getLevelModel.getProbability(nextNode, actualTag.simpleTag) 
-           val conditionProb = this.getConditionModel.getProbability(nextNode, actualNode._2._1.tag, actualNode._2._2.tag)
-           val tripple = (actualNode._1,nextNode,levelProb * conditionProb )
-           tripple
-        }).groupBy(f => f._3).maxBy(f => f._1)._2
-        maxNext
-      }).flatten
-         
+      
+      println(actualTag)
+      println(maxActual)
+      println(minActual)
+      println(maxActual * minGrow)
+      println(minActual * maxGrow)
+      println(prunePaths.length)
+      println(paths.length)
+      println(actualUsedStates.length)
+      
+      // override maxEdges(actualStates : List(Int,(Tag,Tag))) 
+      
+      val maxEdges = this.getMaxEdges(actualUsedStates, actualTag)
+       println(maxEdges.length)
+       println(maxEdges)
       // add new part of path
 
       
-      val newPaths = prunePaths.map( f => {
-        maxEdges.filter(a => a._1 == f._2.head._1).toList.map( newEdge => {
-        
-        val newTag = actualTag.addLevelToSimpleTag(newEdge._2)
-        val newPath = (f._1*newEdge._3, (newEdge._2, (newTag ,f._2.head._2._1)) :: f._2)
-        
-        newPath
-        })
-      }).flatten.toList
+      // override getNewPaths(prunePaths, maxEdges) : List[(Double, List[(Int, (common.Tag, common.Tag))])]
+      val newPaths = this.getNewPaths(prunePaths, maxEdges, actualTag)
   
       getBestPath(sentence.tail, newPaths)
      
@@ -71,4 +69,7 @@ trait Viterbi {
     // list of levels
     double._2.reverse.tail.map(f => f._1)
   }
+  
+  def getMaxEdges(actualUsedStates : List[(Int,(Tag,Tag))], actualTag  : Tag) : List[(Int, Int, Double)]
+  def getNewPaths(prunePaths: List[(Double, List[(Int, (common.Tag, common.Tag))])], maxEdges : List[(Int, Int, Double)] , actualTag : Tag ): List[(Double, List[(Int, (common.Tag, common.Tag))])] 
 }

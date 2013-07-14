@@ -2,9 +2,9 @@ package StatisticModul.Models
 
 
 import common.Tag
-import statistic.Models.ConditionalLevelModel
 
-object ConditionModel extends ConditionalLevelModel with LoaderTags {
+
+object ConditionalLevelModel extends statistic.Models.ConditionalLevelModel with LoaderTags {
  
    val simpleTags : List[List[Tag]] = this.LoadTags
     
