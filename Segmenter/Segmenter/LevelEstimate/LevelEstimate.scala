@@ -8,23 +8,32 @@ import java.io.File
 object LevelEstimate extends App {
   
  override def main(args: Array[String]) {
+    // naètení odhadovaných dat
     def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Develop")).toList
-     val pw = new java.io.PrintWriter(new File("logErrorLevel"))
-     val results = files.map(f => {
-     val sentence = AnxReader.ReadAnalyzedSentence(f)
-     val analyzed = new LevelAnalyzedSentence(sentence.morfSentence)
-    val result = compareSentence(sentence.analyzedSentence, analyzed)
-    if (result._3 > 0)
-     {
-        pw.write("---Start-----------\n")
-        pw.write(sentence.toString)
-        pw.write(analyzed.toString)
-        pw.write(analyzed.getLog)
-        pw.write("---End-------------\n")
-     }
-     result
+    // log data chybne urèené vìty
+    val pw = new java.io.PrintWriter(new File("logErrorLevel"))
+    val results = files.map(f => {
+        // naètení vìty
+	    val sentence = AnxReader.ReadAnalyzedSentence(f)
+	    // analýza vìty bez naètených informací
+	    val analyzed = new LevelAnalyzedSentence(sentence.morfSentence)
+	    // porovnání naètené a analyzované vìty
+	    //(stejný poèet segmentù,poèet správnì urèených segmentù , poèet špatnì urèených segmentù , celá vìta)
+	    val result = compareSentence(sentence.analyzedSentence, analyzed)
+	    if (result._3 > 0)
+	     {
+	        // zápis špatnì anotované vìty
+	        pw.write("---Start-----------\n")
+	        pw.write(sentence.toString)
+	        pw.write(analyzed.toString)
+	        pw.write(analyzed.getLog)
+	        pw.write("---End-------------\n")
+	     }
+	     result
     }).toList
     
+    printGroupData(results,"Celková úspìšnost", "")
+    /*
     val wholeCount = results.map( a => a._2 + a._3).toList.sum
     val rightCount = results.map(a => a._2).toList.sum
     val wrongCount = results.map(a => a._3).toList.sum
@@ -43,7 +52,7 @@ object LevelEstimate extends App {
     println("Wrong Sentence:")
     println((results.length - rightCountSentence).doubleValue/ results.length )
     println(results.length.toString)
-    
+    */
  }
  def compareSentence(sentence : AnalyzedSentence , test : LevelAnalyzedSentence ) : 
   (Boolean,Int,Int , AnalyzedSentence) = 
@@ -69,5 +78,29 @@ object LevelEstimate extends App {
    (sentence.segments.length == test.estimatedSegments.length,compare._1,compare._2, sentence)
   }
  
+ 
+ def printGroupData(data : List[ (Boolean,Int,Int , AnalyzedSentence)], headline : String , prefix : String) : Unit = 
+ {
+    val wholeCount = data.map( a => a._2 + a._3).toList.sum
+    val rightCount = data.map(a => a._2).toList.sum
+    val wrongCount = data.map(a => a._3).toList.sum
+    
+    val rightCountSentence = data.filter(p => p._3 == 0).length 
+    
+    println("-----------------" + headline + "-------------------")
+    println(prefix +"Right Segments:")
+    println(prefix + (rightCount.doubleValue/wholeCount).toString )
+    println(prefix + rightCount.toString + " " + wholeCount.toString)
+    println(prefix + "Wrong Segments:")
+    println(prefix + wrongCount.doubleValue/wholeCount )
+    println(prefix + wrongCount.toString + " " + wholeCount.toString)
+    
+    println(prefix + "Right Sentence:")
+    println(prefix + rightCountSentence.doubleValue/ data.length )
+    println(prefix + "Wrong Sentence:")
+    println(prefix + ((data.length - rightCountSentence).doubleValue/ data.length).toString)
+    println(prefix + data.length.toString)
+    println("-----------------end "+ headline + "-------------------")
  }
+}
  
