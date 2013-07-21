@@ -17,8 +17,7 @@ trait ClauseSentence extends SimpleLog {
  var inBracket : Boolean = false
  var containsVerb : Boolean = false 
  var countDash : Int = 0
- //var log : String = ""
- //def addToLog(text : String) : Unit
+
 
  private def maxClauseNum =
    if (clauses.isEmpty) {
@@ -68,9 +67,9 @@ trait ClauseSentence extends SimpleLog {
      data.head._1
    } 
  }
-   if (this.clauses.filter( f => f._1 == c).length > 0){
-   // println("addClause" + c.toString)
-       clauses.filter(p => p._1 == c).head._2.addSegment(i, s)
+   if (this.clauses.filter( f => f._1 == c).length > 0)
+   {
+	   clauses.filter(p => p._1 == c).head._2.addSegment(i, s)
    }
    else {
      val actualLevel = s.level.getExactLevel
@@ -458,7 +457,6 @@ private def setNullBoundaryClause(acc : List[Segment]) : Unit = {
           }  
           else if ((headTag.Level > prevPureSegment.Level && !prevPureSegment.isEmpty) && !prevTag.haveDash )
           {
-          //  println("add 9 :" + index.toString + " / " + segment.segment)
              this.addToLog("add 9 :" + index.toString + " / " + headTag.Level.toString + ":" + prevPureSegment.Level.toString)
              this.addSegment(nextClause, index, segment.segment)
              segment.segment.setClause(nextClause)
@@ -559,7 +557,6 @@ private def getPreviousSegment(segments : List[Segment]) : Segment = {
    {
      clause += 1
    }
-   println("clause " + clause.toString + "\n")
    data.head.setClause(clause)
    this.addSegment(clause, index, data.head)
    updateInBracket(data.tail, clause,index-1,BaseSegment.createInfoSegment(data.head).HaveActiveVerb)

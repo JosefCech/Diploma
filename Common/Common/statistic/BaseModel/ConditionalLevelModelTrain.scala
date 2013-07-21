@@ -7,8 +7,16 @@ trait ConditionalLevelModelTrain extends BaseLevelModel  {
    val simpleTags = this.getSimpleTags
    
    // pro clauze zmenit tvorbu trojic
+  
    val tripples = simpleTags.map(s => {
-      val levelsOnly = s.map(s1 => s1.Level).toList ::: List(-1)
+      var actualLevel = 1
+      val levelsOnly = s.map(
+          s1 => { val diff = this.getObserve(actualLevel, s1.Level)
+                  actualLevel = s1.Level
+                  diff
+          }
+          
+      ).toList ::: List(-1)
       val firstFullTags = List("*") ::: s.map(s2 => s2.tag) ::: List("S")
       val secFullTags = List("*","*") ::: s.map(s2 => s2.tag)
       firstFullTags.zip(secFullTags).toList.zip(levelsOnly).toList.filterNot(p => p._1._2 == "S" && p._1._1 == "S")
@@ -43,5 +51,6 @@ trait ConditionalLevelModelTrain extends BaseLevelModel  {
        (f,pairData)
      }).toList
  }    
- 
+    
+
 }

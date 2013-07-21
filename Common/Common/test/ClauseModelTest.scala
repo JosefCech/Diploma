@@ -34,6 +34,7 @@ import scala.xml._
      
      override val getClauseTags = this.simpleTags
      override val toString : String =  super.toString
+     override def getObserve(previous : Int, next : Int) : Int = next;
   }
 
 @RunWith(classOf[JUnitRunner])

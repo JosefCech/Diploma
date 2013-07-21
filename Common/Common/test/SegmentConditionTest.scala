@@ -34,6 +34,7 @@ import statistic.Models.ConditionalLevelModel
      )
      override val getSimpleTags = this.simpleTags
      override val toString : String =  super.toString
+      override def getObserve(previous : Int, next : Int) : Int = next;
   }
 
 

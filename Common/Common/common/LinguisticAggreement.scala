@@ -15,29 +15,27 @@ object LinguisticAggreement {
    var aggreementInSegment : Boolean = false
    if (!addVerbs.isEmpty  && !addNom.isEmpty)
    {
-     aggreementInSegment = this.compareVerbsAndNouns(addVerbs, addNom) 
+	   aggreementInSegment = this.compareVerbsAndNouns(addVerbs, addNom) 
    }
    if (!clauseVerbs.isEmpty && !clauseNom.isEmpty )
    {
-     aggreementInClause = this.compareVerbsAndNouns(clauseVerbs, clauseNom)
+	   aggreementInClause = this.compareVerbsAndNouns(clauseVerbs, clauseNom)
    }
+   // pokud mùže být shoda pøísudku s podmìtem naplnìna v aktuálním objektu tak se nehledá mimo
    if (aggreementInClause || aggreementInSegment)
    {
-     false
+	   false
    }
-   if (!addVerbs.isEmpty && !clauseNom.isEmpty) {
-   /*   println(segment.segment)
-   println("slovesa")
-   println(addVerbs.map(p => p.toString).mkString(" "))
-   println("nom")
-   println(clauseNom.map(p => p.toString).mkString(" "))*/
-   this.compareVerbsAndNouns(addVerbs, clauseNom)
+   if (!addVerbs.isEmpty && !clauseNom.isEmpty) 
+   {
+	   this.compareVerbsAndNouns(addVerbs, clauseNom)
    }
-   else if (!clauseVerbs.isEmpty && !addNom.isEmpty) {
-      
-     this.compareVerbsAndNouns(clauseVerbs, addNom ::: clauseNom)
+   else if (!clauseVerbs.isEmpty && !addNom.isEmpty) 
+   {
+	   this.compareVerbsAndNouns(clauseVerbs, addNom ::: clauseNom)
    }
-   else {
+   else 
+   {
        true
    }
  }
@@ -81,7 +79,6 @@ object LinguisticAggreement {
      }
       
      val countSubjects = subjects.length
-     //println( verbGender.toString + verbNumber.toString + verbPerson.toString) 
      if (verbPerson != '3' ) 
      {
        val pronomeSubject = subjects.filter(p => p.isPronome)

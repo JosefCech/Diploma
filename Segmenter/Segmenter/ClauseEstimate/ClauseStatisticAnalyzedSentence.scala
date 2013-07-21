@@ -5,6 +5,7 @@ import common.sentence.AnxSentence
 import common.segment.Segment
 import common.segment.InfoSegment
 import common.segment.BaseSegment
+import common.segment.AnalyzedSegment
 
 class ClauseStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
 	extends  EstimateSentence
@@ -24,11 +25,19 @@ class ClauseStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
        else
        {       
          val newSegment = sentence.head
-         newSegment.setClause(path.head)
-         applyBestPath(sentence.tail, path.tail, newSegment :: acc)
+         println(newSegment)
+         println(path.head)
+         newSegment.clause = path.head
+         val segTest = new AnalyzedSegment( newSegment,  newSegment.level.getExactLevel, path.head, false ) 
+         segTest
+         println(segTest)
+         applyBestPath(sentence.tail, path.tail, segTest :: acc)
        }
      }    
-     applyBestPath(sentence.segments, path, List[Segment]())
+     println(path)
+    val newSegments = applyBestPath(sentence.segments, path, List[Segment]())
+   // println(newSegments)
+  newSegments
   }
   
     

@@ -30,6 +30,7 @@ trait Viterbi {
         }
         else
         {
+          // zaøínutí
           paths.take(100)
         }
         
@@ -39,7 +40,7 @@ trait Viterbi {
   
       val actualTag = sentence.head
       
-      println(actualTag)
+   /*   println(actualTag)
       println(maxActual)
       println(minActual)
       println(maxActual * minGrow)
@@ -47,12 +48,12 @@ trait Viterbi {
       println(prunePaths.length)
       println(paths.length)
       println(actualUsedStates.length)
-      
+      */
       // override maxEdges(actualStates : List(Int,(Tag,Tag))) 
       
       val maxEdges = this.getMaxEdges(actualUsedStates, actualTag)
-       println(maxEdges.length)
-       println(maxEdges)
+     /*  println(maxEdges.length)
+       println(maxEdges)*/
       // add new part of path
 
       

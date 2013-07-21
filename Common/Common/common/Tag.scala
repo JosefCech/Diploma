@@ -33,7 +33,8 @@ class Tag(val tag:String) extends ITag  {
                   this.tag.substring(1,2).toInt
                   }
                   catch {
-                   case _ => { println(this.tag) 
+                   case _ => { 
+                              // println(this.tag) 
                               -1  
                              }
                   }

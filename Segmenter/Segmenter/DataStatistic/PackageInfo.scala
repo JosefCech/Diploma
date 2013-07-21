@@ -2,17 +2,53 @@ package DataStatistic
 
 import Anx.AnxReader
 import common.Tag
+import common.sentence.AnalyzedSentence
 
 object PackageInfo extends App {
  override def main(args : Array[String]) = 
  {
-    def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("TestClause")).toList
+    def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Test")).toList
     val info = files.map(f => 
       {
           val sentence = AnxReader.ReadAnalyzedSentence(f)
-          (sentence.getTagsWithClause,sentence.analyzedSentence.clause)
+          val dashData = sentence.sentenceWithData.zipWithIndex.filter(p => p._1.words.filter(p => p.equals("-")).length > 0)
+         
+          val countData = dashData.filter(f => f._2 != 0).map(f => {
+            val index = f._2
+            
+            val data = sentence.sentenceWithData.zipWithIndex
+            
+            val prevSeq = data.filter(p => p._2 < index && !p._1.isBoundary )
+            val nextSeq = data.filter(p => p._2 > index && !p._1.isBoundary )
+            if (prevSeq.isEmpty)
+            {
+             
+                (false,(0,0),(0,0))
+            }
+            else if (nextSeq.isEmpty)
+            {
+             
+               (false,(0,0),(0,0))
+            }
+            else
+            {
+           
+            val prev = prevSeq.maxBy(_._2)
+            val next = nextSeq.minBy(_._2)
+            (true,(prev._1.Level,next._1.Level),(prev._1.ClauseNum,next._1.ClauseNum))
+            }
+          })
+          (sentence.getTagsWithClause,sentence.analyzedSentence.clause, countData)
       })
    
+   println("Okolí pomlèky - level")
+   val infoGroup = info.map(f => f._3).flatten
+   val levelInfo = infoGroup.filter(f => f._1).map(f => f._2._1 - f._2._2).groupBy(f => f).map(f => (f._1, f._2.length)).toList.sortBy(f => f._2).reverse
+   println(levelInfo)
+   println("Okolí pomlèky - clause")
+   val clauseInfo = infoGroup.filter(f => f._1).map(f => f._3._1 - f._3._2).groupBy(f => f).map(f => (f._1, f._2.length)).toList.sortBy(f => f._2).reverse
+   println(clauseInfo)
+    
    println("Informace o balíèku")
    println("-- Poèet vìt : " + info.length.toString )
    println("-- Poèet segmentù : " + info.map(f => f._1.length).sum.toString )
@@ -71,10 +107,32 @@ object PackageInfo extends App {
    // println("-- Maximální poèet klauzí : " + info.maxBy(f => f._1)._1.toString )
   // info.foreach(p => println(p._3))
  }
+   def isComplexSentence(sentence : AnalyzedSentence) : Int = {
+    val data : List[(Int,Tag)] = sentence.segments.map( segment => {
+      (segment.clause, segment.taggedSegment.GetTag )  
+    })
+    data.groupBy(f => f._1).filter( c => c._2.filter(s => s._2.haveActiveVerb).length > 0).size 
+   }
  
- 
-   def containsGap(data : List[Int], zeroClause : List[Int] , actualhead : Int) : Boolean =
-  {
+   def containsGap(sentence : AnalyzedSentence) : Boolean =
+   {
+     val zero = sentence.clause.find(p =>p._1 == 0)
+     if (!zero.isEmpty)
+     {
+     sentence.clause.filterNot(p => p._1 == 0).filter(p =>
+       {
+         containsGap(p._2,zero.head._2,p._2.head)
+       }).size > 0
+       
+     }
+     else
+     {
+        sentence.clause.filterNot(p => p._1 == 0).filter(p => containsGap(p._2,List[Int](),p._2.head)).size > 0
+     }
+   
+   }
+   
+   def containsGap(data : List[Int], zeroClause : List[Int] , actualhead : Int) : Boolean = {
     if (data.isEmpty)
     {
       false
@@ -103,8 +161,7 @@ object PackageInfo extends App {
       true
     }
   }
-   def baseClauseCreation(data : List[(Int,Tag)],actualClause : Int, acc : Int) : Int =
-   {
+   def baseClauseCreation(data : List[(Int,Tag)],actualClause : Int, acc : Int) : Int = {
      if (data.isEmpty) 
      {
        acc

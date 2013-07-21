@@ -8,4 +8,6 @@ object ConditionalClauseModel extends statistic.Models.ConditionalClauseModel wi
     
    override val getClauseTags = this.clauseTags
    override val toString : String =  super.toString
+   
+     override def getObserve(previous : Int, actual : Int ) =  actual
 }

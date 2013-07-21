@@ -10,4 +10,6 @@ object ClauseModel extends UnigClauseModel with LoaderTags {
    override val getClauseTags = this.clauseTags
    override val toString : String =  super.toString
    
+     override def getObserve(previous : Int, actual : Int ) = actual
+   
 }
