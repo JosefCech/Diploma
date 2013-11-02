@@ -1,28 +1,43 @@
-package dataObjects
+package DataObjects
 import Xml.XmlWritable
 import scala.xml._
-import common._
+import common.{MorfWord, Word, AnalyzedWord }
+import common.segment.AnalyzedSegment
+import scala.xml.{ MetaData ,UnprefixedAttribute}
 /**
  * class Sentence implements Xml.XmlWritable 
  **/
-class Sentence(val sentence : List[List[Word]]) extends Xml.XmlWritable {
+class BaseXmlSentence(val sentence : Any) extends Xml.XmlWritable {
 
    
-  def CreateSentenceNode(sentence : List[List[Word]]) : Node = {
-    
+  def CreateSentenceNode(sentence : Any) : Node =  {
+   
     val root : Elem = <sentence></sentence>
-    def segmentsNodes = sentence.map(t => CreateSegmentNode(t))
+   
+    def segmentsNodes = sentence match {
+      case sentence : List[Any] => sentence.map(t => CreateSegmentNode(t))
+    }
+      
+     
     Elem(null, "sentence", null, xml.TopScope, segmentsNodes : _*)
   }
 
-  def CreateSegmentNode(segment : List[Word]) : Node = {
-    
-  def wordNodes = segment.map(w => CreateWordNode(w))
-     Elem(null, "segment", null, xml.TopScope, wordNodes : _*)
+  def CreateSegmentNode(segment : Any) : Node = {
+             
+  def wordData : (MetaData, List[Node]) = segment match {
+    case segment : List[Any] => (null,segment.map(w => CreateWordNode(w)))
+    case segment : AnalyzedSegment => { 
+    									var attributes = new UnprefixedAttribute("isStartClause",segment.getStartNewClause.toString,null)
+    									attributes.append(new UnprefixedAttribute("level",segment.level.toString,null))
+                                        (attributes,segment.words.map(w => CreateWordNode(w)))
+                                      }
+  }
+     Elem(null, "segment", wordData._1, xml.TopScope, wordData._2 : _*)
+     
   }
   
   
-  def CreateWordNode(w: Word) : Node = w match {
+  def CreateWordNode(w: Any) : Node = w match {
     case w : MorfWord =>	{ 
     							val form = new Some(w.form)
     							val tag = new Some(w.tag)
@@ -34,7 +49,17 @@ class Sentence(val sentence : List[List[Word]]) extends Xml.XmlWritable {
     						val word : Node = <word form={form.get}></word>
     						word
     				 	}
+    case w : AnalyzedWord => {
+                              val form = new Some(w.word.form)
+                              val tag = new Some(w.word.tag)
+                              val separator = new Some(w.separator.toString)
+                              val clauseNum = new Some(w.clauseNum.toString)
+                              val word : Node = <word form={form.get} tag={tag.get} separator={separator.get} clauseNum={clauseNum.get}></word>
+                              word
+                           }
   }
 
   def TransformXml = CreateSentenceNode(this.sentence)
 }
+
+
