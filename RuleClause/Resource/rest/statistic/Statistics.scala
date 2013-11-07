@@ -11,8 +11,8 @@ import common.SimpleClause
 
 object Statistics extends App {
  
-  private def segDataFolder = "../GoldenData/Seg"
-  private def goldenDataFolder = "../GoldenData/OutputGolden"
+  private def segDataFolder = "GoldenData/Seg"
+  private def goldenDataFolder = "GoldenData/OutputGolden"
   
   def getFilesAnx(folder : String) : List[File]= {
     println(folder)

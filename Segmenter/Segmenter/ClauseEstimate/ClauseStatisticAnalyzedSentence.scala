@@ -25,18 +25,13 @@ class ClauseStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
        else
        {       
          val newSegment = sentence.head
-         println(newSegment)
-         println(path.head)
          newSegment.clause = path.head
          val segTest = new AnalyzedSegment( newSegment,  newSegment.level.getExactLevel, path.head, false ) 
          segTest
-         println(segTest)
          applyBestPath(sentence.tail, path.tail, segTest :: acc)
        }
-     }    
-     println(path)
+     }   
     val newSegments = applyBestPath(sentence.segments, path, List[Segment]())
-   // println(newSegments)
   newSegments
   }
   

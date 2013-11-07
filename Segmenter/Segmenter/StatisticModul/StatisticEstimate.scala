@@ -11,7 +11,6 @@ import statistic.Models.ConditionalLevelModel
 import StatisticModul.Models.LevelModel
 import StatisticModul.Models.ConditionalLevelModel
 import StatisticModul.Models.ClauseModel
-import test.ConditionClauseModelTest
 import StatisticModul.Models.ConditionalClauseModel
 import statistic.Models.UnigClauseModel
 import statistic.BaseModel.UnigModel
@@ -41,8 +40,8 @@ class StatisticLevelEstimate extends LevelViterbi {
 
 class StatisticLevelEstimateDiff extends LevelViterbi {
   
-  override val getLevelModel : UnigModel = LevelModelDiff
-  override val getConditionModel : ConditionalModel = ConditionalLevelModelDiff
+  override val getLevelModel : UnigModel = LevelModel
+  override val getConditionModel : ConditionalModel = ConditionalLevelModel
   
   def StatisticEstimateLevel(sentence : AnxSentence ) : EstimateSentence = 
   {

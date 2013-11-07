@@ -1,0 +1,364 @@
+Results data --------------------------------------------------------------------------------------------------------------------
+Count 1
+Level no annotated data - whole data------------------------
+Right Segments:
+0.0
+0 4026
+Wrong Segments:
+1.0
+4026 4026
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+575
+endLevel no annotated data - whole data--------------------- end Count 1
+Count 2
+Level no annotated data - whole data------------------------
+Right Segments:
+0.0
+0 3959
+Wrong Segments:
+1.0
+3959 3959
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+524
+endLevel no annotated data - whole data--------------------- end Count 2
+Count 3
+Level no annotated data - whole data------------------------
+Right Segments:
+0.0
+0 2659
+Wrong Segments:
+1.0
+2659 2659
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+260
+endLevel no annotated data - whole data--------------------- end Count 3
+Count 4
+Level no annotated data - whole data------------------------
+Right Segments:
+0.0
+0 1248
+Wrong Segments:
+1.0
+1248 1248
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+99
+endLevel no annotated data - whole data--------------------- end Count 4
+Count 5
+Level no annotated data - whole data------------------------
+Right Segments:
+0.0
+0 449
+Wrong Segments:
+1.0
+449 449
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+27
+endLevel no annotated data - whole data--------------------- end Count 5
+Count 6
+Level no annotated data - whole data------------------------
+Right Segments:
+0.0
+0 177
+Wrong Segments:
+1.0
+177 177
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+9
+endLevel no annotated data - whole data--------------------- end Count 6
+Count 7
+Level no annotated data - whole data------------------------
+Right Segments:
+0.0
+0 63
+Wrong Segments:
+1.0
+63 63
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+3
+endLevel no annotated data - whole data--------------------- end Count 7
+Count 8
+Level no annotated data - whole data------------------------
+Right Segments:
+NaN
+0 0
+Wrong Segments:
+NaN
+0 0
+Right selected clause : 
+NaN
+Wrong 1 - k existujicim klauzim segmenty navic
+NaN
+Wrong 2 - spatny pocet klauzi
+NaN
+Right Sentence:
+NaN
+Wrong Sentence:
+NaN
+0
+endLevel no annotated data - whole data--------------------- end Count 8
+Count 9
+Level no annotated data - whole data------------------------
+Right Segments:
+0.0
+0 25
+Wrong Segments:
+1.0
+25 25
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+1
+endLevel no annotated data - whole data--------------------- end Count 9
+End Results data --------------------------------------------------------------------------------------------------------------------
+Results  simple data --------------------------------------------------------------------------------------------------------------------
+Count 1
+Level no annotated data - whole data------------------------
+Right Segments:
+0.9542970690511674
+3842 4026
+Wrong Segments:
+0.04570293094883259
+184 4026
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.8834782608695653
+Wrong Sentence:
+0.11652173913043479
+575
+endLevel no annotated data - whole data--------------------- end Count 1
+Count 2
+Level no annotated data - whole data------------------------
+Right Segments:
+0.9078050012629452
+3594 3959
+Wrong Segments:
+0.0921949987370548
+365 3959
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.8244274809160306
+Wrong Sentence:
+0.17557251908396945
+524
+endLevel no annotated data - whole data--------------------- end Count 2
+Count 3
+Level no annotated data - whole data------------------------
+Right Segments:
+0.8529522376833396
+2268 2659
+Wrong Segments:
+0.1470477623166604
+391 2659
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.6730769230769231
+Wrong Sentence:
+0.3269230769230769
+260
+endLevel no annotated data - whole data--------------------- end Count 3
+Count 4
+Level no annotated data - whole data------------------------
+Right Segments:
+0.8693910256410257
+1085 1248
+Wrong Segments:
+0.13060897435897437
+163 1248
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.6363636363636364
+Wrong Sentence:
+0.36363636363636365
+99
+endLevel no annotated data - whole data--------------------- end Count 4
+Count 5
+Level no annotated data - whole data------------------------
+Right Segments:
+0.7683741648106904
+345 449
+Wrong Segments:
+0.23162583518930957
+104 449
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.48148148148148145
+Wrong Sentence:
+0.5185185185185185
+27
+endLevel no annotated data - whole data--------------------- end Count 5
+Count 6
+Level no annotated data - whole data------------------------
+Right Segments:
+0.847457627118644
+150 177
+Wrong Segments:
+0.15254237288135594
+27 177
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.4444444444444444
+Wrong Sentence:
+0.5555555555555556
+9
+endLevel no annotated data - whole data--------------------- end Count 6
+Count 7
+Level no annotated data - whole data------------------------
+Right Segments:
+0.6825396825396826
+43 63
+Wrong Segments:
+0.31746031746031744
+20 63
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+3
+endLevel no annotated data - whole data--------------------- end Count 7
+Count 8
+Level no annotated data - whole data------------------------
+Right Segments:
+NaN
+0 0
+Wrong Segments:
+NaN
+0 0
+Right selected clause : 
+NaN
+Wrong 1 - k existujicim klauzim segmenty navic
+NaN
+Wrong 2 - spatny pocet klauzi
+NaN
+Right Sentence:
+NaN
+Wrong Sentence:
+NaN
+0
+endLevel no annotated data - whole data--------------------- end Count 8
+Count 9
+Level no annotated data - whole data------------------------
+Right Segments:
+0.68
+17 25
+Wrong Segments:
+0.32
+8 25
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.0
+Wrong 2 - spatny pocet klauzi
+1.0
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+1
+endLevel no annotated data - whole data--------------------- end Count 9
+End Results  simple data --------------------------------------------------------------------------------------------------------------------

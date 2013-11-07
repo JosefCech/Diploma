@@ -41,23 +41,23 @@ object PackageInfo extends App {
           (sentence.getTagsWithClause,sentence.analyzedSentence.clause, countData)
       })
    
-   println("Okolí pomlèky - level")
+   println("Okolï¿½ pomlï¿½ky - level")
    val infoGroup = info.map(f => f._3).flatten
    val levelInfo = infoGroup.filter(f => f._1).map(f => f._2._1 - f._2._2).groupBy(f => f).map(f => (f._1, f._2.length)).toList.sortBy(f => f._2).reverse
    println(levelInfo)
-   println("Okolí pomlèky - clause")
+   println("Okolï¿½ pomlï¿½ky - clause")
    val clauseInfo = infoGroup.filter(f => f._1).map(f => f._3._1 - f._3._2).groupBy(f => f).map(f => (f._1, f._2.length)).toList.sortBy(f => f._2).reverse
    println(clauseInfo)
     
-   println("Informace o balíèku")
-   println("-- Poèet vìt : " + info.length.toString )
-   println("-- Poèet segmentù : " + info.map(f => f._1.length).sum.toString )
-   println("-- Poèet klauzí : " + info.map(f => f._2.filterKeys(_ != 0).size).sum.toString)
+   println("Informace o balï¿½ï¿½ku")
+   println("-- Poï¿½et vï¿½t : " + info.length.toString )
+   println("-- Poï¿½et segmentï¿½ : " + info.map(f => f._1.length).sum.toString )
+   println("-- Poï¿½et klauzï¿½ : " + info.map(f => f._2.filterKeys(_ != 0).size).sum.toString)
    
-   println("-- Maximální poèet segmentù : " + info.maxBy(f => f._1.length)._1.length.toString )
-   println("-- Maximální poèet klauzí : " + info.maxBy(f => f._2.toList.length)._2.toList.length.toString )
-   println("-- Maximální hloubka : " + info.maxBy(f => f._1.map(s => s._2.Level).max)._1.map(s => s._2.Level).max.toString)
-   println("-- Maximální poèet segmentù : " + info.maxBy(f => f._1.length)._1.length.toString )
+   println("-- Maximï¿½lnï¿½ poï¿½et segmentï¿½ : " + info.maxBy(f => f._1.length)._1.length.toString )
+   println("-- Maximï¿½lnï¿½ poï¿½et klauzï¿½ : " + info.maxBy(f => f._2.toList.length)._2.toList.length.toString )
+   println("-- Maximï¿½lnï¿½ hloubka : " + info.maxBy(f => f._1.map(s => s._2.Level).max)._1.map(s => s._2.Level).max.toString)
+   println("-- Maximï¿½lnï¿½ poï¿½et segmentï¿½ : " + info.maxBy(f => f._1.length)._1.length.toString )
    println("-- Max Pomer pocet segmentu vs clause : " + info.map(f => (f._2.size.doubleValue/f._1.length,  f._2.size,f._1.length)).max.toString )
    println("--Min Pomer pocet segmentu vs clause : " + info.map(f => (f._2.size.doubleValue/f._1.length,  f._2.size,f._1.length)).min.toString )
    println("-- Pomer pocet segmentu vs clause : " + (info.map(f => f._2.size).sum.doubleValue / info.map(f => f._1.length).sum).toString )
@@ -99,12 +99,12 @@ object PackageInfo extends App {
     println("-- Baseline pro segmenty (subflag => l == 1 jinak l == 0) : " + (baseLineSegments / info.map(f => f._1.length).sum.doubleValue).toString) 
     println("-- Baseline pro clause (boundary => c == 0 jinak c == 1) : " + (baseLineClause / info.map(f => f._1.length).sum.doubleValue).toString) 
    
-     println("-- Baseline pro poèet klauzí (bez aktivního slovesa 1) : " + (baseLineCount.doubleValue / info.length).toString) 
+     println("-- Baseline pro poï¿½et klauzï¿½ (bez aktivnï¿½ho slovesa 1) : " + (baseLineCount.doubleValue / info.length).toString) 
     
-    println("-- Baseline pro správnì urèené vìty (segment) : " + (baseLineSegmentsSent.doubleValue / info.length).toString) 
-    println("-- Baseline pro správnì urèené vìty (clause) : " + (baseLineClauseSent.doubleValue / info.length).toString) 
+    println("-- Baseline pro sprï¿½vnï¿½ urï¿½enï¿½ vï¿½ty (segment) : " + (baseLineSegmentsSent.doubleValue / info.length).toString) 
+    println("-- Baseline pro sprï¿½vnï¿½ urï¿½enï¿½ vï¿½ty (clause) : " + (baseLineClauseSent.doubleValue / info.length).toString) 
      
-   // println("-- Maximální poèet klauzí : " + info.maxBy(f => f._1)._1.toString )
+   // println("-- Maximï¿½lnï¿½ poï¿½et klauzï¿½ : " + info.maxBy(f => f._1)._1.toString )
   // info.foreach(p => println(p._3))
  }
    def isComplexSentence(sentence : AnalyzedSentence) : Int = {

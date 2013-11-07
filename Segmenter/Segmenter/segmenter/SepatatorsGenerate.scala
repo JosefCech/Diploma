@@ -50,8 +50,9 @@ object SepatatorsGeneate extends App {
 	  Xml.Writer.Write("separators2.xml",rootNode)
   }
   
-  println(subflags.size)
+ /* println(subflags.size)
   subflags.foreach(t => println(t.form ))
+  */
   
 //WriteSeparators(data)
   

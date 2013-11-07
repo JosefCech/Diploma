@@ -1,0 +1,121 @@
+[info] Loading project definition from C:\Projekty\Skola\Diploma\project
+[info] Set current project to SegmentAnalyzer (in build file:/C:/Projekty/Skola/Diploma/)
+[info] Running ClauseEstimate.ClauseStatisticEstimate 
+not good tagged
+0.0
+0.0
+Level annotated data - whole data---------------------------
+Right Segments:
+0.0
+0 12610
+Wrong Segments:
+1.0
+12610 12610
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.25222951371361263
+Wrong 2 - spatny pocet klauzi
+0.7477704862863873
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+1499
+endLevel annotated data - whole data------------------------
+	Level annotated data - with break---------------------------
+	Right Segments:
+	0.0
+	0 1716
+	Wrong Segments:
+	1.0
+	1716 1716
+	Right selected clause : 
+	0.0
+	Wrong 1 - k existujicim klauzim segmenty navic
+	0.19971056439942114
+	Wrong 2 - spatny pocet klauzi
+	0.8002894356005789
+	Right Sentence:
+	0.0
+	Wrong Sentence:
+	1.0
+	138
+	endLevel annotated data - with break------------------------
+	Level annotated data -complex sentence----------------------
+	Right Segments:
+	0.0
+	0 8465
+	Wrong Segments:
+	1.0
+	8465 8465
+	Right selected clause : 
+	0.0
+	Wrong 1 - k existujicim klauzim segmenty navic
+	0.21547223540579022
+	Wrong 2 - spatny pocet klauzi
+	0.7845277645942098
+	Right Sentence:
+	0.0
+	Wrong Sentence:
+	1.0
+	908
+	endLevel annotated data -complex sentence-------------------
+Level no annotated data- whole------------------------------
+Right Segments:
+0.0
+0 12610
+Wrong Segments:
+1.0
+12610 12610
+Right selected clause : 
+0.0
+Wrong 1 - k existujicim klauzim segmenty navic
+0.25222951371361263
+Wrong 2 - spatny pocet klauzi
+0.7477704862863873
+Right Sentence:
+0.0
+Wrong Sentence:
+1.0
+1499
+endLevel no annotated data- whole---------------------------
+	Level no annotated data-clause with break-------------------
+	Right Segments:
+	0.0
+	0 1716
+	Wrong Segments:
+	1.0
+	1716 1716
+	Right selected clause : 
+	0.0
+	Wrong 1 - k existujicim klauzim segmenty navic
+	0.19971056439942114
+	Wrong 2 - spatny pocet klauzi
+	0.8002894356005789
+	Right Sentence:
+	0.0
+	Wrong Sentence:
+	1.0
+	138
+	endLevel no annotated data-clause with break----------------
+	Level no annotated data-compex sentence---------------------
+	Right Segments:
+	0.0
+	0 8465
+	Wrong Segments:
+	1.0
+	8465 8465
+	Right selected clause : 
+	0.0
+	Wrong 1 - k existujicim klauzim segmenty navic
+	0.21547223540579022
+	Wrong 2 - spatny pocet klauzi
+	0.7845277645942098
+	Right Sentence:
+	0.0
+	Wrong Sentence:
+	1.0
+	908
+	endLevel no annotated data-compex sentence------------------
+[success] Total time: 17 s, completed 7.11.2013 18:39:31

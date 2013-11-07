@@ -1,0 +1,69 @@
+exit
+compile
+sbt run
+run
+sby
+sbt
+test
+sbt "show homepage\"
+sbt "show homepage"
+show homepage
+publish-local
+exit
+publish-local
+publish
+exit
+test
+refresh
+exit
+test
+encoding
+help
+version
+show encoding
+test
+test  -encoding
+test
+compile
+test
+exit
+test
+run
+run-main
+publish
+sbt
+exit
+compile
+test
+publish
+compile
+clean
+compile
+reload
+compile
+clean
+compile
+reaload
+reload
+build
+compile
+reload
+compile
+publish
+reaload
+reload
+compile
+exit
+compile
+test
+reload
+test
+exit
+compile
+test
+compile
+test
+exit
+test
+reload
+exit

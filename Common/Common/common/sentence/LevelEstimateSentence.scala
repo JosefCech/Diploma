@@ -9,9 +9,9 @@ import common.MorfWord
 trait LevelEstimateSentence extends SimpleLog{
   
   var coordConj : Boolean = false
-    
+     
   /**
-   * Vrátí segmenty s úrovní zanoøení
+   * Vrï¿½tï¿½ segmenty s ï¿½rovnï¿½ zanoï¿½enï¿½
    */
   def estimateLevelSegments(segments : List[Segment]) : List[Segment] = {
    
@@ -23,34 +23,34 @@ trait LevelEstimateSentence extends SimpleLog{
   }
   
   /**
-   * Vrátí segmenty s úrovní zanoøení - rozšíøená verze s acc
+   * Vrï¿½tï¿½ segmenty s ï¿½rovnï¿½ zanoï¿½enï¿½ - rozï¿½ï¿½ï¿½enï¿½ verze s acc
    */
   private def estimateLevels(segments : List[Segment], actualLevel : Int, dualBorder : List[String], acc : List[Segment]) : List[Segment] = {
    
     if (segments.isEmpty) 
     {
-      // konec vrátím otoèený zásobník
+      // konec vrï¿½tï¿½m otoï¿½enï¿½ zï¿½sobnï¿½k
       acc.reverse
     } 
     else 
     {
       
      if (segments.tail.isEmpty && segments.head.isBoundary) 
-     {   // pokud je pøedposlední segment je hranice napø. ) nastavit úroveò na 0
+     {   // pokud je pï¿½edposlednï¿½ segment je hranice napï¿½. ) nastavit ï¿½roveï¿½ na 0
          this.appendLog("add 0 : " + segments.head.toString )
 	     var boundary =  setLevelSegment(segments.head,0, false )
 	     estimateLevels(segments.tail, actualLevel, dualBorder, boundary :: acc)
      } 
      else if (segments.head.isBoundary ) 
-     {   // pokud je aktuální objekt hranice - pøipravím si ji na aktuální úroveò
+     {   // pokud je aktuï¿½lnï¿½ objekt hranice - pï¿½ipravï¿½m si ji na aktuï¿½lnï¿½ ï¿½roveï¿½
          this.appendLog("add 1 : " + segments.head.toString )
 	     var boundary =  setLevelSegment(segments.head,actualLevel, false )
-	     //  má nìjaký protiklad napø. závorky
+	     //  mï¿½ nï¿½jakï¿½ protiklad napï¿½. zï¿½vorky
 	     val opposite =  boundary.words.head.syntacticOpposite
 	     var level = actualLevel
 	     val info = new InfoSegment(boundary)
 	     val prevHaveVerb = {
-	        // pokud pøedchozí segment má sloveso 
+	        // pokud pï¿½edchozï¿½ segment mï¿½ sloveso 
 		     if (acc.isEmpty) 
 		     {
 		       false
@@ -60,7 +60,7 @@ trait LevelEstimateSentence extends SimpleLog{
 		       new InfoSegment(acc.head).HaveActiveVerb
 		     }
          }
-	 // aktuální objekt má pøíznak podøízenosti     
+	 // aktuï¿½lnï¿½ objekt mï¿½ pï¿½ï¿½znak podï¿½ï¿½zenosti     
      val prevHaveSubflag = {
 	     if (acc.isEmpty) 
 	     {
@@ -71,7 +71,7 @@ trait LevelEstimateSentence extends SimpleLog{
 	       new InfoSegment(acc.head).HaveSubFlag
 	     }
      }
-     // pøípadné pøidání nebo upravení úrovnì zanoøení
+     // pï¿½ï¿½padnï¿½ pï¿½idï¿½nï¿½ nebo upravenï¿½ ï¿½rovnï¿½ zanoï¿½enï¿½
      val newDualBorder : List[String] = {
     		 if (isRequiredDualBorder(boundary,dualBorder))
              {
@@ -89,10 +89,10 @@ trait LevelEstimateSentence extends SimpleLog{
               opposite :: dualBorder
              }
      }
-     // konec získávání informací 
-      // zaèátek rozhodování
+     // konec zï¿½skï¿½vï¿½nï¿½ informacï¿½ 
+      // zaï¿½ï¿½tek rozhodovï¿½nï¿½
      if (nextSegmentSubflag(segments.tail))
-	 { // následující segment má subflag
+	 { // nï¿½sledujï¿½cï¿½ segment mï¿½ subflag
       val prev = {
         if (acc.isEmpty) 
         {
@@ -106,7 +106,7 @@ trait LevelEstimateSentence extends SimpleLog{
       val next = segments.tail.head.createInfoSegment
        var checkSubflag = this.checkSubFlagsSegment(prev,next)
       if (info.HaveComma && !acc.isEmpty && checkSubflag)
-      { // segA , segB => obsahuji podobné pøíznaky podøízenosti oddìlené èárkou 
+      { // segA , segB => obsahuji podobnï¿½ pï¿½ï¿½znaky podï¿½ï¿½zenosti oddï¿½lenï¿½ ï¿½ï¿½rkou 
        level += 1
        this.coordConj = false;
        boundary.setLevel(0)    
@@ -123,7 +123,7 @@ trait LevelEstimateSentence extends SimpleLog{
 	  estimateLevels(segments.tail.tail,level, newDualBorder , nextSegment :: boundary :: acc)
 	 }
      else if ((info.HaveComma) && nextSegmentCordConjuctionWithNoComma(segments.tail))
-     { // , a|i => sniž úroveò o jedna
+     { // , a|i => sniï¿½ ï¿½roveï¿½ o jedna
        val nextLevel = {
          if (!segments.tail.isEmpty && nextSegmentSubflag(segments.tail.tail))
          {
@@ -140,7 +140,7 @@ trait LevelEstimateSentence extends SimpleLog{
        estimateLevels(segments.tail, nextLevel , newDualBorder, boundary :: acc)
       }
       else if (prevHaveSubflag && prevHaveVerb && nextSegmentActiveVerb(segments.tail) && info.HaveComma)
-      { // segA , segB => segA obsahuje pøíznak podøízenosti a sloveso a následující segment obsahuje sloveso
+      { // segA , segB => segA obsahuje pï¿½ï¿½znak podï¿½ï¿½zenosti a sloveso a nï¿½sledujï¿½cï¿½ segment obsahuje sloveso
         val nextLevel = this.minusLevel(level)
         this.coordConj = false;
         boundary.setLevel(0)         
@@ -148,7 +148,7 @@ trait LevelEstimateSentence extends SimpleLog{
         estimateLevels(segments.tail, nextLevel , newDualBorder, boundary :: acc)    
       }
       else if (info.HaveComma && this.coordConj)
-      { // , a v pøedchozím byly segmenty spojeny spojkou
+      { // , a v pï¿½edchozï¿½m byly segmenty spojeny spojkou
         val nextLevel = this.minusLevel(level)
         this.coordConj = false;
         boundary.setLevel(0)      
@@ -157,13 +157,13 @@ trait LevelEstimateSentence extends SimpleLog{
       }
     
 	  else
-	  { // v ostatních pøípadech použíj aktuální úroveò zanoøení
+	  { // v ostatnï¿½ch pï¿½ï¿½padech pouï¿½ï¿½j aktuï¿½lnï¿½ ï¿½roveï¿½ zanoï¿½enï¿½
 	     this.appendLog("add 6 : " + level.toString +"/"+segments.head.toString )
 	     estimateLevels(segments.tail, level, newDualBorder, boundary :: acc)
 	  }
     }
     else 
-    { // objekt není boundary => segment
+    { // objekt nenï¿½ boundary => segment
       var level = actualLevel
       if (nextSegmentSubflag(segments))
       { // obsahuje subflag add level
@@ -189,7 +189,7 @@ trait LevelEstimateSentence extends SimpleLog{
   }
 
   /**
-   * následující segment obsahuje pøíznak podøízenosti
+   * nï¿½sledujï¿½cï¿½ segment obsahuje pï¿½ï¿½znak podï¿½ï¿½zenosti
    */
   private def nextSegmentSubflag(l : List[Segment]) : Boolean = 
   {
@@ -200,7 +200,7 @@ trait LevelEstimateSentence extends SimpleLog{
   }
   
   /**
-   * Segment obsahuje pøíznak podøízenosti
+   * Segment obsahuje pï¿½ï¿½znak podï¿½ï¿½zenosti
    */
   private def containSubflag(s : Segment) : Boolean = {
    val data = new InfoSegment(s)
@@ -208,7 +208,7 @@ trait LevelEstimateSentence extends SimpleLog{
   }
 
   /**
-   * Nastavení úrovnì zanoøení a poèátek nové clause
+   * Nastavenï¿½ ï¿½rovnï¿½ zanoï¿½enï¿½ a poï¿½ï¿½tek novï¿½ clause
    */
   private def setLevelSegment(s : Segment, level : Int , startNewClause : Boolean) : Segment = {
     s.setLevel(level)
@@ -216,7 +216,7 @@ trait LevelEstimateSentence extends SimpleLog{
     s
   }
   /**
-   * následující segment je hranice
+   * nï¿½sledujï¿½cï¿½ segment je hranice
    */
   private def nextSegmentBoundary(l : List[Segment]) : Boolean = 
   { 
@@ -226,7 +226,7 @@ trait LevelEstimateSentence extends SimpleLog{
      }
   }
   /**
-   * další segment obsahuje spojky, pøed kterými nesmí být èárka
+   * dalï¿½ï¿½ segment obsahuje spojky, pï¿½ed kterï¿½mi nesmï¿½ bï¿½t ï¿½ï¿½rka
    */
   private def nextSegmentCordConjuctionWithNoComma(l : List[Segment]) : Boolean ={
     if (nextSegmentBoundary(l) &&  (new InfoSegment(l.head).HaveCordConjuction))
@@ -239,7 +239,7 @@ trait LevelEstimateSentence extends SimpleLog{
     }
   }
   /**
-   * další segment obsahuje aktivní sloveso
+   * dalï¿½ï¿½ segment obsahuje aktivnï¿½ sloveso
    */
   private def nextSegmentActiveVerb(l : List[Segment]) : Boolean = {
     if (l.isEmpty) {
@@ -251,7 +251,7 @@ trait LevelEstimateSentence extends SimpleLog{
   }
 
   /**
-   * kontrola zda hranice není ukonèovací  závorka 
+   * kontrola zda hranice nenï¿½ ukonï¿½ovacï¿½  zï¿½vorka 
    */
   private def isRequiredDualBorder(s : Segment, b : List[String]) : Boolean =
   {
@@ -264,7 +264,7 @@ trait LevelEstimateSentence extends SimpleLog{
     }
   }
   /**
-   * kontrola zda pøedchozí a následující segment mají pøíznak podøízenosti
+   * kontrola zda pï¿½edchozï¿½ a nï¿½sledujï¿½cï¿½ segment majï¿½ pï¿½ï¿½znak podï¿½ï¿½zenosti
    */
   private def checkSubFlagsSegment(prev : InfoSegment , next : InfoSegment) : Boolean = {
     
@@ -283,7 +283,7 @@ trait LevelEstimateSentence extends SimpleLog{
     }
   }
   /**
-   * zmenšení úrovnì zanoøení nesmí klesnout pod 0
+   * zmenï¿½enï¿½ ï¿½rovnï¿½ zanoï¿½enï¿½ nesmï¿½ klesnout pod 0
    */
   private def minusLevel(level : Int) : Int = {
      if (level == 0) {

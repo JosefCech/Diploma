@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Vendor: ruleclause-library
+Implementation-Title: RuleClause library
+Implementation-Version: 0.1
+Implementation-Vendor-Id: ruleclause-library
+Specification-Vendor: ruleclause-library
+Specification-Title: RuleClause library
+Specification-Version: 0.1
+

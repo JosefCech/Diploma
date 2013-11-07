@@ -8,7 +8,7 @@ object LinguisticAggreement {
    val addVerbs = segment.ActiveVerbs
    val addNom = segment.Subject
    
-   val clauseInfo = clause.map(p => BaseSegment.createInfoSegment(p))
+   val clauseInfo = clause.map(p => BaseSegment.createInfoSegment(p)) 
    val clauseVerbs = clauseInfo.map(p => p.ActiveVerbs).toList.flatten
    val clauseNom = clauseInfo.map( p => p.Subject).toList.flatten
    var aggreementInClause : Boolean = false
@@ -21,7 +21,7 @@ object LinguisticAggreement {
    {
 	   aggreementInClause = this.compareVerbsAndNouns(clauseVerbs, clauseNom)
    }
-   // pokud mùže být shoda pøísudku s podmìtem naplnìna v aktuálním objektu tak se nehledá mimo
+   // pokud mï¿½e bï¿½t shoda pï¿½ï¿½sudku s podmï¿½tem naplnï¿½na v aktuï¿½lnï¿½m objektu tak se nehledï¿½ mimo
    if (aggreementInClause || aggreementInSegment)
    {
 	   false

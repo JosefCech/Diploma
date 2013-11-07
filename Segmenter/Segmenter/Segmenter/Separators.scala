@@ -6,7 +6,7 @@ import scala.xml._
 import common._
 import java.io._
 
-object Separators extends App {
+object Separators  {
 
  def separatorsWords : List[Word]  = {
    
@@ -31,7 +31,5 @@ protected def readData : Node =
 		   val sepFile = dirData +"/"+ files.head.getName()
 		   new Xml.Reader(sepFile).data 
 		 }
-
- println(separatorsWords)
   
 }

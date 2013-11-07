@@ -3,8 +3,10 @@ package common.sentence
 
 import common.Word
 
-class Sentence(val Words : List[Word]) {
+class Sentence(val Words : List[Word], val ident : String ) {
 
+ def this(Words : List[Word] ) = this(Words, "")
+  
   override def equals(other : Any) : Boolean = other match {
     
     case other : Sentence =>  this.compareWords(other.Words)

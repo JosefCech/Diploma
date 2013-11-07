@@ -1,6 +1,6 @@
 package statistic
 
-import common.Tag
+import common.Tag 
 
 import statistic.BaseModel.UnigModel
 import statistic.BaseModel.ConditionalModel
@@ -30,7 +30,7 @@ trait Viterbi {
         }
         else
         {
-          // zaøínutí
+          // zaï¿½ï¿½nutï¿½
           paths.take(100)
         }
         

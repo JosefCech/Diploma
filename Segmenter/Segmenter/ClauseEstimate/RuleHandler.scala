@@ -1,7 +1,8 @@
 package ClauseEstimate
 
 
-import Anx.RulesReader
+import Rules._;
+import RuleStore.RulesReader
 import Rules.Rule
 import java.io.File
 import segmenter.Configuration

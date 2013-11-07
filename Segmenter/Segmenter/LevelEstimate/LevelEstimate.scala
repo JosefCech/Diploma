@@ -6,9 +6,9 @@ import common.segment.{ Segment, AnalyzedSegment}
 import java.io.File
 import DataStatistic.PackageInfo
 import DataObjects.EstimateSentence
+import Translation._
 
-object LevelEstimate extends App {
-  
+object LevelEstimate extends App {  
  override def main(args: Array[String]) {
     val dataSets = List("Develop","Heldout","Test")
     val printData =true
@@ -19,19 +19,19 @@ object LevelEstimate extends App {
  def analyzedSetData(dataSet : String, headLine : String, prefix : String , print : Boolean) : Unit =
  {
     def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder(dataSet)).toList
-    // log data chybne urèené vìty
+    // log data chybne urï¿½enï¿½ vï¿½ty
     val pw = new java.io.PrintWriter(new File("logErrorLevel" + dataSet))
     val results = files.map(f => {
-        // naètení vìty
+        // naï¿½tenï¿½ vï¿½ty
 	    val sentence = AnxReader.ReadAnalyzedSentence(f)
-	    // analýza vìty bez naètených informací
+	    // analï¿½za vï¿½ty bez naï¿½tenï¿½ch informacï¿½
 	    val analyzed = new LevelAnalyzedSentence(sentence.morfSentence)
-	    // porovnání naètené a analyzované vìty
-	    //(stejný poèet segmentù,poèet správnì urèených segmentù , poèet špatnì urèených segmentù , rozštìpená klauze, poèet vìt)
+	    // porovnï¿½nï¿½ naï¿½tenï¿½ a analyzovanï¿½ vï¿½ty
+	    //(stejnï¿½ poï¿½et segmentï¿½,poï¿½et sprï¿½vnï¿½ urï¿½enï¿½ch segmentï¿½ , poï¿½et ï¿½patnï¿½ urï¿½enï¿½ch segmentï¿½ , rozï¿½tï¿½penï¿½ klauze, poï¿½et vï¿½t)
 	    val result = compareSentence(sentence.analyzedSentence, analyzed)
 	    if (result._3 > 0)
 	     {
-	        // zápis špatnì anotované vìty
+	        // zï¿½pis ï¿½patnï¿½ anotovanï¿½ vï¿½ty
 	        pw.write("---Start-----------\n")
 	        pw.write(sentence.toString)
 	        pw.write(analyzed.toString)
@@ -43,13 +43,13 @@ object LevelEstimate extends App {
     if (print)
     {
     println((headLine + "-------------------------------------------------------------------------------------------------").take(60))
-    printGroupData(results,"Celková úspìšnost", "")
-    printGroupData(results.filter(f => f._5 > 1).toList,"Úspìšnost v souvìtí ", "\t")
+    printGroupData(results,Translation.succesTotal, "")
+    printGroupData(results.filter(f => f._5 > 1).toList,Translation.succesComplex, "\t")
     
     results.groupBy(f => f._5).filterNot(f => f._1 < 2).map(f => f._1).toList.sorted.foreach(s => 
-       printGroupData(results.filter(f => f._5 == s).toList,"Úspìšnost v souvìtí s " + s + " vìtami", "\t\t") 
+       printGroupData(results.filter(f => f._5 == s).toList,Translation.succesComplexWith(s), "\t\t") 
     )
-    printGroupData(results.filter(f => f._4).toList,"Úspìšnost ve vìtách s rozdìlenými klauzemi ", "\t")
+    printGroupData(results.filter(f => f._4).toList,Translation.succesSplitSentence, "\t")
     println(("end " +headLine + "-------------------------------------------------------------------------------------------------").take(60))
     }
     else 

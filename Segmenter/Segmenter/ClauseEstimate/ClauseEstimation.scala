@@ -11,6 +11,7 @@ import common.sentence.Sentence
 import common.segment.TaggedSegment
 import DataStatistic.PackageInfo
 import DataObjects.EstimateSentence
+import Translation.Translation
 
 
 object ClauseEstimation extends App
@@ -24,10 +25,10 @@ object ClauseEstimation extends App
    val results = files.map(f => {
        val sentence = AnxReader.ReadAnalyzedSentence(f)
        val analyzed2 = new ClauseAnalyzedSentence(sentence.sentenceWithLevel,sentence.Ident)
-       // porovnej naètená a analyzovaná data
+       // porovnej naï¿½tenï¿½ a analyzovanï¿½ data
        val result = compareSentence(sentence.analyzedSentence,analyzed2)
  
-       // zápis chybových vìt do logu       
+       // zï¿½pis chybovï¿½ch vï¿½t do logu       
        if (result._2 > 0)
        {
         pw.write("---Start-----------\n")
@@ -37,14 +38,14 @@ object ClauseEstimation extends App
         pw.write("---End-------------\n")
      
        }
-       // poèet klauzí bez slovesa
+       // poï¿½et klauzï¿½ bez slovesa
         val countWithoutVerb = analyzed2.estimatedSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
-        // existuje nìjaké sloveso
+        // existuje nï¿½jakï¿½ sloveso
         val existWithVerb =analyzed2.estimatedSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
        
        if (result._2 > 0 && countWithoutVerb > 0 && existWithVerb  )       
        {
-         // vìta porušuje konzistenci z pohledu sloves a klauzí 
+         // vï¿½ta poruï¿½uje konzistenci z pohledu sloves a klauzï¿½ 
          pw.write(countWithoutVerb.toString + " / " + existWithVerb.toString)
          notGoodAnalyzed +=1
        }
@@ -55,10 +56,10 @@ object ClauseEstimation extends App
    val resultssimple = files.map(f => {
        val sentence = AnxReader.ReadAnalyzedSentence(f)
        val analyzed2 = new ClauseAnalyzedSentence(sentence.morfSentence)
-       // porovnej naètená a analyzovaná data
+       // porovnej naï¿½tenï¿½ a analyzovanï¿½ data
        val result = compareSentence(sentence.analyzedSentence,analyzed2)
  
-       // zápis chybových vìt do logu       
+       // zï¿½pis chybovï¿½ch vï¿½t do logu       
        if (result._2 > 0)
        {
         pw.write("---Start-----------\n")
@@ -68,14 +69,14 @@ object ClauseEstimation extends App
         pw.write("---End-------------\n")
      
        }
-       // poèet klauzí bez slovesa
+       // poï¿½et klauzï¿½ bez slovesa
         val countWithoutVerb = analyzed2.estimatedSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
-        // existuje nìjaké sloveso
+        // existuje nï¿½jakï¿½ sloveso
         val existWithVerb =analyzed2.estimatedSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
        
        if (result._2 > 0 && countWithoutVerb > 0 && existWithVerb  )       
        {
-         // vìta porušuje konzistenci z pohledu sloves a klauzí 
+         // veta porusuje konzistenci z pohledu sloves a klauzi 
          pw.write(countWithoutVerb.toString + " / " + existWithVerb.toString)
          notGoodSimple +=1
        }
@@ -84,15 +85,17 @@ object ClauseEstimation extends App
     
     pw.close;
     
-    println("not good tagged")
-    println(notGoodAnalyzed.doubleValue / results.length)
-    println(notGoodSimple.doubleValue / results.length)
+     print(Translation.wrongTagged)
+     println( 	"( " + (notGoodAnalyzed.doubleValue / results.length).toString
+    		 	+ "," + (notGoodSimple.doubleValue / results.length).toString + " )" 
+    		 )
     println(this.createResultData(results, "Level annotated data - whole data", ""))
     println(this.createResultData(results.filter(p => p._5), "Level annotated data - with break", "\t"))
     println(this.createResultData(results.filter(p => p._6 > 1), "Level annotated data -complex sentence", "\t"))
     println(this.createResultData(resultssimple, "Level no annotated data- whole", ""))
     println(this.createResultData(resultssimple.filter(p => p._5), "Level no annotated data-clause with break", "\t"))
     println(this.createResultData(resultssimple.filter(p => p._6 > 1), "Level no annotated data-compex sentence", "\t"))
+   
     val resultfile = new java.io.PrintWriter(new File("results1"))
     val maxCountSegmentInResult =  results.map(p => p._3.countClause).max
     val maxCountSegmentInResultSimple =  resultssimple.map(p => p._3.countClause).max
@@ -145,7 +148,7 @@ object ClauseEstimation extends App
  def compareSentence(sentence : AnalyzedSentence , test : EstimateSentence) : 
   (Int,Int , AnalyzedSentence, (Int,Int,Int), Boolean, Int) = 
   {
-   // porovnání jednotlivých segmentù
+   // porovnï¿½nï¿½ jednotlivï¿½ch segmentï¿½
    val compare = segmentsCompare(sentence.segments, test.getEstimateSegments,(0,0))
   // println(sentence.segments)
    //println(test.getEstimateSegments)
@@ -212,7 +215,7 @@ object ClauseEstimation extends App
     {
       if (segments.isEmpty || testSegments.isEmpty)
       {
-        // nenalezene žádné segmenty => jsou oznaèeny za chybu
+        // nenalezene ï¿½ï¿½dnï¿½ segmenty => jsou oznaï¿½eny za chybu
         var wrong = 0;
         if (segments.isEmpty) wrong += testSegments.length
         if (testSegments.isEmpty) wrong += segments.length
@@ -223,11 +226,11 @@ object ClauseEstimation extends App
        val a = segments.head 
        val t = testSegments.head
        if (a.ClauseNum == t.clause)
-       { // správnì zaøazený segment do klauze
+       { // sprï¿½vnï¿½ zaï¿½azenï¿½ segment do klauze
          segmentsCompare(segments.tail,testSegments.tail,(acc._1 + 1, acc._2 ))
        }
        else
-       { // špatnì zaøazený segment
+       { // ï¿½patnï¿½ zaï¿½azenï¿½ segment
          segmentsCompare(segments.tail,testSegments.tail,(acc._1 , acc._2 + 1 ))      
        }
        }

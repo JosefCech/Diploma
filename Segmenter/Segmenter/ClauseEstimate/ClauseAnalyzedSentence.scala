@@ -3,6 +3,7 @@ package ClauseEstimate
 import common.sentence.{ MorfSentence , ClauseSentence }
 import common.segment.{Segment, TaggedSegment}
 import common.{ Word }
+import Rules._;
 import LevelEstimate.LevelAnalyzedSentence
 import Rules.MatchEffect
 

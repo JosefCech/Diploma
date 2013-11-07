@@ -11,12 +11,10 @@ object Directory {
       
 	if (typeFile!=""){
 	     directory.listFiles filterNot (_.isDirectory) filter (t => t.getName().endsWith(typeFile)) toList
-    }
-   else {
+    } else {
 	   	directory.listFiles filterNot (_.isDirectory) toList
-   }
-   }
-    else {
+      }
+    } else {
             println("Missing folder exception")
             println(directory.getAbsoluteFile)
             List[File]()   

@@ -1,0 +1,110 @@
+exit
+git show
+show
+show version
+build
+compile
+show sources
+show
+show version
+exit
+compile
+reload
+compile
+reload
+compile
+exit
+compiled
+compile
+exit
+test
+sbtexit
+exit
+compile
+test
+publish
+compile
+clean
+compile
+reload
+test
+compile
+reload
+compile
+test
+compile libXml
+compile
+clean
+compile
+reload
+compile
+test
+test > test.result
+test
+reload\
+reload
+compile
+test
+last test-only
+last test
+test
+last test
+test
+last segmenter/test:test
+test
+last segmenter/test:test
+test
+test segmenter/test:test
+ segmenter/test:test
+test-only segmenter.Configuration*
+test-only segmenter
+Segmenter/test:test-only
+test Segmenter/test:test-only
+Segmenter/test:test-only
+segmenter/test:test-only
+segmenter/test:test-only ConfigurationTest
+segmenter/test:test-only segmenter.*
+segmenter/test:test-only *
+last test
+segmenter/test:test-only DataObjectTests.*
+test
+scala
+exit
+sbt run
+run
+compile
+package
+assembly
+compile
+publish
+SegmentAnalyzer/*:publish-configuration
+last SegmentAnalyzer/*:publish-configuration
+run
+run Segmenter
+run Segmenter/compile:run
+Segmenter/run
+Segmenter
+segmenter
+segmenter/run
+segmenter/run segmenter.Separators
+segmenter/run Separators
+run-main segmenter.Separators
+segmenter/compile:run-main Separators
+segmenter/compile:run-main segmenter.Separators
+Segmenter/run
+segmenter/run segmenter.Separators
+segmenter/compile:run-main segmenter.Separators
+segmenter/run segmenter.Separators
+segmenter/run
+compile
+segmenter/run
+update
+segmenter/run
+upload
+update
+segmenter/run
+update
+segmenter/run
+exit
+segmenter/run
+exit

@@ -20,15 +20,21 @@ class AnxSentence ( Segments : List[Segment], val Ident : String) extends Senten
       }
    
    def analyzedSentence = {  try {
-                             new AnalyzedSentence(Ident,Segments);
+	   						  new AnalyzedSentence(Ident,Segments);
                              }
    							 catch {
-   							   case e : Exception => null
+   							   case e : Exception => { println(e.toString)
+   								   						null
+   							   						}
+   							   }
    							 }
-   }
+   							 
+   
    def morfSentence = new MorfSentence(this.Words.map(p => p match {case c : MorfWord => c}).toList, Ident)
    
-   def sentenceWithData =  analyzedSentence.segments
+   def sentenceWithData ={	if (analyzedSentence != null) analyzedSentence.segments
+   							else List[AnalyzedSegment]()
+   						}
   
    
    def sentenceWithLevel : List[Segment] = { val data = Segments.map( p => p match {
