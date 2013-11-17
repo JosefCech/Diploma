@@ -108,3 +108,94 @@ segmenter/run
 exit
 segmenter/run
 exit
+publish
+ls
+exit
+publish
+reload
+publish
+publish segmenter
+publish SegmentAnalyzer/*:publish-configuration
+last SegmentAnalyzer/*:publish-configuration
+reload
+publish
+publish-localy
+publish-locally
+publish locally
+publish-local
+reload
+publish
+run
+run segmenter
+segmenter/run
+exit
+compile
+Stast/run
+StatsProject/run
+StatsProject/run-main
+StatsProject
+run
+segmenter/run
+reload
+compile
+statsProject/run
+statsProject/compile
+statsProject/run
+last statsProject/compile:run
+statsProject/run
+reload
+statsProject/run
+compile
+clean
+compile
+reload
+compile
+reload
+compile
+reaload
+reload
+compile
+statsProject/run-main
+compile
+statsProject/run
+last statsProject/compile:run
+statsProject/run
+exit
+update
+run
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+update
+statsProject/run
+last statsProject/compile:run
+reload
+statsProject/run

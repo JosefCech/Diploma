@@ -12,7 +12,7 @@ trait ConditionalClauseModel extends ConditionalClauseModelTrain with Conditiona
  lazy val countLevels = this.getClauseTags.flatten.groupBy(f => f._2.Level).map(f => (f._1,f._2.length))
  
  
- var lamba0 : Double = (1).doubleValue / 4
+ var lamba0 : Double = (1).doubleValue / 10
  var lamba1 : Double = lamba0
  var lamba2 : Double = 1 - (lamba1)
  

@@ -12,6 +12,7 @@ import common.segment.TaggedSegment
 import DataStatistic.PackageInfo
 import DataObjects.EstimateSentence
 import Translation.Translation
+import common.sentence.LevelEstimateSentence
 
 
 object ClauseEstimation extends App
@@ -24,24 +25,25 @@ object ClauseEstimation extends App
    pw.write("Analyzed Data result")
    val results = files.map(f => {
        val sentence = AnxReader.ReadAnalyzedSentence(f)
-       val analyzed2 = new ClauseAnalyzedSentence(sentence.sentenceWithLevel,sentence.Ident)
+       //val analyzed2 = new ClauseAnalyzedSentence(sentence.Words, sentence.Ident, sentence.sentenceWithLevel)
+       val analyzed = new ClauseAnalyzedSentence(sentence.sentenceWithLevel,sentence.Ident)
        // porovnej na�ten� a analyzovan� data
-       val result = compareSentence(sentence.analyzedSentence,analyzed2)
+       val result = compareSentence(sentence.analyzedSentence,analyzed)
  
        // z�pis chybov�ch v�t do logu       
        if (result._2 > 0)
        {
         pw.write("---Start-----------\n")
         pw.write(sentence.toString)
-        pw.write(analyzed2.toString)
-        pw.write(analyzed2.getLog)
+        pw.write(analyzed.toString)
+        pw.write(analyzed.getLog)
         pw.write("---End-------------\n")
      
        }
        // po�et klauz� bez slovesa
-        val countWithoutVerb = analyzed2.estimatedSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
+        val countWithoutVerb = analyzed.estimatedSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
         // existuje n�jak� sloveso
-        val existWithVerb =analyzed2.estimatedSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
+        val existWithVerb =analyzed.estimatedSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
        
        if (result._2 > 0 && countWithoutVerb > 0 && existWithVerb  )       
        {
@@ -225,6 +227,9 @@ object ClauseEstimation extends App
       {
        val a = segments.head 
        val t = testSegments.head
+       val aClause =  a.ClauseNum
+       val tClause = t.clause
+      
        if (a.ClauseNum == t.clause)
        { // spr�vn� za�azen� segment do klauze
          segmentsCompare(segments.tail,testSegments.tail,(acc._1 + 1, acc._2 ))

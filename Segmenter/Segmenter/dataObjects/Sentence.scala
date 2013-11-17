@@ -2,7 +2,7 @@ package DataObjects
 import Xml.XmlWritable
 import scala.xml._
 import common.{MorfWord, Word, AnalyzedWord }
-import common.segment.AnalyzedSegment
+import common.segment.{ AnalyzedSegment, Segment }
 import scala.xml.{ MetaData ,UnprefixedAttribute}
 /**
  * class Sentence implements Xml.XmlWritable 
@@ -25,12 +25,13 @@ class BaseXmlSentence(val sentence : Any) extends Xml.XmlWritable {
   def CreateSegmentNode(segment : Any) : Node = {
              
   def wordData : (MetaData, List[Node]) = segment match {
-    case segment : List[Any] => (null,segment.map(w => CreateWordNode(w)))
+  
     case segment : AnalyzedSegment => { 
     									var attributes = new UnprefixedAttribute("isStartClause",segment.getStartNewClause.toString,null)
     									attributes.append(new UnprefixedAttribute("level",segment.level.toString,null))
                                         (attributes,segment.words.map(w => CreateWordNode(w)))
                                       }
+    case segment : List[Segment] => (null,segment.map(w => CreateWordNode(w)))
   }
      Elem(null, "segment", wordData._1, xml.TopScope, wordData._2 : _*)
      

@@ -1,5 +1,6 @@
 package Stats
 import common._
+import common.segment.AnalyzedSegment
 import java.io._
 import xml._
 import Pdt.MorfReader
@@ -30,29 +31,30 @@ class BaseInfo(string : String) {
   					
   val maxLevel = segData.map(f => f._2.map(t => t._1).toList.reduceRight((x,v) => if (x > v) x else v)).toList.reduceRight((x,v) => if (x > v) x else v)
   val countSegments = goldenSet.map(f => f._2.parsedSegments(f._1._2.toList)).flatten.size
-  val noVerbSegments = goldenSet.map(s => s._2.parsedSegments(s._1._2.toList).map(m => new AnalyzedSegment(m)).filter(m => m.haveActiveVerb)).flatten
-  val errors = goldenSet.filter(p => p._1._2.size != p._2.parsedSegments(List[(Int,Int)]()).size).toList
+  val noVerbSegments = goldenSet.map(s => s._2.parsedSegments(s._1._2.toList).map(m => new AnalyzedSegment(m)).filter(m => m.getInfoSegment.HaveActiveVerb)).flatten
+ 
+   val errors = goldenSet.filter(p => p._1._2.size != p._2.parsedSegments(List[(Int,Int)]()).size).toList
   val clauseEstimatedCount = 
      	goldenSet.map(t => (t._1._1,t._2.parsedSegments(t._1._2.toList).map(s => new AnalyzedSegment(s)))).map(s => {
-     		val countActiveVerb = s._2.filter(p => p.haveActiveVerb).size
+     		val countActiveVerb = s._2.filter(p => p.getInfoSegment.HaveActiveVerb).size
      		val countSegments = s._2.size
      		if (countActiveVerb == 0) {
      		  (s._1,countSegments,1)
      		}
      		else {
-     			(s._1,countSegments,s._2.filter(p => p.haveActiveVerb).size)
+     			(s._1,countSegments,s._2.filter(p => p.getInfoSegment.HaveActiveVerb).size)
      		}
    		}).groupBy(f => f._3).map(f => (f._1,
    		    f._2.groupBy(f => f._2).map(f => (f._1,f._2.size)).toList.sortBy(f => f._1)
    		    )).toList.sortBy(f => f._1)
   val subFlagsStats = goldenSet.map(t => (t._1._1,t._2.parsedSegments(t._1._2.toList).map(s => new AnalyzedSegment(s)))).map(s => { 
-      val countSubflags = s._2.filter(p => p.haveSubFlag).size
-      val countSegments = s._2.filter(p => p.segment.level != 0).size
+      val countSubflags = s._2.filter(p => p.getInfoSegment.HaveSubFlag).size
+      val countSegments = s._2.filter(p => p.LevelDefault != 0).size
       (countSegments,countSubflags)
     }  
   ).toList.groupBy(f => f).map(f => (f._1,f._2.size)).toList
   
   val sublflagsDetail = goldenSet.map(t => (t._1._1,t._2.parsedSegments(t._1._2.toList).map(s => new AnalyzedSegment(s)))).map(s => s._2).
-  						flatten.toList.filter(p => (!p.isBoundarySegment && p.segment.level == 0 && (p.haveSubFlag))).map(s => (s.segment.words.head.form, s.segment.ToString)).toList.
+  						flatten.toList.filter(p => (!p.getInfoSegment.IsBoundarySegment && p.LevelDefault == 0 && (p.getInfoSegment.HaveSubFlag))).map(s => (s.words.head.form, s.data.toString)).toList.
   						groupBy(s => s._1).toList
 }

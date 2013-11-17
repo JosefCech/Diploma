@@ -55,7 +55,9 @@ class MorfSentence(val sentence : List[Word], val ident : String  ) extends Segm
    /** List of tuple (Level,Segment) where Level has initial value -1 */
    def segments = this.parsedSegments(this.morfWords, List[(Int,Int)]())
    
-   
+   def parsedSegments(levels:List[(Int,Int)]) : List[Segment] = {
+     this.parsedSegments(this.morfWords, levels)
+   }
    /** List segment with bonus properties on morphological information */
    def taggedSegments =  segments.map(t => new TaggedSegment(t)).toList 
    
@@ -106,7 +108,7 @@ class MorfSentence(val sentence : List[Word], val ident : String  ) extends Segm
    def isClauseAnalyzed = !this.clauseInfo.isEmpty
    def isClauseConsistent = {
      val data = this.analyzedSegments.filterNot(p => p.ClauseNum == -1).
-         map(t => (t.Level,t.ClauseNum)).
+         map(t => (t.LevelDefault, t.ClauseNum)).
          groupBy(_._2).toList.map(t => t._2.groupBy(_._1)).filter(t => t.toList.length > 1)  
    data.length == 0
    }

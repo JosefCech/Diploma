@@ -26,7 +26,7 @@ class ClauseStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
        {       
          val newSegment = sentence.head
          newSegment.clause = path.head
-         val segTest = new AnalyzedSegment( newSegment,  newSegment.level.getExactLevel, path.head, false ) 
+         val segTest = new AnalyzedSegment( newSegment,  newSegment.level.getExactLevel , path.head, false ) 
          segTest
          applyBestPath(sentence.tail, path.tail, segTest :: acc)
        }
@@ -36,9 +36,10 @@ class ClauseStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
   }
   
     
-  override def toString =  this.estimatedSegments.map(t => t.level.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
+  override def toString =  this.estimatedSegments.map(t => t.level.toString + " "+ t.clause +" " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
   
   override val getEstimateSegments = this.estimatedSegments
+  val getTestList    = this.getEstimateSegments.zipWithIndex.map(s => (s._2, s._1._clause)).toList
   override val getClause    = this.getEstimateSegments.zipWithIndex.map(s => (s._2, s._1.clause)).toList.groupBy( f => f._2).map(f => (f._1, f._2.map(t => t._1)))
   override val getEstimationOfCountClause : Int = this.countEstimate(this.estimatedSegments.map(segment => BaseSegment.createInfoSegment(segment)).toList, false, false,false, 0)
   override val getCountOfClause :Int = this.getEstimateSegments.map(f => f.clause).toList.max

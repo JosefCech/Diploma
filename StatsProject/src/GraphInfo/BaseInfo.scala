@@ -9,8 +9,10 @@ object BaseInfo extends SimpleSwingApplication {
 
   def top = new MainFrame {
 		title = "Clauser Statistics"
-		contents = new ScrollPane(new BaseInfoContainer("GoldenData").box)
+		contents = new ScrollPane(new BaseInfoContainer("StatsProject/GoldenData").box)
   	}
+  
+  
   
 	
 }

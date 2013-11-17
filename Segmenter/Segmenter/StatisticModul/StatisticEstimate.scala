@@ -21,6 +21,7 @@ import StatisticModul.Models.LevelModelDiff
 import StatisticModul.Models.ConditionalLevelModelDiff
 import common.segment.Segment
 import LevelEstimate.LevelStatisticAnalyzedSentenceDiff
+import LevelEstimate.LevelAnalyzedSentence
 
 
 class StatisticLevelEstimate extends LevelViterbi {
@@ -62,6 +63,12 @@ class StatisticClauseEstimate extends ClauseViterbi {
    val tags = sentence.getTagsOnly
    val best = this.getBestPath(tags)
    new ClauseStatisticAnalyzedSentence(sentence,best)
+  }
+  
+  def StatisticEstimateClause(sentence : EstimateSentence , ident : String) : EstimateSentence =  {
+  	
+  	val anxSentence = new AnxSentence(sentence.getEstimateSegments,ident)
+  	this.StatisticEstimateClause(anxSentence)
   }
 
   

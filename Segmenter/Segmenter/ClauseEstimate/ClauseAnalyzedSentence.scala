@@ -3,18 +3,25 @@ package ClauseEstimate
 import common.sentence.{ MorfSentence , ClauseSentence }
 import common.segment.{Segment, TaggedSegment}
 import common.{ Word }
-import Rules._;
+import Rules._
 import LevelEstimate.LevelAnalyzedSentence
 import Rules.MatchEffect
+import common.segment.BaseSegment
+import DataObjects.EstimateSentence
+import common.sentence.AnxSentence
+import common.segment.AnalyzedSegment
 
-class ClauseAnalyzedSentence(sentence : List[Word], ident : String , val levelWithSegments : List[Segment]) 
-   extends LevelAnalyzedSentence(sentence, ident)
-   with ClauseSentence {
+class ClauseAnalyzedSentence(sentence : List[Word],  ident : String , val levelWithSegments : List[Segment]) 
+	extends MorfSentence(sentence,ident)
+    with ClauseSentence 
+    with EstimateSentence{
 
    def this (sentence : MorfSentence) =  this(sentence.morfWords,sentence.ident,List[Segment]())
    
    def this (segments : List[Segment], ident : String) = 
                this(segments.map(t => t.words.map(w => Word.createMorfWord(w))).flatten,ident,segments)
+   
+   var estimatedSegments = this.estimateClause(this.taggedSegments)
    
    def estimationOfClause : Int = {
         this.countEstimate(this.taggedSegments.map(t => t.analyzed).toList,false, false,false, 0)
@@ -32,7 +39,11 @@ class ClauseAnalyzedSentence(sentence : List[Word], ident : String , val levelWi
   
   override def toString =  this.clauseEstimateSegments.map(t => t.clause.toString + " " + t.level.toString +" "+t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
 
-  
+  override val getEstimateSegments = this.estimatedSegments
+  val getTestList    = this.getEstimateSegments.zipWithIndex.map(s => (s._2, s._1.clause)).toList
+  override val getClause    = this.getEstimateSegments.zipWithIndex.map(s => (s._2, s._1.clause)).toList.groupBy( f => f._2).map(f => (f._1, f._2.map(t => t._1)))
+  override val getEstimationOfCountClause : Int = this.countEstimate(this.estimatedSegments.map(segment => BaseSegment.createInfoSegment(segment)).toList, false, false,false, 0)
+  override val getCountOfClause :Int = this.getEstimateSegments.map(f => f.clause).toList.max
    
   def applyMatches(matches : List[MatchEffect] ) = {
      this.clauseEstimateSegments.zipWithIndex.foreach(f => {

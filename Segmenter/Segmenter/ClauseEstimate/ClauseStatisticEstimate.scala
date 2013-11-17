@@ -2,105 +2,64 @@ package ClauseEstimate
 
 import StatisticModul.StatisticClauseEstimate
 import Anx.AnxReader
-import java.io.File
+import java.io.{ File, PrintWriter}
 import common.sentence.AnalyzedSentence
 import DataObjects.EstimateSentence
 import common.segment.AnalyzedSegment
 import common.segment.Segment
 import common.segment.InfoSegment
 import Translation._
+import java.io.PrintWriter
+import common.sentence.AnxSentence
+import StatisticModul.StatisticLevelEstimate
+import LevelEstimate.LevelAnalyzedSentence
 
 object ClauseStatisticEstimate extends App{
 
    override def main(args: Array[String]) {
+	val dataFolder: String  = args.apply(0)
+	val withAnotatedLevel : Boolean = args.apply(1) match {
+		case "-l" => true
+		case _ => false
+	}
+	
+   def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder(dataFolder)).toList
+   val pw = new PrintWriter(new File("logErrorLevel"))
+   this.analyzedData(files, pw, withAnotatedLevel)
+ }
  
-   def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Test")).toList
-     val pw = new java.io.PrintWriter(new File("logErrorLevel"))
-     val statisticModel = new StatisticClauseEstimate
-   //   val statisticModel = new StatisticClauseEstimate
-      var notGoodAnalyzed = 0
-      var notGoodSimple = 0
-     val results = files.map(f => {
+  def analyzedData(files : List[File], pw : PrintWriter, withLevel : Boolean)
+  {
+   val statisticClauseModel = new StatisticClauseEstimate
+   val statisticLevelModel = new StatisticLevelEstimate
+   var notGoodAnalyzed = 0
+   var notGoodSimple = 0
+   val results = files.map(f => {
 		     val sentence = AnxReader.ReadAnalyzedSentence(f)
-		     val analyzed2 = statisticModel.StatisticEstimateClause(sentence)
+		     if (withLevel) {
+		     val analyzed = statisticClauseModel.StatisticEstimateClause(sentence)
+		     val result = ClauseEstimation.compareSentence(sentence.analyzedSentence, analyzed)
+		     this.writeResultIntoLog(pw, sentence, analyzed, result) 
+		      result
+		     }
+		     else {
+		     //val analyzed = statisticLevelModel.StatisticEstimateLevel(sentence)
+		     val analyzed = new LevelAnalyzedSentence(sentence.morfSentence)
+		     val analyzed2 = statisticClauseModel.StatisticEstimateClause(analyzed, sentence.Ident)
 		     val result = ClauseEstimation.compareSentence(sentence.analyzedSentence, analyzed2)
-		     //println(result)
-		
-		       if (result._2 > 0)
-		       {
-		        
-		        pw.write("---Start-----------\n")
-		        pw.write(sentence.toString)
-		        pw.write(analyzed2.toString)
-		       // pw.write(analyzed2.getLog)
-		        pw.write("---End-------------\n")
-		     
-		       }
-		        val countWithoutVerb = analyzed2.getEstimateSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
-		        val existWithVerb =analyzed2.getEstimateSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
-		       
-		       if (result._2 > 0 && countWithoutVerb > 0 && existWithVerb  )
-		       
-		       {
-		         pw.write(analyzed2.toString)
-		         pw.write(sentence.toString)
-		        // pw.write(analyzed2.log.toString)
-		         pw.write(countWithoutVerb.toString + " / " + existWithVerb.toString)
-		           notGoodAnalyzed +=1
-		       }
-		       result
+		     this.writeResultIntoLog(pw, sentence, analyzed, result)
+		     result
+		     }
    }).toList
     
-     pw.write("Simple Data result")
-       
-        pw.write("Simple Data result")
-        val resultssimple = files.map(f => {
-	       val sentence = AnxReader.ReadAnalyzedSentence(f)
-	       val analyzed2 = statisticModel.StatisticEstimateClause(sentence)
-	       // porovnej na�ten� a analyzovan� data
-	       val result = ClauseEstimation.compareSentence(sentence.analyzedSentence,analyzed2)
-	 
-	       // z�pis chybov�ch v�t do logu       
-	       if (result._2 > 0)
-	       {
-	        pw.write("---Start-----------\n")
-	        pw.write(sentence.toString)
-	        pw.write(analyzed2.toString)
-	       
-	        pw.write("---End-------------\n")
-	     
-	       }
-	       // po�et klauz� bez slovesa
-	        val countWithoutVerb = analyzed2.getEstimateSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
-	        // existuje n�jak� sloveso
-	        val existWithVerb =analyzed2.getEstimateSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
-	       
-	       if (result._2 > 0 && countWithoutVerb > 0 && existWithVerb  )       
-	       {
-	         // v�ta poru�uje konzistenci z pohledu sloves a klauz� 
-	         pw.write(countWithoutVerb.toString + " / " + existWithVerb.toString)
-	         notGoodSimple +=1
-	       }
-	       result
-   }).toList
-   
     pw.close;
     
-  
-   	print(Translation.wrongTagged)
-     println( 	"( " + (notGoodAnalyzed.doubleValue / results.length).toString
-    		 	+ "," + (notGoodSimple.doubleValue / results.length).toString + " )" 
-    		 )
-    println(ClauseEstimation.createResultData(results, "Level annotated data - whole data", ""))
-    println(ClauseEstimation.createResultData(results.filter(p => p._5), "Level annotated data - with break", "\t"))
-    println(ClauseEstimation.createResultData(results.filter(p => p._6 > 1), "Level annotated data -complex sentence", "\t"))
-    println(ClauseEstimation.createResultData(resultssimple, "Level no annotated data- whole", ""))
-    println(ClauseEstimation.createResultData(resultssimple.filter(p => p._5), "Level no annotated data-clause with break", "\t"))
-    println(ClauseEstimation.createResultData(resultssimple.filter(p => p._6 > 1), "Level no annotated data-compex sentence", "\t"))
+    resultfile.write(ClauseEstimation.createResultData(results, "Level annotated data - whole data", ""))
+    resultfile.write(ClauseEstimation.createResultData(results.filter(p => p._5), "Level annotated data - with break", "\t"))
+    resultfile.write(ClauseEstimation.createResultData(results.filter(p => p._6 > 1), "Level annotated data -complex sentence", "\t"))
     
     val resultfile = new java.io.PrintWriter(new File("results1"))
     val maxCountSegmentInResult =  results.map(p => p._3.countClause).max
-    val maxCountSegmentInResultSimple =  resultssimple.map(p => p._3.countClause).max
     resultfile.write("Results data --------------------------------------------------------------------------------------------------------------------\n")
     var i = 1
     while (i < maxCountSegmentInResult + 1)
@@ -113,20 +72,11 @@ object ClauseStatisticEstimate extends App{
     resultfile.write("End Results data --------------------------------------------------------------------------------------------------------------------\n")
    
     resultfile.write("Results  simple data --------------------------------------------------------------------------------------------------------------------\n")
-  
-    i = 1
-    while (i < maxCountSegmentInResultSimple + 1)
-    {
-      resultfile.write("Count " +i + "\n")
-      resultfile.write(ClauseEstimation.createResultData(resultssimple.filter(f => f._3.countClause <= i && i - 1 < f._3.countClause ), "Level no annotated data - whole data", ""))
-       resultfile.write(" end Count " +i + "\n")
-     i +=1
-    }
-     resultfile.write("End Results  simple data --------------------------------------------------------------------------------------------------------------------\n")
+    resultfile.write("End Results  simple data --------------------------------------------------------------------------------------------------------------------\n")
   
     resultfile.close
- }
-  
+  }
+   
  def compareSentence(sentence : AnalyzedSentence , test : EstimateSentence ) : 
   (Int,Int , AnalyzedSentence, Int, Int,(Int,Int,Int), Boolean) = 
   {
@@ -218,6 +168,26 @@ object ClauseStatisticEstimate extends App{
       }
     }
   }
+  
+ def writeResultIntoLog(pw: PrintWriter, sentence: AnxSentence, analyzed : EstimateSentence, result: (Int, Int, common.sentence.AnalyzedSentence, (Int, Int, Int), Boolean, Int)) =
+ {
+	 if (result._2 > 0)
+	 {
+	  pw.write("---Start-----------\n")
+	  pw.write(sentence.toString)
+	  pw.write(analyzed.toString)
+	  pw.write("---End-------------\n")
+	 }
+	 val countWithoutVerb = analyzed.getEstimateSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
+     val existWithVerb =analyzed.getEstimateSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
+      if (result._2 > 0 && countWithoutVerb > 0 && existWithVerb  )
+      {	pw.write(analyzed.toString)
+    	pw.write(sentence.toString)
+        pw.write(countWithoutVerb.toString + " / " + existWithVerb.toString)
+        //notGoodAnalyzed +=1
+      }
+      pw.write("Simple Data result")
+ }
 
 def writeToFile(p: String, s: String) {
     val pw = new java.io.PrintWriter(new File(p))

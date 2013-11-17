@@ -1,0 +1,18 @@
+[0m[[0mdebug[0m] [0mOther repositories:[0m
+[0m[[0mdebug[0m] [0m	FileRepository(file,FileConfiguration(true,None),sbt.Patterns@47f3b292)[0m
+[0m[[0mdebug[0m] [0mDefault repositories:[0m
+[0m[[0mdebug[0m] [0m	Raw(ProjectResolver(inter-project, mapped: common-library#common-library_2.9.1;0.1, ruleclause-library#ruleclause-library_2.9.1;0.1, xml-library#xml-library_2.9.1;0.1))[0m
+[0m[[0mdebug[0m] [0m	FileRepository(local,FileConfiguration(true,None),sbt.Patterns@60d6e3c)[0m
+[0m[[0mdebug[0m] [0m	public: http://repo1.maven.org/maven2/[0m
+[0m[[0mdebug[0m] [0mUsing inline dependencies specified in Scala.[0m
+[0m[[0minfo[0m] [0mResolving common-library#common-library_2.9.1;0.1 ...[0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.9.1 ...[0m
+[0m[[0minfo[0m] [0mResolving junit#junit;4.10 ...[0m
+[0m[[0minfo[0m] [0mResolving org.hamcrest#hamcrest-core;1.1 ...[0m
+[0m[[0minfo[0m] [0mResolving ruleclause-library#ruleclause-library_2.9.1;0.1 ...[0m
+[0m[[0minfo[0m] [0mResolving xml-library#xml-library_2.9.1;0.1 ...[0m
+[0m[[0minfo[0m] [0mResolving org.scalatest#scalatest_2.9.1;1.6.1 ...[0m
+[0m[[0minfo[0m] [0mResolving org.scalacheck#scalacheck_2.9.1;1.10.1 ...[0m
+[0m[[0minfo[0m] [0mResolving org.scala-tools.testing#test-interface;0.5 ...[0m
+[0m[[0minfo[0m] [0mResolving com.novocode#junit-interface;0.10-M1 ...[0m
+[0m[[0minfo[0m] [0mResolving junit#junit-dep;4.10 ...[0m

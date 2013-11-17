@@ -19,5 +19,5 @@ class AnalyzedSentence(val Ident : String,  data : List[Segment])
   val countClause = clause.map(f => f._1).toList.max
    
   
-  override def toString =super.toString + "\n" + this.segments.map(s => s.ClauseNum.toString+ " " + s.Level.toString  + "\n").toList.reduce(_ + _ )
+  override def toString =super.toString + "\n" + this.segments.map(s => s.ClauseNum.toString+ " " + s.LevelDefault.toString  + "\n").toList.reduce(_ + _ )
 }

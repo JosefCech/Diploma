@@ -9,7 +9,7 @@ class AnxSentence ( Segments : List[Segment], val Ident : String) extends Senten
   val segments = Segments
   def this(Segments : List[Segment]) = this(Segments,"")
  
-   override def toString = { 
+   override def toString : String = { 
       var text = ""
       this.Segments.foreach( f => f match { case f : PureSegment => text += f.toString + "\n"
       										case f : Boundary => text += f.toString + "\n"
@@ -17,7 +17,7 @@ class AnxSentence ( Segments : List[Segment], val Ident : String) extends Senten
       })
       text += this.Ident
       text
-      }
+}
    
    def analyzedSentence = {  try {
 	   						  new AnalyzedSentence(Ident,Segments);
@@ -44,7 +44,7 @@ class AnxSentence ( Segments : List[Segment], val Ident : String) extends Senten
                                               } )
                                              val levelData = analyzedSentence.segments.zipWithIndex
                                              levelData.foreach(f => {
-                                               data.apply(f._2).setLevel(f._1.Level)
+                                               data.apply(f._2).setLevel(f._1.LevelDefault)
                                                data.apply(f._2).setClause(0)
                                              })
                                              data

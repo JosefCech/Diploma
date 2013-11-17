@@ -18,7 +18,7 @@ class XmlSentence(val segments : List[Segment] ) extends XmlWritable {
   def CreateSegmentNodeData(segment : Segment, words : List[Node]) : Node = segment match {
     case segment : AnalyzedSegment => {
       
-           <segment level={segment.Level.toString }  clause={segment.ClauseNum.toString }  clausebeg={segment.Clausebeg.toString}>{words}</segment>
+           <segment level={segment.LevelDefault.toString }  clause={segment.ClauseNum.toString }  clausebeg={segment.Clausebeg.toString}>{words}</segment>
        }
     case _ =>  <segment>{words}</segment>
     

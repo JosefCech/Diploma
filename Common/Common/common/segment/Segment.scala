@@ -55,7 +55,10 @@ trait Segment {
   var _clause : Int  = -1
   var _startNewClause = false
   def level =  _level
-  def clause = _clause
+  def clause = this match {
+    case x : AnalyzedSegment => x.ClauseNum
+    case x : Segment => _clause
+  }
   
   def isSimpleComma : Boolean = words.filter(p => p.form == ",").length > 0
   

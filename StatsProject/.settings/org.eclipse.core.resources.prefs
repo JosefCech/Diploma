@@ -1,6 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/GraphInfo/BaseInfo.scala=UTF-8
-encoding//src/GraphInfo/BaseInfoContainer.scala=UTF-8
+encoding//src/GraphInfo=UTF-8
+encoding//src/Stats=UTF-8
 encoding//src/Stats/Stats.scala=UTF-8
-encoding/<project>=Cp1250
 encoding/src=Cp1250

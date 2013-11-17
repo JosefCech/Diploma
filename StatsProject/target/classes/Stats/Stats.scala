@@ -1,13 +1,15 @@
 package Stats
 import common._
+import common.sentence._
+import common.segment.AnalyzedSegment
 import java.io._
 import xml._
 
 import Pdt.MorfReader
 object Stats extends App {
-  val segFiles = Directory.ReadSegFiles("../../firsttry/SVN/data/pdt/train2/golden")
+  val segFiles = Directory.ReadSegFiles("../firsttry/SVN/data/pdt/train2/golden")
   val segFilesNames = segFiles.map(f =>  f.getName.replace(".seg", ""))
-  val morfFiles = segFiles.map(f => "../../firsttry/SVN/data/pdt/train2/" + f.getName().split("-").head +"_"+ f.getName().split("-").tail.head + ".m")
+  val morfFiles = segFiles.map(f => "../firsttry/SVN/data/pdt/train2/" + f.getName().split("-").head +"_"+ f.getName().split("-").tail.head + ".m")
   				  .toList.distinct.map(t => new File(t)).toList.filter(p => p.exists)
   
   val segData = segFiles.map(f => SegReader.ReadData(f))				  
@@ -24,7 +26,7 @@ object Stats extends App {
   						}
   					}).toList.filterNot(p => p._1._2 == null).toList 				  
   baseInformation(segData)
-  //segInformation(goldenSet)					
+  segInformation(goldenSet)					
   		
 
  
@@ -57,27 +59,27 @@ object Stats extends App {
    val jumpsLevel = pairsLevel.filter(p => p._1._2 < p._1._1).groupBy(f => f._1._2).toList.sortBy(p => p._1)
   }
 
- def segInformation(goldenSet : List[((String,Array[(Int,Int)]),Sentence)]) = {
+ def segInformation(goldenSet : List[((String,Array[(Int,Int)]),MorfSentence)]) = {
    val segmentErrors = goldenSet.filter(p => p._1._2.size != p._2.parsedSegments(List[(Int,Int)]()).size).toList
    println(goldenSet.map(f => f._2.parsedSegments(f._1._2.toList)).flatten.size)
-   //segmentErrors.foreach(f => println("Sentence Ident "+f._1._1+"Tagged :" + f._1._2.size + " Segmented : " + f._2.parsedSegments(List[(Int,Int)]()).size + " Sentence : " + f._2.parsedSegments(List[(Int,Int)]()).map(t => t.ToString)))
+   segmentErrors.foreach(f => println("Sentence Ident "+f._1._1+"Tagged :" + f._1._2.size + " Segmented : " + f._2.parsedSegments(List[(Int,Int)]()).size + " Sentence : " + f._2.parsedSegments(List[(Int,Int)]()).map(t => t.toString)))
    val clauseEstimatedCount = 
      	goldenSet.map(t => (t._1._1,t._2.parsedSegments(t._1._2.toList).map(s => new AnalyzedSegment(s)))).map(s => {
-     		val countActiveVerb = s._2.filter(p => p.haveActiveVerb).size
+     		val countActiveVerb = s._2.filter(p => p.getInfoSegment.HaveActiveVerb).size
      		if (countActiveVerb == 0) {
      		  (s._1,1)
      		}
      		else {
-     			(s._1,s._2.filter(p => p.haveActiveVerb).size)
+     			(s._1,s._2.filter(p => p.getInfoSegment.HaveActiveVerb).size)
      		}
    		}).groupBy(f => f._2).map(f => (f._1,f._2.size)).toList.sortBy(f => f._1)
    								
    println(clauseEstimatedCount)
    
-   val noVerbSegments = goldenSet.map(s => s._2.parsedSegments(s._1._2.toList).map(m => new AnalyzedSegment(m)).filter(m => m.haveActiveVerb)).flatten
+   val noVerbSegments = goldenSet.map(s => s._2.parsedSegments(s._1._2.toList).map(m => new AnalyzedSegment(m)).filter(m => m.getInfoSegment.HaveActiveVerb)).flatten
    println(noVerbSegments.size)
-   println(noVerbSegments.groupBy(f => f.segment.level).map(f => (f._1,f._2.size)))
-   println(noVerbSegments.filter(p => p.segment.level == 0).size)
+  // println(noVerbSegments.groupBy(f => f).map(f => f._2.LevelDefault(f._1,f._2.size)))
+   println(noVerbSegments.filter(p => p.LevelDefault == 0).size)
  }
 
 

@@ -23,7 +23,7 @@ trait LevelEstimateSentence extends SimpleLog{
   }
   
   /**
-   * Vr�t� segmenty s �rovn� zano�en� - roz���en� verze s acc
+   * Vrátí segmenty  s rovn� zano�en� - rozšířená verze s acc
    */
   private def estimateLevels(segments : List[Segment], actualLevel : Int, dualBorder : List[String], acc : List[Segment]) : List[Segment] = {
    
@@ -200,7 +200,7 @@ trait LevelEstimateSentence extends SimpleLog{
   }
   
   /**
-   * Segment obsahuje p��znak pod��zenosti
+   * Segment obsahuje příznak podřízenosti
    */
   private def containSubflag(s : Segment) : Boolean = {
    val data = new InfoSegment(s)

@@ -35,7 +35,7 @@ object PackageInfo extends App {
            
             val prev = prevSeq.maxBy(_._2)
             val next = nextSeq.minBy(_._2)
-            (true,(prev._1.Level,next._1.Level),(prev._1.ClauseNum,next._1.ClauseNum))
+            (true,(prev._1.LevelDefault,next._1.LevelDefault),(prev._1.ClauseNum,next._1.ClauseNum))
             }
           })
           (sentence.getTagsWithClause,sentence.analyzedSentence.clause, countData)

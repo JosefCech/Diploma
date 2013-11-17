@@ -7,11 +7,12 @@ import java.io.File
 import DataStatistic.PackageInfo
 import DataObjects.EstimateSentence
 import Translation._
+import java.io.PrintWriter
 
 object LevelEstimate extends App {  
  override def main(args: Array[String]) {
     val dataSets = List("Develop","Heldout","Test")
-    val printData =true
+    val printData = true
     dataSets.foreach(dataSet => this.analyzedSetData(dataSet, dataSet + "-file", "\t", printData))
    
  }
@@ -54,7 +55,16 @@ object LevelEstimate extends App {
     }
     else 
     {
-      // put in file
+     val rw = new java.io.PrintWriter(new File("result" + dataSet))
+     rw.print((headLine + "-------------------------------------------------------------------------------------------------").take(60))
+     printGroupDataIntoFile(rw,results,Translation.succesTotal, "")
+     printGroupDataIntoFile(rw,results.filter(f => f._5 > 1).toList,Translation.succesComplex, "\t")
+    
+     results.groupBy(f => f._5).filterNot(f => f._1 < 2).map(f => f._1).toList.sorted.foreach(s => 
+     printGroupDataIntoFile(rw,results.filter(f => f._5 == s).toList,Translation.succesComplexWith(s), "\t\t") 
+     )
+    printGroupDataIntoFile(rw,results.filter(f => f._4).toList,Translation.succesSplitSentence, "\t")
+     rw.print(("end " +headLine + "-------------------------------------------------------------------------------------------------").take(60))
     }
 
     }
@@ -76,7 +86,7 @@ object LevelEstimate extends App {
       {
        val a = segments.head 
        val t = testSegments.head
-       if (a.Level == t.level.getExactLevel) segmentsCompare(segments.tail,testSegments.tail,(acc._1 + 1, acc._2 ))
+       if (a.LevelDefault == t.level.getExactLevel) segmentsCompare(segments.tail,testSegments.tail,(acc._1 + 1, acc._2 ))
        else segmentsCompare(segments.tail,testSegments.tail,(acc._1 , acc._2 + 1 ))      }
     } 
    val compare = segmentsCompare(sentence.segments,test.getEstimateSegments,(0,0))
@@ -87,6 +97,11 @@ object LevelEstimate extends App {
  {
    println(createDataText(data, headline, prefix))
  }
+ 
+ def printGroupDataIntoFile(pw : PrintWriter, data : List[ (Boolean,Int,Int , Boolean,Int)], headline : String , prefix : String) : Unit = {
+	 pw.write(createDataText(data, headline, prefix))
+ }
+ 
  def createDataText(data : List[ (Boolean,Int,Int , Boolean,Int)], headline : String , prefix : String) : String = 
  {
     val wholeCount = data.map( a => a._2 + a._3).toList.sum

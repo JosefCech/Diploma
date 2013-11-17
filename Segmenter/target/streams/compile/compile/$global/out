@@ -4,12 +4,53 @@
 [0m[[0mdebug[0m] [0m	added: Set()[0m
 [0m[[0mdebug[0m] [0m	modified: Set()[0m
 [0m[[0mdebug[0m] [0mRemoved products: Set()[0m
-[0m[[0mdebug[0m] [0mModified external sources: Set()[0m
+[0m[[0mdebug[0m] [0mModified external sources: Set(common.segment.AnalyzedSegment, common.sentence.MorfSentence)[0m
 [0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
 [0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set()[0m
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
 [0m[[0mdebug[0m] [0m	product: Set()[0m
 [0m[[0mdebug[0m] [0m	binary dep: Set()[0m
-[0m[[0mdebug[0m] [0m	external source: Set()[0m
-[0m[[0mdebug[0m] [0mInitially invalidated: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set(C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseStatisticEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\DataObjects\Sentence.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\LevelEstimate\LevelAnalyzedSentence.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\segmenter\SepatatorsGenerate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\segmenter\Segmenter.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\DataStatistic\PackageInfo.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\LevelEstimate\LevelEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseEstimation.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\RuleHandler.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseAnalyzedSentence.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseStatisticAnalyzedSentence.scala)[0m
+[0m[[0mdebug[0m] [0mInitially invalidated: Set(C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseStatisticEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\DataObjects\Sentence.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\LevelEstimate\LevelAnalyzedSentence.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\segmenter\SepatatorsGenerate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\segmenter\Segmenter.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\DataStatistic\PackageInfo.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\LevelEstimate\LevelEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseEstimation.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\RuleHandler.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseAnalyzedSentence.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseStatisticAnalyzedSentence.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 11 Scala sources to C:\Projekty\Skola\Diploma\Segmenter\target\scala-2.9.1\classes...[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 1d315e4b, interfacing (CompilerInterface) with Scala compiler version 2.9.1.final[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-encoding[0m
+[0m[[0mdebug[0m] [0m	UTF-8[0m
+[0m[[0mdebug[0m] [0m	-deprecation[0m
+[0m[[0mdebug[0m] [0m	-unchecked[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	C:\Projekty\Skola\Diploma\Segmenter\target\scala-2.9.1\classes[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Pepa\algs4\java\lib\resources.jar;C:\Users\Pepa\algs4\java\lib\rt.jar;C:\Users\Pepa\algs4\java\lib\sunrsasign.jar;C:\Users\Pepa\algs4\java\lib\jsse.jar;C:\Users\Pepa\algs4\java\lib\jce.jar;C:\Users\Pepa\algs4\java\lib\charsets.jar;C:\Users\Pepa\algs4\java\lib\jfr.jar;C:\Users\Pepa\algs4\java\classes;C:\Users\Pepa\.sbt\boot\scala-2.9.1\lib\scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	C:\Projekty\Skola\Diploma\Segmenter\target\scala-2.9.1\classes;C:\Projekty\Skola\Diploma\Common\target\scala-2.9.1\classes;C:\Projekty\Skola\Diploma\RuleClause\target\scala-2.9.1\classes;C:\Projekty\Skola\Diploma\XmlLib\target\scala-2.9.1\classes;C:\Projekty\Skola\Diploma\RuleClause\lib\common-library_2.9.1-0.1.jar;C:\Users\Pepa\.ivy2\cache\junit\junit\jars\junit-4.10.jar;C:\Users\Pepa\.ivy2\cache\org.hamcrest\hamcrest-core\jars\hamcrest-core-1.1.jar[0m
+[0m[[33mwarn[0m] [0mC:\Projekty\Skola\Diploma\Segmenter\Segmenter\DataObjects\Sentence.scala:18: non variable type-argument Any in type pattern List[Any] is unchecked since it is eliminated by erasure[0m
+[0m[[33mwarn[0m] [0m      case sentence : List[Any] => sentence.map(t => CreateSegmentNode(t))[0m
+[0m[[33mwarn[0m] [0m                      ^[0m
+[0m[[33mwarn[0m] [0mC:\Projekty\Skola\Diploma\Segmenter\Segmenter\DataObjects\Sentence.scala:34: non variable type-argument common.segment.Segment in type pattern List[common.segment.Segment] is unchecked since it is eliminated by erasure[0m
+[0m[[33mwarn[0m] [0m    case segment : List[Segment] => (null,segment.map(w => CreateWordNode(w)))[0m
+[0m[[33mwarn[0m] [0m                   ^[0m
+[0m[[33mwarn[0m] [0mtwo warnings found[0m
+[0m[[0mdebug[0m] [0mScala compilation took 9.5115945 s[0m
+[0m[[0mdebug[0m] [0m	Invalidated direct: Set(C:\Projekty\Skola\Diploma\Segmenter\Segmenter\StatisticModul\StatisticEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\LevelEstimate\LevelEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseEstimation.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\RuleHandler.scala)[0m
+[0m[[0mdebug[0m] [0m	Invalidated direct: Set(C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseStatisticEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\LevelEstimate\LevelStatisticEstimate.scala)[0m
+[0m[[0mdebug[0m] [0m	Invalidated direct: Set()[0m
+[0m[[0mdebug[0m] [0mIncrementally invalidated: Set(C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseStatisticEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\LevelEstimate\LevelAnalyzedSentence.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\StatisticModul\StatisticEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\LevelEstimate\LevelStatisticEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\LevelEstimate\LevelEstimate.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseEstimation.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\RuleHandler.scala, C:\Projekty\Skola\Diploma\Segmenter\Segmenter\ClauseEstimate\ClauseAnalyzedSentence.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 8 Scala sources to C:\Projekty\Skola\Diploma\Segmenter\target\scala-2.9.1\classes...[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 3034655c, interfacing (CompilerInterface) with Scala compiler version 2.9.1.final[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-encoding[0m
+[0m[[0mdebug[0m] [0m	UTF-8[0m
+[0m[[0mdebug[0m] [0m	-deprecation[0m
+[0m[[0mdebug[0m] [0m	-unchecked[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	C:\Projekty\Skola\Diploma\Segmenter\target\scala-2.9.1\classes[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Pepa\algs4\java\lib\resources.jar;C:\Users\Pepa\algs4\java\lib\rt.jar;C:\Users\Pepa\algs4\java\lib\sunrsasign.jar;C:\Users\Pepa\algs4\java\lib\jsse.jar;C:\Users\Pepa\algs4\java\lib\jce.jar;C:\Users\Pepa\algs4\java\lib\charsets.jar;C:\Users\Pepa\algs4\java\lib\jfr.jar;C:\Users\Pepa\algs4\java\classes;C:\Users\Pepa\.sbt\boot\scala-2.9.1\lib\scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	C:\Projekty\Skola\Diploma\Segmenter\target\scala-2.9.1\classes;C:\Projekty\Skola\Diploma\Common\target\scala-2.9.1\classes;C:\Projekty\Skola\Diploma\RuleClause\target\scala-2.9.1\classes;C:\Projekty\Skola\Diploma\XmlLib\target\scala-2.9.1\classes;C:\Projekty\Skola\Diploma\RuleClause\lib\common-library_2.9.1-0.1.jar;C:\Users\Pepa\.ivy2\cache\junit\junit\jars\junit-4.10.jar;C:\Users\Pepa\.ivy2\cache\org.hamcrest\hamcrest-core\jars\hamcrest-core-1.1.jar[0m
+[0m[[0mdebug[0m] [0mScala compilation took 3.689709114 s[0m
+[0m[[0mdebug[0m] [0m	Invalidated direct: Set()[0m
+[0m[[0mdebug[0m] [0mIncrementally invalidated: Set()[0m

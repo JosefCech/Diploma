@@ -6,6 +6,7 @@ import DataObjects.EstimateSentence
 import common.sentence.AnxSentence
 import Anx.AnxReader
 import common.segment.Segment
+import common.segment.AnalyzedSegment
 
 class LevelAnalyzedSentence(sentence : List[Word], ident : String  )
 	extends MorfSentence(sentence, ident ) with LevelEstimateSentence with EstimateSentence
@@ -13,7 +14,7 @@ class LevelAnalyzedSentence(sentence : List[Word], ident : String  )
   def this (sentence : MorfSentence) =  this(sentence.morfWords,sentence.ident)
    
   var estimatedSegments = this.estimateLevelSegments(this.segments)
-  override def toString =  this.estimatedSegments.map(t => t.level.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
+  override def toString =  this.estimatedSegments.map(t => t.level.getExactLevel.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
   
   override val getEstimateSegments = this.estimatedSegments
   
@@ -39,7 +40,7 @@ class LevelStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
        }
        else
        {       
-         val newSegment = sentence.head
+         val newSegment = new AnalyzedSegment(sentence.head,path.head,-1,false)
          newSegment.setLevel(path.head)
          applyBestPath(sentence.tail, path.tail, newSegment :: acc)
        }
@@ -48,7 +49,7 @@ class LevelStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
   }
   
     
-  override def toString =  this.estimatedSegments.map(t => t.level.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
+  override def toString =  this.estimatedSegments.map(t => t.level.getExactLevel.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
   
   override val getEstimateSegments = this.estimatedSegments
    override val getEstimationOfCountClause : Int = 0
