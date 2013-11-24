@@ -1,0 +1,1 @@
+sbt "segmenter/run-main ClauseStatisticEstimate.ClauseStatisticEstimate" > statisicClause.res

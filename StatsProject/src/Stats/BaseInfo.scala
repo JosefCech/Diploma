@@ -11,6 +11,7 @@ class BaseInfo(string : String) {
   val segDir= string + "/seg"
   val morfDir = string + "/morf"
   
+  
   val segFiles = Directory.ReadSegFiles(segDir)
   val segFilesNames = segFiles.map(f =>  f.getName.replace(".seg", ""))
   val morfFiles = segFiles.map(f => morfDir + "/" + f.getName().split("-").head +"_"+ f.getName().split("-").tail.head + ".m")

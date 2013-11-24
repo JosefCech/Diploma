@@ -19,6 +19,7 @@ class AnxSentence ( Segments : List[Segment], val Ident : String) extends Senten
       text
 }
    
+  def  toSimpleString = this match {case t : Sentence => t.toString}
    def analyzedSentence = {  try {
 	   						  new AnalyzedSentence(Ident,Segments);
                              }
@@ -57,6 +58,6 @@ class AnxSentence ( Segments : List[Segment], val Ident : String) extends Senten
     })
     
   }
-   
+  
   def getTagsOnly : List[Tag] = this.sentenceWithData.map(segment => segment.taggedSegment.GetTag)
 }

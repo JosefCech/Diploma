@@ -13,23 +13,38 @@ import java.io.PrintWriter
 import common.sentence.AnxSentence
 import StatisticModul.StatisticLevelEstimate
 import LevelEstimate.LevelAnalyzedSentence
+import DataObjects.ResultsClause
+import DataObjects.ResultsClause
+import Xml.Writer
 
 object ClauseStatisticEstimate extends App{
 
    override def main(args: Array[String]) {
-	val dataFolder: String  = args.apply(0)
+	/*var dataFolder : String = "Test"
+  	if (args.size > 0)
+  	{
+  		dataFolder = args.apply(0)
+  	}
+  	
 	val withAnotatedLevel : Boolean = args.apply(1) match {
 		case "-l" => true
 		case _ => false
-	}
+	}*/
 	
-   def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder(dataFolder)).toList
-   val pw = new PrintWriter(new File("logErrorLevel"))
-   this.analyzedData(files, pw, withAnotatedLevel)
+  	List("Develop","Heldout", "Test", "TestClause").foreach(dataFolder => {
+  		  List(true,false).foreach( withLevel => {
+		   def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder(dataFolder)).toList
+		   def resultOutput = segmenter.Configuration.ResultFolder(dataFolder) + "/results-" + dataFolder ;
+		   val resultfile = new PrintWriter(new File("resultOutput"))
+		   val pw = new PrintWriter(new File("logErrorLevel"))
+		   this.analyzedData(files,dataFolder, pw, withLevel)
+  		  })
+  	})
  }
  
-  def analyzedData(files : List[File], pw : PrintWriter, withLevel : Boolean)
+  def analyzedData(files : List[File], dataSet : String,  pw : PrintWriter, withLevel : Boolean) : Unit  = 
   {
+  
    val statisticClauseModel = new StatisticClauseEstimate
    val statisticLevelModel = new StatisticLevelEstimate
    var notGoodAnalyzed = 0
@@ -53,19 +68,28 @@ object ClauseStatisticEstimate extends App{
    }).toList
     
     pw.close;
-    
-    resultfile.write(ClauseEstimation.createResultData(results, "Level annotated data - whole data", ""))
-    resultfile.write(ClauseEstimation.createResultData(results.filter(p => p._5), "Level annotated data - with break", "\t"))
-    resultfile.write(ClauseEstimation.createResultData(results.filter(p => p._6 > 1), "Level annotated data -complex sentence", "\t"))
+   
+   	val resultsData = new ResultsClause(results)
+   	 Writer.Write("Result/"+"StatisticClause-" + dataSet + "-withLevel.xml", resultsData)
+   
+   	 println(this.createResultData(results, "Level annotated data - whole data", ""))
+    println(this.createResultData(results.filter(p => p._5), "Level annotated data - with break", "\t"))
+    println(this.createResultData(results.filter(p => p._6 > 1), "Level annotated data -complex sentence", "\t"))
     
     val resultfile = new java.io.PrintWriter(new File("results1"))
+    resultfile.write(this.createResultData(results, "Level annotated data - whole data", ""))
+    resultfile.write(this.createResultData(results.filter(p => p._5), "Level annotated data - with break", "\t"))
+    resultfile.write(this.createResultData(results.filter(p => p._6 > 1), "Level annotated data -complex sentence", "\t"))
+    
+    
+    
     val maxCountSegmentInResult =  results.map(p => p._3.countClause).max
     resultfile.write("Results data --------------------------------------------------------------------------------------------------------------------\n")
     var i = 1
     while (i < maxCountSegmentInResult + 1)
     {
       resultfile.write("Count " +i + "\n")
-      resultfile.write(ClauseEstimation.createResultData(results.filter(f =>  f._3.countClause <= i && i - 1 < f._3.countClause ), "Level no annotated data - whole data", ""))
+      resultfile.write(this.createResultData(results.filter(f =>  f._3.countClause <= i && i - 1 < f._3.countClause ), "Level no annotated data - whole data", ""))
        resultfile.write(" end Count " +i + "\n")
      i +=1
     }
@@ -188,7 +212,57 @@ object ClauseStatisticEstimate extends App{
       }
       pw.write("Simple Data result")
  }
-
+  def createResultData(data : List[(Int,Int , AnalyzedSentence, (Int,Int,Int), Boolean,Int)], headLine : String , prefix : String) : String =
+  {
+    val wholeCount = data.map( a => a._1 + a._2).toList.sum
+    val rightCount = data.map(a => a._1).toList.sum
+    val wrongCount = data.map(a => a._2).toList.sum
+   
+    val rightCountSentence = data.filter(p => p._2 == 0).length 
+    
+     val clauseData = data.map(f => (f._4._1,f._4._2,f._4._3,f._5)).toList
+    
+    var builder = new StringBuilder
+    builder.append(prefix + (headLine + "-------------------------------------------------------------------------------------------------").take(60))
+    builder.append("\n")
+    builder.append(prefix + "Right Segments:")
+    builder.append("\n")
+    builder.append(prefix + rightCount.doubleValue/wholeCount )
+    builder.append("\n")
+    builder.append(prefix + rightCount.toString + " " + wholeCount.toString)
+    builder.append("\n")
+    builder.append(prefix + "Wrong Segments:")
+    builder.append("\n")
+    builder.append(prefix + wrongCount.doubleValue/wholeCount )
+    builder.append("\n")
+    builder.append(prefix + wrongCount.toString + " " + wholeCount.toString)
+    builder.append("\n")
+    builder.append(prefix + "Right selected clause : ")
+    builder.append("\n")
+    builder.append(prefix + clauseData.map(t => t._1).toList.sum.doubleValue / clauseData.map(t => t._1 + t._2 + t._3).sum)
+    builder.append("\n")
+    builder.append(prefix + "Wrong 1 - k existujicim klauzim segmenty navic")
+    builder.append("\n")
+    builder.append(prefix + clauseData.map(t => t._2).toList.sum.doubleValue / clauseData.map(t => t._1 + t._2 + t._3).sum)
+    builder.append("\n")
+    builder.append(prefix + "Wrong 2 - spatny pocet klauzi")
+    builder.append("\n")
+    builder.append(prefix + clauseData.map(t => t._3).toList.sum.doubleValue / clauseData.map(t => t._1 + t._2 + t._3).sum)
+    builder.append("\n")
+    builder.append(prefix + "Right Sentence:")
+    builder.append("\n")
+    builder.append(prefix + rightCountSentence.doubleValue/ data.length )
+    builder.append("\n")
+    builder.append(prefix + "Wrong Sentence:")
+    builder.append("\n")
+    builder.append(prefix + (data.length - rightCountSentence).doubleValue/ data.length )
+    builder.append("\n")
+    builder.append(prefix + data.length.toString)
+    builder.append("\n")
+     builder.append(prefix +("end" + headLine + "-------------------------------------------------------------------------------------------------").take(60))
+  
+    builder.toString
+  }
 def writeToFile(p: String, s: String) {
     val pw = new java.io.PrintWriter(new File(p))
     try {

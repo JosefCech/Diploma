@@ -34,7 +34,11 @@ object Configuration {
   def DataFolder(dev : String) = {
      val folder = dev + "Data"
      Configuration.LoadAttributeFolder((root \ folder).head.head)
-    
+  } 
+  
+  def ResultFolder(dev : String) : String = {
+  	val folder = "Result" + dev + "Data"
+     Configuration.LoadAttributeFolder((root \ folder).head.head)
   } 
   
  def LoadAttributeFolder(elem : Node) : String = Configuration.LoadAttribute(elem,"@Folder")   

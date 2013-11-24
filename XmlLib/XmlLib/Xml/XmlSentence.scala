@@ -2,6 +2,8 @@ package Xml
 import common.segment.{Segment, AnalyzedSegment }
 import common.{MorfWord, Word, AnalyzedWord, AbstractWord, ClauseInfo, SegmentInfo}
 import scala.xml._
+import common.segment.PureSegment
+import common.segment.Boundary
 
 class XmlSentence(val segments : List[Segment] ) extends XmlWritable {
 
@@ -20,6 +22,12 @@ class XmlSentence(val segments : List[Segment] ) extends XmlWritable {
       
            <segment level={segment.LevelDefault.toString }  clause={segment.ClauseNum.toString }  clausebeg={segment.Clausebeg.toString}>{words}</segment>
        }
+    case segment : PureSegment => {
+        <segment level={segment._level.getExactLevel.toString }  clause={segment.clause.toString }  clausebeg={segment.startNewClause.toString}>{words}</segment>
+      }
+    case segment : Boundary => {
+        <segment level={segment._level.getExactLevel.toString }  clause={segment.clause.toString }  clausebeg={segment.startNewClause.toString}>{words}</segment>
+      }
     case _ =>  <segment>{words}</segment>
     
   }

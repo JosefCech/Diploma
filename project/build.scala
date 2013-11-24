@@ -1,7 +1,7 @@
 import sbt._
 import Keys._
 
-object HelloBuild extends Build {
+object SegmenterBuild extends Build {
 
 lazy val root = Project(id = "SegmentAnalyzer", base = file("."))
     .aggregate(common, ruleClause, xmlLib, segmenter, statsProject)

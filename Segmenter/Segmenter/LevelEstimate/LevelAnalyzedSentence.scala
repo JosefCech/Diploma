@@ -7,8 +7,11 @@ import common.sentence.AnxSentence
 import Anx.AnxReader
 import common.segment.Segment
 import common.segment.AnalyzedSegment
+import Xml.XmlWritable
+import Xml.XmlSentence
+import scala.xml.Node
 
-class LevelAnalyzedSentence(sentence : List[Word], ident : String  )
+class LevelAnalyzedSentence(sentence : List[Word], ident : String  ) 
 	extends MorfSentence(sentence, ident ) with LevelEstimateSentence with EstimateSentence
 {
   def this (sentence : MorfSentence) =  this(sentence.morfWords,sentence.ident)
@@ -21,10 +24,13 @@ class LevelAnalyzedSentence(sentence : List[Word], ident : String  )
    override val getEstimationOfCountClause : Int = 0
    override val getCountOfClause :Int = 0
    override val getClause : Map[Int,List[Int]] = Map[Int,List[Int]]()
+   override val getIdent : String = this.ident
+   
+    override def TransformXml : Node = new XmlSentence(this.estimatedSegments).TransformXml
 }
 
 class LevelStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
-	extends  EstimateSentence
+	extends  EstimateSentence 
 {
   
    
@@ -48,13 +54,16 @@ class LevelStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
      applyBestPath(sentence.segments, path, List[Segment]())
   }
   
-    
+  
   override def toString =  this.estimatedSegments.map(t => t.level.getExactLevel.toString + " " + t.getStartNewClause.toString + " \n ").toList.reduce(_ + _)
   
-  override val getEstimateSegments = this.estimatedSegments
+   override val getEstimateSegments = this.estimatedSegments
    override val getEstimationOfCountClause : Int = 0
    override val getCountOfClause :Int = 0
    override val getClause : Map[Int,List[Int]] = Map[Int,List[Int]]()
+   override val getIdent : String = sentence.Ident
+    
+   override def TransformXml : Node = new XmlSentence(this.estimatedSegments).TransformXml
  
 }
 
@@ -86,5 +95,8 @@ class LevelStatisticAnalyzedSentenceDiff(sentence : AnxSentence, path : List[Int
    override val getEstimationOfCountClause : Int = 0
    override val getCountOfClause :Int = 0
    override val getClause : Map[Int,List[Int]] = Map[Int,List[Int]]()
+    override val getIdent : String = sentence.Ident
+    
+   override def TransformXml : Node = new XmlSentence(this.estimatedSegments).TransformXml
  
 }

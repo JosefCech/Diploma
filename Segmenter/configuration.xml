@@ -2,16 +2,23 @@
   <Separators Folder="../GoldenData/Seg" />
   <SegmentationData Folder="../GoldenData/Seg" />
   <ClauseGoldData Folder="../GoldenData/GoldClause" />
-  <ClauseOthersData Folder="../GoldenData/GoldOtherClause" />
+  <ClauseTestClauseData Folder="../GoldenData/GoldOtherClause" />
+  
   <PdtData Folder="../GoldenData/Morf" />
   <AnxDataFolder Folder="../GoldenData/AnxDataFolder" />
   <OutputGolden Folder="../GoldenData/OutputGolden" />
-  <OutputOthers Folder="../GoldenData/OutputOthers" />
+  <OutputTestClause Folder="../GoldenData/OutputOthers" />
   
   <DevelopData Folder="../GoldenData/OutputGolden/development" />
   <HeldoutData Folder="../GoldenData/OutputGolden/heldout" />
   <TestData Folder="../GoldenData/OutputGolden/test" />
   <TestClauseData Folder="../GoldenData/OutputOthers" />
+  
+  <ResultDevelopData Folder="../Result/development" />
+  <ResultHeldoutData Folder="../Result/heldout" />
+  <ResultTestData Folder="../Result/test" />
+  <ResultTestClauseData Folder="../Result/others" />
+  
   <RuleFile File="AutomataRules.xml" />
   
 </configuration>

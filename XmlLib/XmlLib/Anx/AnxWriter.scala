@@ -28,7 +28,7 @@ object AnxWriter extends XmlWriter {
   def Write (f: String, node : Node) : Boolean =
   {
     val file = new File(f);
-   scala.xml.XML.save(f,node,"UTF-8")
+    scala.xml.XML.save(f,node,"UTF-8")
     true
   }
   

@@ -98,6 +98,8 @@ trait Segment {
   
   def getStartNewClause : Boolean = this._startNewClause
   
+  def toSimpleString  = words.map(w => w.form).toList.mkString(" ");
+  
 }
 
 

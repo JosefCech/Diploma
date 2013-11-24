@@ -6,6 +6,8 @@ import common.segment.Segment
 import common.segment.InfoSegment
 import common.segment.BaseSegment
 import common.segment.AnalyzedSegment
+import Xml.XmlSentence
+import scala.xml.Node
 
 class ClauseStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
 	extends  EstimateSentence
@@ -43,7 +45,9 @@ class ClauseStatisticAnalyzedSentence(sentence : AnxSentence, path : List[Int] )
   override val getClause    = this.getEstimateSegments.zipWithIndex.map(s => (s._2, s._1.clause)).toList.groupBy( f => f._2).map(f => (f._1, f._2.map(t => t._1)))
   override val getEstimationOfCountClause : Int = this.countEstimate(this.estimatedSegments.map(segment => BaseSegment.createInfoSegment(segment)).toList, false, false,false, 0)
   override val getCountOfClause :Int = this.getEstimateSegments.map(f => f.clause).toList.max
-  
+   override val getIdent : String = sentence.Ident
+    
+   override def TransformXml : Node = new XmlSentence(this.estimatedSegments).TransformXml
     
    def countEstimate(segments : List[InfoSegment], inBracket : Boolean , countBoundary : Boolean, haveVerb : Boolean , acc : Int) : Int = {
       if (segments.isEmpty){

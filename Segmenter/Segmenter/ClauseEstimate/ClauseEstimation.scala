@@ -13,12 +13,18 @@ import DataStatistic.PackageInfo
 import DataObjects.EstimateSentence
 import Translation.Translation
 import common.sentence.LevelEstimateSentence
+import DataObjects.Estimation
+import DataObjects.ResultsClause
+import DataObjects.ResultsClause
+import Xml.Writer
 
 
 object ClauseEstimation extends App
 {
   override def main(args: Array[String]) {
-    def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder("Test")).toList
+
+  	List("Develop","Heldout", "Test", "TestClause").foreach(dataSet => {
+    def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder(dataSet)).toList
    var notGoodAnalyzed = 0
    var notGoodSimple = 0
    val pw = new java.io.PrintWriter(new File("logError"))
@@ -26,10 +32,12 @@ object ClauseEstimation extends App
    val results = files.map(f => {
        val sentence = AnxReader.ReadAnalyzedSentence(f)
        //val analyzed2 = new ClauseAnalyzedSentence(sentence.Words, sentence.Ident, sentence.sentenceWithLevel)
+       
        val analyzed = new ClauseAnalyzedSentence(sentence.sentenceWithLevel,sentence.Ident)
-       // porovnej na�ten� a analyzovan� data
+       
+         //(stejný počet segmenů, počet správně určených segmentů , počet  špatně určených segmentů , rozštěpení klauze, počet vět)
        val result = compareSentence(sentence.analyzedSentence,analyzed)
- 
+       Estimation.writeSentence(analyzed, dataSet, "ruleClauseEstimation")
        // z�pis chybov�ch v�t do logu       
        if (result._2 > 0)
        {
@@ -53,11 +61,18 @@ object ClauseEstimation extends App
        }
        result
    }).toList
+   val resultsData = new ResultsClause(results)
+   resultsData.print(notGoodAnalyzed, notGoodSimple)
+   Writer.Write("Result/"+"RuleClause-" + dataSet + "-withLevel.xml", resultsData)
+    
+   notGoodAnalyzed = 0
+   notGoodSimple = 0
    
-    pw.write("Simple Data result")
+   pw.write("Simple Data result")
    val resultssimple = files.map(f => {
        val sentence = AnxReader.ReadAnalyzedSentence(f)
        val analyzed2 = new ClauseAnalyzedSentence(sentence.morfSentence)
+       //Estimation.writeSentence(analyzed, dataSet, "ruleClauseEstimation")
        // porovnej na�ten� a analyzovan� data
        val result = compareSentence(sentence.analyzedSentence,analyzed2)
  
@@ -87,65 +102,13 @@ object ClauseEstimation extends App
     
     pw.close;
     
-     print(Translation.wrongTagged)
-     println( 	"( " + (notGoodAnalyzed.doubleValue / results.length).toString
-    		 	+ "," + (notGoodSimple.doubleValue / results.length).toString + " )" 
-    		 )
-    println(this.createResultData(results, "Level annotated data - whole data", ""))
-    println(this.createResultData(results.filter(p => p._5), "Level annotated data - with break", "\t"))
-    println(this.createResultData(results.filter(p => p._6 > 1), "Level annotated data -complex sentence", "\t"))
-    println(this.createResultData(resultssimple, "Level no annotated data- whole", ""))
-    println(this.createResultData(resultssimple.filter(p => p._5), "Level no annotated data-clause with break", "\t"))
-    println(this.createResultData(resultssimple.filter(p => p._6 > 1), "Level no annotated data-compex sentence", "\t"))
-   
-    val resultfile = new java.io.PrintWriter(new File("results1"))
-    val maxCountSegmentInResult =  results.map(p => p._3.countClause).max
-    val maxCountSegmentInResultSimple =  resultssimple.map(p => p._3.countClause).max
-    resultfile.write("Results data --------------------------------------------------------------------------------------------------------------------\n")
-    var i = 1
-    while (i < maxCountSegmentInResult + 1)
-    {
-      resultfile.write("Count " +i + "\n")
-      resultfile.write(this.createResultData(results.filter(f =>  f._3.countClause <= i && i - 1 < f._3.countClause ), "Level no annotated data - whole data", ""))
-       resultfile.write(" end Count " +i + "\n")
-     i +=1
-    }
-    resultfile.write("End Results data --------------------------------------------------------------------------------------------------------------------\n")
-   
-    resultfile.write("Results  simple data --------------------------------------------------------------------------------------------------------------------\n")
-  
-    i = 1
-    while (i < maxCountSegmentInResultSimple + 1)
-    {
-      resultfile.write("Count " +i + "\n")
-      resultfile.write(this.createResultData(resultssimple.filter(f => f._3.countClause <= i && i - 1 < f._3.countClause ), "Level no annotated data - whole data", ""))
-       resultfile.write(" end Count " +i + "\n")
-     i +=1
-    }
-     resultfile.write("End Results  simple data --------------------------------------------------------------------------------------------------------------------\n")
-  
-    resultfile.close
-    /* 
-    val rightCountError = results.filter(a => a._2 > 0).map(a => a._1).toList.sum
-    val wrongCountError = results.filter(a => a._2 > 0).map(a => a._2).toList.sum
-    println(wrongCountError / rightCountError.toDouble)
-   val max  = 55
-   var i :  Int = 10
-    while ( i < max)
-    {
-    val wholeCount10 = results.filter(a => a._1 + a._2 > i ).map( a => a._1 + a._2).toList.sum
-    val rightCount10 = results.filter(a => a._1 + a._2 > i ).map(a => a._1).toList.sum
-    val wrongCount10 = results.filter(a => a._1 + a._2 > i ).map(a => a._2).toList.sum
-    println("Right Segments:" + i.toString)
-    println(rightCount10.doubleValue/wholeCount10 )
-    println(rightCount10.toString + " " + wholeCount10.toString)
-    println("Wrong Segments:")
-    println(wrongCount10.doubleValue/wholeCount10 )
-    println(wrongCount10.toString + " " + wholeCount10.toString)
-    i+=5
-    }
-    */
- }
+   val resultsDataSimple = new ResultsClause(resultssimple)
+   resultsDataSimple.print(notGoodAnalyzed, notGoodSimple)
+   Writer.Write("Result/"+"RuleClause-" + dataSet + "-withoutLevel.xml", resultsDataSimple)
+  	}
+  	)
+}
+ 
   
  def compareSentence(sentence : AnalyzedSentence , test : EstimateSentence) : 
   (Int,Int , AnalyzedSentence, (Int,Int,Int), Boolean, Int) = 
@@ -162,57 +125,7 @@ object ClauseEstimation extends App
    (compare._1,compare._2, sentence, estimatedClause, containsBreakClause, isComplexSentence)
   }
   
-  def createResultData(data : List[(Int,Int , AnalyzedSentence, (Int,Int,Int), Boolean,Int)], headLine : String , prefix : String) : String =
-  {
-    val wholeCount = data.map( a => a._1 + a._2).toList.sum
-    val rightCount = data.map(a => a._1).toList.sum
-    val wrongCount = data.map(a => a._2).toList.sum
-   
-    val rightCountSentence = data.filter(p => p._2 == 0).length 
-    
-     val clauseData = data.map(f => (f._4._1,f._4._2,f._4._3,f._5)).toList
-    
-    var builder = new StringBuilder
-    builder.append(prefix + (headLine + "-------------------------------------------------------------------------------------------------").take(60))
-    builder.append("\n")
-    builder.append(prefix + "Right Segments:")
-    builder.append("\n")
-    builder.append(prefix + rightCount.doubleValue/wholeCount )
-    builder.append("\n")
-    builder.append(prefix + rightCount.toString + " " + wholeCount.toString)
-    builder.append("\n")
-    builder.append(prefix + "Wrong Segments:")
-    builder.append("\n")
-    builder.append(prefix + wrongCount.doubleValue/wholeCount )
-    builder.append("\n")
-    builder.append(prefix + wrongCount.toString + " " + wholeCount.toString)
-    builder.append("\n")
-    builder.append(prefix + "Right selected clause : ")
-    builder.append("\n")
-    builder.append(prefix + clauseData.map(t => t._1).toList.sum.doubleValue / clauseData.map(t => t._1 + t._2 + t._3).sum)
-    builder.append("\n")
-    builder.append(prefix + "Wrong 1 - k existujicim klauzim segmenty navic")
-    builder.append("\n")
-    builder.append(prefix + clauseData.map(t => t._2).toList.sum.doubleValue / clauseData.map(t => t._1 + t._2 + t._3).sum)
-    builder.append("\n")
-    builder.append(prefix + "Wrong 2 - spatny pocet klauzi")
-    builder.append("\n")
-    builder.append(prefix + clauseData.map(t => t._3).toList.sum.doubleValue / clauseData.map(t => t._1 + t._2 + t._3).sum)
-    builder.append("\n")
-    builder.append(prefix + "Right Sentence:")
-    builder.append("\n")
-    builder.append(prefix + rightCountSentence.doubleValue/ data.length )
-    builder.append("\n")
-    builder.append(prefix + "Wrong Sentence:")
-    builder.append("\n")
-    builder.append(prefix + (data.length - rightCountSentence).doubleValue/ data.length )
-    builder.append("\n")
-    builder.append(prefix + data.length.toString)
-    builder.append("\n")
-     builder.append(prefix +("end" + headLine + "-------------------------------------------------------------------------------------------------").take(60))
   
-    builder.toString
-  }
   def segmentsCompare(segments : List[AnalyzedSegment], testSegments : List[Segment], acc : (Int,Int)) : (Int, Int) = 
     {
       if (segments.isEmpty || testSegments.isEmpty)

@@ -10,6 +10,8 @@ import common.segment.BaseSegment
 import DataObjects.EstimateSentence
 import common.sentence.AnxSentence
 import common.segment.AnalyzedSegment
+import scala.xml.Node
+import Xml.XmlSentence
 
 class ClauseAnalyzedSentence(sentence : List[Word],  ident : String , val levelWithSegments : List[Segment]) 
 	extends MorfSentence(sentence,ident)
@@ -21,9 +23,9 @@ class ClauseAnalyzedSentence(sentence : List[Word],  ident : String , val levelW
    def this (segments : List[Segment], ident : String) = 
                this(segments.map(t => t.words.map(w => Word.createMorfWord(w))).flatten,ident,segments)
    
-   var estimatedSegments = this.estimateClause(this.taggedSegments)
+   lazy val estimatedSegments = this.estimateClause(this.taggedSegments)
    
-   def estimationOfClause : Int = {
+   val estimationOfClause : Int = {
         this.countEstimate(this.taggedSegments.map(t => t.analyzed).toList,false, false,false, 0)
     }
    
@@ -44,7 +46,11 @@ class ClauseAnalyzedSentence(sentence : List[Word],  ident : String , val levelW
   override val getClause    = this.getEstimateSegments.zipWithIndex.map(s => (s._2, s._1.clause)).toList.groupBy( f => f._2).map(f => (f._1, f._2.map(t => t._1)))
   override val getEstimationOfCountClause : Int = this.countEstimate(this.estimatedSegments.map(segment => BaseSegment.createInfoSegment(segment)).toList, false, false,false, 0)
   override val getCountOfClause :Int = this.getEstimateSegments.map(f => f.clause).toList.max
-   
+   override val getIdent : String = this.ident
+    
+   override def TransformXml : Node = new XmlSentence(this.clauseEstimateSegments).TransformXml
+  
+  
   def applyMatches(matches : List[MatchEffect] ) = {
      this.clauseEstimateSegments.zipWithIndex.foreach(f => {
        val matchEffect = matches.filter(p => p.effectOnIndex == f._2)

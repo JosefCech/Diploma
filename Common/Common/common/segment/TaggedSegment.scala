@@ -46,7 +46,7 @@ class TaggedSegment(val segment : Segment) extends ITaggedSegment  {
   private def GetLevel : String = {
     if (analyzed.segment.level.getExactLevel > -1)
     {
-    analyzed.segment.level.toString
+    segment.level.toString
     }
     else
     {

@@ -14,7 +14,7 @@ class AnalyzedSegment( val data : Segment,  level : Int , clause : Int,  startNe
    
   super.level = new Level(level,level)
   
-  def ClauseNum = if (clause == -1) 0
+  def ClauseNum : Int = if (clause == -1) 0
                   else {
                     this.setClause(clause)
                     clause

@@ -1,0 +1,1 @@
+sbt "segmenter/run-main LevelStatisticEstimate.LevelStatisticEstimate" > statisticLevelEstimate.res

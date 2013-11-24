@@ -1,4 +1,58 @@
-Results data --------------------------------------------------------------------------------------------------------------------
+Level annotated data - whole data---------------------------
+Right Segments:
+0.7037415902742259
+17887 25417
+Wrong Segments:
+0.2962584097257741
+7530 25417
+Right selected clause : 
+0.44946785866326094
+Wrong 1 - k existujicim klauzim segmenty navic
+0.4083439761600681
+Wrong 2 - spatny pocet klauzi
+0.14218816517667093
+Right Sentence:
+0.5129911960489586
+Wrong Sentence:
+0.48700880395104146
+4657
+endLevel annotated data - whole data------------------------	Level annotated data - with break---------------------------
+	Right Segments:
+	0.6239928379588182
+	2091 3351
+	Wrong Segments:
+	0.37600716204118173
+	1260 3351
+	Right selected clause : 
+	0.2230281051677244
+	Wrong 1 - k existujicim klauzim segmenty navic
+	0.5584768812330009
+	Wrong 2 - spatny pocet klauzi
+	0.2184950135992747
+	Right Sentence:
+	0.14181818181818182
+	Wrong Sentence:
+	0.8581818181818182
+	275
+	endLevel annotated data - with break------------------------	Level annotated data -complex sentence----------------------
+	Right Segments:
+	0.6303532151636693
+	9744 15458
+	Wrong Segments:
+	0.3696467848363307
+	5714 15458
+	Right selected clause : 
+	0.27080111351685743
+	Wrong 1 - k existujicim klauzim segmenty navic
+	0.49768017321373337
+	Wrong 2 - spatny pocet klauzi
+	0.2315187132694092
+	Right Sentence:
+	0.19529938444320089
+	Wrong Sentence:
+	0.8047006155567991
+	1787
+	endLevel annotated data -complex sentence-------------------Results data --------------------------------------------------------------------------------------------------------------------
 Count 1
 Level no annotated data - whole data------------------------
 Right Segments:

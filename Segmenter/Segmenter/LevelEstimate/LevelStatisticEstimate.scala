@@ -8,6 +8,9 @@ import DataObjects.EstimateSentence
 import StatisticModul.StatisticLevelEstimate
 import StatisticModul.StatisticLevelEstimateDiff
 import Translation.Translation
+import DataObjects.Estimation
+import Xml.Writer
+import DataObjects.ResultsLevel
 
 
 object LevelStatisticEstimate extends App {
@@ -27,6 +30,7 @@ object LevelStatisticEstimate extends App {
     val results = files.map(f => {
 	     val sentence = AnxReader.ReadAnalyzedSentence(f)
 	     val analyzed = statisticModel.StatisticEstimateLevel(sentence)
+	     Estimation.writeSentence(analyzed, dataSet, "statisticLevelEstimation")
 	     //val statisticModelDiff = new StatisticLevelDiffEstimate
 	     val result = LevelEstimate.compareSentence(sentence.analyzedSentence, analyzed)
 	     
@@ -40,22 +44,9 @@ object LevelStatisticEstimate extends App {
      result
     }).toList
     
-    if (print)
-    {
-    println((headLine + "-------------------------------------------------------------------------------------------------").take(60))
-    LevelEstimate.printGroupData(results,Translation.succesTotal, "")
-    LevelEstimate.printGroupData(results.filter(f => f._5 > 1).toList,Translation.succesComplex, "\t")
-    
-    results.groupBy(f => f._5).filterNot(f => f._1 < 2).map(f => f._1).toList.sorted.foreach(s => 
-     LevelEstimate.printGroupData(results.filter(f => f._5 == s).toList,Translation.succesComplexWith(s), "\t\t") 
-    )
-     LevelEstimate.printGroupData(results.filter(f => f._4).toList,Translation.succesSplitSentence, "\t")
-    println(("end " +headLine + "-------------------------------------------------------------------------------------------------").take(60))
-    }
-    else 
-    {
-      //TODO put in file
-    }
+     val resultsData = new ResultsLevel(results)
+    resultsData.print(false, headLine, dataSet)
+    Writer.Write("Result/StatisticLevel-"+dataSet + ".xml", resultsData)
 
     }
   

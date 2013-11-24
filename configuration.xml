@@ -14,4 +14,9 @@
   <TestClauseData Folder="GoldenData/OutputOthers" />
   <RuleFile File="AutomataRules.xml" />
   
+    <ResultDevelopData Folder="Result/development" />
+  <ResultHeldoutData Folder="Result/heldout" />
+  <ResultTestData Folder="Result/test" />
+  <ResultTestClauseData Folder="Result/others" />
+  
 </configuration>
