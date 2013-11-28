@@ -110,7 +110,7 @@ class ResultsClause(val results : List[(Int, Int, AnalyzedSentence, (Int, Int, I
 	
 	 override val TransformXml : Node =  <results>
  											<segments right={(rightCount.doubleValue/wholeCount).toString} wholeCount={wholeCount.toString} rightCount={rightCount.toString}  />
- 											<clause right={(clauseData.map(t => t._1).toList.sum.doubleValue / clauseData.map(t => t._1 + t._2 + t._3).sum).toString} />
+ 											<clause right={(clauseData.map(t => t._1).toList.sum.doubleValue / clauseData.map(t => t._1 + t._2 + t._3).sum).toString} rightCount={clauseData.map(t => t._1).toList.sum.toString} wholeCount={clauseData.map(t => t._1 + t._2 + t._3).sum.toString} />
  											<sentence right={(rightCountSentence.doubleValue/wholeCountSentence).toString} wholeCount={wholeCountSentence.toString} rightCount={rightCountSentence.toString} />
  										 </results>
   def createResultData(data : List[(Int,Int , AnalyzedSentence, (Int,Int,Int), Boolean,Int)], headLine : String , prefix : String) : String =

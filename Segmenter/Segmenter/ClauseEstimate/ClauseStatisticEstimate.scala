@@ -70,8 +70,10 @@ object ClauseStatisticEstimate extends App{
     pw.close;
    
    	val resultsData = new ResultsClause(results)
-   	 Writer.Write("Result/"+"StatisticClause-" + dataSet + "-withLevel.xml", resultsData)
-   
+   	withLevel match {
+   		case true => Writer.Write("Result/"+"StatisticClause-" + dataSet + "-withLevel.xml", resultsData)
+   		case false => Writer.Write("Result/"+"StatisticClause-" + dataSet + "-withoutLevel.xml", resultsData)
+   	}
    	 println(this.createResultData(results, "Level annotated data - whole data", ""))
     println(this.createResultData(results.filter(p => p._5), "Level annotated data - with break", "\t"))
     println(this.createResultData(results.filter(p => p._6 > 1), "Level annotated data -complex sentence", "\t"))

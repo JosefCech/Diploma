@@ -6,6 +6,6 @@ import  java.io._
 class Reader(file : String) extends XmlReader {
 
   val data : Node = ReadFile(new File(file))
-  
+  def GetData : Node = data
  
 }

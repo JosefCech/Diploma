@@ -23,6 +23,10 @@ trait XmlReader {
     else value.head._2
   }
   
+ def getChildNodesWithAtrib(node : Node ) : List[(String,List[(String,String)])] = {   // return (elemName,(atrName,atrValue))
+   
+    node.child.filterNot(p => p.isAtom) map (t => (t.label,getAttributes(t))) toList
+ }
  def getTextAttribute(node : Node , attrib : String) : String = this.getAttribute(node, attrib)
   
  def getBooleanAttribute(node : Node, attrib : String) : Boolean = {

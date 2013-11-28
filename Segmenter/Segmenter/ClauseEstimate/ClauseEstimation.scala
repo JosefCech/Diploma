@@ -22,9 +22,15 @@ import Xml.Writer
 object ClauseEstimation extends App
 {
   override def main(args: Array[String]) {
-
-  	List("Develop","Heldout", "Test", "TestClause").foreach(dataSet => {
-    def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder(dataSet)).toList
+    List(true,false).foreach( withLevel => {
+    	List("Develop","Heldout", "Test", "TestClause").foreach(dataSet => {
+    			ClauseEstimation.analyzeSingleDataSet(dataSet, withLevel)
+  		}
+  	)
+}
+ 
+  def analyzeSingleDataSet(dataSet : String,  withLevel : Boolean) : Unit = {
+  	def files = common.Directory.ReadAnxFiles(segmenter.Configuration.DataFolder(dataSet)).toList
    var notGoodAnalyzed = 0
    var notGoodSimple = 0
    val pw = new java.io.PrintWriter(new File("logError"))
@@ -33,8 +39,10 @@ object ClauseEstimation extends App
        val sentence = AnxReader.ReadAnalyzedSentence(f)
        //val analyzed2 = new ClauseAnalyzedSentence(sentence.Words, sentence.Ident, sentence.sentenceWithLevel)
        
-       val analyzed = new ClauseAnalyzedSentence(sentence.sentenceWithLevel,sentence.Ident)
-       
+       val analyzed =  withLevel match { 
+      	 case true => new ClauseAnalyzedSentence(sentence.sentenceWithLevel,sentence.Ident)
+      	 case false => new ClauseAnalyzedSentence(sentence.morfSentence)
+       }
          //(stejný počet segmenů, počet správně určených segmentů , počet  špatně určených segmentů , rozštěpení klauze, počet vět)
        val result = compareSentence(sentence.analyzedSentence,analyzed)
        Estimation.writeSentence(analyzed, dataSet, "ruleClauseEstimation")
@@ -63,54 +71,13 @@ object ClauseEstimation extends App
    }).toList
    val resultsData = new ResultsClause(results)
    resultsData.print(notGoodAnalyzed, notGoodSimple)
-   Writer.Write("Result/"+"RuleClause-" + dataSet + "-withLevel.xml", resultsData)
-    
-   notGoodAnalyzed = 0
-   notGoodSimple = 0
-   
-   pw.write("Simple Data result")
-   val resultssimple = files.map(f => {
-       val sentence = AnxReader.ReadAnalyzedSentence(f)
-       val analyzed2 = new ClauseAnalyzedSentence(sentence.morfSentence)
-       //Estimation.writeSentence(analyzed, dataSet, "ruleClauseEstimation")
-       // porovnej na�ten� a analyzovan� data
-       val result = compareSentence(sentence.analyzedSentence,analyzed2)
- 
-       // z�pis chybov�ch v�t do logu       
-       if (result._2 > 0)
-       {
-        pw.write("---Start-----------\n")
-        pw.write(sentence.toString)
-        pw.write(analyzed2.toString)
-        pw.write(analyzed2.getLog)
-        pw.write("---End-------------\n")
-     
-       }
-       // po�et klauz� bez slovesa
-        val countWithoutVerb = analyzed2.estimatedSegments.groupBy(f => f.clause).filterNot(p => p._2.filter(s => new InfoSegment(s).HaveActiveVerb).length > 0).filter(p =>  p._1 != 0).toList.length
-        // existuje n�jak� sloveso
-        val existWithVerb =analyzed2.estimatedSegments.filter(p => new InfoSegment(p).HaveActiveVerb).length > 0  
-       
-       if (result._2 > 0 && countWithoutVerb > 0 && existWithVerb  )       
-       {
-         // veta porusuje konzistenci z pohledu sloves a klauzi 
-         pw.write(countWithoutVerb.toString + " / " + existWithVerb.toString)
-         notGoodSimple +=1
-       }
-       result
-   }).toList
-    
-    pw.close;
-    
-   val resultsDataSimple = new ResultsClause(resultssimple)
-   resultsDataSimple.print(notGoodAnalyzed, notGoodSimple)
-   Writer.Write("Result/"+"RuleClause-" + dataSet + "-withoutLevel.xml", resultsDataSimple)
+    val analyzed =  withLevel match { 
+      	case true => Writer.Write("Result/"+"RuleClause-" + dataSet + "-withLevel.xml", resultsData)
+      	case false => Writer.Write("Result/"+"RuleClause-" + dataSet + "-withoutLevel.xml", resultsData)
   	}
-  	)
-}
- 
+  }
   
- def compareSentence(sentence : AnalyzedSentence , test : EstimateSentence) : 
+  def compareSentence(sentence : AnalyzedSentence , test : EstimateSentence) : 
   (Int,Int , AnalyzedSentence, (Int,Int,Int), Boolean, Int) = 
   {
    // porovn�n� jednotliv�ch segment�
